@@ -109,6 +109,9 @@ int main()
     tempIntPtr = NULL;
     int fl_number = 0;
     fl_number=countNumberFL(fl_head);
+    loading();
+    printf("数据加载完成，按下回车以继续");
+    choose();
     while (choice_0)
     {
         printf("******登    录******\n");
@@ -276,8 +279,8 @@ int main()
                                             tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 1);
                                             if (*tempIntPtr == 0)
                                             {
-                                                printf("很凄惨，我们的应用没有人在用。");
-                                                printf("回车以继续");
+                                                printf("很凄惨，我们的应用没有人在用。\n");
+                                                printf("回车以继续\n");
                                                 getchar();
                                                 choose();
                                                 break;
@@ -335,8 +338,8 @@ int main()
                                                         }
                                                         else
                                                         {
-                                                            printf("两次输入不一样的嘞");
-                                                            printf("回车以继续");
+                                                            printf("两次输入不一样的嘞\n");
+                                                            printf("回车以继续\n");
                                                             getchar();
                                                             choose();
                                                             break;
@@ -378,7 +381,7 @@ int main()
                                                 if (*(tempIntPtr - 1) == 0)
                                                 {
                                                     printf("找不到您输入的内容。\n");
-                                                    printf("按下回车以继续\n");
+                                                    printf("按下回车以继续");
                                                     getchar();
                                                     choose();
                                                 }
@@ -408,8 +411,8 @@ int main()
                                             tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 1);
                                             if (*tempIntPtr == 0)
                                             {
-                                                printf("很凄惨，我们的应用没有人在用。");
-                                                printf("回车以继续");
+                                                printf("很凄惨，我们的应用没有人在用。\n");
+                                                printf("回车以继续\n");
                                                 getchar();
                                                 choose();
                                                 break;
@@ -432,7 +435,8 @@ int main()
                                                 printf("成功找到对象\n");
                                                 printf("编号\t\t姓名\t\t账号\t\t电话\n");
                                                 printf("%s\t%s\t\t%s\t\t%s\n", ag_p1->Number, ag_p1->Name, ag_p1->Account, ag_p1->phone_n);
-                                                printf("您确定要删除该员工吗？1确认 2取消：");
+                                                printf("您确定要删除该员工吗？\n1确认\t 2取消：\n");
+                                                printf("您的选择：");
                                                 scanf("%d", &jug6);
                                                 if (jug6 == 1)
                                                 {

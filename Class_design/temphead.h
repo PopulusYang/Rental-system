@@ -91,6 +91,7 @@ void removeDuplicates(int* arr, int* length);
 来自color.c
 ***********/
 void color(short x);
+void loading();
 
 /************
 来自output.c
