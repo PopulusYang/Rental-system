@@ -146,6 +146,10 @@
     <None Include="agency.bin" />
     <None Include="customer.bin" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="appointment.bin" />
+    <Text Include="flat.bin" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

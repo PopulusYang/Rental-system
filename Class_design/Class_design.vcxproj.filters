@@ -62,4 +62,8 @@
       <Filter>资源文件</Filter>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="appointment.bin" />
+    <Text Include="flat.bin" />
+  </ItemGroup>
 </Project>

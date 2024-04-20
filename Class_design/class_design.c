@@ -80,6 +80,8 @@ int main()
     filecachAD_read(&ad_tail);
     filecachAG_read(&ag_tail);
     filecachCU_read(&cu_tail);
+    filecachFL_read(&fl_tail,ag_head);
+    filecachAP_read(&ap_tail,cu_head,fl_head);
 
     void choose();
     int choice_0 = 1, choice_1, choice_2, choice_3, choice_4;
@@ -1146,8 +1148,79 @@ int main()
                                                 float rent;
                                                 scanf("%s", city);
                                                 scanf("%f %d %d %d %d %f", &Area, &shi, &ting, &t, &floor, &rent);
-                                                extend_writeFlat(fl_p1, fl_head, fl_tail, city, Area, t, floor, rent, shi, ting);
-                                                fl_tail = fl_tail->next;
+                                                while (1)
+                                                {
+                                                    memset(input_string, 0, sizeof(input_string));
+                                                    printf("请输入员工信息（最多50个字符）：");
+                                                    scanf("%s", input_string);
+                                                    tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 1);
+                                                    if (*tempIntPtr == 0)
+                                                    {
+                                                        printf("很凄惨，我们的应用没有人在用。");
+                                                        printf("回车以继续");
+                                                        getchar();
+                                                        choose();
+                                                        break;
+                                                    }
+                                                    tempIntPtr++;
+                                                    for (int i = 0; i != *(tempIntPtr - 1); i++)
+                                                    {
+                                                        ag_p1 = ag_head->next;
+                                                        for (int j = 0; j != tempIntPtr[i]; j++)
+                                                            ag_p1 = ag_p1->next;
+                                                        if (!strcmp(ag_p1->Number, input_string) || !strcmp(ag_p1->Name, input_string) || !strcmp(ag_p1->Account, input_string) || !strcmp(ag_p1->phone_n, input_string))
+                                                        {
+                                                            jug5 = 1;
+                                                            break;
+                                                        }
+                                                    }
+                                                    if (jug5)
+                                                    {
+                                                        choose();
+                                                        printf("成功找到对象\n");
+                                                        printf("编号\t\t姓名\t\t账号\t\t电话\n");
+                                                        printf("%s\t%s\t\t%s\t\t%s\n", ag_p1->Number, ag_p1->Name, ag_p1->Account, ag_p1->phone_n);
+                                                        printf("您确定是这位中介人员吗？1确认 2取消：");
+                                                        scanf("%d", &jug6);
+                                                        if (jug6 == 1)
+                                                        {
+                                                            extend_writeFlat(fl_p1, fl_head, fl_tail, city, Area, t, floor, rent, shi, ting, ag_p1);
+                                                            fl_tail = fl_tail->next;
+                                                            printf("操作成功\n");
+                                                        }
+                                                        jug6 = 0;
+                                                        jug5 = 0;//初始化
+                                                        printf("回车以继续\n");
+                                                        getchar();
+                                                        choose();
+                                                        break;
+                                                    }
+                                                    else
+                                                        if (*(tempIntPtr - 1) == 0)
+                                                        {
+                                                            printf("找不到您输入的内容。\n");
+                                                            printf("按下回车以继续\n");
+                                                            getchar();
+                                                            choose();
+                                                        }
+                                                        else
+                                                        {
+                                                            printf("您输入的内容比较模糊，为您找到以下内容\n");
+                                                            printf("序号\t\t编号\t\t姓名\t\t账号\t\t电话\n");
+                                                            for (int i = 0; i < *(tempIntPtr - 1); i++)
+                                                            {
+                                                                ag_p1 = ag_head->next;
+                                                                for (int j = 0; j < *(tempIntPtr + i); j++)
+                                                                    ag_p1 = ag_p1->next;
+                                                                printf("%d\t\t%s\t%s\t\t%s\t\t%s\n", i + 1, ag_p1->Number, ag_p1->Name, ag_p1->Account, ag_p1->phone_n);
+                                                            }
+                                                            printf("回车以继续\n");
+                                                            getchar();
+                                                            choose();
+                                                        }
+                                                    free(tempIntPtr - 1);
+                                                    tempIntPtr = NULL;
+                                                }
                                             }
                                             printf("信息录入成功\n");
                                             printf("目前有%d个房源\n", fl_number);
@@ -1241,7 +1314,7 @@ int main()
                         }
                         else
                         {
-                            bubbleSort_Area(fl_head, choice_5);
+                            bubbleSort_Area(&fl_head, choice_5);
                             choose();
                             printf("*********排序方式*********\n");
                             printf("**                      **\n");
@@ -1251,7 +1324,7 @@ int main()
                             printf("**************************\n");
                             scanf("%d", &jug7);
                             choose();
-                            list_printfl(&fl_head, fl_tail, jug7);
+                            list_printfl(fl_head, fl_tail, jug7);
                             printf("按下回车以继续\n");
                             getchar();
                             choose();
@@ -1726,6 +1799,8 @@ int main()
     filecachAD_write(ad_head);
     filecachAG_write(ag_head);
     filecachCU_write(cu_head);
+    filecachAP_write(ap_head);
+    filecachFL_write(fl_head);
     return 0;
 }
 static void choose()//用于清屏

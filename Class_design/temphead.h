@@ -50,13 +50,13 @@ int extendAgency(char* Account, char* key, struct Agency* p1, struct Agency* hea
 //延长Admin链表
 int extendAdmin(char* Account, char* key, struct Admin* p1, struct Admin* p2, struct Admin* tail);
 //延长Flat链表并写入
-int extend_writeFlat(list_1 p1, list_1 head, list_1 tail, char* city, float area, int t, int floor, float rent, int shi, int ting);
+int extend_writeFlat(list_1 p1, list_1 head, list_1 tail, char* city, float area, int t, int floor, float rent, int shi, int ting,struct Agency* ag);
 //更改房产信息
 int fl_change(list_1 fl_p1);
 //查找操作，查找一个范围内的房产信息
 //l和r为左右端点
 //jug为正序or倒序
-int range_search_Area(int l, int r, list_1 mylist_head, list_1 mylist_tail, int jug,int jug2);//以房产面积为例子
+int range_search_Area(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2);//以房产面积为例子
 //延长extendApm链表
 int extendApm(struct Appointment* p, struct Appointment* tail, int year, int month, int day, struct Flat* flat, struct Customer* custom);
 //打印链表

@@ -571,7 +571,7 @@ int fl_change(list_1 fl_p1)//用于更改房子信息
 //judge用于判断正反向打印
 int list_printfl(list_1 mylist_head, list_1 mylist_tail,int judge)
 {
-    struct Flat* head,*p1;
+    struct Flat*p1;
     if (mylist_head->next == NULL)
     {
         logError(0);

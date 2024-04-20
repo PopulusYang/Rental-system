@@ -2,7 +2,6 @@
 #include "temphead.h"
 
 
-//�ļ���д����
 bool filecachAD_write(struct Admin* head)
 {
 	FILE* fp;
@@ -13,7 +12,6 @@ bool filecachAD_write(struct Admin* head)
 		logError(2);
 		return false;
 	}
-	//�ƺ��깤��
 	struct Admin* p;
 	p = head->next;
 	while (p != NULL)
@@ -35,7 +33,6 @@ bool filecachAD_read(struct Admin** tailp)
 		logError(2);
 		return false;
 	}
-	//�ƺ��깤��
 	struct Admin* p;
 	p = NULL;
 	while (!feof(fp))
@@ -57,7 +54,6 @@ bool filecachAD_read(struct Admin** tailp)
 	return true;
 }
 
-//�ļ���д����
 bool filecachAG_write(struct Agency* head)
 {
 	FILE* fp;
@@ -68,7 +64,6 @@ bool filecachAG_write(struct Agency* head)
 		logError(2);
 		return false;
 	}
-	//�ƺ��깤��
 	struct Agency* p;
 	p = head->next;
 	while (p != NULL)
@@ -90,7 +85,6 @@ bool filecachAG_read(struct Agency** tailp)
 		logError(2);
 		return false;
 	}
-	//�ƺ��깤��
 	struct Agency* p;
 	p = NULL;
 	while (!feof(fp))
@@ -112,7 +106,6 @@ bool filecachAG_read(struct Agency** tailp)
 	return true;
 }
 
-//�ļ���д����
 bool filecachCU_write(struct Customer* head)
 {
 	FILE* fp;
@@ -123,7 +116,6 @@ bool filecachCU_write(struct Customer* head)
 		logError(2);
 		return false;
 	}
-	//�ƺ��깤��
 	struct Customer* p;
 	p = head->next;
 	while (p != NULL)
@@ -145,7 +137,6 @@ bool filecachCU_read(struct Customer** tailp)
 		logError(2);
 		return false;
 	}
-	//�ƺ��깤��
 	struct Customer* p;
 	p = NULL;
 	while (!feof(fp))
@@ -167,7 +158,6 @@ bool filecachCU_read(struct Customer** tailp)
 	return true;
 }
 
-//�ļ���д����
 bool filecachFL_write(struct Flat* head)
 {
 	FILE* fp;
@@ -178,7 +168,6 @@ bool filecachFL_write(struct Flat* head)
 		logError(2);
 		return false;
 	}
-	//�ƺ��깤��
 	struct Flat* p;
 	p = head->next;
 	while (p != NULL)
@@ -202,7 +191,6 @@ bool filecachFL_read(struct Flat** tailp,struct Agency* head)
 		logError(2);
 		return false;
 	}
-	//�ƺ��깤��
 	struct Flat* p;
 	p = NULL;
 	while (!feof(fp))
@@ -211,10 +199,12 @@ bool filecachFL_read(struct Flat** tailp,struct Agency* head)
 		assert(p);
 		fread(p, sizeof(struct Flat), 1, fp);
 		p1 = head->next;
-		while (!strcmp((*tailp)->agposition, p1->Number) && fp != NULL)
-			p = p->next;
-		(*tailp)->agency = p;
-
+		if (p1 != NULL)
+		{
+			while (!strcmp((*tailp)->agposition, p1->Number) && p1 != NULL)
+				p1 = p1->next;
+			(*tailp)->agency = p1;
+		}
 		(*tailp)->next = p;
 		p->prev = (*tailp);
 		(*tailp) = p;
@@ -239,7 +229,6 @@ bool filecachAP_write(struct Appointment* head)
 		logError(2);
 		return false;
 	}
-	//�ƺ��깤��
 	struct Appointment* p;
 	p = head->next;
 	while (p != NULL)
@@ -263,7 +252,6 @@ bool filecachAP_read(struct Appointment** tailp, struct Customer* chead, struct 
 		logError(2);
 		return false;
 	}
-	//�ƺ��깤��
 	struct Appointment* p;
 	p = NULL;
 	while (!feof(file))
@@ -272,12 +260,18 @@ bool filecachAP_read(struct Appointment** tailp, struct Customer* chead, struct 
 		assert(p);
 		fread(p, sizeof(struct Appointment), 1, file);
 		cp = chead->next;
-		while (!strcmp(p->cuposition, cp->Account) && cp != NULL)
-			cp = cp->next;
-		p->custom = cp;
-		fp = fhead->next;
-		while (!strcmp(p->flposition, fp->number) && fp != NULL)
-			fp = fp->next;
+		if (cp != NULL)
+		{
+			while (!strcmp(p->cuposition, cp->Account) && cp != NULL)
+				cp = cp->next;
+			p->custom = cp;
+		}
+		if (fp != NULL)
+		{
+			fp = fhead->next;
+			while (!strcmp(p->flposition, fp->number) && fp != NULL)
+				fp = fp->next;
+		}
 		(*tailp)->next = p;
 		p->prev = (*tailp);
 		(*tailp) = p;
