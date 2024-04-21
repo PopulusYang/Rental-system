@@ -1068,6 +1068,8 @@ int main()
 												float rent;
 												scanf("%s", city);
 												scanf("%f %d %d %d %d %f", &Area, &shi, &ting, &t, &floor, &rent);
+												extend_writeFlat(fl_p1, fl_head, fl_tail, city, Area, t, floor, rent, shi, ting, NULL);
+												fl_tail = fl_tail->next;
 												printf("信息录入成功\n");
 												printf("目前有%d个房源\n", fl_number);
 												printf("按下回车以继续\n");
@@ -1215,6 +1217,8 @@ int main()
 											float rent;
 											scanf("%s", city);
 											scanf("%f %d %d %d %d %f", &Area, &shi, &ting, &t, &floor, &rent);
+											extend_writeFlat(fl_p1, fl_head, fl_tail, city, Area, t, floor, rent, shi, ting, NULL);
+											fl_tail = fl_tail->next;
 											printf("信息录入成功\n");
 											printf("目前有%d个房源\n", fl_number);
 											printf("按下回车以继续\n");
@@ -1821,7 +1825,7 @@ int main()
 						//空闲中
 						break;
 					case 5:
-						//施工中
+						//完成
 					{
 						int num = 0;
 						ap_p = ap_head->next;
