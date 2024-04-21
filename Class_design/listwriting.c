@@ -87,8 +87,7 @@ int extend_writeFlat(list_1 p1, list_1 head, list_1 tail, char* city, float area
     //数据修改都在上面
     p1->prev = tail;
     tail->next = p1;
-    tail = p1;
-    tail->next = NULL;
+    p1->next = NULL;
 
     return 0;
 }
@@ -227,11 +226,13 @@ int DelListall(list_1 mylist, int t) //t为删除的序号
 //jug2判断排什么的顺序
 int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,int jug2)//以房产面积为例子
 {
-    bubbleSort_Area(&mylist_head,jug2);
+    Flat* temp;
+    temp = mylist_head;
+    bubbleSort_Area(&temp,jug2);
     struct Flat* p1;
     int t = 0;
     //正序
-    if (mylist_head->next = NULL)
+    if (mylist_head->next == NULL)
     {
         logError(0);
         return -1;
@@ -240,7 +241,7 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
     assert(p1);
     if (jug2 == 1)
     {
-        while (p1->next != NULL && jug == 1)
+        while (p1 != NULL && jug == 1)
         {
             //这块需要加入打印
             if (p1->rent >= l && p1->rent <= r)
@@ -328,7 +329,7 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
     }
     if (jug2 == 2)
     {
-        while (p1->next != NULL && jug == 1)
+        while (p1!= NULL && jug == 1)
         {
             //这块需要加入打印
             if (p1->floor >= l && p1->floor <= r)
@@ -416,7 +417,7 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
     }
     if (jug2 == 3)
     {
-        while (p1->next != NULL && jug == 1)
+        while (p1 != NULL && jug == 1)
         {
             //这块需要加入打印
             if (p1->Area >= l && p1->Area <= r)
@@ -590,7 +591,7 @@ int list_printfl(list_1 mylist_head, list_1 mylist_tail,int judge)
         return -1;
     }
     p1 = mylist_head->next;
-    while (p1->next != NULL && judge == 1)
+    while (p1 != NULL && judge == 1)
     {
         n++;
         printf("%d:\t",n);
@@ -630,10 +631,13 @@ int list_printfl(list_1 mylist_head, list_1 mylist_tail,int judge)
         }
         p1 = p1->next;
     }
-    while (mylist_tail->prev != NULL && judge== 2)
+    p1 = mylist_tail;
+    assert(p1);
+    while (p1->prev != NULL && judge== 2)
     {
         n++;
         printf("%d:\t", n);
+        assert(p1);
         printf("%s\t", p1->number);//这里需要更改成序号
         printf("%4.2f\t", p1->Area);
         printf("%d室%d厅\t", p1->shi, p1->ting);
@@ -667,9 +671,8 @@ int list_printfl(list_1 mylist_head, list_1 mylist_tail,int judge)
             case 8:
                 printf("西北\n");
                 break;
-
             }
-        mylist_tail = mylist_tail->prev;
+        p1 = p1->prev;
     }
     return 0;
 }
@@ -683,7 +686,7 @@ int toward_search(list_1 mylist_head,int i)
         return -1;
     }
     p1 = mylist_head->next;
-    while (p1->next != NULL )
+    while (p1 != NULL )
     {
         //这块需要加入打印
         if ((int)p1->toward ==  i)
