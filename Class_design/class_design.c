@@ -66,7 +66,8 @@ int main()
     fl_tail->next = NULL;
     fl_head->prev = NULL;
 
-    struct Appointment* ap_p, * ap_tail, * ap_head;//构建预约信息链表
+    struct Appointment* ap_p, * ap_tail, * ap_head,* ap_p2;//构建预约信息链表
+    ap_p2 = NULL;
     ap_p = (struct Appointment*)malloc(sizeof(struct Appointment));
     if (ap_p == NULL)//注意安全摸摸哒
     {
@@ -109,6 +110,36 @@ int main()
     tempIntPtr = NULL;
     int fl_number = 0;
     fl_number=countNumberFL(fl_head);
+
+
+    int year = 0, month = 0, day = 0;
+    //清理过期的预约
+    time_t now = time(NULL);
+    struct tm* local = localtime(&now);
+    ap_p = ap_head->next;
+    while (ap_p != NULL)
+    {
+        if (ap_p->year < local->tm_year || (ap_p->year == local->tm_year && ap_p->month < local->tm_mon) || (ap_p->year == local->tm_year && ap_p->month == local->tm_mon && ap_p->day < local->tm_mday))
+        {
+            ap_p2 = ap_p;
+            ap_p = ap_p->prev;
+            if (ap_p2->next == NULL)
+            {
+                ap_p2->prev->next = NULL;
+                free(ap_p2);
+            }
+            else
+            {
+                ap_p2->next->prev = ap_p2->prev;
+                ap_p2->prev->next = ap_p2->next;
+                free(ap_p2);
+            }
+            ap_p2 = NULL;
+        }
+        ap_p = ap_p->next;
+    }
+
+
     while (choice_0)
     {
         printf("******登    录******\n");
@@ -188,19 +219,19 @@ int main()
                         break;
                     }
                 }
-                while (jug)
+                while (jug && ad_p1 != NULL)
                 {
                     printf("*********功能菜单*********\n");
                     printf("**                      **\n");
                     printf("**0.     注    销       **\n");
-                    printf("**1.     信息管理       **\n");
-                    printf("**2.     看房管理       **\n");
-                    printf("**3.     信息查询       **\n");
-                    printf("**4.     信息排序       **\n");
-                    printf("**5.     信息统计       **\n");
-                    printf("**6.     更改密码       **\n");
-                    printf("**7.    生成邀请码      **\n");
-                    printf("**8.     删除账户       **\n");
+                    printf("**1.     信息管理       **\n");//完工
+                    printf("**2.     看房管理       **\n");//未士兑已完工
+                    printf("**3.     信息查询       **\n");//完工
+                    printf("**4.     信息排序       **\n");//未士兑施工中
+                    printf("**5.     信息统计       **\n");//施工中
+                    printf("**6.     更改密码       **\n");//完工
+                    printf("**7.    生成邀请码      **\n");//完工
+                    printf("**8.     删除账户       **\n");//完工
                     printf("**                      **\n");
                     printf("**************************\n");
                     printf("请选择功能：");
@@ -518,6 +549,7 @@ int main()
                                                             ag_p1 = ag_tail;
                                                             strcpy(ag_p1->phone_n, input_phonenumber);
                                                             printf("注册成功！\n");
+                                                            printf("该用户的编号为%s\n", ag_p1->Number);
                                                             printf("请输入用户的姓名：");
                                                             scanf("%s", ag_p1->Name);
                                                             printf("回车以继续\n");
@@ -1240,7 +1272,177 @@ int main()
                         break;
                     case 2://看房管理
                         //施工中
-
+                        printf("*********看房管理*********\n");
+                        printf("**                      **\n");
+                        printf("**0.     返    回       **\n");
+                        printf("**1.   预约信息处理     **\n");
+                        printf("**2.   预约信息查询     **\n");
+                        printf("**                      **\n");
+                        printf("**************************\n");
+                        scanf("%d", &choice_2);
+                        switch (choice_2)
+                        {
+                        case 0:
+                            break;
+                        case 1:
+                            printf("请输入您想要处理的预约信息:");
+                            memset(input_string, 0, sizeof(input_string));
+                            scanf("%s", input_string);
+                            tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 1);
+                            if (*tempIntPtr == 0)
+                            {
+                                printf("找不到该预约信息");
+                                printf("回车以继续");
+                                getchar();
+                                choose();
+                                break;
+                            }
+                            tempIntPtr++;
+                            for (int i = 0; i != *(tempIntPtr - 1); i++)
+                            {
+                                ap_p = ap_head->next;
+                                for (int j = 0; j != tempIntPtr[i]; j++)
+                                    ap_p = ap_p->next;
+                                if (!strcmp(ap_p->Number, input_string) || !strcmp(ap_p->custom->Account, input_string) || !strcmp(ap_p->custom->Name, input_string) || !strcmp(ap_p->custom->phone_n, input_string) || !strcmp(ap_p->flat->number, input_string))
+                                {
+                                    jug5 = 1;
+                                    break;
+                                }
+                            }
+                            if (jug5)
+                            {
+                                choose();
+                                printf("成功找到对象\n");
+                                printf("编号\t\t时间\t\t租客\t\t房源编号\n");
+                                printf("%s\t%d:%d:%d\t%s\t\t%s\n", ap_p->Number, ap_p->year,ap_p->month,ap_p->day, ap_p->custom->Account, ap_p->flat->number);
+                                printf("*********预约信息*********\n");
+                                printf("**                      **\n");
+                                printf("**0.     返    回       **\n");
+                                printf("**1.     删    除       **\n");
+                                printf("**2.     修改时间       **\n");
+                                printf("**                      **\n");
+                                printf("**************************\n");
+                                scanf("%d", &choice_2);
+                                switch (choice_2)
+                                {
+                                case 0:
+                                    break;
+                                    
+                                case 1:
+                                    printf("您确定要删除该预约信息吗？1确认 2取消：");
+                                    scanf("%d", &jug6);
+                                    if (jug6 == 1)
+                                    {
+                                        if (ap_p->next == NULL)
+                                        {
+                                            ap_tail = ap_p->prev;
+                                            ap_p->prev->next = NULL;
+                                            free(ap_p);
+                                        }
+                                        else
+                                        {
+                                            ap_p->prev->next = ap_p->next;
+                                            ap_p->next->prev = ap_p->prev;
+                                            free(ap_p);
+                                        }
+                                        ap_p = NULL;
+                                    }
+                                    printf("删除成功！\n");
+                                    printf("回车以继续\n");
+                                    getchar();
+                                    choose();
+                                    break;
+                                case 2:
+                                {
+                                    printf("请输入新时间（年 月 日）:");
+                                    year, month, day;
+                                    scanf("%d%d%d", &year, &month, &day);
+                                    time_t now = time(NULL);
+                                    struct tm* local = localtime(&now);
+                                    if (year < local->tm_year || (year == local->tm_year && month < local->tm_mon) || (year == local->tm_year && month == local->tm_mon && day < local->tm_mday))
+                                        printf("无效的时间\n");
+                                    else
+                                    {
+                                        ap_p->year = year;
+                                        ap_p->month = month;
+                                        ap_p->day = day;
+                                        printf("修改成功！\n");
+                                    }
+                                }
+                                    printf("回车以继续\n");
+                                    getchar();
+                                    choose();
+                                    break;
+                                }
+                                jug6 = 0;
+                                jug5 = 0;//初始化
+                            }
+                            else
+                                if (*(tempIntPtr - 1) == 0)
+                                {
+                                    printf("找不到您输入的内容。\n");
+                                    printf("按下回车以继续\n");
+                                    getchar();
+                                    choose();
+                                }
+                                else
+                                {
+                                    printf("您输入的内容比较模糊，为您找到以下内容\n");
+                                    printf("编号\t\t时间\t\t租客\t\t房源编号\n");
+                                    for (int i = 0; i < *(tempIntPtr - 1); i++)
+                                    {
+                                        ap_p = ap_head->next;
+                                        for (int j = 0; j < *(tempIntPtr + i); j++)
+                                            ap_p = ap_p->next;
+                                        printf("%s\t%d:%d:%d\t%s\t\t%s\n", ap_p->Number, ap_p->year, ap_p->month, ap_p->day, ap_p->custom->Account, ap_p->flat->number);
+                                    }
+                                    printf("回车以继续\n");
+                                    getchar();
+                                    choose();
+                                }
+                            free(tempIntPtr - 1);
+                            tempIntPtr = NULL;
+                            break;
+                        case 2:
+                            printf("请输入信息:");
+                            memset(input_string, 0, sizeof(input_string));
+                            scanf("%s", input_string);
+                            tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 1);
+                            if (*tempIntPtr == 0)
+                            {
+                                printf("找不到该预约信息");
+                                printf("回车以继续");
+                                getchar();
+                                choose();
+                                break;
+                            }
+                            tempIntPtr++;
+                            if (*(tempIntPtr - 1) == 0)
+                            {
+                                printf("找不到您输入的内容。\n");
+                                printf("按下回车以继续\n");
+                                getchar();
+                                choose();
+                            }
+                            else
+                            {
+                                printf("为您找到以下内容\n");
+                                printf("编号\t\t时间\t\t租客\t\t房源编号\n");
+                                for (int i = 0; i < *(tempIntPtr - 1); i++)
+                                {
+                                    ap_p = ap_head->next;
+                                    for (int j = 0; j < *(tempIntPtr + i); j++)
+                                        ap_p = ap_p->next;
+                                    printf("%s\t%d:%d:%d\t%s\t\t%s\n", ap_p->Number, ap_p->year, ap_p->month, ap_p->day, ap_p->custom->Account, ap_p->flat->number);
+                                }
+                                printf("回车以继续\n");
+                                getchar();
+                                choose();
+                            }
+                            free(tempIntPtr - 1);
+                            tempIntPtr = NULL;
+                            break;
+                        }
                         break;
                     case 3://信息查询
                    
@@ -1333,10 +1535,43 @@ int main()
                             break;
                         }
                     case 5://信息统计
-                        //空闲中
+                        //完工
+                        printf("访问人数：我们没有接入互联网\n");
+                        printf("管理员数量：%d\n", countNumberAD(ad_head));
+                        printf("中介人员数量：%d\n", countNumberAG(ag_head));
+                        printf("租客人员数量：%d\n", countNumberCU(cu_head));
+                        printf("房源数量：%d\n", countNumberFL(fl_head));
+                        printf("预约总数：%d\n", countNumberAP(ap_head));
+                        printf("按下回车以继续\n");
+                        choose();
                         break;
                     case 6:
-                        //空闲中
+                        while (1)
+                        {
+                            memset(input_key, 0, sizeof(input_key));
+                            memset(input_key_2, 0, sizeof(input_key_2));
+                            printf("请输入密码：");
+                            scanf("%s", input_key);
+                            printf("请确认密码：");
+                            scanf("%s", input_key_2);
+                            if (!strcmp(input_key, input_key_2))
+                            {
+                                strcpy(ad_p1->Key, input_key);
+                                printf("修改成功!\n");
+                                printf("回车以继续\n");
+                                getchar();
+                                choose();
+                                break;
+                            }
+                            else
+                            {
+                                printf("两次输入不一样的嘞");
+                                printf("回车以继续");
+                                getchar();
+                                choose();
+                                break;
+                            }
+                        }
                         break;
                     case 7://生成邀请码
                         build_invitation = radom_string(19);
@@ -1710,6 +1945,7 @@ int main()
                                     ag_p1 = ag_tail;
                                     strcpy(ag_p1->phone_n, input_phonenumber);
                                     printf("注册成功！\n");
+                                    printf("您的编号为%s\n", ag_p1->Number);
                                     printf("请输入您的姓名：");
                                     scanf("%s", ag_p1->Name);
                                     printf("回车以继续\n");

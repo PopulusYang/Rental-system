@@ -93,6 +93,19 @@ char* radom_number(int n)
 	return str;
 }
 
+int countNumberAD(struct Admin* head)
+{
+	struct Admin* p;
+	p = head->next;
+	int number = 0;
+	while (p != NULL)
+	{
+		p = p->next;
+		number++;
+	}
+	return number;
+}
+
 //计算链表中元素个数（房子）
 int countNumberFL(struct Flat* head)
 {
@@ -192,3 +205,4 @@ void removeDuplicates(int* arr, int* length)
 		}
 	}
 }
+
