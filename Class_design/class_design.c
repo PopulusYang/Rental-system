@@ -1651,12 +1651,13 @@ int main()
 					printf("*********功能菜单*********\n");
 					printf("**                      **\n");
 					printf("**0.     注    销       **\n");
-					printf("**1.     看房管理       **\n");
+					printf("**1.     看房管理       **\n");//完工
 					printf("**2.     租房管理       **\n");
 					printf("**3.     信息查询       **\n");
 					printf("**4.     信息排序       **\n");
-					printf("**5.     信息统计       **\n");
-					printf("**6.     更改密码       **\n");
+					printf("**5.     信息统计       **\n");//完工
+					printf("**6.     更改密码       **\n");//完工
+					printf("**7.     删除账户       **\n");//完工
 					printf("**                      **\n");
 					printf("**************************\n");
 					printf("请选择功能：");
@@ -1669,7 +1670,7 @@ int main()
 						ag_p1 = ag_tail;
 						break;
 					case 1:
-						//施工中
+						//完工
 						printf("*********看房管理*********\n");
 						printf("**                      **\n");
 						printf("**0.     返    回       **\n");
@@ -1683,7 +1684,7 @@ int main()
 						case 0:
 							break;
 						case 1:
-							//施工中
+							//完工
 							printf("编号\t\t时间\t\t租客\t\t房源编号\n");
 							ap_p = ap_head->next;
 							jug6 = 0;
@@ -1820,12 +1821,60 @@ int main()
 						//空闲中
 						break;
 					case 5:
-						//空闲中
+						//施工中
+					{
+						int num = 0;
+						ap_p = ap_head->next;
+						while (ap_p != NULL)
+						{
+							if (ap_p->flat->agency == ag_p1)
+								num++;
+							ap_p = ap_p->next;
+						}
+						printf("您所管理的房源的预约有%d个", num);
+						num = 0;
+						fl_p1 = fl_head;
+						while (fl_p1 != NULL)
+						{
+							if (fl_p1->agency == ag_p1)
+								num++;
+							fl_p1 = fl_p1->next;
+						}
+						printf("您所管理的房源有%d个", num);
+					}						
 						break;
 					case 6:
-						//空闲中
+						//完成
+						while (1)
+						{
+							memset(input_key, 0, sizeof(input_key));
+							memset(input_key_2, 0, sizeof(input_key_2));
+							printf("请输入密码：");
+							scanf("%s", input_key);
+							printf("请确认密码：");
+							scanf("%s", input_key_2);
+							if (!strcmp(input_key, input_key_2))
+							{
+								strcpy(ag_p1->Key, input_key);
+								printf("修改成功!\n");
+								printf("回车以继续\n");
+								getchar();
+								choose();
+								break;
+							}
+							else
+							{
+								printf("两次输入不一样的嘞");
+								printf("回车以继续");
+								getchar();
+								choose();
+								break;
+							}
+						}
 						break;
-
+					case 7:
+						
+						break;
 					}
 				}
 				break;
