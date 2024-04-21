@@ -1,0 +1,40 @@
+#include <stdio.h>  
+#include <time.h>  
+  
+// 定义一个结构体来存储年月日  
+typedef struct {  
+    int year;  
+    int month;  
+    int day;  
+} Date;  
+  
+// 函数声明  
+Date getCurrentDate();  
+  
+int main() {  
+    // 调用函数获取当前日期  
+    Date currentDate = getCurrentDate();  
+  
+    // 打印当前日期  
+    printf("当前日期: %d-%02d-%02d\n", currentDate.year, currentDate.month, currentDate.day);  
+  
+    return 0;  
+}  
+  
+// 函数定义：获取当前日期并返回  
+Date getCurrentDate() {  
+    // 获取当前时间的time_t表示  
+    time_t now = time(NULL);  
+  
+    // 将time_t转换为本地时间的tm结构体  
+    struct tm *local = localtime(&now);  
+  
+    // 创建一个Date结构体并填充年月日信息  
+    Date date;  
+    date.year = local->tm_year + 1900; // 年份是从1900年开始的，所以需要加上1900  
+    date.month = local->tm_mon + 1;    // 月份是从0开始的，所以需要加上1  
+    date.day = local->tm_mday;         // 日期是直接的  
+  
+    // 返回填充好的Date结构体  
+    return date;  
+}

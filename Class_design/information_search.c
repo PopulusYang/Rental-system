@@ -498,6 +498,150 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				jug = 0;
 			}
 		}
+		app = aph;
+		for (int a = 0; a != max; a++)
+		{
+			app = app->next;
+			int jug = 0;//判断数据与输入项是否有关联，0无关联，1有关联
+			int time = 0;//time越小关联性越高
+			for (int i = 0; i <= (int)strlen(app->custom->Account) - (int)strlen(input); i++)
+			{
+				int k = 0;
+				for (int j = i; j < i + strlen(input); j++)
+					*(temp2 + k++) = app->custom->Account[j];
+				if (strcmp(temp2, input) == 0)
+				{
+					jug = 1;
+					break;
+				}
+				time++;//每检查一次，time+1
+			}
+			if (jug)
+			{
+				p = (struct MyStruct*)malloc(sizeof(struct MyStruct));
+				if (p == NULL)
+				{
+					logError(0);
+					return NULL;
+				}
+				strcpy(p->string, app->custom->Account);
+				p->time = time;
+				p->position = a;
+				tail->next = p;
+				tail = p;
+				tail->next = NULL;//延长链表
+				geshu++;
+				jug = 0;
+			}
+		}
+		app = aph;
+		for (int a = 0; a != max; a++)
+		{
+			app = app->next;
+			int jug = 0;//判断数据与输入项是否有关联，0无关联，1有关联
+			int time = 0;//time越小关联性越高
+			for (int i = 0; i <= (int)strlen(app->custom->Name) - (int)strlen(input); i++)
+			{
+				int k = 0;
+				for (int j = i; j < i + strlen(input); j++)
+					*(temp2 + k++) = app->custom->Name[j];
+				if (strcmp(temp2, input) == 0)
+				{
+					jug = 1;
+					break;
+				}
+				time++;//每检查一次，time+1
+			}
+			if (jug)
+			{
+				p = (struct MyStruct*)malloc(sizeof(struct MyStruct));
+				if (p == NULL)
+				{
+					logError(0);
+					return NULL;
+				}
+				strcpy(p->string, app->custom->Name);
+				p->time = time;
+				p->position = a;
+				tail->next = p;
+				tail = p;
+				tail->next = NULL;//延长链表
+				geshu++;
+				jug = 0;
+			}
+		}
+		app = aph;
+		for (int a = 0; a != max; a++)
+		{
+			app = app->next;
+			int jug = 0;//判断数据与输入项是否有关联，0无关联，1有关联
+			int time = 0;//time越小关联性越高
+			for (int i = 0; i <= (int)strlen(app->custom->phone_n) - (int)strlen(input); i++)
+			{
+				int k = 0;
+				for (int j = i; j < i + strlen(input); j++)
+					*(temp2 + k++) = app->custom->phone_n[j];
+				if (strcmp(temp2, input) == 0)
+				{
+					jug = 1;
+					break;
+				}
+				time++;//每检查一次，time+1
+			}
+			if (jug)
+			{
+				p = (struct MyStruct*)malloc(sizeof(struct MyStruct));
+				if (p == NULL)
+				{
+					logError(0);
+					return NULL;
+				}
+				strcpy(p->string, app->custom->phone_n);
+				p->time = time;
+				p->position = a;
+				tail->next = p;
+				tail = p;
+				tail->next = NULL;//延长链表
+				geshu++;
+				jug = 0;
+			}
+		}
+		app = aph;
+		for (int a = 0; a != max; a++)
+		{
+			app = app->next;
+			int jug = 0;//判断数据与输入项是否有关联，0无关联，1有关联
+			int time = 0;//time越小关联性越高
+			for (int i = 0; i <= (int)strlen(app->flat->number) - (int)strlen(input); i++)
+			{
+				int k = 0;
+				for (int j = i; j < i + strlen(input); j++)
+					*(temp2 + k++) = app->flat->number[j];
+				if (strcmp(temp2, input) == 0)
+				{
+					jug = 1;
+					break;
+				}
+				time++;//每检查一次，time+1
+			}
+			if (jug)
+			{
+				p = (struct MyStruct*)malloc(sizeof(struct MyStruct));
+				if (p == NULL)
+				{
+					logError(0);
+					return NULL;
+				}
+				strcpy(p->string, app->flat->number);
+				p->time = time;
+				p->position = a;
+				tail->next = p;
+				tail = p;
+				tail->next = NULL;//延长链表
+				geshu++;
+				jug = 0;
+			}
+		}
 		break;
 	case 4:
 		max = countNumberFL(fh);
@@ -536,6 +680,36 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 					return NULL;
 				}
 				strcpy(p->string, fp->number);
+				p->time = time;
+				p->position = a;
+				tail->next = p;
+				tail = p;
+				tail->next = NULL;//延长链表
+				geshu++;
+				jug = 0;
+			}
+			fp = fh;
+			for (int i = 0; i <= (int)strlen(fp->city) - (int)strlen(input); i++)
+			{
+				int k = 0;
+				for (int j = i; j < i + strlen(input); j++)
+					*(temp2 + k++) = fp->city[j];
+				if (strcmp(temp2, input) == 0)
+				{
+					jug = 1;
+					break;
+				}
+				time++;//每检查一次，time+1
+			}
+			if (jug)
+			{
+				p = (struct MyStruct*)malloc(sizeof(struct MyStruct));
+				if (p == NULL)
+				{
+					logError(0);
+					return NULL;
+				}
+				strcpy(p->string, fp->city);
 				p->time = time;
 				p->position = a;
 				tail->next = p;
