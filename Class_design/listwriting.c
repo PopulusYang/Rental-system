@@ -654,4 +654,5 @@ int list_printfl(list_1 mylist_head, list_1 mylist_tail,int judge)
             }
         mylist_tail = mylist_tail->prev;
     }
+    return 0;
 }

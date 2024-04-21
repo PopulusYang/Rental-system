@@ -11,3 +11,22 @@ void color(short x)
 }
 //0-15颜色分别为：黑色/深蓝/绿色/浅蓝/深红/紫色/土黄/白色（0-7）
 //                灰色/中蓝/亮绿/青色/浅红/亮紫/亮黄/亮白（8-15)
+void loading()
+{
+    int i, j = 0;
+    printf("正在读取数据中...\n");
+    for (i = 0; i <= 15; i++)
+    {
+        color(i);
+        for (j = 0; j < i; j++)
+        {
+            printf("=");
+        }
+        printf(">");
+        fflush(stdout);
+        Sleep(1);
+        printf("\r");
+    }
+    color(7);
+    printf("\n");
+}
