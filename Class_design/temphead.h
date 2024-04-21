@@ -77,6 +77,8 @@ char* radom_number(int n);
 int checkRecurFL(char* num, struct Flat* head);
 int checkRecurAG(char* num, struct Agency* aghead);
 
+int countNumberAD(struct Admin* head);
+
 int countNumberFL(struct Flat* head);
 
 int countNumberAG(struct Agency* head);

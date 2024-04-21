@@ -69,5 +69,8 @@
     <Text Include="flat.bin">
       <Filter>资源文件</Filter>
     </Text>
+    <Text Include="log.txt">
+      <Filter>资源文件</Filter>
+    </Text>
   </ItemGroup>
 </Project>
