@@ -623,7 +623,7 @@ int list_printfl(list_1 mylist_head, list_1 mylist_tail,int judge)
     }
     while (mylist_tail->prev != NULL && judge== 2)
     {
-        printf("%s", mylist_tail->number);//这里需要更改成序号
+        printf("%s", mylist_tail->number);
         printf("%4.2f\t", mylist_tail->Area);
         printf("%d室%d厅\t", mylist_tail->shi, mylist_tail->ting);
         printf("%d层", mylist_tail->floor);
@@ -655,7 +655,6 @@ int list_printfl(list_1 mylist_head, list_1 mylist_tail,int judge)
             case 8:
                 printf("西北\n");
                 break;
-
             }
         mylist_tail = mylist_tail->prev;
     }

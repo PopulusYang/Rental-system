@@ -1436,104 +1436,100 @@ int main()
 								int left = 0;
 								int right = 0;
 
-                                printf("*********排序方式*********\n");
-                                printf("**                      **\n");
-                                printf("**1.     从小到大       **\n");
-                                printf("**2.     从大到小       **\n");
-                                printf("**                      **\n");
-                                printf("**************************\n");
-                                scanf("%d", &jug7);
-                                printf("请输入左右范围:\n");
-                                printf("左:");
-                                scanf("%d", &left);
-                                printf("\n右:");
-                                scanf("%d", &right);
-                                choose();
-                                int t;
-                                t=range_search_Area(left, right, fl_head, fl_tail, choice_6, jug7);
-                                printf("共有%d间房子符合标准\n",t);
-                                printf("按下回车以继续\n");
-                                getchar();
-                                choose();
-                                break;
-                            case 2:
-                                printf("*********查询方式*********\n");
-                                printf("**                      **\n");
-                                printf("**1.     城    市       **\n");
-                                printf("**2.     中    介       **\n");
-                                printf("**3.     编    号       **\n");
-                                printf("**4.     朝    向       **\n");
-                                printf("**                      **\n");
-                                printf("**************************\n");
-                                scanf("%d", &choice_6);
-                                switch (choice_6)
-                                {
-                                case 0:
-                                    break;
-                                case 1:
+								printf("*********排序方式*********\n");
+								printf("**                      **\n");
+								printf("**1.     从小到大       **\n");
+								printf("**2.     从大到小       **\n");
+								printf("**                      **\n");
+								printf("**************************\n");
+								scanf("%d", &jug7);
+								printf("请输入左右范围:\n");
+								printf("左:");
+								scanf("%d", &left);
+								printf("\n右:");
+								scanf("%d", &right);
+								choose();
+								int t;
+								t=range_search_Area(left, right, fl_head, fl_tail, choice_6, jug7);
+								printf("共有%d间房子符合标准\n",t);
+								printf("按下回车以继续\n");
+								getchar();
+								choose();
+								break;
+							case 2:
+								printf("*********查询方式*********\n");
+								printf("**                      **\n");
+								printf("**1.     城    市       **\n");
+								printf("**2.     中    介       **\n");
+								printf("**3.     编    号       **\n");
+								printf("**4.     朝    向       **\n");
+								printf("**                      **\n");
+								printf("**************************\n");
+								scanf("%d", &choice_6);
+								switch (choice_6)
+								{
+								case 0:
+									break;
+								case 1:
 
-                                    break;
-                                case 2:
-                                    break;
-                                case 3:
-                                    printf("请输入希望修改的房屋序号（最多10个字符）：");
-                                    scanf("%s", input_string);
-                                    tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
-                                    tempIntPtr++;
-                                    for (int i = 0; i != *(tempIntPtr - 1); i++)
-                                    {
-                                        fl_p1 = fl_head->next;
-                                        for (int j = 0; j != tempIntPtr[i]; j++)
-                                            fl_p1 = fl_p1->next;
-                                        if (!strcmp(fl_p1->number, input_string))
-                                        {
-                                            jug5 = 1;
-                                            break;
-                                        }
-                                    }
-                                    if (jug5)
-                                    {
-                                        fl_change(fl_p1);
-                                        printf("房屋信息已修改\n");
-                                        printf("按下回车以继续\n");
-                                        getchar();
-                                        choose();
-                                        jug5 = 0;//初始化
-                                    }
-                                    else
-                                        if (*(tempIntPtr - 1) == 0)
-                                        {
-                                            printf("找不到您输入的内容。\n");
-                                            printf("按下回车以继续\n");
-                                            getchar();
-                                            choose();
-                                        }
-                                        else
-                                        {
-                                            printf("您输入的内容比较模糊，为您找到以下内容\n");
-                                            printf("序号\t\t编号\t\t姓名\t\t账号\t\t电话\n");
-                                            for (int i = 0; i < *(tempIntPtr - 1); i++)
-                                            {
-                                                ag_p1 = ag_head->next;
-                                                for (int j = 0; j < *(tempIntPtr + i); j++)
-                                                    ag_p1 = ag_p1->next;
-                                                printf("%d\t\t%s\t%s\t\t%s\t\t%s\n", i + 1, ag_p1->Number, ag_p1->Name, ag_p1->Account, ag_p1->phone_n);
-                                            }
-                                            printf("回车以继续\n");
-                                            getchar();
-                                            choose();
-                                        }
-                                 没看懂，留个报错，帮帮我；
-                                    break;
-                                case 4:
-                                    break;
+									break;
+								case 2:
+									break;
+								case 3:
+									printf("请输入希望修改的房屋序号（最多10个字符）：");
+									scanf("%s", input_string);
+									tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
+									tempIntPtr++;
+									for (int i = 0; i != *(tempIntPtr - 1); i++)
+									{
+										fl_p1 = fl_head->next;
+										for (int j = 0; j != tempIntPtr[i]; j++)
+											fl_p1 = fl_p1->next;
+										if (!strcmp(fl_p1->number, input_string))
+										{
+											jug5 = 1;
+											break;
+										}
+									}
+									if (jug5)
+									{
+										fl_change(fl_p1);
+										printf("房屋信息已修改\n");
+										printf("按下回车以继续\n");
+										getchar();
+										choose();
+										jug5 = 0;//初始化
+									}
+									else
+										if (*(tempIntPtr - 1) == 0)
+										{
+											printf("找不到您输入的内容。\n");
+											printf("按下回车以继续\n");
+											getchar();
+											choose();
+										}
+										else
+										{
+											printf("您输入的内容比较模糊，为您找到以下内容\n");
+											printf("序号\t\t编号\t\t姓名\t\t账号\t\t电话\n");
+											for (int i = 0; i < *(tempIntPtr - 1); i++)
+											{
+												ag_p1 = ag_head->next;
+												for (int j = 0; j < *(tempIntPtr + i); j++)
+													ag_p1 = ag_p1->next;
+												printf("%d\t\t%s\t%s\t\t%s\t\t%s\n", i + 1, ag_p1->Number, ag_p1->Name, ag_p1->Account, ag_p1->phone_n);
+											}
+											printf("回车以继续\n");
+											getchar();
+											choose();
+										}
+									break;
+								case 4:
+									break;
 
 								}
 								break;
 							}
-							
-				 
-			 
 						break;
 					case 4://信息排序并输出
 						//施工中
@@ -1705,7 +1701,7 @@ int main()
 					printf("**                      **\n");
 					printf("**0.     注    销       **\n");
 					printf("**1.     看房管理       **\n");//完工
-					printf("**2.     租房管理       **\n");
+					printf("**2.     租房管理       **\n");//完工
 					printf("**3.     信息查询       **\n");
 					printf("**4.     信息排序       **\n");
 					printf("**5.     信息统计       **\n");//完工
@@ -1781,8 +1777,8 @@ int main()
 								printf("**2.     修改时间       **\n");
 								printf("**                      **\n");
 								printf("**************************\n");
-								scanf("%d", &choice_2);
-								switch (choice_2)
+								scanf("%d", &choice_3);
+								switch (choice_3)
 								{
 								case 0:
 									break;
@@ -1865,7 +1861,354 @@ int main()
 						}
 						break;
 					case 2:
-						//空闲中
+						//施工中
+						printf("*********租房管理*********\n");
+						printf("**                      **\n");
+						printf("**0.     返    回       **\n");
+						printf("**1.     添加房源       **\n");
+						printf("**2.	 我的房源       **\n");
+						printf("**3.     删除房源       **\n");
+						printf("**                      **\n");
+						printf("**************************\n");
+						scanf("%d", &choice_3);
+						switch (choice_3)
+						{
+						case 0:
+							break;
+						case 1:
+						{
+							int flnumber = 0;
+							int num_1 = 0;
+							flnumber = countNumberFL(fl_head);
+							int* num = (int*)malloc(sizeof(int) * flnumber);
+							for (int i = 0; i < flnumber; i++)
+								num[i] = i;
+							for (int i = 0; i < 15 && i < flnumber; i++)
+							{
+								unsigned long long len = flnumber;//随机输出十五个
+								unsigned int seed;
+								seed = (unsigned int)time(NULL);
+								srand(seed);
+								num_1 = (int)(rand() % flnumber);
+								jug6 = 0;
+								for (int j = 0; j < flnumber; j++)
+								{
+									if (num_1 == num[j])
+									{
+										num[j] == -1;
+										jug6 = 1;
+										break;
+									}
+								}
+								if (jug6)
+								{
+									fl_p1 = fl_head->next;
+									for (int j = 0; j < num_1; j++)
+										fl_p1 = fl_p1->next;
+									printf("%s", fl_p1->number);
+									printf("%4.2f\t", fl_p1->Area);
+									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
+									printf("%d层", fl_p1->floor);
+									printf("%s", fl_p1->city);
+									printf("租金为%6.2f", fl_p1->rent);
+									switch ((int)fl_p1->toward)
+									{
+									case 1:
+										printf("东\t");
+										break;
+									case 2:
+										printf("西\t");
+										break;
+									case 3:
+										printf("南\t");
+										break;
+									case 4:
+										printf("北\t");
+										break;
+									case 5:
+										printf("东南\t");
+										break;
+									case 6:
+										printf("东北\t");
+										break;
+									case 7:
+										printf("西南\t");
+										break;
+									case 8:
+										printf("西北\t");
+										break;
+									}
+									if (fl_p1->agency == NULL)
+										printf("空闲中\n");
+									else
+										printf("已占用\n");
+								}
+								else
+									i--;
+							}
+							free(num);
+						}
+						memset(input_string, 0, sizeof(input_string));
+						printf("请输入房源信息（最多20个字符）：");
+						scanf("%s", input_string);
+						tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
+						if (*tempIntPtr == 0)
+						{
+							printf("找不到房源\n");
+							printf("回车以继续\n");
+							getchar();
+							choose();
+							break;
+						}
+						tempIntPtr++;
+						for (int i = 0; i != *(tempIntPtr - 1); i++)
+						{
+							fl_p1 = fl_head->next;
+							for (int j = 0; j != tempIntPtr[i]; j++)
+								fl_p1 = fl_p1->next;
+							if (!strcmp(fl_p1->number,input_string)||!strcmp(fl_p1->city,input_string))
+							{
+								jug5 = 1;
+								break;
+							}
+						}
+						if (jug5)
+						{
+							choose();
+							printf("成功找到对象\n");
+							printf("%s", fl_p1->number);
+							printf("%4.2f\t", fl_p1->Area);
+							printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
+							printf("%d层", fl_p1->floor);
+							printf("%s", fl_p1->city);
+							printf("租金为%6.2f", fl_p1->rent);
+							switch ((int)fl_p1->toward)
+							{
+							case 1:
+								printf("东\t");
+								break;
+							case 2:
+								printf("西\t");
+								break;
+							case 3:
+								printf("南\t");
+								break;
+							case 4:
+								printf("北\t");
+								break;
+							case 5:
+								printf("东南\t");
+								break;
+							case 6:
+								printf("东北\t");
+								break;
+							case 7:
+								printf("西南\t");
+								break;
+							case 8:
+								printf("西北\t");
+								break;
+							}
+							if (fl_p1->agency == NULL)
+								printf("空闲中\n");
+							else
+								printf("已占用\n");
+							if (fl_p1->agency != NULL)
+							{
+								printf("该房源以被占用\n");
+								printf("回车以继续\n");
+								getchar();
+								choose();
+								break;
+							}
+							printf("您确定添加该房源吗？\n1确认\t 2取消：\n");
+							printf("您的选择：");
+							scanf("%d", &jug6);
+							if (jug6 == 1)
+							{
+								//填东西
+								fl_p1->agency = ag_p1;
+								strcpy(fl_p1->agposition, ag_p1->Number);
+							}
+							jug6 = 0;
+							jug5 = 0;//初始化
+							printf("操作成功！\n");
+							printf("回车以继续\n");
+							getchar();
+							choose();
+						}
+						else
+							if (*(tempIntPtr - 1) == 0)
+							{
+								printf("找不到您输入的内容。\n");
+								printf("按下回车以继续\n");
+								getchar();
+								choose();
+							}
+							else
+							{
+								printf("您输入的内容比较模糊，为您找到以下内容\n");
+								for (int i = 0; i < *(tempIntPtr - 1); i++)
+								{
+									fl_p1 = fl_head->next;
+									for (int j = 0; j < *(tempIntPtr + i); j++)
+										fl_p1 = fl_p1->next;
+									printf("%s", fl_p1->number);
+									printf("%4.2f\t", fl_p1->Area);
+									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
+									printf("%d层", fl_p1->floor);
+									printf("%s", fl_p1->city);
+									printf("租金为%6.2f", fl_p1->rent);
+									switch ((int)fl_p1->toward)
+									{
+									case 1:
+										printf("东\t");
+										break;
+									case 2:
+										printf("西\t");
+										break;
+									case 3:
+										printf("南\t");
+										break;
+									case 4:
+										printf("北\t");
+										break;
+									case 5:
+										printf("东南\t");
+										break;
+									case 6:
+										printf("东北\t");
+										break;
+									case 7:
+										printf("西南\t");
+										break;
+									case 8:
+										printf("西北\t");
+										break;
+									}
+									if (fl_p1->agency == NULL)
+										printf("空闲中\n");
+									else
+										printf("已占用\n");
+								}
+								printf("回车以继续\n");
+								getchar();
+								choose();
+							}
+							free(tempIntPtr - 1);
+							tempIntPtr = NULL;
+							break;
+						case 2:
+							fl_p1 = fl_p1->next;
+							while (fl_p1 != NULL)
+							{
+								if (fl_p1->agency == ag_p1)
+								{
+									printf("%s", fl_p1->number);
+									printf("%4.2f\t", fl_p1->Area);
+									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
+									printf("%d层", fl_p1->floor);
+									printf("%s", fl_p1->city);
+									printf("租金为%6.2f", fl_p1->rent);
+									switch ((int)fl_p1->toward)
+									{
+									case 1:
+										printf("东\t");
+										break;
+									case 2:
+										printf("西\t");
+										break;
+									case 3:
+										printf("南\t");
+										break;
+									case 4:
+										printf("北\t");
+										break;
+									case 5:
+										printf("东南\t");
+										break;
+									case 6:
+										printf("东北\t");
+										break;
+									case 7:
+										printf("西南\t");
+										break;
+									case 8:
+										printf("西北\t");
+										break;
+									}
+									printf("\n");
+								}
+							}
+							printf("回车以继续\n");
+							choose();
+							break;
+						case 3:
+							printf("请输入编号：");
+							memset(input_string, 0, sizeof(input_string));
+							scanf("%s", input_string);
+							fl_p1 = fl_head->next;
+							while (fl_p1 != NULL)
+							{
+								if (!strcmp(fl_p1->number, input_string) && fl_p1->agency == ag_p1)
+								{
+									printf("%s", fl_p1->number);
+									printf("%4.2f\t", fl_p1->Area);
+									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
+									printf("%d层", fl_p1->floor);
+									printf("%s", fl_p1->city);
+									printf("租金为%6.2f", fl_p1->rent);
+									switch ((int)fl_p1->toward)
+									{
+									case 1:
+										printf("东\t");
+										break;
+									case 2:
+										printf("西\t");
+										break;
+									case 3:
+										printf("南\t");
+										break;
+									case 4:
+										printf("北\t");
+										break;
+									case 5:
+										printf("东南\t");
+										break;
+									case 6:
+										printf("东北\t");
+										break;
+									case 7:
+										printf("西南\t");
+										break;
+									case 8:
+										printf("西北\t");
+										break;
+									}
+									printf("\n");
+									printf("确定删除该房源吗？1确定  2取消：");
+									scanf("%d", &jug6);
+									if (jug6 == 1)
+									{
+										fl_p1->agency = NULL;
+										memset(fl_p1->agposition, 0, sizeof(fl_p1->agposition));
+										printf("操作成功\n");
+									}
+									printf("回车以继续\n");
+									getchar();
+									choose();
+									break;
+								}
+							}
+							if (fl_p1 == NULL)
+							{
+								printf("找不到对象\n");
+								printf("回车以继续\n");
+								getchar();
+								choose();
+								break;
+							}
+						}
 						break;
 					case 3:
 						//空闲中
@@ -1884,18 +2227,20 @@ int main()
 								num++;
 							ap_p = ap_p->next;
 						}
-						printf("您所管理的房源的预约有%d个", num);
+						printf("您所管理的房源的预约有%d个\n", num);
 						num = 0;
-						fl_p1 = fl_head;
+						fl_p1 = fl_head->next;
 						while (fl_p1 != NULL)
 						{
 							if (fl_p1->agency == ag_p1)
 								num++;
 							fl_p1 = fl_p1->next;
 						}
-						printf("您所管理的房源有%d个", num);
-					}						
-						break;
+						printf("您所管理的房源有%d个\n", num);
+					}			
+					printf("回车以继续\n");
+					choose();
+					break;
 					case 6:
 						//完成
 						while (1)
@@ -1995,6 +2340,7 @@ int main()
 					printf("**4.     信息排序       **\n");
 					printf("**5.     信息统计       **\n");
 					printf("**6.     更改密码       **\n");
+					printf("**7.     删除账户       **\n");
 					printf("**                      **\n");
 					printf("**************************\n");
 					printf("请选择功能：");
@@ -2024,7 +2370,9 @@ int main()
 					case 6:
 						//空闲中
 						break;
-
+					case 7:
+						//空闲中
+						break;
 					}
 				}
 				break;
