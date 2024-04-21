@@ -71,4 +71,5 @@ struct Appointment//预约
     struct Flat* flat;
     char cuposition[20];
     char flposition[9];
+    int statment;//0已完成，1有效中，2过期未处理
 };

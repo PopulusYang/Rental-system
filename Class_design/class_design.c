@@ -4,17 +4,8 @@
 #pragma warning(disable:6031) 
 typedef struct Flat Flat, * list_1;
 
-static void clearlog()
-{
-	FILE* temp;
-	temp = fopen("log.txt", "w");
-	fputs("\n", temp);
-	fclose(temp);
-}
-
 int main()
 {
-	clearlog();
 	struct Admin* ad_p1, * ad_p2, * ad_tail, * ad_head;//构建链表
 	ad_p1 = (struct Admin*)malloc(sizeof(struct Admin));//申请空间
 	if (ad_p1 == NULL)//判断申请的空间是否为空（NULL）
@@ -128,22 +119,9 @@ int main()
 	ap_p = ap_head->next;
 	while (ap_p != NULL)
 	{
-		if (ap_p->year < local->tm_year || (ap_p->year == local->tm_year && ap_p->month < local->tm_mon) || (ap_p->year == local->tm_year && ap_p->month == local->tm_mon && ap_p->day < local->tm_mday))
+		if (ap_p->year < local->tm_year || (ap_p->year == local->tm_year && ap_p->month < local->tm_mon) || (ap_p->year == local->tm_year && ap_p->month == local->tm_mon && ap_p->day < local->tm_mday) && ap_p->statment != 0)
 		{
-			ap_p2 = ap_p;
-			ap_p = ap_p->prev;
-			if (ap_p2->next == NULL)
-			{
-				ap_p2->prev->next = NULL;
-				free(ap_p2);
-			}
-			else
-			{
-				ap_p2->next->prev = ap_p2->prev;
-				ap_p2->prev->next = ap_p2->next;
-				free(ap_p2);
-			}
-			ap_p2 = NULL;
+			ap_p->statment = 2;
 		}
 		ap_p = ap_p->next;
 	}
@@ -154,6 +132,11 @@ int main()
 	choose();
 	while (choice_0)
 	{
+		time_t now = time(NULL);
+		struct tm* local = localtime(&now);
+		printf("当前时间: %d-%02d-%02d %02d:%02d:%02d\n",
+			local->tm_year + 1900, local->tm_mon + 1, local->tm_mday,
+			local->tm_hour, local->tm_min, local->tm_sec);
 		printf("******登    录******\n");
 		printf("**                **\n");
 		printf("**0.  关    闭    **\n");
@@ -1343,6 +1326,7 @@ int main()
 										ap_p->year = year;
 										ap_p->month = month;
 										ap_p->day = day;
+										ap_p->statment = 1;
 										printf("修改成功！\n");
 									}
 								}
@@ -1404,13 +1388,25 @@ int main()
 							else
 							{
 								printf("为您找到以下内容\n");
-								printf("编号\t\t时间\t\t租客\t\t房源编号\n");
+								printf("编号\t\t时间\t\t租客\t\t房源编号\t状态\n");
 								for (int i = 0; i < *(tempIntPtr - 1); i++)
 								{
 									ap_p = ap_head->next;
 									for (int j = 0; j < *(tempIntPtr + i); j++)
 										ap_p = ap_p->next;
-									printf("%s\t%d:%d:%d\t%s\t\t%s\n", ap_p->Number, ap_p->year, ap_p->month, ap_p->day, ap_p->custom->Account, ap_p->flat->number);
+									char statment[10];
+									switch (ap_p->statment)
+									{
+									case 0:
+										strcpy(statment, "完成");
+										break;
+									case 1:
+										strcpy(statment, "有效");
+										break;
+									case 2:
+										strcpy(statment, "过期");
+									}
+									printf("%s\t%d:%d:%d\t%s\t\t%s\t%s\n", ap_p->Number, ap_p->year, ap_p->month, ap_p->day, ap_p->custom->Account, ap_p->flat->number, statment);
 								}
 								printf("回车以继续\n");
 								getchar();
@@ -1422,7 +1418,6 @@ int main()
 						}
 						break;
 					case 3://信息查询
-				   
 							printf("*********查询方式*********\n");
 							printf("**                      **\n");
 							printf("**0.     返    回       **\n");
@@ -1743,6 +1738,81 @@ int main()
 						printf("租客人员数量：%d\n", countNumberCU(cu_head));
 						printf("房源数量：%d\n", countNumberFL(fl_head));
 						printf("预约总数：%d\n", countNumberAP(ap_head));
+						int a = 0;
+						fl_p1 = fl_head->next;
+						while (fl_p1 != NULL)
+						{
+							if (fl_p1->statment == true)
+								a++;
+							fl_p1 = fl_p1->next;
+						}
+						printf("房屋出租率：%.2f%%\n\n", (float)a/(float)countNumberFL(fl_head)*100);
+						printf("*********信息统计*********\n");
+						printf("**0.     返    回       **\n");
+						printf("*********预约信息*********\n");
+						printf("**1.     展    示       **\n");
+						printf("**2.     按 时 间       **\n");
+						printf("*********房源信息*********\n");
+						printf("**3.     展    示       **\n");
+						printf("**4.     按 面 积       **\n");
+						printf("**5.     按 朝 向       **\n");
+						printf("**6.     按 城 市       **\n");
+						printf("**7.     按 格 局       **\n");
+						printf("**************************\n");
+						scanf("%d", &choice_5);
+						choose();
+						switch (choice_5)
+						{
+						case 0:
+							break;
+						case 1:
+						{
+							int a = 0;
+							int b = 0;
+							ap_p = ap_head;
+							while (ap_p != NULL)
+							{
+								switch (ap_p->statment)
+								{
+								case 0:
+									a++;
+									break;
+								case 2:
+									b++;
+								}
+								ap_p = ap_p->next;
+							}
+							printf("完成数：%d\n", a);
+							printf("过期数：%d\n", b);
+							printf("完成率：%.2f\n", (float)a / (float)countNumberAP(ap_head));
+							printf("过期率：%.2f\n", (float)b / (float)countNumberAP(ap_head));
+						}
+							break;
+						case 2:
+							printf("请输入开始时间（年 月 日）:");
+							scanf("%d%d%d", &year, &month, &day);
+							int year2=0, month2=0, day2=0;
+							printf("请输入结束时间（年 月 日）:");
+							scanf("%d%d%d", &year2, &month2, &day2);
+							if (year > year2 || (year == year2 && month > month) || (year == year2 && month == month2 && day > day2))
+							{
+								printf("无效的时间\n");
+								printf("按下回车以继续\n");
+								getchar();
+								choose();
+								break;
+							}
+							int a = 0;
+							ap_p = ap_head;
+							while (ap_p != NULL)
+							{
+								if (ap_p->year >= year && ap_p->year <= year2 && ap_p->month >= month && ap_p->month <= month2 && ap_p->day >= day && ap_p->day <= day2 && ap_p->statment == 1);
+									a++;
+								ap_p = ap_p->next;
+							}
+							printf("有效的预约有%d\n", a);
+							break;
+						}
 						printf("按下回车以继续\n");
 						choose();
 						break;

@@ -84,6 +84,7 @@ int extend_writeFlat(list_1 p1, list_1 head, list_1 tail, char* city, float area
     else
         strcpy(p1->agposition, ag->Number);
     p1->agency = ag;
+    p1->statment = true;
     //数据修改都在上面
     p1->prev = tail;
     tail->next = p1;
