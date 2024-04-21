@@ -63,7 +63,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="appointment.bin" />
-    <Text Include="flat.bin" />
+    <Text Include="appointment.bin">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="flat.bin">
+      <Filter>资源文件</Filter>
+    </Text>
   </ItemGroup>
 </Project>
