@@ -1,6 +1,6 @@
 #pragma once
 #include "temphead.h"
-#include<cstdbool>;
+#include <stdbool.h>
 #pragma warning(disable:6031) 
 typedef struct Flat Flat, * list_1;
 //Á´±íÉùÃ÷
