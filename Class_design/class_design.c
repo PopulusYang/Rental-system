@@ -98,6 +98,8 @@ int main()
 	int jug8 = 1;//功能管理下级
 	int jug9 = 1;//信息管理中下级
 
+	float f_number=0.0f;
+
 	char input_string[50] = { '\0' };
 	char input_account[20] = { '\0' };
 	char input_key[20] = { '\0' };
@@ -1868,6 +1870,7 @@ int main()
 						printf("**1.     添加房源       **\n");
 						printf("**2.	 我的房源       **\n");
 						printf("**3.     删除房源       **\n");
+						printf("**4.   房源状态修改     **\n");
 						printf("**                      **\n");
 						printf("**************************\n");
 						scanf("%d", &choice_3);
@@ -2211,10 +2214,11 @@ int main()
 						}
 						break;
 					case 3:
-						//空闲中
+						//施工中
 						break;
 					case 4:
-						//空闲中
+						//施工中
+
 						break;
 					case 5:
 						//完成
@@ -2271,7 +2275,28 @@ int main()
 						}
 						break;
 					case 7:
-						
+						printf("您确定要删除您的账户吗？1确定 2取消；");
+						scanf("%d", &jug6);
+						if (jug6 == 1)
+						{
+							if (ag_p1->next == NULL)
+							{
+								ag_p1->prev->next = NULL;
+								free(ag_p1);
+								ag_p1 = NULL;
+							}
+							else
+							{
+								ag_p1->prev->next = ag_p1->next;
+								ag_p1->next->prev = ag_p1->prev;
+								free(ag_p1);
+								ag_p1 = NULL;
+							}
+							printf("操作成功\n");
+							printf("回车以继续");
+							getchar();
+							choose();
+						}
 						break;
 					}
 				}
@@ -2336,8 +2361,8 @@ int main()
 					printf("**0.     注    销       **\n");
 					printf("**1.     个人信息       **\n");
 					printf("**2.     看房预约       **\n");
-					printf("**3.     信息查询       **\n");
-					printf("**4.     信息排序       **\n");
+					printf("**3.     信息查询       **\n");//交给朱桑了
+					printf("**4.     信息排序       **\n");//交给朱桑了
 					printf("**5.     信息统计       **\n");
 					printf("**6.     更改密码       **\n");
 					printf("**7.     删除账户       **\n");
@@ -2371,7 +2396,28 @@ int main()
 						//空闲中
 						break;
 					case 7:
-						//空闲中
+						printf("您确定要删除您的账户吗？1确定 2取消；");
+						scanf("%d", &jug6);
+						if (jug6 == 1)
+						{
+							if (cu_p1->next == NULL)
+							{
+								cu_p1->prev->next = NULL;
+								free(cu_p1);
+								cu_p1 = NULL;
+							}
+							else
+							{
+								cu_p1->prev->next = cu_p1->next;
+								cu_p1->next->prev = cu_p1->prev;
+								free(cu_p1);
+								cu_p1 = NULL;
+							}
+							printf("操作成功\n");
+							printf("回车以继续");
+							getchar();
+							choose();
+						}
 						break;
 					}
 				}
