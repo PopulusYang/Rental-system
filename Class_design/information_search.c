@@ -688,6 +688,36 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				geshu++;
 				jug = 0;
 			}
+			fp = fh;
+			for (int i = 0; i <= (int)strlen(fp->city) - (int)strlen(input); i++)
+			{
+				int k = 0;
+				for (int j = i; j < i + strlen(input); j++)
+					*(temp2 + k++) = fp->city[j];
+				if (strcmp(temp2, input) == 0)
+				{
+					jug = 1;
+					break;
+				}
+				time++;//每检查一次，time+1
+			}
+			if (jug)
+			{
+				p = (struct MyStruct*)malloc(sizeof(struct MyStruct));
+				if (p == NULL)
+				{
+					logError(0);
+					return NULL;
+				}
+				strcpy(p->string, fp->city);
+				p->time = time;
+				p->position = a;
+				tail->next = p;
+				tail = p;
+				tail->next = NULL;//延长链表
+				geshu++;
+				jug = 0;
+			}
 		}
 	}
 	position = (int*)malloc((geshu + 1)* sizeof(int));
