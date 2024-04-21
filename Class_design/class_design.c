@@ -4,10 +4,17 @@
 #pragma warning(disable:6031) 
 typedef struct Flat Flat, * list_1;
 
-
+static void clearlog()
+{
+	FILE* temp;
+	temp = fopen("log.txt", "w");
+	fputs("\n", temp);
+	fclose(temp);
+}
 
 int main()
 {
+	clearlog();
 	struct Admin* ad_p1, * ad_p2, * ad_tail, * ad_head;//构建链表
 	ad_p1 = (struct Admin*)malloc(sizeof(struct Admin));//申请空间
 	if (ad_p1 == NULL)//判断申请的空间是否为空（NULL）
@@ -197,6 +204,7 @@ int main()
 						scanf("%s", input_key);
 						if (!strcmp(input_key, ad_p1->Key))
 						{
+							logInfo(1);
 							printf("登录成功，欢迎，管理员%s\n", ad_p1->Account);
 							printf("回车以继续\n");
 							getchar();
@@ -205,6 +213,7 @@ int main()
 						}
 						else
 						{
+							logWarning(2);
 							printf("密码错误\n");
 							printf("回车以继续\n");
 							getchar();
@@ -216,6 +225,7 @@ int main()
 					ad_p1 = ad_p1->next;
 					if (ad_p1 == NULL)
 					{
+						logWarning(2);
 						printf("找不到对象\n");
 						printf("回车以继续\n");
 						getchar();
@@ -248,6 +258,7 @@ int main()
 					case 0:
 						jug = 0;
 						ad_p1 = ad_tail;
+						logInfo(2);
 						break;
 					case 1:
 						//已完成
@@ -1801,6 +1812,7 @@ int main()
 								ad_p1 = NULL;
 							}
 							printf("操作成功\n");
+							logInfo(4);
 							printf("回车以继续");
 							getchar();
 							choose();
@@ -1827,6 +1839,7 @@ int main()
 						scanf("%s", input_key);
 						if (!strcmp(input_key, ag_p1->Key))
 						{
+							logInfo(1);
 							printf("登录成功，欢迎，中介员工%s\n", ag_p1->Name);
 							printf("回车以继续\n");
 							getchar();
@@ -1835,6 +1848,7 @@ int main()
 						}
 						else
 						{
+							logWarning(2);
 							printf("密码错误\n");
 							printf("回车以继续\n");
 							getchar();
@@ -1846,6 +1860,7 @@ int main()
 					ag_p1 = ag_p1->next;
 					if (ag_p1 == NULL)
 					{
+						logWarning(2);
 						printf("找不到对象\n");
 						printf("回车以继续\n");
 						getchar();
@@ -1854,7 +1869,7 @@ int main()
 						break;
 					}
 				}
-				while (jug)
+				while (jug && ag_p1 != NULL)
 				{
 					printf("*********功能菜单*********\n");
 					printf("**                      **\n");
@@ -1876,6 +1891,7 @@ int main()
 					case 0:
 						jug = 0;
 						ag_p1 = ag_tail;
+						logInfo(2);
 						break;
 					case 1:
 						//完工
@@ -2055,7 +2071,7 @@ int main()
 								{
 									if (num_1 == num[j])
 									{
-										num[j] == -1;
+										num[j] = -1;
 										jug6 = 1;
 										break;
 									}
@@ -2450,6 +2466,7 @@ int main()
 								ag_p1 = NULL;
 							}
 							printf("操作成功\n");
+							logInfo(4);
 							printf("回车以继续");
 							getchar();
 							choose();
@@ -2476,6 +2493,7 @@ int main()
 						if (cu_p1->statment == 0)
 						{
 							printf("抱歉，您因为违反我们的条例而被封禁。如有问题请联系管理员\n");
+							logWarning(2);
 							printf("回车以继续");
 							getchar();
 							choose();
@@ -2484,6 +2502,7 @@ int main()
 						}
 						if (!strcmp(input_key, cu_p1->Key))
 						{
+							logInfo(1);
 							printf("登录成功，欢迎，亲爱的%s\n", cu_p1->Account);
 							printf("回车以继续\n");
 							getchar();
@@ -2492,6 +2511,7 @@ int main()
 						}
 						else
 						{
+							logWarning(2);
 							printf("密码错误\n");
 							printf("回车以继续\n");
 							getchar();
@@ -2503,6 +2523,7 @@ int main()
 					cu_p1 = cu_p1->next;
 					if (cu_p1 == NULL)
 					{
+						logWarning(2);
 						printf("找不到对象\n");
 						printf("回车以继续\n");
 						getchar();
@@ -2511,7 +2532,7 @@ int main()
 						break;
 					}
 				}
-				while (jug)
+				while (jug && cu_p1 != NULL)
 				{
 					printf("*********功能菜单*********\n");
 					printf("**                      **\n");
@@ -2531,6 +2552,7 @@ int main()
 					switch (choice_4)
 					{
 					case 0:
+						logInfo(2);
 						jug = 0;
 						cu_p1 = cu_tail;
 						break;
@@ -2571,6 +2593,7 @@ int main()
 								cu_p1 = NULL;
 							}
 							printf("操作成功\n");
+							logInfo(4);
 							printf("回车以继续");
 							getchar();
 							choose();
@@ -2628,6 +2651,7 @@ int main()
 									ad_p2 = ad_tail;
 									ad_p1 = ad_tail;
 									printf("注册成功！");
+									logInfo(3);
 									printf("回车以继续");
 									getchar();
 									choose();
@@ -2719,6 +2743,7 @@ int main()
 									ag_p1 = ag_tail;
 									strcpy(ag_p1->phone_n, input_phonenumber);
 									printf("注册成功！\n");
+									logInfo(3);
 									printf("您的编号为%s\n", ag_p1->Number);
 									printf("请输入您的姓名：");
 									scanf("%s", ag_p1->Name);
@@ -2801,7 +2826,7 @@ int main()
 								cu_p1 = cu_tail;
 								strcpy(cu_p1->phone_n, input_phonenumber);
 								printf("注册成功！\n");
-
+								logInfo(3);
 								printf("请输入您的姓名：");
 								scanf("%s", cu_p1->Name);
 								printf("回车以继续\n");
@@ -2845,6 +2870,7 @@ int main()
 	filecachCU_write(cu_head);
 	filecachAP_write(ap_head);
 	filecachFL_write(fl_head);
+	logInfo(5);
 	return 0;
 }
 static void choose()//用于清屏

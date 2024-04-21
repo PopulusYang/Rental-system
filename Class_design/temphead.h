@@ -17,8 +17,8 @@ typedef struct Flat Flat, * list_1;
 *来自log.c
 *************/
 void logError(int kind);
-void logInfo();
-void logWarning();
+void logInfo(int kind);
+void logWarning(int kind);
 
 /***********************
 来自information_search.c
