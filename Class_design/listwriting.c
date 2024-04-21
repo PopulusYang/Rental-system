@@ -667,7 +667,6 @@ int list_printfl(list_1 mylist_head, list_1 mylist_tail,int judge)
             case 8:
                 printf("Î÷±±\n");
                 break;
-
             }
         mylist_tail = mylist_tail->prev;
     }
