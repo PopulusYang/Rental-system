@@ -203,6 +203,7 @@ int main()
                     printf("**5.     信息统计       **\n");
                     printf("**6.     更改密码       **\n");
                     printf("**7.    生成邀请码      **\n");
+                    printf("**8.     删除账户       **\n");
                     printf("**                      **\n");
                     printf("**************************\n");
                     printf("请选择功能：");
@@ -1242,7 +1243,8 @@ int main()
                         jug8 = 1;
                         break;
                     case 2://看房管理
-                        //空闲中
+                        //施工中
+
                         break;
                     case 3://信息查询
                    
@@ -1350,6 +1352,38 @@ int main()
                         ad_p1->effective = 1;
                         free(build_invitation);
                         choose();
+                        break;
+                    case 8:
+                        if (ad_p1->prev->prev == NULL && ad_p1->next == NULL)
+                        {
+                            printf("你是最后一个管理员，别删了兄弟\n");
+                            printf("回车以继续");
+                            getchar();
+                            choose();
+                            break;
+                        }
+                        printf("您确定要删除您的账户吗？1确定 2取消；");
+                        scanf("%d", &jug6);
+                        if (jug6 == 1)
+                        {
+                            if (ad_p1->next == NULL)
+                            {
+                                ad_p1->prev->next = NULL;
+                                free(ad_p1);
+                                ad_p1 = NULL;
+                            }
+                            else
+                            {
+                                ad_p1->prev->next = ad_p1->next;
+                                ad_p1->next->prev = ad_p1->prev;
+                                free(ad_p1);
+                                ad_p1 = NULL;
+                            }
+                            printf("操作成功\n");
+                            printf("回车以继续");
+                            getchar();
+                            choose();
+                        }
                         break;
                     }
                    
