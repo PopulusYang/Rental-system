@@ -79,7 +79,7 @@ int extend_writeFlat(list_1 p1, list_1 head, list_1 tail, char* city, float area
     strcpy(p1->number, temp);
     if (ag == NULL)
     {
-        strcpy(p1->agposition, "\0\0\0\0\0\0\0\0\0");
+        memset(p1->agposition, 0, sizeof(p1->agposition));
     }
     else
         strcpy(p1->agposition, ag->Number);
