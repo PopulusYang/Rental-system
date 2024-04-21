@@ -61,6 +61,8 @@ int range_search_Area(int l, int r, Flat* mylist_head, list_1 mylist_tail, int j
 int extendApm(struct Appointment* p, struct Appointment* tail, int year, int month, int day, struct Flat* flat, struct Customer* custom);
 //打印链表
 int list_printfl(list_1 mylist_head, list_1 mylist_tail, int judge);
+//朝向查找
+int toward_search(list_1 mylist_head, int i);
 /***********
 来自others.c
 ************/
