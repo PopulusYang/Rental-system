@@ -1067,12 +1067,11 @@ int main()
 												extend_writeFlat(fl_p1, fl_head, fl_tail, city, Area, t, floor, rent, shi, ting, NULL);
 												fl_tail = fl_tail->next;
 												printf("信息录入成功\n");
-												printf("目前有%d个房源\n", fl_number);
-												printf("按下回车以继续\n");
-												getchar();
-												choose();
-												break;
 											}
+											printf("目前有%d个房源\n", fl_number);
+											printf("按下回车以继续\n");
+											getchar();
+											choose();
 										}
 										if (choice_2 == 0)
 										{
@@ -1216,13 +1215,14 @@ int main()
 											extend_writeFlat(fl_p1, fl_head, fl_tail, city, Area, t, floor, rent, shi, ting, NULL);
 											fl_tail = fl_tail->next;
 											printf("信息录入成功\n");
-											printf("目前有%d个房源\n", fl_number);
-											printf("按下回车以继续\n");
-											getchar();
-											choose();
-											break;
 										}
+										printf("目前有%d个房源\n", fl_number);
+										printf("按下回车以继续\n");
+										getchar();
+										choose();
+										break;
 									}
+
 									}
 								}
 								break;
@@ -1458,7 +1458,7 @@ int main()
                                 scanf("%d", &right);
                                 choose();
                                 int t;
-                                t=range_search_Area(left, right, fl_head, fl_tail, choice_6, jug7);
+                                t=range_search_Area(left, right, fl_head, fl_tail, jug7, choice_6);
                                 printf("共有%d间房子符合标准\n",t);
                                 printf("按下回车以继续\n");
                                 getchar();
@@ -1725,8 +1725,7 @@ int main()
 							scanf("%d", &jug7);
 							choose();
 							list_printfl(fl_head, fl_tail, jug7);
-							printf("按下回车以继续\n");
-							getchar();
+							printf("按下回车以继续");
 							choose();
 							break;
 						}
