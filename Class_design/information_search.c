@@ -687,8 +687,14 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				tail->next = NULL;//延长链表
 				geshu++;
 				jug = 0;
-			}
-			fp = fh;
+			}			
+		}
+		fp = fh;
+		for (int a = 0; a != max; a++)
+		{
+			fp = fp->next;
+			int jug = 0;//判断数据与输入项是否有关联，0无关联，1有关联
+			int time = 0;//time越小关联性越高
 			for (int i = 0; i <= (int)strlen(fp->city) - (int)strlen(input); i++)
 			{
 				int k = 0;

@@ -1816,7 +1816,7 @@ int main()
 						fl_p1 = fl_head->next;
 						while (fl_p1 != NULL)
 						{
-							if (fl_p1->statment == true)
+							if (fl_p1->statment == false)
 								a++;
 							fl_p1 = fl_p1->next;
 						}
@@ -1978,7 +1978,7 @@ int main()
 								}
 								fl_p1 = fl_p1->next;
 							}
-							printf("东：%d\t西：%d\t南：%d\t北：%d\t东南：%d\t东北：%d\t西南：%d\t西北：%d\n", a, b, c, d, e, f, g, h);
+							printf("东：%d\t南：%d\t西：%d\t北：%d\t东南：%d\t东北：%d\t西南：%d\t西北：%d\n", a, b, c, d, e, f, g, h);
 						}
 							break;
 						case 6:
@@ -2420,7 +2420,8 @@ int main()
 							int* num = (int*)malloc(sizeof(int) * flnumber);
 							for (int i = 0; i < flnumber; i++)
 								num[i] = i;
-							for (int i = 0; i < 15 && i < flnumber; i++)
+							printf("推荐\n");
+							for (int i = 0; i < 5 && i < flnumber; i++)
 							{
 								unsigned long long len = flnumber;//随机输出十五个
 								unsigned int seed;
@@ -2442,22 +2443,22 @@ int main()
 									fl_p1 = fl_head->next;
 									for (int j = 0; j < num_1; j++)
 										fl_p1 = fl_p1->next;
-									printf("%s", fl_p1->number);
+									printf("%s\t", fl_p1->number);
 									printf("%4.2f\t", fl_p1->Area);
 									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
-									printf("%d层", fl_p1->floor);
-									printf("%s", fl_p1->city);
-									printf("租金为%6.2f", fl_p1->rent);
+									printf("%d层\t", fl_p1->floor);
+									printf("%s\t", fl_p1->city);
+									printf("租金为%6.2f\t\t", fl_p1->rent);
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
 										printf("东\t");
 										break;
 									case 2:
-										printf("西\t");
+										printf("南\t");
 										break;
 									case 3:
-										printf("南\t");
+										printf("西\t");
 										break;
 									case 4:
 										printf("北\t");
@@ -2513,22 +2514,22 @@ int main()
 						{
 							choose();
 							printf("成功找到对象\n");
-							printf("%s", fl_p1->number);
+							printf("%s\t", fl_p1->number);
 							printf("%4.2f\t", fl_p1->Area);
 							printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
-							printf("%d层", fl_p1->floor);
-							printf("%s", fl_p1->city);
-							printf("租金为%6.2f", fl_p1->rent);
+							printf("%d层\t", fl_p1->floor);
+							printf("%s\t", fl_p1->city);
+							printf("租金为%6.2f\t\t", fl_p1->rent);
 							switch ((int)fl_p1->toward)
 							{
 							case 1:
 								printf("东\t");
 								break;
 							case 2:
-								printf("西\t");
+								printf("南\t");
 								break;
 							case 3:
-								printf("南\t");
+								printf("西\t");
 								break;
 							case 4:
 								printf("北\t");
@@ -2590,22 +2591,22 @@ int main()
 									fl_p1 = fl_head->next;
 									for (int j = 0; j < *(tempIntPtr + i); j++)
 										fl_p1 = fl_p1->next;
-									printf("%s", fl_p1->number);
+									printf("%s\t", fl_p1->number);
 									printf("%4.2f\t", fl_p1->Area);
 									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
-									printf("%d层", fl_p1->floor);
-									printf("%s", fl_p1->city);
-									printf("租金为%6.2f", fl_p1->rent);
+									printf("%d层\t", fl_p1->floor);
+									printf("%s\t", fl_p1->city);
+									printf("租金为%6.2f\t\t", fl_p1->rent);
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
 										printf("东\t");
 										break;
 									case 2:
-										printf("西\t");
+										printf("南\t");
 										break;
 									case 3:
-										printf("南\t");
+										printf("西\t");
 										break;
 									case 4:
 										printf("北\t");
@@ -2641,22 +2642,22 @@ int main()
 							{
 								if (fl_p1->agency == ag_p1)
 								{
-									printf("%s", fl_p1->number);
+									printf("%s\t", fl_p1->number);
 									printf("%4.2f\t", fl_p1->Area);
 									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
-									printf("%d层", fl_p1->floor);
-									printf("%s", fl_p1->city);
-									printf("租金为%6.2f", fl_p1->rent);
+									printf("%d层\t", fl_p1->floor);
+									printf("%s\t", fl_p1->city);
+									printf("租金为%6.2f\t\t", fl_p1->rent);
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
 										printf("东\t");
 										break;
 									case 2:
-										printf("西\t");
+										printf("南\t");
 										break;
 									case 3:
-										printf("南\t");
+										printf("西\t");
 										break;
 									case 4:
 										printf("北\t");
@@ -2689,22 +2690,22 @@ int main()
 							{
 								if (!strcmp(fl_p1->number, input_string) && fl_p1->agency == ag_p1)
 								{
-									printf("%s", fl_p1->number);
+									printf("%s\t", fl_p1->number);
 									printf("%4.2f\t", fl_p1->Area);
 									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
-									printf("%d层", fl_p1->floor);
-									printf("%s", fl_p1->city);
-									printf("租金为%6.2f", fl_p1->rent);
+									printf("%d层\t", fl_p1->floor);
+									printf("%s\t", fl_p1->city);
+									printf("租金为%6.2f\t\t", fl_p1->rent);
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
 										printf("东\t");
 										break;
 									case 2:
-										printf("西\t");
+										printf("南\t");
 										break;
 									case 3:
-										printf("南\t");
+										printf("西\t");
 										break;
 									case 4:
 										printf("北\t");
