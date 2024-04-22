@@ -199,12 +199,13 @@ bool filecachFL_read(struct Flat** tailp,struct Agency* head)
 		assert(p);
 		fread(p, sizeof(struct Flat), 1, fp);
 		p1 = head->next;
-		if (p1 != NULL)
+		while (p1 != NULL)
 		{
-			while (!strcmp((*tailp)->agposition, p1->Number) && p1 != NULL)
-				p1 = p1->next;
-			(*tailp)->agency = p1;
-		}
+			if (!strcmp((*tailp)->agposition, p1->Number))
+				break;
+			p1 = p1->next;
+		}				
+		(*tailp)->agency = p1;
 		(*tailp)->next = p;
 		p->prev = (*tailp);
 		(*tailp) = p;
@@ -260,18 +261,20 @@ bool filecachAP_read(struct Appointment** tailp, struct Customer* chead, struct 
 		assert(p);
 		fread(p, sizeof(struct Appointment), 1, file);
 		cp = chead->next;
-		if (cp != NULL)
+		while (cp != NULL)
 		{
-			while (!strcmp(p->cuposition, cp->Account) && cp != NULL)
-				cp = cp->next;
-			p->custom = cp;
-		}
-		if (fp != NULL)
+			if (!strcmp(p->cuposition, cp->Account))
+				break;
+			cp = cp->next;
+		}				
+		p->custom = cp;
+		fp = fhead->next;
+		while (fp != NULL)
 		{
-			fp = fhead->next;
-			while (!strcmp(p->flposition, fp->number) && fp != NULL)
-				fp = fp->next;
-		}
+			if (strcmp(p->flposition, fp->number))
+			break;
+			fp = fp->next;
+		}				
 		(*tailp)->next = p;
 		p->prev = (*tailp);
 		(*tailp) = p;
