@@ -56,6 +56,7 @@ struct Flat//∑ø÷Ã
     struct Agency* agency;//÷–ΩÈ
     char agposition[9];
     bool statment;
+
 };
 
 

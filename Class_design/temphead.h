@@ -62,6 +62,18 @@ int range_search_Area(int l, int r, Flat* mylist_head, list_1 mylist_tail, int j
 //延长extendApm链表
 int extendApm(struct Appointment* p, struct Appointment* tail, int year, int month, int day, struct Flat* flat, struct Customer* custom);
 
+//打印有中介的房产
+int list_printfl_ag(list_1 mylist_head, list_1 mylist_tail, int judge);
+//打印没有中介的房产
+int list_printfl_cu(list_1 mylist_head, list_1 mylist_tail, int judge);
+//范围搜索有中介的房产
+int range_search_cu(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2);
+//范围搜索没有中介的房产
+int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2);
+//朝向搜索有中介的房产
+int toward_search_cu(list_1 mylist_head, int i);
+//朝向搜索没有中介的房产
+int toward_search_ag(list_1 mylist_head, int i);
 
 /***********
 来自others.c
