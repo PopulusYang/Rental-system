@@ -2515,7 +2515,7 @@ int main()
 							choose();
 							printf("成功找到对象\n");
 							printf("%s\t", fl_p1->number);
-							printf("%4.2f\t", fl_p1->Area);
+							printf("%4.2f平方米\n", fl_p1->Area);
 							printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
 							printf("%d层\t", fl_p1->floor);
 							printf("%s\t", fl_p1->city);
@@ -2592,7 +2592,7 @@ int main()
 									for (int j = 0; j < *(tempIntPtr + i); j++)
 										fl_p1 = fl_p1->next;
 									printf("%s\t", fl_p1->number);
-									printf("%4.2f\t", fl_p1->Area);
+									printf("%4.2f平方米\n", fl_p1->Area);
 									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
 									printf("%d层\t", fl_p1->floor);
 									printf("%s\t", fl_p1->city);
@@ -2643,7 +2643,7 @@ int main()
 								if (fl_p1->agency == ag_p1)
 								{
 									printf("%s\t", fl_p1->number);
-									printf("%4.2f\t", fl_p1->Area);
+									printf("%4.2f平方米\n", fl_p1->Area);
 									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
 									printf("%d层\t", fl_p1->floor);
 									printf("%s\t", fl_p1->city);
@@ -2691,7 +2691,7 @@ int main()
 								if (!strcmp(fl_p1->number, input_string) && fl_p1->agency == ag_p1)
 								{
 									printf("%s\t", fl_p1->number);
-									printf("%4.2f\t", fl_p1->Area);
+									printf("%4.2f平方米\n", fl_p1->Area);
 									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
 									printf("%d层\t", fl_p1->floor);
 									printf("%s\t", fl_p1->city);
@@ -2966,7 +2966,7 @@ int main()
 											fl_p1 = fl_head->next;
 											for (int j = 0; j < *(tempIntPtr + i); j++)
 												fl_p1 = fl_p1->next;
-											printf("%d\t\t%s\t\t%6.2f\t\t%d室%d厅\t\t%6.2f\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
+											printf("%d\t\t%s\t\t%6.2f平方米\t\t%d室%d厅\t\t%6.2f元\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
 										}
 										printf("回车以继续\n");
 										getchar();

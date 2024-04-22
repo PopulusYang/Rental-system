@@ -580,4 +580,3 @@ int fl_change(list_1 fl_p1)//用于更改房子信息
     fl_p1->deposit = fl_p1->rent * 3;//押金为三个月租金、
     return 0;
 }
-
