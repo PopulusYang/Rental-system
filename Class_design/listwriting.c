@@ -85,6 +85,7 @@ int extend_writeFlat(list_1 p1, list_1 head, list_1 tail, char* city, float area
         strcpy(p1->agposition, ag->Number);
     p1->agency = ag;
     p1->statment = true;
+    p1->custome = NULL;
     //数据修改都在上面
     p1->prev = tail;
     tail->next = p1;
@@ -188,6 +189,7 @@ int extendApm(struct Appointment* p, struct Appointment* tail, int year, int mon
     strcpy(p->cuposition, custom->Account);
     strcpy(p->flposition, flat->number);
     tail->next = p;
+    p->next = NULL;
     return 0;
 }
 

@@ -55,6 +55,8 @@ struct Flat//房痔
     int floor;//在几楼
     float rent, agency_fee, deposit;//费用，包括租金、中介费、押金
     struct Agency* agency;//中介
+    struct Customer* custome;//租客
+    char cuposition[20];
     char agposition[9];
     bool statment;
 

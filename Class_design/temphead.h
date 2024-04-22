@@ -127,7 +127,7 @@ bool filecachCU_write(struct Customer* head);
 bool filecachCU_read(struct Customer** tailp);
 
 bool filecachFL_write(struct Flat* head);
-bool filecachFL_read(struct Flat** tailp, struct Agency* head);
+bool filecachFL_read(struct Flat** tailp, struct Agency* head, struct Customer* chead);
 
 bool filecachAP_write(struct Appointment* head);
 bool filecachAP_read(struct Appointment** tailp, struct Customer* chead, struct Flat* fhead);

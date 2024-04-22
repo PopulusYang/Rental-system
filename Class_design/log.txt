@@ -50,4 +50,38 @@
 [Info]The file has been modified.
 [Info]The file has been modified.
 >>>>>>> 16279b6b64cd64088564e27915483ba89b17b942
+<<<<<<< HEAD
 [Info]The file has been modified.
+=======
+>>>>>>> 67bbd3d19ff3e4c173d2db5793f276c0015e3e0f
+[Info]The file has been modified.
+[Info]A user has registered.
+[Info]A user logged in.
+[Info]A user has registered.
+[Info]A user logged in.
+[Info]A user has registered.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Info]A user logged in.
+[Info]A user logged in.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged in.
+[Warn]User login failed.
+[Warn]User login failed.
+[Info]A user logged in.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Info]A user logged in.
+[Warn]User login failed.
+[Info]A user logged in.
