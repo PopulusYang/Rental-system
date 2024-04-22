@@ -1203,6 +1203,7 @@ int main()
 										printf("请按照城市/面积/室/厅/朝向/楼层/租金顺序输入\n");
 										for (int i = 0; i < input_number; i++)
 										{
+											printf("请输入\n");
 											char city[20];
 											float Area;
 											int shi;
@@ -1215,6 +1216,7 @@ int main()
 											extend_writeFlat(fl_p1, fl_head, fl_tail, city, Area, t, floor, rent, shi, ting, NULL);
 											fl_tail = fl_tail->next;
 											printf("信息录入成功\n");
+											printf("其编号为%s\n", fl_tail->number);
 										}
 										printf("目前有%d个房源\n", fl_number);
 										printf("按下回车以继续\n");
@@ -1816,18 +1818,24 @@ int main()
 								a++;
 							fl_p1 = fl_p1->next;
 						}
-						printf("房屋出租率：%.2f%%\n\n", (float)a/(float)countNumberFL(fl_head)*100);
+						printf("房屋出租率：%.2f%%\n\n", (float)a/(float)countNumberFL(fl_head)*100.0f);
 						printf("*********信息统计*********\n");
+						printf("**                      **\n");
 						printf("**0.     返    回       **\n");
+						printf("**                      **\n");
 						printf("*********预约信息*********\n");
+						printf("**                      **\n");
 						printf("**1.     展    示       **\n");
 						printf("**2.     按 时 间       **\n");
+						printf("**                      **\n");
 						printf("*********房源信息*********\n");
+						printf("**                      **\n");
 						printf("**3.     展    示       **\n");
 						printf("**4.     按 面 积       **\n");
 						printf("**5.     按 朝 向       **\n");
 						printf("**6.     按 城 市       **\n");
 						printf("**7.     按 格 局       **\n");
+						printf("**                      **\n");
 						printf("**************************\n");
 						scanf("%d", &choice_5);
 						choose();
@@ -1854,8 +1862,8 @@ int main()
 							}
 							printf("完成数：%d\n", a);
 							printf("过期数：%d\n", b);
-							printf("完成率：%.2f\n", (float)a / (float)countNumberAP(ap_head));
-							printf("过期率：%.2f\n", (float)b / (float)countNumberAP(ap_head));
+							printf("完成率：%.2f%%\n", (float)a / (float)countNumberAP(ap_head)*100.0f);
+							printf("过期率：%.2f%%\n", (float)b / (float)countNumberAP(ap_head)*100.0f);
 						}
 							break;
 						case 2:
@@ -1873,14 +1881,224 @@ int main()
 								break;
 							}
 							int a = 0;
+							int b = 0;
+							int c = 0;
+							int num = 0;
 							ap_p = ap_head;
 							while (ap_p != NULL)
 							{
-								if (ap_p->year >= year && ap_p->year <= year2 && ap_p->month >= month && ap_p->month <= month2 && ap_p->day >= day && ap_p->day <= day2 && ap_p->statment == 1);
-									a++;
+								if (ap_p->year >= year && ap_p->year <= year2 && ap_p->month >= month && ap_p->month <= month2 && ap_p->day >= day && ap_p->day <= day2);
+								{
+									switch (ap_p->statment)
+									{
+									case 0:
+										b++;
+										break;
+									case 1:
+										a++;
+										break;
+									case 2:
+										c++;
+									}
+									num++;
+								}
 								ap_p = ap_p->next;
 							}
-							printf("有效的预约有%d\n", a);
+							printf("有效的预约有%d个\n", a);
+							printf("过期的预约有%d个\n", c);
+							printf("完成的预约有%d个\n", b);
+							printf("完成率为%.2f%%\n", (float)b / (float)num);
+							break;
+						case 3:
+							//完工
+							fl_p1 = fl_head->next;
+							int a1 = 0;
+							int b1 = 0;
+							while (fl_p1 != NULL)
+							{
+								if (fl_p1->statment == true)
+									a1++;
+								else
+									b1++;
+								fl_p1 = fl_p1->next;
+							}
+							printf("未出租的房源有%d个\n", a1);
+							printf("已出租的房源有%d个\n", b1);
+							break;
+						case 4:
+							//面积
+						{
+							int r = 0, l = 0;
+							printf("请输入左值，右值:");
+							scanf("%d%d", &r, &l);
+							if (r > l);//修正
+							{
+								int t = r;
+								r = l;
+								l = t;
+							}
+							printf("面积大于%d平方米小于%d平方米的有%d个\n", r, l, range_search_Area(l, r, fl_head, fl_tail, 1, 3));
+						}
+							break;
+						case 5:
+							//朝向
+						{
+							int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0;
+							fl_p1 = fl_head->next;
+							while (fl_p1 != NULL)
+							{
+								switch ((int)fl_p1->toward)
+								{
+								case 1:
+									a++;
+									break;
+								case 2:
+									b++;
+									break;
+								case 3:
+									c++;
+									break;
+								case 4:
+									d++;
+									break;
+								case 5:
+									e++;
+									break;
+								case 6:
+									f++;
+									break;
+								case 7:
+									g++;
+									break;
+								case 8:
+									h++;
+									break;
+								}
+								fl_p1 = fl_p1->next;
+							}
+							printf("东：%d\t西：%d\t南：%d\t北：%d\t东南：%d\t东北：%d\t西南：%d\t西北：%d\n", a, b, c, d, e, f, g, h);
+						}
+							break;
+						case 6:
+							//城市
+						{
+							int j = 0;
+							typedef struct city
+							{
+								char p[20];
+								int num;
+								struct city* next;
+							}City;
+							City *p, *head, *tail;
+							p = (struct city*)malloc(sizeof(struct city));
+							assert(p);
+							head = p;
+							tail = p;
+							p->next = NULL;
+							memset(p->p, 0, sizeof(p->p));
+							fl_p1 = fl_head->next;
+							while (fl_p1 != NULL)
+							{
+								p = head->next;
+								j = 1;
+								while (p != NULL)
+								{
+									if (!strcmp(fl_p1->city, p->p))
+									{
+										j = 0;
+										p->num++;
+										break;
+									}									
+									p = p->next;
+								}
+								if (head->next == NULL || j)
+								{
+									p = (struct city*)malloc(sizeof(struct city));
+									assert(p);
+									strcpy(p->p, fl_p1->city);
+									p->num = 1;
+									tail->next = p;
+									tail = p;
+									p->next = NULL;
+								}
+								fl_p1 = fl_p1->next;
+							}
+							p = head->next;
+							while (p != NULL)
+							{
+								printf("%s：%d\n", p->p, p->num);
+								p = p->next;
+							}
+							p = head;
+							City* p2 = NULL;
+							while (p != NULL)
+							{
+								p2 = p;
+								p = p->next;
+								free(p2);
+							}
+						}
+							break;
+						case 7:
+							//格局
+						{
+							int j = 0;
+							typedef struct shiting
+							{
+								int shi;
+								int ting;//几室几厅
+								int num;
+								struct shiting* next;
+							}Shiting;
+							Shiting* p, * head, * tail;
+							p = (struct shiting*)malloc(sizeof(struct shiting));
+							assert(p);
+							head = p;
+							tail = p;
+							p->next = NULL;
+							fl_p1 = fl_head->next;
+							while (fl_p1 != NULL)
+							{
+								p = head->next;
+								j = 1;
+								while (p != NULL)
+								{
+									if (fl_p1->shi==p->shi&&fl_p1->ting==p->ting)
+									{
+										j = 0;
+										p->num++;
+										break;
+									}
+									p = p->next;
+								}
+								if (head->next == NULL || j)
+								{
+									p = (struct shiting*)malloc(sizeof(struct shiting));
+									assert(p);
+									p->shi = fl_p1->shi;
+									p->ting = fl_p1->ting;
+									p->num = 1;
+									tail->next = p;
+									tail = p;
+									p->next = NULL;
+								}
+								fl_p1 = fl_p1->next;
+							}
+							p = head->next;
+							while (p != NULL)
+							{
+								printf("%d室%d厅：%d\n", p->shi, p->ting, p->num);
+								p = p->next;
+							}
+							p = head;
+							Shiting* p2 = NULL;
+							while (p != NULL)
+							{
+								p2 = p;
+								p = p->next;
+								free(p2);
+							}
+						}
 							break;
 						}
 						printf("按下回车以继续\n");
@@ -2528,10 +2746,316 @@ int main()
 						break;
 					case 3:
 						//施工中
-						break;
-					case 4:
-						//施工中
+						printf("*********查询方式*********\n");
+						printf("**                      **\n");
+						printf("**0.     返    回       **\n");
+						printf("**1.     范围查找       **\n");
+						printf("**2.     具体查找       **\n");
+						printf("**                      **\n");
+						printf("**************************\n");
+						scanf("%d", &choice_6);
+						choose();
+						switch (choice_6)
+						{
+						case 0:
+							break;
+						case 1:
+							printf("*********查询方式*********\n");
+							printf("**                      **\n");
+							printf("**1.     租    金       **\n");
+							printf("**2.     楼    层       **\n");
+							printf("**3.     面    积       **\n");
+							printf("**                      **\n");
+							printf("**************************\n");
+							scanf("%d", &choice_6);
+							choose();
+							int left = 0;
+							int right = 0;
 
+							printf("*********排序方式*********\n");
+							printf("**                      **\n");
+							printf("**1.     从小到大       **\n");
+							printf("**2.     从大到小       **\n");
+							printf("**                      **\n");
+							printf("**************************\n");
+							scanf("%d", &jug7);
+							printf("请输入左右范围:\n");
+							printf("左:");
+							scanf("%d", &left);
+							printf("\n右:");
+							scanf("%d", &right);
+							choose();
+							int t;
+							t = range_search_ag(left, right, fl_head, fl_tail, jug7, choice_6);
+							printf("共有%d间房子符合标准\n", t);
+							printf("按下回车以继续\n");
+							getchar();
+							choose();
+							break;
+						case 2:
+							printf("*********查询方式*********\n");
+							printf("**                      **\n");
+							printf("**1.     城    市       **\n");
+							printf("**2.     编    号       **\n");
+							printf("**3.     朝    向       **\n");
+							printf("**                      **\n");
+							printf("**************************\n");
+							scanf("%d", &choice_6);
+							choose();
+							switch (choice_6)
+							{
+							case 0:
+								break;
+							case 1:
+								printf("请输入希望查找的城市（最多10个字符）：");
+								scanf("%s", input_string);
+								tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
+								tempIntPtr++;
+								for (int i = 0; i != *(tempIntPtr - 1); i++)
+								{
+									fl_p1 = fl_head->next;
+									for (int j = 0; j != tempIntPtr[i]; j++)
+										fl_p1 = fl_p1->next;
+									if (!strcmp(fl_p1->number, input_string)&&fl_p1==NULL)
+									{
+										jug5 = 1;
+										break;
+									}
+								}
+								if (jug5)
+								{
+
+									printf("%s\t", fl_p1->number);
+									printf("%4.2f平方米\n", fl_p1->Area);
+									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
+									printf("%d层", fl_p1->floor);
+									printf("位于%s", fl_p1->city);
+									printf("租金为%6.2f", fl_p1->rent);
+									printf("朝向为");
+									switch ((int)fl_p1->toward)
+									{
+									case 1:
+										printf("东\n");
+										break;
+									case 2:
+										printf("西\n");
+										break;
+									case 3:
+										printf("南\n");
+										break;
+									case 4:
+										printf("北\n");
+										break;
+									case 5:
+										printf("东南\n");
+										break;
+									case 6:
+										printf("东北\n");
+										break;
+									case 7:
+										printf("西南\n");
+										break;
+									case 8:
+										printf("西北\n");
+										break;
+									}
+									printf("按下回车以继续\n");
+									getchar();
+									choose();
+									jug5 = 0;//初始化
+								}
+								else
+									if (*(tempIntPtr - 1) == 0)
+									{
+										printf("找不到您输入的内容。\n");
+										printf("按下回车以继续\n");
+										getchar();
+										choose();
+									}
+									else
+									{
+										printf("您输入的内容比较模糊，为您找到以下内容\n");
+										printf("序号\t\t编号\t\t面积\t\t室厅情况\t\t费用\n");
+										for (int i = 0; i < *(tempIntPtr - 1); i++)
+										{
+											fl_p1 = fl_head->next;
+											for (int j = 0; j < *(tempIntPtr + i); j++)
+												fl_p1 = fl_p1->next;
+											printf("%d\t\t%s\t\t%6.2f\t\t%d室%d厅\t\t%6.2f\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
+										}
+										printf("回车以继续\n");
+										getchar();
+										choose();
+									}
+								break;
+							case 2:
+								printf("请输入希望查找的房屋序号（最多10个字符）：");
+								scanf("%s", input_string);
+								tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
+								tempIntPtr++;
+								for (int i = 0; i != *(tempIntPtr - 1); i++)
+								{
+									fl_p1 = fl_head->next;
+									for (int j = 0; j != tempIntPtr[i]; j++)
+										fl_p1 = fl_p1->next;
+									if (!strcmp(fl_p1->number, input_string)&&fl_p1 == NULL)
+									{
+										jug5 = 1;
+										break;
+									}
+								}
+								if (jug5)
+								{
+									printf("%s\t", fl_p1->number);//这里需要更改成序号
+									printf("%4.2f平方米\n", fl_p1->Area);
+									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
+									printf("%d层", fl_p1->floor);
+									printf("位于%s", fl_p1->city);
+									printf("租金为%6.2f", fl_p1->rent);
+									printf("朝向为");
+									switch ((int)fl_p1->toward)
+									{
+									case 1:
+										printf("东\n");
+										break;
+									case 2:
+										printf("西\n");
+										break;
+									case 3:
+										printf("南\n");
+										break;
+									case 4:
+										printf("北\n");
+										break;
+									case 5:
+										printf("东南\n");
+										break;
+									case 6:
+										printf("东北\n");
+										break;
+									case 7:
+										printf("西南\n");
+										break;
+									case 8:
+										printf("西北\n");
+										break;
+									}
+									printf("按下回车以继续\n");
+									getchar();
+									choose();
+									jug5 = 0;//初始化
+								}
+								else
+									if (*(tempIntPtr - 1) == 0)
+									{
+										printf("找不到您输入的内容。\n");
+										printf("按下回车以继续\n");
+										getchar();
+										choose();
+									}
+									else
+									{
+										printf("您输入的内容比较模糊，为您找到以下内容\n");
+										printf("序号\t\t编号\t\t面积\t\t室厅情况\t\t费用\n");
+										for (int i = 0; i < *(tempIntPtr - 1); i++)
+										{
+											fl_p1 = fl_head->next;
+											for (int j = 0; j < *(tempIntPtr + i); j++)
+												fl_p1 = fl_p1->next;
+											printf("%d\t\t%s\t\t%6.2f\t\t%d室%d厅\t\t%6.2f\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
+										}
+										printf("回车以继续\n");
+										getchar();
+										choose();
+									}
+								break;
+							case 3://朝向查找
+								printf("*********查询方式*********\n");
+								printf("**                      **\n");
+								printf("**1.        东          **\n");
+								printf("**2.		西          **\n");
+								printf("**3.        南          **\n");
+								printf("**4.        北          **\n");
+								printf("**5.      东  南        **\n");
+								printf("**6.      东  北        **\n");
+								printf("**7.      西  南        **\n");
+								printf("**8.      西  北        **\n");
+								printf("**                      **\n");
+								printf("**************************\n");
+								scanf("%d", &choice_6);
+								choose();
+								int i;
+								i = toward_search_ag(fl_head, choice_6);
+								printf("共有%d个房源朝向", i);
+								switch (choice_6)
+								{
+								case 1:
+									printf("东\n");
+									break;
+								case 2:
+									printf("西\n");
+									break;
+								case 3:
+									printf("南\n");
+									break;
+								case 4:
+									printf("北\n");
+									break;
+								case 5:
+									printf("东南\n");
+									break;
+								case 6:
+									printf("东北\n");
+									break;
+								case 7:
+									printf("西南\n");
+									break;
+								case 8:
+									printf("西北\n");
+									break;
+								}
+								printf("按下回车以继续\n");
+								getchar();
+								choose();
+								break;
+							}
+							break;
+						}
+						break;
+						break;
+					case 4://信息排序
+						//施工中
+						printf("*********查看房源*********\n");
+						printf("**                      **\n");
+						printf("**0.     返    回       **\n");
+						printf("**1.     租    金       **\n");
+						printf("**2.     层    数       **\n");
+						printf("**3.     房产面积       **\n");
+						printf("**                      **\n");
+						printf("**************************\n");
+						scanf("%d", &choice_5);
+						if (choice_5 == 0)
+						{
+							choose();
+							break;
+						}
+						else
+						{
+							bubbleSort_Area(&fl_head, choice_5);
+							choose();
+							printf("*********排序方式*********\n");
+							printf("**                      **\n");
+							printf("**1.     从小到大       **\n");
+							printf("**2.     从大到小       **\n");
+							printf("**                      **\n");
+							printf("**************************\n");
+							scanf("%d", &jug7);
+							choose();
+							list_printfl_ag(fl_head, fl_tail, jug7);
+							printf("按下回车以继续");
+							choose();
+							break;
+						}
 						break;
 					case 5:
 						//完成
@@ -2704,9 +3228,386 @@ int main()
 						break;
 					case 3:
 						//空闲中
+						printf("*********查询方式*********\n");
+						printf("**                      **\n");
+						printf("**0.     返    回       **\n");
+						printf("**1.     范围查找       **\n");
+						printf("**2.     具体查找       **\n");
+						printf("**                      **\n");
+						printf("**************************\n");
+						scanf("%d", &choice_6);
+						choose();
+						switch (choice_6)
+						{
+						case 0:
+							break;
+						case 1:
+							printf("*********查询方式*********\n");
+							printf("**                      **\n");
+							printf("**1.     租    金       **\n");
+							printf("**2.     楼    层       **\n");
+							printf("**3.     面    积       **\n");
+							printf("**                      **\n");
+							printf("**************************\n");
+							scanf("%d", &choice_6);
+							choose();
+							int left = 0;
+							int right = 0;
+
+							printf("*********排序方式*********\n");
+							printf("**                      **\n");
+							printf("**1.     从小到大       **\n");
+							printf("**2.     从大到小       **\n");
+							printf("**                      **\n");
+							printf("**************************\n");
+							scanf("%d", &jug7);
+							printf("请输入左右范围:\n");
+							printf("左:");
+							scanf("%d", &left);
+							printf("\n右:");
+							scanf("%d", &right);
+							choose();
+							int t;
+							t = range_search_cu(left, right, fl_head, fl_tail, jug7, choice_6);
+							printf("共有%d间房子符合标准\n", t);
+							printf("按下回车以继续\n");
+							getchar();
+							choose();
+							break;
+						case 2:
+							printf("*********查询方式*********\n");
+							printf("**                      **\n");
+							printf("**1.     城    市       **\n");
+							printf("**2.     中    介       **\n");
+							printf("**3.     编    号       **\n");
+							printf("**4.     朝    向       **\n");
+							printf("**                      **\n");
+							printf("**************************\n");
+							scanf("%d", &choice_6);
+							choose();
+							switch (choice_6)
+							{
+							case 0:
+								break;
+							case 1:
+								printf("请输入希望查找的城市（最多10个字符）：");
+								scanf("%s", input_string);
+								tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
+								tempIntPtr++;
+								for (int i = 0; i != *(tempIntPtr - 1); i++)
+								{
+									fl_p1 = fl_head->next;
+									for (int j = 0; j != tempIntPtr[i]; j++)
+										fl_p1 = fl_p1->next;
+									if (!strcmp(fl_p1->number, input_string)&&fl_p1!=NULL)
+									{
+										jug5 = 1;
+										break;
+									}
+								}
+								if (jug5)
+								{
+
+									printf("%s\t", fl_p1->number);
+									printf("%4.2f平方米\n", fl_p1->Area);
+									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
+									printf("%d层", fl_p1->floor);
+									printf("位于%s", fl_p1->city);
+									printf("租金为%6.2f", fl_p1->rent);
+									printf("朝向为");
+									switch ((int)fl_p1->toward)
+									{
+									case 1:
+										printf("东\n");
+										break;
+									case 2:
+										printf("西\n");
+										break;
+									case 3:
+										printf("南\n");
+										break;
+									case 4:
+										printf("北\n");
+										break;
+									case 5:
+										printf("东南\n");
+										break;
+									case 6:
+										printf("东北\n");
+										break;
+									case 7:
+										printf("西南\n");
+										break;
+									case 8:
+										printf("西北\n");
+										break;
+									}
+									printf("按下回车以继续\n");
+									getchar();
+									choose();
+									jug5 = 0;//初始化
+								}
+								else
+									if (*(tempIntPtr - 1) == 0)
+									{
+										printf("找不到您输入的内容。\n");
+										printf("按下回车以继续\n");
+										getchar();
+										choose();
+									}
+									else
+									{
+										printf("您输入的内容比较模糊，为您找到以下内容\n");
+										printf("序号\t\t编号\t\t面积\t\t室厅情况\t\t费用\n");
+										for (int i = 0; i < *(tempIntPtr - 1); i++)
+										{
+											fl_p1 = fl_head->next;
+											for (int j = 0; j < *(tempIntPtr + i); j++)
+												fl_p1 = fl_p1->next;
+											printf("%d\t\t%s\t\t%6.2f\t\t%d室%d厅\t\t%6.2f\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
+										}
+										printf("回车以继续\n");
+										getchar();
+										choose();
+									}
+								break;
+							case 2://此处缺少中介查询
+								printf("请输入您想搜索的中介姓名：\n");
+								char input[20];
+								scanf("%s", input);
+								choose();
+								fl_p1 = fl_head->next;
+								ag_p1 = ag_head->next;
+								while (ag_p1 != NULL)
+								{
+									if (!strcmp(input, ag_p1->Name))
+									{
+										printf("编号：");
+										printf("%s\n", ag_p1->Number);
+										printf("姓名：");
+										printf("%s\n", ag_p1->Name);
+										printf("电话：");
+										printf("%s\n", ag_p1->phone_n);
+										break;
+									}
+									ag_p1 = ag_p1->next;
+								}
+								printf("房产信息：\n");
+								int t = 0;
+								while (fl_p1 != NULL)
+								{
+									if (!strcmp(input, fl_p1->agency->Name))
+									{
+										t++;
+										printf("%d:\t", t);
+										printf("%s\t", fl_p1->number);
+										printf("%4.2f\n", fl_p1->Area);
+										printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
+										printf("%d层\t", fl_p1->floor);
+										printf("位于%s\t", fl_p1->city);
+										printf("租金为%6.2f", fl_p1->rent);
+										printf("朝向为");
+										switch ((int)fl_p1->toward)
+										{
+										case 1:
+											printf("东\n");
+											break;
+										case 2:
+											printf("西\n");
+											break;
+										case 3:
+											printf("南\n");
+											break;
+										case 4:
+											printf("北\n");
+											break;
+										case 5:
+											printf("东南\n");
+											break;
+										case 6:
+											printf("东北\n");
+											break;
+										case 7:
+											printf("西南\n");
+											break;
+										case 8:
+											printf("西北\n");
+											break;
+										}
+									}
+									fl_p1 = fl_p1->next;
+								}
+								printf("按下回车以继续\n");
+								getchar();
+								choose();
+								break;
+							case 3:
+								printf("请输入希望查找的房屋序号（最多10个字符）：");
+								scanf("%s", input_string);
+								tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
+								tempIntPtr++;
+								for (int i = 0; i != *(tempIntPtr - 1); i++)
+								{
+									fl_p1 = fl_head->next;
+									for (int j = 0; j != tempIntPtr[i]; j++)
+										fl_p1 = fl_p1->next;
+									if (!strcmp(fl_p1->number, input_string) && fl_p1 != NULL)
+									{
+										jug5 = 1;
+										break;
+									}
+								}
+								if (jug5)
+								{
+									printf("%s\t", fl_p1->number);//这里需要更改成序号
+									printf("%4.2f平方米\n", fl_p1->Area);
+									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
+									printf("%d层", fl_p1->floor);
+									printf("位于%s", fl_p1->city);
+									printf("租金为%6.2f", fl_p1->rent);
+									printf("朝向为");
+									switch ((int)fl_p1->toward)
+									{
+									case 1:
+										printf("东\n");
+										break;
+									case 2:
+										printf("西\n");
+										break;
+									case 3:
+										printf("南\n");
+										break;
+									case 4:
+										printf("北\n");
+										break;
+									case 5:
+										printf("东南\n");
+										break;
+									case 6:
+										printf("东北\n");
+										break;
+									case 7:
+										printf("西南\n");
+										break;
+									case 8:
+										printf("西北\n");
+										break;
+									}
+									printf("按下回车以继续\n");
+									getchar();
+									choose();
+									jug5 = 0;//初始化
+								}
+								else
+									if (*(tempIntPtr - 1) == 0)
+									{
+										printf("找不到您输入的内容。\n");
+										printf("按下回车以继续\n");
+										getchar();
+										choose();
+									}
+									else
+									{
+										printf("您输入的内容比较模糊，为您找到以下内容\n");
+										printf("序号\t\t编号\t\t面积\t\t室厅情况\t\t费用\n");
+										for (int i = 0; i < *(tempIntPtr - 1); i++)
+										{
+											fl_p1 = fl_head->next;
+											for (int j = 0; j < *(tempIntPtr + i); j++)
+												fl_p1 = fl_p1->next;
+											printf("%d\t\t%s\t\t%6.2f\t\t%d室%d厅\t\t%6.2f\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
+										}
+										printf("回车以继续\n");
+										getchar();
+										choose();
+									}
+								break;
+							case 4://朝向查找
+								printf("*********查询方式*********\n");
+								printf("**                      **\n");
+								printf("**1.        东          **\n");
+								printf("**2.		西          **\n");
+								printf("**3.        南          **\n");
+								printf("**4.        北          **\n");
+								printf("**5.      东  南        **\n");
+								printf("**6.      东  北        **\n");
+								printf("**7.      西  南        **\n");
+								printf("**8.      西  北        **\n");
+								printf("**                      **\n");
+								printf("**************************\n");
+								scanf("%d", &choice_6);
+								choose();
+								int i;
+								i = toward_search_cu(fl_head, choice_6);
+								printf("共有%d个房源朝向", i);
+								switch (choice_6)
+								{
+								case 1:
+									printf("东\n");
+									break;
+								case 2:
+									printf("西\n");
+									break;
+								case 3:
+									printf("南\n");
+									break;
+								case 4:
+									printf("北\n");
+									break;
+								case 5:
+									printf("东南\n");
+									break;
+								case 6:
+									printf("东北\n");
+									break;
+								case 7:
+									printf("西南\n");
+									break;
+								case 8:
+									printf("西北\n");
+									break;
+								}
+								printf("按下回车以继续\n");
+								getchar();
+								choose();
+								break;
+							}
+							break;
+						}
 						break;
 					case 4:
 						//空闲中
+						printf("*********查看房源*********\n");
+						printf("**                      **\n");
+						printf("**0.     返    回       **\n");
+						printf("**1.     租    金       **\n");
+						printf("**2.     层    数       **\n");
+						printf("**3.     房产面积       **\n");
+						printf("**                      **\n");
+						printf("**************************\n");
+						scanf("%d", &choice_5);
+						if (choice_5 == 0)
+						{
+							choose();
+							break;
+						}
+						else
+						{
+							bubbleSort_Area(&fl_head, choice_5);
+							choose();
+							printf("*********排序方式*********\n");
+							printf("**                      **\n");
+							printf("**1.     从小到大       **\n");
+							printf("**2.     从大到小       **\n");
+							printf("**                      **\n");
+							printf("**************************\n");
+							scanf("%d", &jug7);
+							choose();
+							list_printfl_cu(fl_head, fl_tail, jug7);
+							printf("按下回车以继续");
+							choose();
+							break;
+						}
 						break;
 					case 5:
 						//空闲中

@@ -1,32 +1,102 @@
 #include "list.h"
 #include "temphead.h"
 
-void outputFL(int position,struct Flat* head)
-{
-	struct Flat* p;
-	p = head->next;
-	for (int i = 0; i < position; i++)
-		p = p->next;
-	printf("编号\t位置\t面积\t房型\t租金\n");
-	printf("%s\t%s\t%.2f\t%d室%d厅\t%.2f\n", p->number, p->city, p->Area, p->shi, p->ting, p->rent);
-}
 
-void list_print(list_1 mylist)
+
+//链表打印
+//judge用于判断正反向打印
+int list_printfl(list_1 mylist_head, list_1 mylist_tail, int judge)
 {
-    struct Flat* head, * end, * temp;
-    head = mylist;
-    end = NULL;
-    temp = head;
-    while (1)
+    int n = 0;
+    struct Flat* p1;
+    if (mylist_head->next == NULL)
     {
-        if ((temp->next == NULL))
-        {
-            return;
-        }
-        printf("%s", temp->number);
-        printf("%4.2f", temp->Area);
-        printf("%d室%d厅\t", temp->shi, temp->ting);
-        printf("%4.2f", temp->rent);
-        temp = temp->next;
+        logError(0);
+        return -1;
     }
+    p1 = mylist_head->next;
+    while (p1 != NULL && judge == 1)
+    {
+        n++;
+        printf("%d:\t", n);
+        printf("%s\t", p1->number);//这里需要更改成序号
+        printf("%4.2f\t", p1->Area);
+        printf("%d室%d厅\t", p1->shi, p1->ting);
+        printf("%d层\t", p1->floor);
+        printf("在%s城市\t", p1->city);
+        printf("租金为%6.2f\t", p1->rent);
+        printf("朝向为");
+        switch ((int)p1->toward)
+        {
+        case 1:
+            printf("东\n");
+            break;
+        case 2:
+            printf("西\n");
+            break;
+        case 3:
+            printf("南\n");
+            break;
+        case 4:
+            printf("北\n");
+            break;
+        case 5:
+            printf("东南\n");
+            break;
+        case 6:
+            printf("东北\n");
+            break;
+        case 7:
+            printf("西南\n");
+            break;
+        case 8:
+            printf("西北\n");
+            break;
+        }
+        p1 = p1->next;
+    }
+    p1 = mylist_tail;
+    assert(p1);
+    while (p1->prev != NULL && judge == 2)
+    {
+        n++;
+        printf("%d:\t", n);
+        assert(p1);
+        printf("%s\t", p1->number);//这里需要更改成序号
+        printf("%4.2f\t", p1->Area);
+        printf("%d室%d厅\t", p1->shi, p1->ting);
+        printf("%d层\t", p1->floor);
+        printf("在%s城市\t", p1->city);
+        printf("租金为%6.2f\t", p1->rent);
+        printf("朝向为");
+        switch ((int)mylist_tail->toward)
+        {
+        case 1:
+            printf("东\n");
+            break;
+        case 2:
+            printf("西\n");
+            break;
+        case 3:
+            printf("南\n");
+            break;
+        case 4:
+            printf("北\n");
+            break;
+        case 5:
+            printf("东南\n");
+            break;
+        case 6:
+            printf("东北\n");
+            break;
+        case 7:
+            printf("西南\n");
+            break;
+        case 8:
+            printf("西北\n");
+            break;
+        }
+        p1 = p1->prev;
+    }
+    return 0;
 }
