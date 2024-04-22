@@ -1241,6 +1241,7 @@ int main()
 						printf("**                      **\n");
 						printf("**************************\n");
 						scanf("%d", &choice_2);
+						choose();
 						switch (choice_2)
 						{
 						case 0:
@@ -1285,6 +1286,7 @@ int main()
 								printf("**                      **\n");
 								printf("**************************\n");
 								scanf("%d", &choice_2);
+								choose();
 								switch (choice_2)
 								{
 								case 0:
@@ -1501,11 +1503,12 @@ int main()
 									}
 									if (jug5)
 									{
-										printf("%s", fl_p1->number);
-										printf("%4.2f\t", fl_p1->Area);
+
+										printf("%s\t", fl_p1->number);
+										printf("%4.2f平方米\n", fl_p1->Area);
 										printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
 										printf("%d层", fl_p1->floor);
-										printf("%s", fl_p1->city);
+										printf("位于%s", fl_p1->city);
 										printf("租金为%6.2f", fl_p1->rent);
 										printf("朝向为");
 										switch ((int)fl_p1->toward)
@@ -1565,6 +1568,74 @@ int main()
 										}
                                     break;
                                 case 2://此处缺少中介查询
+									printf("请输入您想搜索的中介姓名：\n");
+									char input[20];
+									scanf("%s", input);
+									choose();
+									fl_p1 = fl_head->next;
+									ag_p1 = ag_head->next;
+									while (ag_p1 != NULL)
+									{
+										if (!strcmp(input, ag_p1->Name))
+										{
+											printf("编号：");
+											printf("%s\n",ag_p1->Number);
+											printf("姓名：");
+											printf("%s\n", ag_p1->Name);
+											printf("电话：");
+											printf("%s\n", ag_p1->phone_n);
+											break;
+										}
+										ag_p1 = ag_p1->next;
+									}
+									printf("房产信息：\n");
+									int t = 0;
+									while (fl_p1 != NULL)
+									{
+										if (!strcmp(input, fl_p1->agency->Name))
+										{
+											t++;
+											printf("%d:\t", t);
+											printf("%s\t", fl_p1->number);
+											printf("%4.2f\n", fl_p1->Area);
+											printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
+											printf("%d层\t", fl_p1->floor);
+											printf("位于%s\t", fl_p1->city);
+											printf("租金为%6.2f", fl_p1->rent);
+											printf("朝向为");
+											switch ((int)fl_p1->toward)
+											{
+											case 1:
+												printf("东\n");
+												break;
+											case 2:
+												printf("西\n");
+												break;
+											case 3:
+												printf("南\n");
+												break;
+											case 4:
+												printf("北\n");
+												break;
+											case 5:
+												printf("东南\n");
+												break;
+											case 6:
+												printf("东北\n");
+												break;
+											case 7:
+												printf("西南\n");
+												break;
+											case 8:
+												printf("西北\n");
+												break;
+											}
+										}
+										fl_p1 = fl_p1->next;
+									}
+									printf("按下回车以继续\n");
+									getchar();
+									choose();
                                     break;
                                 case 3:
 									printf("请输入希望查找的房屋序号（最多10个字符）：");
@@ -1584,11 +1655,11 @@ int main()
 									}
 									if (jug5)
 									{
-										printf("%s", fl_p1->number);//这里需要更改成序号
-										printf("%4.2f\t", fl_p1->Area);
+										printf("%s\t", fl_p1->number);//这里需要更改成序号
+										printf("%4.2f平方米\n", fl_p1->Area);
 										printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
 										printf("%d层", fl_p1->floor);
-										printf("%s", fl_p1->city);
+										printf("位于%s", fl_p1->city);
 										printf("租金为%6.2f", fl_p1->rent);
 										printf("朝向为");
 										switch ((int)fl_p1->toward)
@@ -1597,10 +1668,10 @@ int main()
 											printf("东\n");
 											break;
 										case 2:
-											printf("西\n");
+											printf("南\n");
 											break;
 										case 3:
-											printf("南\n");
+											printf("西\n");
 											break;
 										case 4:
 											printf("北\n");
@@ -3161,12 +3232,15 @@ int main()
 	filecachAP_write(ap_head);
 	filecachFL_write(fl_head);
 	logInfo(5);
+
+
+
+
 	return 0;
 }
 static void choose()//用于清屏
 {
 	char wait;
-	//getchar();             //吃'\n'
 	scanf("%c", &wait);
 	if (wait == '\n')
 		system("cls");

@@ -249,7 +249,7 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
             {
                 t++;
                 printf("%d:\t", t);
-                printf("%s\t", p1->number);//这里需要更改成序号
+                printf("%s平方米\n", p1->number);//这里需要更改成序号
                 printf("%4.2f\t", p1->Area);
                 printf("%d室%d厅\t", p1->shi, p1->ting);
                 printf("朝向为");
@@ -259,10 +259,10 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -293,7 +293,7 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
                 t++;
                 printf("%d:\t", t);
                 printf("%s\t", mylist_tail->number);//改成序号
-                printf("%4.2f\t", mylist_tail->Area);
+                printf("%4.2f平方米\n", mylist_tail->Area);
                 printf("%d室%d厅\t", mylist_tail->shi, mylist_tail->ting);
                 printf("朝向为");
                 switch ((int)mylist_tail->toward)
@@ -302,10 +302,10 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -337,7 +337,7 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
             {
                 t++;
                 printf("%d:\t", t);
-                printf("%s\t", p1->number);//这里需要更改成序号
+                printf("%s平方米\n", p1->number);//这里需要更改成序号
                 printf("%4.2f\t", p1->Area);
                 printf("%d室%d厅\t", p1->shi, p1->ting);
                 printf("朝向为");
@@ -347,10 +347,10 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -380,7 +380,7 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
             {
                 t++;
                 printf("%d:\t", t);
-                printf("%s\t", mylist_tail->number);//改成序号
+                printf("%s平方米\n", mylist_tail->number);//改成序号
                 printf("%4.2f\t", mylist_tail->Area);
                 printf("%d室%d厅\t", mylist_tail->shi, mylist_tail->ting);
                 printf("朝向为");
@@ -390,10 +390,10 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -425,7 +425,7 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
             {
                 t++;
                 printf("%d:\t", t);
-                printf("%s\t", p1->number);//这里需要更改成序号
+                printf("%s平方米\n", p1->number);//这里需要更改成序号
                 printf("%4.2f\t", p1->Area);
                 printf("%d室%d厅\t", p1->shi, p1->ting);
                 printf("朝向为");
@@ -435,10 +435,10 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -469,7 +469,7 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
                 t++;
                 printf("%d:\t", t);
                 printf("%s\t", mylist_tail->number);//改成序号
-                printf("%4.2f\t", mylist_tail->Area);
+                printf("%4.2f平方米\n", mylist_tail->Area);
                 printf("%d室%d厅\t", mylist_tail->shi, mylist_tail->ting);
                 printf("朝向为");
                 switch ((int)mylist_tail->toward)
@@ -478,10 +478,10 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
