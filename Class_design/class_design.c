@@ -1067,12 +1067,11 @@ int main()
 												extend_writeFlat(fl_p1, fl_head, fl_tail, city, Area, t, floor, rent, shi, ting, NULL);
 												fl_tail = fl_tail->next;
 												printf("信息录入成功\n");
-												printf("目前有%d个房源\n", fl_number);
-												printf("按下回车以继续\n");
-												getchar();
-												choose();
-												break;
 											}
+											printf("目前有%d个房源\n", fl_number);
+											printf("按下回车以继续\n");
+											getchar();
+											choose();
 										}
 										if (choice_2 == 0)
 										{
@@ -1204,6 +1203,7 @@ int main()
 										printf("请按照城市/面积/室/厅/朝向/楼层/租金顺序输入\n");
 										for (int i = 0; i < input_number; i++)
 										{
+											printf("请输入\n");
 											char city[20];
 											float Area;
 											int shi;
@@ -1216,13 +1216,15 @@ int main()
 											extend_writeFlat(fl_p1, fl_head, fl_tail, city, Area, t, floor, rent, shi, ting, NULL);
 											fl_tail = fl_tail->next;
 											printf("信息录入成功\n");
-											printf("目前有%d个房源\n", fl_number);
-											printf("按下回车以继续\n");
-											getchar();
-											choose();
-											break;
+											printf("其编号为%s\n", fl_tail->number);
 										}
+										printf("目前有%d个房源\n", fl_number);
+										printf("按下回车以继续\n");
+										getchar();
+										choose();
+										break;
 									}
+
 									}
 								}
 								break;
@@ -1458,7 +1460,7 @@ int main()
                                 scanf("%d", &right);
                                 choose();
                                 int t;
-                                t=range_search_Area(left, right, fl_head, fl_tail, choice_6, jug7);
+                                t=range_search_Area(left, right, fl_head, fl_tail, jug7, choice_6);
                                 printf("共有%d间房子符合标准\n",t);
                                 printf("按下回车以继续\n");
                                 getchar();
@@ -1725,8 +1727,7 @@ int main()
 							scanf("%d", &jug7);
 							choose();
 							list_printfl(fl_head, fl_tail, jug7);
-							printf("按下回车以继续\n");
-							getchar();
+							printf("按下回车以继续");
 							choose();
 							break;
 						}
@@ -1746,18 +1747,24 @@ int main()
 								a++;
 							fl_p1 = fl_p1->next;
 						}
-						printf("房屋出租率：%.2f%%\n\n", (float)a/(float)countNumberFL(fl_head)*100);
+						printf("房屋出租率：%.2f%%\n\n", (float)a/(float)countNumberFL(fl_head)*100.0f);
 						printf("*********信息统计*********\n");
+						printf("**                      **\n");
 						printf("**0.     返    回       **\n");
+						printf("**                      **\n");
 						printf("*********预约信息*********\n");
+						printf("**                      **\n");
 						printf("**1.     展    示       **\n");
 						printf("**2.     按 时 间       **\n");
+						printf("**                      **\n");
 						printf("*********房源信息*********\n");
+						printf("**                      **\n");
 						printf("**3.     展    示       **\n");
 						printf("**4.     按 面 积       **\n");
 						printf("**5.     按 朝 向       **\n");
 						printf("**6.     按 城 市       **\n");
 						printf("**7.     按 格 局       **\n");
+						printf("**                      **\n");
 						printf("**************************\n");
 						scanf("%d", &choice_5);
 						choose();
@@ -1784,8 +1791,8 @@ int main()
 							}
 							printf("完成数：%d\n", a);
 							printf("过期数：%d\n", b);
-							printf("完成率：%.2f\n", (float)a / (float)countNumberAP(ap_head));
-							printf("过期率：%.2f\n", (float)b / (float)countNumberAP(ap_head));
+							printf("完成率：%.2f%%\n", (float)a / (float)countNumberAP(ap_head)*100.0f);
+							printf("过期率：%.2f%%\n", (float)b / (float)countNumberAP(ap_head)*100.0f);
 						}
 							break;
 						case 2:
@@ -1803,14 +1810,224 @@ int main()
 								break;
 							}
 							int a = 0;
+							int b = 0;
+							int c = 0;
+							int num = 0;
 							ap_p = ap_head;
 							while (ap_p != NULL)
 							{
-								if (ap_p->year >= year && ap_p->year <= year2 && ap_p->month >= month && ap_p->month <= month2 && ap_p->day >= day && ap_p->day <= day2 && ap_p->statment == 1);
-									a++;
+								if (ap_p->year >= year && ap_p->year <= year2 && ap_p->month >= month && ap_p->month <= month2 && ap_p->day >= day && ap_p->day <= day2);
+								{
+									switch (ap_p->statment)
+									{
+									case 0:
+										b++;
+										break;
+									case 1:
+										a++;
+										break;
+									case 2:
+										c++;
+									}
+									num++;
+								}
 								ap_p = ap_p->next;
 							}
-							printf("有效的预约有%d\n", a);
+							printf("有效的预约有%d个\n", a);
+							printf("过期的预约有%d个\n", c);
+							printf("完成的预约有%d个\n", b);
+							printf("完成率为%.2f%%\n", (float)b / (float)num);
+							break;
+						case 3:
+							//完工
+							fl_p1 = fl_head->next;
+							int a1 = 0;
+							int b1 = 0;
+							while (fl_p1 != NULL)
+							{
+								if (fl_p1->statment == true)
+									a1++;
+								else
+									b1++;
+								fl_p1 = fl_p1->next;
+							}
+							printf("未出租的房源有%d个\n", a1);
+							printf("已出租的房源有%d个\n", b1);
+							break;
+						case 4:
+							//面积
+						{
+							int r = 0, l = 0;
+							printf("请输入左值，右值:");
+							scanf("%d%d", &r, &l);
+							if (r > l);//修正
+							{
+								int t = r;
+								r = l;
+								l = t;
+							}
+							printf("面积大于%d平方米小于%d平方米的有%d个\n", r, l, range_search_Area(l, r, fl_head, fl_tail, 1, 3));
+						}
+							break;
+						case 5:
+							//朝向
+						{
+							int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0;
+							fl_p1 = fl_head->next;
+							while (fl_p1 != NULL)
+							{
+								switch ((int)fl_p1->toward)
+								{
+								case 1:
+									a++;
+									break;
+								case 2:
+									b++;
+									break;
+								case 3:
+									c++;
+									break;
+								case 4:
+									d++;
+									break;
+								case 5:
+									e++;
+									break;
+								case 6:
+									f++;
+									break;
+								case 7:
+									g++;
+									break;
+								case 8:
+									h++;
+									break;
+								}
+								fl_p1 = fl_p1->next;
+							}
+							printf("东：%d\t西：%d\t南：%d\t北：%d\t东南：%d\t东北：%d\t西南：%d\t西北：%d\n", a, b, c, d, e, f, g, h);
+						}
+							break;
+						case 6:
+							//城市
+						{
+							int j = 0;
+							typedef struct city
+							{
+								char p[20];
+								int num;
+								struct city* next;
+							}City;
+							City *p, *head, *tail;
+							p = (struct city*)malloc(sizeof(struct city));
+							assert(p);
+							head = p;
+							tail = p;
+							p->next = NULL;
+							memset(p->p, 0, sizeof(p->p));
+							fl_p1 = fl_head->next;
+							while (fl_p1 != NULL)
+							{
+								p = head->next;
+								j = 1;
+								while (p != NULL)
+								{
+									if (!strcmp(fl_p1->city, p->p))
+									{
+										j = 0;
+										p->num++;
+										break;
+									}									
+									p = p->next;
+								}
+								if (head->next == NULL || j)
+								{
+									p = (struct city*)malloc(sizeof(struct city));
+									assert(p);
+									strcpy(p->p, fl_p1->city);
+									p->num = 1;
+									tail->next = p;
+									tail = p;
+									p->next = NULL;
+								}
+								fl_p1 = fl_p1->next;
+							}
+							p = head->next;
+							while (p != NULL)
+							{
+								printf("%s：%d\n", p->p, p->num);
+								p = p->next;
+							}
+							p = head;
+							City* p2 = NULL;
+							while (p != NULL)
+							{
+								p2 = p;
+								p = p->next;
+								free(p2);
+							}
+						}
+							break;
+						case 7:
+							//格局
+						{
+							int j = 0;
+							typedef struct shiting
+							{
+								int shi;
+								int ting;//几室几厅
+								int num;
+								struct shiting* next;
+							}Shiting;
+							Shiting* p, * head, * tail;
+							p = (struct shiting*)malloc(sizeof(struct shiting));
+							assert(p);
+							head = p;
+							tail = p;
+							p->next = NULL;
+							fl_p1 = fl_head->next;
+							while (fl_p1 != NULL)
+							{
+								p = head->next;
+								j = 1;
+								while (p != NULL)
+								{
+									if (fl_p1->shi==p->shi&&fl_p1->ting==p->ting)
+									{
+										j = 0;
+										p->num++;
+										break;
+									}
+									p = p->next;
+								}
+								if (head->next == NULL || j)
+								{
+									p = (struct shiting*)malloc(sizeof(struct shiting));
+									assert(p);
+									p->shi = fl_p1->shi;
+									p->ting = fl_p1->ting;
+									p->num = 1;
+									tail->next = p;
+									tail = p;
+									p->next = NULL;
+								}
+								fl_p1 = fl_p1->next;
+							}
+							p = head->next;
+							while (p != NULL)
+							{
+								printf("%d室%d厅：%d\n", p->shi, p->ting, p->num);
+								p = p->next;
+							}
+							p = head;
+							Shiting* p2 = NULL;
+							while (p != NULL)
+							{
+								p2 = p;
+								p = p->next;
+								free(p2);
+							}
+						}
 							break;
 						}
 						printf("按下回车以继续\n");

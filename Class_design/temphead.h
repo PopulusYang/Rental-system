@@ -27,6 +27,8 @@ void logWarning(int kind);
 int* number_seach(char* input_num, int* num_group, int max);//整型数据搜索
 
 int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Flat* fh, struct Appointment* aph, int kind);
+
+int toward_search(list_1 mylist_head, int i);//朝向查找
 /*********
 来自sort.c
 **********/
@@ -59,10 +61,8 @@ int fl_change(list_1 fl_p1);
 int range_search_Area(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2);//以房产面积为例子
 //延长extendApm链表
 int extendApm(struct Appointment* p, struct Appointment* tail, int year, int month, int day, struct Flat* flat, struct Customer* custom);
-//打印链表
-int list_printfl(list_1 mylist_head, list_1 mylist_tail, int judge);
-//朝向查找
-int toward_search(list_1 mylist_head, int i);
+
+
 /***********
 来自others.c
 ************/
@@ -101,10 +101,8 @@ void loading();
 来自output.c
 ************/
 
-void outputFL(int position, struct Flat* head);
-
-void list_print(list_1 mylist);
-
+//输出房痔
+int list_printfl(list_1 mylist_head, list_1 mylist_tail, int judge);//打印链表
 /************
 来自filecach.h
 *************/

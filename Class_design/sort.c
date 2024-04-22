@@ -63,7 +63,7 @@ void bubbleSort_Area(Flat** head,int jug)
 		return; // 空链表或只有一个节点，无需排序  
 	}
 	int swapped;
-	if (jug = 1)
+	if (jug == 1)
 	{
 		do
 		{
@@ -123,7 +123,7 @@ void bubbleSort_Area(Flat** head,int jug)
 			}
 		} while (swapped); // 如果本轮没有交换，则排序完成  
 	}
-	if (jug = 2)
+	if (jug == 2)
 	{
 		do
 		{
@@ -183,7 +183,7 @@ void bubbleSort_Area(Flat** head,int jug)
 			}
 		} while (swapped); // 如果本轮没有交换，则排序完成  
 	}
-	if (jug = 3)
+	if (jug == 3)
 	{
 		do
 		{
