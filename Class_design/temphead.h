@@ -29,6 +29,11 @@ int* number_seach(char* input_num, int* num_group, int max);//整型数据搜索
 int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Flat* fh, struct Appointment* aph, int kind);
 
 int toward_search(list_1 mylist_head, int i);//朝向查找
+
+//朝向搜索有中介的房产
+int toward_search_cu(list_1 mylist_head, int i);
+//朝向搜索没有中介的房产
+int toward_search_ag(list_1 mylist_head, int i);
 /*********
 来自sort.c
 **********/
@@ -61,6 +66,15 @@ int fl_change(list_1 fl_p1);
 int range_search_Area(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2);//以房产面积为例子
 //延长extendApm链表
 int extendApm(struct Appointment* p, struct Appointment* tail, int year, int month, int day, struct Flat* flat, struct Customer* custom);
+
+//打印有中介的房产
+int list_printfl_ag(list_1 mylist_head, list_1 mylist_tail, int judge);
+//打印没有中介的房产
+int list_printfl_cu(list_1 mylist_head, list_1 mylist_tail, int judge);
+//范围搜索有中介的房产
+int range_search_cu(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2);
+//范围搜索没有中介的房产
+int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2);
 
 
 /***********

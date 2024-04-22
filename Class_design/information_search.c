@@ -842,3 +842,113 @@ int toward_search(list_1 mylist_head, int i)
 	}
 	return n;
 }
+
+
+int toward_search_ag(list_1 mylist_head, int i)
+{
+	int n = 0;
+	struct Flat* p1;
+	if (mylist_head->next == NULL)
+	{
+		logError(0);
+		return -1;
+	}
+	p1 = mylist_head->next;
+	while (p1 != NULL)
+	{
+		//这块需要加入打印
+		if ((int)p1->toward == i && p1->agency == NULL)
+		{
+			n++;
+			printf("%d:\t", n);
+			printf("%s平方米\n", p1->number);//这里需要更改成序号
+			printf("%4.2f\t", p1->Area);
+			printf("%d室%d厅\t", p1->shi, p1->ting);
+			printf("朝向为");
+			switch ((int)p1->toward)
+			{
+			case 1:
+				printf("东\n");
+				break;
+			case 2:
+				printf("南\n");
+				break;
+			case 3:
+				printf("西\n");
+				break;
+			case 4:
+				printf("北\n");
+				break;
+			case 5:
+				printf("东南\n");
+				break;
+			case 6:
+				printf("东北\n");
+				break;
+			case 7:
+				printf("西南\n");
+				break;
+			case 8:
+				printf("西北\n");
+				break;
+
+			}
+		}
+		p1 = p1->next;
+	}
+	return n;
+}
+int toward_search_cu(list_1 mylist_head, int i)
+{
+	int n = 0;
+	struct Flat* p1;
+	if (mylist_head->next == NULL)
+	{
+		logError(0);
+		return -1;
+	}
+	p1 = mylist_head->next;
+	while (p1 != NULL)
+	{
+		//这块需要加入打印
+		if ((int)p1->toward == i && p1->agency != NULL)
+		{
+			n++;
+			printf("%d:\t", n);
+			printf("%s平方米\n", p1->number);//这里需要更改成序号
+			printf("%4.2f\t", p1->Area);
+			printf("%d室%d厅\t", p1->shi, p1->ting);
+			printf("朝向为");
+			switch ((int)p1->toward)
+			{
+			case 1:
+				printf("东\n");
+				break;
+			case 2:
+				printf("南\n");
+				break;
+			case 3:
+				printf("西\n");
+				break;
+			case 4:
+				printf("北\n");
+				break;
+			case 5:
+				printf("东南\n");
+				break;
+			case 6:
+				printf("东北\n");
+				break;
+			case 7:
+				printf("西南\n");
+				break;
+			case 8:
+				printf("西北\n");
+				break;
+
+			}
+		}
+		p1 = p1->next;
+	}
+	return n;
+}
