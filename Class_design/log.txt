@@ -54,6 +54,7 @@
 [Info]The file has been modified.
 =======
 >>>>>>> 67bbd3d19ff3e4c173d2db5793f276c0015e3e0f
+<<<<<<< HEAD
 [Info]The file has been modified.
 [Info]A user has registered.
 [Info]A user logged in.
@@ -85,3 +86,5 @@
 [Info]A user logged in.
 [Warn]User login failed.
 [Info]A user logged in.
+=======
+>>>>>>> d1d65ceb2ea24d30c2b995c29c279597995746c9
