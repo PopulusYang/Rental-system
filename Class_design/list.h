@@ -1,5 +1,6 @@
 #pragma once
 #include "temphead.h"
+#include <stdbool.h>
 #pragma warning(disable:6031) 
 typedef struct Flat Flat, * list_1;
 //链表声明
@@ -54,6 +55,7 @@ struct Flat//房痔
     float rent, agency_fee, deposit;//费用，包括租金、中介费、押金
     struct Agency* agency;//中介
     char agposition[9];
+    bool statment;
 };
 
 

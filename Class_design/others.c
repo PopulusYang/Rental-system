@@ -51,7 +51,7 @@ char* radom_string(int n)
 	str = (char*)malloc(n * sizeof(char));
 	if (str == NULL)
 	{
-		logError(1);
+		logError(0);
 		return NULL;
 	}
 	memset(str, 0, (n) * sizeof(char));
@@ -76,7 +76,7 @@ char* radom_number(int n)
 	str = (char*)malloc(n * sizeof(char));
 	if (str == NULL)
 	{
-		logError(1);
+		logError(0);
 		return NULL;
 	}
 	memset(str, 0, (n) * sizeof(char));
