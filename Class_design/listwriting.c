@@ -173,7 +173,7 @@ int extendCustomer(char* Account, char* key, struct Customer* p1, struct Custome
 }
 
 //延长预约信息
-int extendApm(struct Appointment* p, struct Appointment* tail, int year, int month, int day, struct Flat* flat, struct Customer* custom)
+int extendApm(struct Appointment* p, struct Appointment* tail, struct Appintment *head,int year, int month, int day, struct Flat* flat, struct Customer* custom)
 {
     p = (struct Appointment*)malloc(sizeof(struct Appointment));
     if (p == NULL)//注意安全
@@ -188,6 +188,17 @@ int extendApm(struct Appointment* p, struct Appointment* tail, int year, int mon
     p->flat = flat;
     strcpy(p->cuposition, custom->Account);
     strcpy(p->flposition, flat->number);
+    char* temp;
+    temp = radom_number(8);//生成编号
+
+    while (checkRecurAP(temp, head))//查重
+    {
+        free(temp);
+        temp = radom_number(8);
+    }
+    strcpy(p->Number, temp);//复制
+    p->statment = 1;
+    free(temp);
     tail->next = p;
     p->next = NULL;
     return 0;
