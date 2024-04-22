@@ -952,3 +952,567 @@ int toward_search_cu(list_1 mylist_head, int i)
 	}
 	return n;
 }
+
+int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2)//以房产面积为例子
+{
+	Flat* temp;
+	temp = mylist_head;
+	bubbleSort_Area(&temp, jug2);
+	struct Flat* p1;
+	int t = 0;
+	//正序
+	if (mylist_head->next == NULL)
+	{
+		logError(0);
+		return -1;
+	}
+	p1 = mylist_head->next;
+	assert(p1);
+	if (jug2 == 1)
+	{
+		while (p1 != NULL && jug == 1)
+		{
+			//这块需要加入打印
+			if (p1->rent >= l && p1->rent <= r && p1->agency == NULL)
+			{
+				t++;
+				printf("%d:\t", t);
+				printf("%s平方米\n", p1->number);//这里需要更改成序号
+				printf("%4.2f\t", p1->Area);
+				printf("%d室%d厅\t", p1->shi, p1->ting);
+				printf("朝向为");
+				switch ((int)p1->toward)
+				{
+				case 1:
+					printf("东\n");
+					break;
+				case 2:
+					printf("南\n");
+					break;
+				case 3:
+					printf("西\n");
+					break;
+				case 4:
+					printf("北\n");
+					break;
+				case 5:
+					printf("东南\n");
+					break;
+				case 6:
+					printf("东北\n");
+					break;
+				case 7:
+					printf("西南\n");
+					break;
+				case 8:
+					printf("西北\n");
+					break;
+
+				}
+			}
+			p1 = p1->next;
+		}
+		//倒序
+		while (mylist_tail->prev != NULL && jug == 2)
+		{
+			//这块需要加入打印
+			if (mylist_tail->rent >= l && mylist_tail->rent <= r && mylist_tail->agency == NULL)
+			{
+				t++;
+				printf("%d:\t", t);
+				printf("%s\t", mylist_tail->number);//改成序号
+				printf("%4.2f平方米\n", mylist_tail->Area);
+				printf("%d室%d厅\t", mylist_tail->shi, mylist_tail->ting);
+				printf("朝向为");
+				switch ((int)mylist_tail->toward)
+				{
+				case 1:
+					printf("东\n");
+					break;
+				case 2:
+					printf("南\n");
+					break;
+				case 3:
+					printf("西\n");
+					break;
+				case 4:
+					printf("北\n");
+					break;
+				case 5:
+					printf("东南\n");
+					break;
+				case 6:
+					printf("东北\n");
+					break;
+				case 7:
+					printf("西南\n");
+					break;
+				case 8:
+					printf("西北\n");
+					break;
+
+				}
+			}
+			mylist_tail = mylist_tail->prev;
+		}
+	}
+	if (jug2 == 2)
+	{
+		while (p1 != NULL && jug == 1)
+		{
+			//这块需要加入打印
+			if (p1->floor >= l && p1->floor <= r && p1->agency == NULL)
+			{
+				t++;
+				printf("%d:\t", t);
+				printf("%s平方米\n", p1->number);//这里需要更改成序号
+				printf("%4.2f\t", p1->Area);
+				printf("%d室%d厅\t", p1->shi, p1->ting);
+				printf("朝向为");
+				switch ((int)p1->toward)
+				{
+				case 1:
+					printf("东\n");
+					break;
+				case 2:
+					printf("南\n");
+					break;
+				case 3:
+					printf("西\n");
+					break;
+				case 4:
+					printf("北\n");
+					break;
+				case 5:
+					printf("东南\n");
+					break;
+				case 6:
+					printf("东北\n");
+					break;
+				case 7:
+					printf("西南\n");
+					break;
+				case 8:
+					printf("西北\n");
+					break;
+
+				}
+			}
+			p1 = p1->next;
+		}
+		//倒序
+		while (mylist_tail->prev != NULL && jug == 2)
+		{
+			//这块需要加入打印
+			if (mylist_tail->floor >= l && mylist_tail->floor <= r && mylist_tail->agency == NULL)
+			{
+				t++;
+				printf("%d:\t", t);
+				printf("%s平方米\n", mylist_tail->number);//改成序号
+				printf("%4.2f\t", mylist_tail->Area);
+				printf("%d室%d厅\t", mylist_tail->shi, mylist_tail->ting);
+				printf("朝向为");
+				switch ((int)mylist_tail->toward)
+				{
+				case 1:
+					printf("东\n");
+					break;
+				case 2:
+					printf("南\n");
+					break;
+				case 3:
+					printf("西\n");
+					break;
+				case 4:
+					printf("北\n");
+					break;
+				case 5:
+					printf("东南\n");
+					break;
+				case 6:
+					printf("东北\n");
+					break;
+				case 7:
+					printf("西南\n");
+					break;
+				case 8:
+					printf("西北\n");
+					break;
+
+				}
+			}
+			mylist_tail = mylist_tail->prev;
+		}
+	}
+	if (jug2 == 3)
+	{
+		while (p1 != NULL && jug == 1)
+		{
+			//这块需要加入打印
+			if (p1->Area >= l && p1->Area <= r && p1->agency == NULL)
+			{
+				t++;
+				printf("%d:\t", t);
+				printf("%s平方米\n", p1->number);//这里需要更改成序号
+				printf("%4.2f\t", p1->Area);
+				printf("%d室%d厅\t", p1->shi, p1->ting);
+				printf("朝向为");
+				switch ((int)p1->toward)
+				{
+				case 1:
+					printf("东\n");
+					break;
+				case 2:
+					printf("南\n");
+					break;
+				case 3:
+					printf("西\n");
+					break;
+				case 4:
+					printf("北\n");
+					break;
+				case 5:
+					printf("东南\n");
+					break;
+				case 6:
+					printf("东北\n");
+					break;
+				case 7:
+					printf("西南\n");
+					break;
+				case 8:
+					printf("西北\n");
+					break;
+
+				}
+			}
+			p1 = p1->next;
+		}
+		//倒序
+		while (mylist_tail->prev != NULL && jug == 2)
+		{
+			//这块需要加入打印
+			if (mylist_tail->Area >= l && mylist_tail->Area <= r && mylist_tail->agency == NULL)
+			{
+				t++;
+				printf("%d:\t", t);
+				printf("%s\t", mylist_tail->number);//改成序号
+				printf("%4.2f平方米\n", mylist_tail->Area);
+				printf("%d室%d厅\t", mylist_tail->shi, mylist_tail->ting);
+				printf("朝向为");
+				switch ((int)mylist_tail->toward)
+				{
+				case 1:
+					printf("东\n");
+					break;
+				case 2:
+					printf("南\n");
+					break;
+				case 3:
+					printf("西\n");
+					break;
+				case 4:
+					printf("北\n");
+					break;
+				case 5:
+					printf("东南\n");
+					break;
+				case 6:
+					printf("东北\n");
+					break;
+				case 7:
+					printf("西南\n");
+					break;
+				case 8:
+					printf("西北\n");
+					break;
+
+				}
+			}
+			mylist_tail = mylist_tail->prev;
+		}
+	}
+	return t;
+}
+int range_search_cu(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2)//以房产面积为例子
+{
+	Flat* temp;
+	temp = mylist_head;
+	bubbleSort_Area(&temp, jug2);
+	struct Flat* p1;
+	int t = 0;
+	//正序
+	if (mylist_head->next == NULL)
+	{
+		logError(0);
+		return -1;
+	}
+	p1 = mylist_head->next;
+	assert(p1);
+	if (jug2 == 1)
+	{
+		while (p1 != NULL && jug == 1)
+		{
+			//这块需要加入打印
+			if (p1->rent >= l && p1->rent <= r && p1->agency != NULL)
+			{
+				t++;
+				printf("%d:\t", t);
+				printf("%s平方米\n", p1->number);//这里需要更改成序号
+				printf("%4.2f\t", p1->Area);
+				printf("%d室%d厅\t", p1->shi, p1->ting);
+				printf("朝向为");
+				switch ((int)p1->toward)
+				{
+				case 1:
+					printf("东\n");
+					break;
+				case 2:
+					printf("南\n");
+					break;
+				case 3:
+					printf("西\n");
+					break;
+				case 4:
+					printf("北\n");
+					break;
+				case 5:
+					printf("东南\n");
+					break;
+				case 6:
+					printf("东北\n");
+					break;
+				case 7:
+					printf("西南\n");
+					break;
+				case 8:
+					printf("西北\n");
+					break;
+
+				}
+			}
+			p1 = p1->next;
+		}
+		//倒序
+		while (mylist_tail->prev != NULL && jug == 2)
+		{
+			//这块需要加入打印
+			if (mylist_tail->rent >= l && mylist_tail->rent <= r && mylist_tail->agency != NULL)
+			{
+				t++;
+				printf("%d:\t", t);
+				printf("%s\t", mylist_tail->number);//改成序号
+				printf("%4.2f平方米\n", mylist_tail->Area);
+				printf("%d室%d厅\t", mylist_tail->shi, mylist_tail->ting);
+				printf("朝向为");
+				switch ((int)mylist_tail->toward)
+				{
+				case 1:
+					printf("东\n");
+					break;
+				case 2:
+					printf("南\n");
+					break;
+				case 3:
+					printf("西\n");
+					break;
+				case 4:
+					printf("北\n");
+					break;
+				case 5:
+					printf("东南\n");
+					break;
+				case 6:
+					printf("东北\n");
+					break;
+				case 7:
+					printf("西南\n");
+					break;
+				case 8:
+					printf("西北\n");
+					break;
+
+				}
+			}
+			mylist_tail = mylist_tail->prev;
+		}
+	}
+	if (jug2 == 2)
+	{
+		while (p1 != NULL && jug == 1)
+		{
+			//这块需要加入打印
+			if (p1->floor >= l && p1->floor <= r && p1->agency != NULL)
+			{
+				t++;
+				printf("%d:\t", t);
+				printf("%s平方米\n", p1->number);//这里需要更改成序号
+				printf("%4.2f\t", p1->Area);
+				printf("%d室%d厅\t", p1->shi, p1->ting);
+				printf("朝向为");
+				switch ((int)p1->toward)
+				{
+				case 1:
+					printf("东\n");
+					break;
+				case 2:
+					printf("南\n");
+					break;
+				case 3:
+					printf("西\n");
+					break;
+				case 4:
+					printf("北\n");
+					break;
+				case 5:
+					printf("东南\n");
+					break;
+				case 6:
+					printf("东北\n");
+					break;
+				case 7:
+					printf("西南\n");
+					break;
+				case 8:
+					printf("西北\n");
+					break;
+
+				}
+			}
+			p1 = p1->next;
+		}
+		//倒序
+		while (mylist_tail->prev != NULL && jug == 2)
+		{
+			//这块需要加入打印
+			if (mylist_tail->floor >= l && mylist_tail->floor <= r && mylist_tail->agency != NULL)
+			{
+				t++;
+				printf("%d:\t", t);
+				printf("%s平方米\n", mylist_tail->number);//改成序号
+				printf("%4.2f\t", mylist_tail->Area);
+				printf("%d室%d厅\t", mylist_tail->shi, mylist_tail->ting);
+				printf("朝向为");
+				switch ((int)mylist_tail->toward)
+				{
+				case 1:
+					printf("东\n");
+					break;
+				case 2:
+					printf("南\n");
+					break;
+				case 3:
+					printf("西\n");
+					break;
+				case 4:
+					printf("北\n");
+					break;
+				case 5:
+					printf("东南\n");
+					break;
+				case 6:
+					printf("东北\n");
+					break;
+				case 7:
+					printf("西南\n");
+					break;
+				case 8:
+					printf("西北\n");
+					break;
+
+				}
+			}
+			mylist_tail = mylist_tail->prev;
+		}
+	}
+	if (jug2 == 3)
+	{
+		while (p1 != NULL && jug == 1)
+		{
+			//这块需要加入打印
+			if (p1->Area >= l && p1->Area <= r && p1->agency != NULL)
+			{
+				t++;
+				printf("%d:\t", t);
+				printf("%s平方米\n", p1->number);//这里需要更改成序号
+				printf("%4.2f\t", p1->Area);
+				printf("%d室%d厅\t", p1->shi, p1->ting);
+				printf("朝向为");
+				switch ((int)p1->toward)
+				{
+				case 1:
+					printf("东\n");
+					break;
+				case 2:
+					printf("南\n");
+					break;
+				case 3:
+					printf("西\n");
+					break;
+				case 4:
+					printf("北\n");
+					break;
+				case 5:
+					printf("东南\n");
+					break;
+				case 6:
+					printf("东北\n");
+					break;
+				case 7:
+					printf("西南\n");
+					break;
+				case 8:
+					printf("西北\n");
+					break;
+
+				}
+			}
+			p1 = p1->next;
+		}
+		//倒序
+		while (mylist_tail->prev != NULL && jug == 2)
+		{
+			//这块需要加入打印
+			if (mylist_tail->Area >= l && mylist_tail->Area <= r && mylist_tail->agency != NULL)
+			{
+				t++;
+				printf("%d:\t", t);
+				printf("%s\t", mylist_tail->number);//改成序号
+				printf("%4.2f平方米\n", mylist_tail->Area);
+				printf("%d室%d厅\t", mylist_tail->shi, mylist_tail->ting);
+				printf("朝向为");
+				switch ((int)mylist_tail->toward)
+				{
+				case 1:
+					printf("东\n");
+					break;
+				case 2:
+					printf("南\n");
+					break;
+				case 3:
+					printf("西\n");
+					break;
+				case 4:
+					printf("北\n");
+					break;
+				case 5:
+					printf("东南\n");
+					break;
+				case 6:
+					printf("东北\n");
+					break;
+				case 7:
+					printf("西南\n");
+					break;
+				case 8:
+					printf("西北\n");
+					break;
+
+				}
+			}
+			mylist_tail = mylist_tail->prev;
+		}
+	}
+	return t;
+}
+
