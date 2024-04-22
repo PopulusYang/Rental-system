@@ -50,4 +50,7 @@
 [Info]The file has been modified.
 [Info]The file has been modified.
 >>>>>>> 16279b6b64cd64088564e27915483ba89b17b942
+<<<<<<< HEAD
 [Info]The file has been modified.
+=======
+>>>>>>> 67bbd3d19ff3e4c173d2db5793f276c0015e3e0f

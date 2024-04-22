@@ -3425,6 +3425,7 @@ int main()
 								{
 									if (!strcmp(input, fl_p1->agency->Name))
 									{
+
 										t++;
 										printf("%d:\t", t);
 										printf("%s\t", fl_p1->number);
@@ -3478,6 +3479,8 @@ int main()
 									fl_p1 = fl_head->next;
 									for (int j = 0; j != tempIntPtr[i]; j++)
 										fl_p1 = fl_p1->next;
+									jug6 = 1;
+									ap_p = ap_head->next;
 									while (ap_p != NULL)
 									{
 										if (ap_p->flat == fl_p1)
