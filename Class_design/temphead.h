@@ -24,7 +24,6 @@ void logWarning(int kind);
 来自information_search.c
 ************************/
 
-int* number_seach(char* input_num, int* num_group, int max);//整型数据搜索
 
 int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Flat* fh, struct Appointment* aph, int kind);
 
@@ -44,8 +43,6 @@ int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
 **********/
 
 
-//整型数组排序
-int I_sort(float* a, int l, int r);// l 为左端点，r 为右端点
 //链表排序（冒泡)(房子面积）
 void bubbleSort_Area(Flat** head, int jug);
 
@@ -77,8 +74,6 @@ int extendApm(struct Appointment* p, struct Appointment* tail, int year, int mon
 来自others.c
 ************/
 
-//输入的为头和目标数组，返回值为数组中的元素个数
-float* GetNumber_FL_float(struct Flat* head);
 
 //n为字符个数,返回字符串地址
 char* radom_string(int n);

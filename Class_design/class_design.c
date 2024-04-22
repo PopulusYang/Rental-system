@@ -641,6 +641,7 @@ int main()
 												printf("**1.     重置密码       **\n");
 												printf("**2.     修改姓名       **\n");
 												printf("**3.     修改电话       **\n");
+												printf("**4.     修改城市       **\n");
 												printf("**                      **\n");
 												printf("**************************\n");
 												printf("请选择功能：");
@@ -707,6 +708,15 @@ int main()
 													getchar();
 													choose();
 													break;
+												case 4:
+													memset(input_string, 0, sizeof(input_string));
+													printf("请输入新的城市:");
+													scanf("%s", input_string);
+													strcpy(cu_p1->city, input_string);
+													printf("修改成功！\n");
+													printf("回车以继续\n");
+													getchar();
+													choose();
 												}
 												jug5 = 0;//初始化
 											}
@@ -855,6 +865,8 @@ int main()
 															printf("注册成功！\n");
 															printf("请输入用户的姓名：");
 															scanf("%s", cu_p1->Name);
+															printf("请输入城市：");
+															scanf("%s", cu_p1->city);
 															printf("回车以继续\n");
 															getchar();
 															choose();
@@ -3225,13 +3237,13 @@ int main()
 						cu_p1 = cu_tail;
 						break;
 					case 1:
-						//空闲中
+						//施工
 						break;
 					case 2:
 						//空闲中
 						break;
 					case 3:
-						//空闲中
+						//施工
 						printf("*********查询方式*********\n");
 						printf("**                      **\n");
 						printf("**0.     返    回       **\n");
@@ -3303,7 +3315,18 @@ int main()
 									fl_p1 = fl_head->next;
 									for (int j = 0; j != tempIntPtr[i]; j++)
 										fl_p1 = fl_p1->next;
-									if (!strcmp(fl_p1->number, input_string)&&fl_p1!=NULL)
+									jug6 = 1;
+									ap_p = ap_head->next;
+									while (ap_p != NULL)
+									{
+										if (ap_p->flat == fl_p1)
+										{
+											jug6 = 0;
+											break;
+										}											
+										ap_p = ap_p->next;
+									}
+									if (!strcmp(fl_p1->number, input_string) && fl_p1 != NULL && fl_p1->statment == true && jug6)
 									{
 										jug5 = 1;
 										break;
@@ -3455,7 +3478,16 @@ int main()
 									fl_p1 = fl_head->next;
 									for (int j = 0; j != tempIntPtr[i]; j++)
 										fl_p1 = fl_p1->next;
-									if (!strcmp(fl_p1->number, input_string) && fl_p1 != NULL)
+									while (ap_p != NULL)
+									{
+										if (ap_p->flat == fl_p1)
+										{
+											jug6 = 0;
+											break;
+										}
+										ap_p = ap_p->next;
+									}
+									if (!strcmp(fl_p1->number, input_string) && fl_p1 != NULL && fl_p1->statment == true && jug6)
 									{
 										jug5 = 1;
 										break;
@@ -3874,6 +3906,8 @@ int main()
 								logInfo(3);
 								printf("请输入您的姓名：");
 								scanf("%s", cu_p1->Name);
+								printf("请输入城市：");
+								scanf("%s", cu_p1->city);
 								printf("回车以继续\n");
 								getchar();
 								choose();

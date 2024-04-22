@@ -39,6 +39,7 @@ struct Customer//×â¿Í
     struct Customer* prev;
     struct Customer* next;
     int statment;
+    char city[20];
 };
 
 struct Flat//·¿ÖÌ
