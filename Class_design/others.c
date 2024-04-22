@@ -2,45 +2,6 @@
 #include "temphead.h"
 
 
-/************************************
-由于部分排序搜索函数使用数组进行操作，
-因此写一个将链表转换成数组的函数很有
-必要
-************************************/
-
-//输入的为头和目标数组，返回值为租金数组地址，其中第一个数是数组元素个数.配合free.
-float* GetNumber_FL_float(struct Flat* head)
-{
-	struct Flat* p;
-	p = head->next;
-	float number = 0.0f;
-	while (p != NULL)
-	{
-		number++;
-		p = p->next;
-	}
-	float* numG;
-	numG = (float*)malloc((int)number * sizeof(float));
-	if (numG == NULL)
-	{
-		logError(0);
-		return NULL;
-	}
-	*(numG++) = number;
-	p = head->next;
-	if (p == NULL)//判断申请的空间是否为空（NULL）
-	{
-		logError(0);
-		return NULL;
-	}
-	while (p != NULL)
-	{
-		assert(numG);
-		*(numG++) = p->rent;
-		p = p->next;
-	}
-	return numG;
-}
 
 
 //n为字符个数,返回字符串地址

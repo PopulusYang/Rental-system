@@ -39,3 +39,8 @@
 [Info]A user logged out.
 [Info]The file has been modified.
 [Info]The file has been modified.
+[Info]The file has been modified.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Info]The file has been modified.

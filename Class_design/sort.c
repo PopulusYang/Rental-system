@@ -1,59 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "temphead.h"
-//数组排序
-int I_sort(float* a, int l, int r)// l 为左端点，r 为右端点
-{
-	a++;
-	if (l >= r)//判断左端点是否在右端点左侧
-	{
-		logError(1);
-		return -1;
-	}
-	float* b = (float*)malloc(r * sizeof(float));
-	float* c = (float*)malloc(r * sizeof(float));
-	float* d = (float*)malloc(r * sizeof(float));
-	if (b == NULL|| c == NULL|| d == NULL)
-	{
-		logError(0);
-		return -1;
-	}
-	int num = rand() % (r - l + 1) + l;
-	int num1 = 0, num2 = 0, num3 = 0; // 随机选择一个数，并定义三个作为下标的变量来记录长度、存放数据
-	for (int i = l; i <= r; i++)// 将 a 中的数分别分到 b, c, d
-	{
-		if (a[i] < a[num]) 
-		{
-			b[num1++] = a[i];
-		}
-		else if (a[i] == a[num]) 
-		{
-			c[num2++] = a[i];
-		}
-		else 
-		{
-			d[num3++] = a[i];
-		}
-	}
-	for (int i = 0; i < num1; i++) // 将 b, c, d 中的数重新放回 a
-	{
-		a[i + l] = b[i];
-	}
-	for (int i = 0; i < num2; i++)
-	{
-		a[i + num1 + l] = c[i];
-	}
-	for (int i = 0; i < num3; i++)// 继续排序原来的 b 和 d
-	{
-		a[i + num1 + num2 + l] = d[i];
-	}
-	free(b);
-	free(c);
-	free(d);
-	I_sort(a,l, l + num1 - 1);
-	I_sort(a,l + num1 + num2, r);
-	return 0;
-}
-
 //链表排序（冒泡)(房子面积）
 //jug用于判断具体排什么的顺序
 void bubbleSort_Area(Flat** head,int jug) 
