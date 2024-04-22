@@ -134,9 +134,8 @@ int main()
 	{
 		time_t now = time(NULL);
 		struct tm* local = localtime(&now);
-		printf("当前时间: %d-%02d-%02d %02d:%02d:%02d\n",
-			local->tm_year + 1900, local->tm_mon + 1, local->tm_mday,
-			local->tm_hour, local->tm_min, local->tm_sec);
+		printf("当前时间: %d-%02d-%02d\n",
+			local->tm_year + 1900, local->tm_mon + 1, local->tm_mday);
 		printf("******登    录******\n");
 		printf("**                **\n");
 		printf("**0.  关    闭    **\n");
@@ -1246,6 +1245,7 @@ int main()
 						switch (choice_2)
 						{
 						case 0:
+							choose();
 							break;
 						case 1:
 							printf("请输入您想要处理的预约信息:");
@@ -1434,7 +1434,8 @@ int main()
 							switch (choice_6)
 							{
 							case 0:
-							  break;
+								choose();
+								break;
 							case 1:
 								printf("*********查询方式*********\n");
 								printf("**                      **\n");
@@ -1482,6 +1483,7 @@ int main()
                                 switch (choice_6)
                                 {
                                 case 0:
+									choose(0);
                                     break;
                                 case 1:
 									printf("请输入希望查找的城市（最多10个字符）：");
@@ -1666,10 +1668,10 @@ int main()
 											printf("东\n");
 											break;
 										case 2:
-											printf("西\n");
+											printf("南\n");
 											break;
 										case 3:
-											printf("南\n");
+											printf("西\n");
 											break;
 										case 4:
 											printf("北\n");
@@ -2102,6 +2104,7 @@ int main()
 							break;
 						}
 						printf("按下回车以继续\n");
+						getchar();
 						choose();
 						break;
 					case 6:
@@ -3207,7 +3210,7 @@ int main()
 					printf("**4.     信息排序       **\n");//交给朱桑了
 					printf("**5.     信息统计       **\n");
 					printf("**6.     更改密码       **\n");
-					printf("**7.     删除账户       **\n");
+					printf("**7.     删除账户       **\n");//完工
 					printf("**                      **\n");
 					printf("**************************\n");
 					printf("请选择功能：");
