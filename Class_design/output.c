@@ -32,10 +32,10 @@ int list_printfl(list_1 mylist_head, list_1 mylist_tail, int judge)
             printf("东\n");
             break;
         case 2:
-            printf("西\n");
+            printf("南\n");
             break;
         case 3:
-            printf("南\n");
+            printf("西\n");
             break;
         case 4:
             printf("北\n");

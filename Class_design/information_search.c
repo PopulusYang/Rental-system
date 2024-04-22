@@ -809,10 +809,10 @@ int toward_search(list_1 mylist_head, int i)
 				printf("东\n");
 				break;
 			case 2:
-				printf("西\n");
+				printf("南\n");
 				break;
 			case 3:
-				printf("南\n");
+				printf("西\n");
 				break;
 			case 4:
 				printf("北\n");

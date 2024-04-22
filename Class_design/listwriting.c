@@ -259,10 +259,10 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -302,10 +302,10 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -347,10 +347,10 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -390,10 +390,10 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -435,10 +435,10 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -478,10 +478,10 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -609,10 +609,10 @@ int list_printfl(list_1 mylist_head, list_1 mylist_tail,int judge)
             printf("东\n");
             break;
         case 2:
-            printf("西\n");
+            printf("南\n");
             break;
         case 3:
-            printf("南\n");
+            printf("西\n");
             break;
         case 4:
             printf("北\n");
@@ -652,10 +652,10 @@ int list_printfl(list_1 mylist_head, list_1 mylist_tail,int judge)
                 printf("东\n");
                 break;
             case 2:
-                printf("西\n");
+                printf("南\n");
                 break;
             case 3:
-                printf("南\n");
+                printf("西\n");
                 break;
             case 4:
                 printf("北\n");
@@ -704,10 +704,10 @@ int toward_search(list_1 mylist_head,int i)
                 printf("东\n");
                 break;
             case 2:
-                printf("西\n");
+                printf("南\n");
                 break;
             case 3:
-                printf("南\n");
+                printf("西\n");
                 break;
             case 4:
                 printf("北\n");
@@ -760,10 +760,10 @@ int list_printfl_ag(list_1 mylist_head, list_1 mylist_tail, int judge)
                 printf("东\n");
                 break;
             case 2:
-                printf("西\n");
+                printf("南\n");
                 break;
             case 3:
-                printf("南\n");
+                printf("西\n");
                 break;
             case 4:
                 printf("北\n");
@@ -806,10 +806,10 @@ int list_printfl_ag(list_1 mylist_head, list_1 mylist_tail, int judge)
                 printf("东\n");
                 break;
             case 2:
-                printf("西\n");
+                printf("南\n");
                 break;
             case 3:
-                printf("南\n");
+                printf("西\n");
                 break;
             case 4:
                 printf("北\n");
@@ -861,10 +861,10 @@ int list_printfl_cu(list_1 mylist_head, list_1 mylist_tail, int judge)
                 printf("东\n");
                 break;
             case 2:
-                printf("西\n");
+                printf("南\n");
                 break;
             case 3:
-                printf("南\n");
+                printf("西\n");
                 break;
             case 4:
                 printf("北\n");
@@ -907,10 +907,10 @@ int list_printfl_cu(list_1 mylist_head, list_1 mylist_tail, int judge)
                 printf("东\n");
                 break;
             case 2:
-                printf("西\n");
+                printf("南\n");
                 break;
             case 3:
-                printf("南\n");
+                printf("西\n");
                 break;
             case 4:
                 printf("北\n");
@@ -967,10 +967,10 @@ int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -1010,10 +1010,10 @@ int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -1055,10 +1055,10 @@ int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -1098,10 +1098,10 @@ int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -1143,10 +1143,10 @@ int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -1186,10 +1186,10 @@ int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -1248,10 +1248,10 @@ int range_search_cu(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -1291,10 +1291,10 @@ int range_search_cu(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -1336,10 +1336,10 @@ int range_search_cu(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -1379,10 +1379,10 @@ int range_search_cu(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -1424,10 +1424,10 @@ int range_search_cu(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -1467,10 +1467,10 @@ int range_search_cu(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
                     printf("东\n");
                     break;
                 case 2:
-                    printf("西\n");
+                    printf("南\n");
                     break;
                 case 3:
-                    printf("南\n");
+                    printf("西\n");
                     break;
                 case 4:
                     printf("北\n");
@@ -1522,10 +1522,10 @@ int toward_search_ag(list_1 mylist_head, int i)
                 printf("东\n");
                 break;
             case 2:
-                printf("西\n");
+                printf("南\n");
                 break;
             case 3:
-                printf("南\n");
+                printf("西\n");
                 break;
             case 4:
                 printf("北\n");
@@ -1576,10 +1576,10 @@ int toward_search_cu(list_1 mylist_head, int i)
                 printf("东\n");
                 break;
             case 2:
-                printf("西\n");
+                printf("南\n");
                 break;
             case 3:
-                printf("南\n");
+                printf("西\n");
                 break;
             case 4:
                 printf("北\n");
