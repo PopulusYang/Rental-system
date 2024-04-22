@@ -7,7 +7,7 @@ void logError(int kind)
 	{
 	case 0:
 		color(4);
-		printf("[ERROR]A pointer points to NULL.Please check the log.");
+		printf("[ERROR]A pointer points to NULL.Please check the log.\n");
 		color(7);
 		FILE* fp;
 		fp = fopen("log.txt", "a");
