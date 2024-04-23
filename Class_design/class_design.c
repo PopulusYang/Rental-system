@@ -1192,18 +1192,17 @@ int main()
 											}
 											if (jug5)
 											{
+												DelListall(fl_head, t);
+												fl_number--;
+												jug5 = 0;//初始化
+												printf("该信息已经删除\n");
+												printf("目前有%d个房源\n", fl_number);
+												printf("按下回车以继续\n");
+												getchar();
+												choose();
 												break;
 											}
 										}
-
-										DelListall(fl_head, t);
-										fl_number--;
-										jug5 = 0;//初始化
-										printf("该信息已经删除\n");
-										printf("目前有%d个房源\n", fl_number);
-										printf("按下回车以继续\n");
-										getchar();
-										choose();
 										break;
 									}
 									case 3://增加房源
@@ -1264,7 +1263,7 @@ int main()
 							printf("请输入您想要处理的预约信息:");
 							memset(input_string, 0, sizeof(input_string));
 							scanf("%s", input_string);
-							tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 1);
+							tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 3);
 							if (*tempIntPtr == 0)
 							{
 								printf("找不到该预约信息");
@@ -1890,7 +1889,7 @@ int main()
 									printf("**************************\n");
 									scanf("%d", &jug7);
 									choose();
-									list_printfl_cu(fl_head, fl_tail, jug7);
+									list_printfl(fl_head, fl_tail, jug7);
 									printf("按下回车以继续\n");
 									getchar();
 									choose();
@@ -1907,7 +1906,7 @@ int main()
 									printf("**************************\n");
 									scanf("%d", &jug7);
 									choose();
-									list_printfl_cu(fl_head, fl_tail, jug7);
+									list_printfl(fl_head, fl_tail, jug7);
 									printf("按下回车以继续\n");
 									getchar();
 									choose();
@@ -1934,7 +1933,7 @@ int main()
 								printf("**************************\n");
 								scanf("%d", &jug7);
 								choose();
-								list_printfl_cu(fl_head, fl_tail, jug7);
+								list_printfl(fl_head, fl_tail, jug7);
 								printf("按下回车以继续\n");
 								getchar();
 								choose();
@@ -2404,6 +2403,7 @@ int main()
 						switch (choice_3)
 						{
 						case 0:
+							choose();
 							break;
 						case 1:
 							//完工
@@ -2412,7 +2412,7 @@ int main()
 							jug6 = 0;
 							while (ap_p != NULL)
 							{
-								if (ap_p->flat->agency = ag_p1)
+								if (ap_p->flat->agency == ag_p1)
 								{
 									jug6 = 1;
 									printf("%s\t%d:%d:%d\t%s\t\t%s\n", ap_p->Number, ap_p->year, ap_p->month, ap_p->day, ap_p->custom->Account, ap_p->flat->number);
@@ -2429,6 +2429,7 @@ int main()
 							printf("请输入您要处理的预约信息编号：");
 							memset(input_string, 0, sizeof(input_string));
 							scanf("%s", input_string);
+							ap_p = ap_head->next;
 							while (ap_p != NULL)
 							{
 								if (!strcmp(ap_p->Number,input_string))
@@ -2519,7 +2520,7 @@ int main()
 							jug6 = 0;
 							while (ap_p != NULL)
 							{
-								if (ap_p->flat->agency = ag_p1)
+								if (ap_p->flat->agency == ag_p1)
 								{
 									printf("%s\t%d:%d:%d\t%s\t\t%s\n", ap_p->Number, ap_p->year, ap_p->month, ap_p->day, ap_p->custom->Account, ap_p->flat->number);
 									jug6 = 1;
@@ -2529,11 +2530,12 @@ int main()
 							if (!jug6)
 								printf("您还没有预约信息\n");
 							printf("回车以继续\n");
+							getchar();
 							choose();
 						}
 						break;
 					case 2:
-						//施工中
+						//完工
 						printf("*********租房管理*********\n");
 						printf("**                      **\n");
 						printf("**0.     返    回       **\n");
@@ -2774,7 +2776,7 @@ int main()
 							tempIntPtr = NULL;
 							break;
 						case 2:
-							fl_p1 = fl_p1->next;
+							fl_p1 = fl_head->next;
 							while (fl_p1 != NULL)
 							{
 								if (fl_p1->agency == ag_p1)
@@ -2817,6 +2819,7 @@ int main()
 								fl_p1 = fl_p1->next;
 							}
 							printf("回车以继续\n");
+							getchar();
 							choose();
 							break;
 						case 3:
@@ -2936,8 +2939,7 @@ int main()
 									scanf("%d", &jug6);
 									if (jug6 == 1)
 									{
-										fl_p1->statment = !(fl_p1->statment);
-										if (fl_p1->statment)
+										if (!fl_p1->statment)
 										{
 											memset(fl_p1->cuposition, 0, sizeof(fl_p1->cuposition));
 											fl_p1->custome = NULL;
@@ -2958,6 +2960,7 @@ int main()
 											}
 											if (jug6)
 											{
+												fl_p1->statment = !(fl_p1->statment);
 												fl_p1->custome = ap_p->custom;
 												strcpy(fl_p1->cuposition, fl_p1->custome->Account);
 												printf("操作成功\n");
@@ -3320,7 +3323,7 @@ int main()
 						}
 						break;
 					case 4://信息排序
-						//施工中
+						//完工
 						printf("*********查看房源*********\n");
 						printf("**                      **\n");
 						printf("**0.     返    回       **\n");
@@ -3367,7 +3370,7 @@ int main()
 									printf("**************************\n");
 									scanf("%d", &jug7);
 									choose();
-									list_printfl_cu(fl_head, fl_tail, jug7);
+									list_printfl_ag(fl_head, fl_tail, jug7);
 									printf("按下回车以继续\n");
 									getchar();
 									choose();
@@ -3384,7 +3387,7 @@ int main()
 									printf("**************************\n");
 									scanf("%d", &jug7);
 									choose();
-									list_printfl_cu(fl_head, fl_tail, jug7);
+									list_printfl_ag(fl_head, fl_tail, jug7);
 									printf("按下回车以继续\n");
 									getchar();
 									choose();
@@ -3411,7 +3414,7 @@ int main()
 								printf("**************************\n");
 								scanf("%d", &jug7);
 								choose();
-								list_printfl_cu(fl_head, fl_tail, jug7);
+								list_printfl_ag(fl_head, fl_tail, jug7);
 								printf("按下回车以继续\n");
 								getchar();
 								choose();
@@ -3431,6 +3434,25 @@ int main()
 						}
 						printf("您所管理的房源的预约有%d个\n", num);
 						num = 0;
+						ap_p = ap_head->next;
+						while (ap_p != NULL)
+						{
+							if (ap_p->flat->agency == ag_p1 && ap_p->statment == 1)
+								num++;
+							ap_p = ap_p->next;
+						}
+						printf("有效的预约有%d个\n", num);
+						num = 0;
+						ap_p = ap_head->next;
+
+						while (ap_p != NULL)
+						{
+							if (ap_p->year == local->tm_year +1900 && ap_p->month == local->tm_mon + 1 && ap_p->day == local->tm_mday && ap_p->flat->agency == ag_p1)
+								num++;
+							ap_p = ap_p->next;
+						}
+						printf("今天的预约有%d个\n", num);
+						num = 0;
 						fl_p1 = fl_head->next;
 						while (fl_p1 != NULL)
 						{
@@ -3439,6 +3461,15 @@ int main()
 							fl_p1 = fl_p1->next;
 						}
 						printf("您所管理的房源有%d个\n", num);
+						num = 0;
+						fl_p1 = fl_head->next;
+						while (fl_p1 != NULL)
+						{
+							if (fl_p1->agency == ag_p1 && fl_p1->statment == false)
+								num++;
+							fl_p1 = fl_p1->next;
+						}
+						printf("您租出的房子有%d个\n", num);
 					}			
 					printf("回车以继续\n");
 					choose();
@@ -3634,7 +3665,7 @@ int main()
 						}
 						break;
 					case 2:
-						//施工中
+						//完工
 						printf("*********看房预约*********\n");
 						printf("**                      **\n");
 						printf("**0.     返    回       **\n");
@@ -3777,7 +3808,32 @@ int main()
 								}
 								ap_p = ap_p->next;
 							}
+							printf("是否要处理预约信息？ 1确定 2取消：");
+							scanf("%d", &jug6);
+							if (jug6 == 1)
+							{
+								printf("请输入预约信息编号：");
+								memset(input_string, 0, sizeof(input_string));
+								scanf("%s", input_string);
+								ap_p = ap_head->next;
+								while (ap_p != NULL)
+								{
+									if (ap_p->custom == cu_p1)
+									{
+										printf("是否完成预约？1确定 2取消：");
+										scanf("%d", &jug6);
+										if (jug6 == 1)
+										{
+											ap_p->statment = 0;
+											printf("操作成功！");
+										}
+										break;
+									}
+									ap_p = ap_p->next;
+								}
+							}
 							printf("回车以继续\n");
+							getchar();
 							choose();
 							break;
 						case 2:
@@ -3952,14 +4008,6 @@ int main()
 								printf("空闲中\n");
 							else
 								printf("已占用\n");
-							if (fl_p1->agency != NULL)
-							{
-								printf("该房源以被占用\n");
-								printf("回车以继续\n");
-								getchar();
-								choose();
-								break;
-							}
 							printf("您确定要预约该房源吗？\n1确认\t 2取消：\n");
 							printf("您的选择：");
 							scanf("%d", &jug6);
@@ -4046,7 +4094,7 @@ int main()
 						}
 						break;
 					case 3:
-						//施工
+						//完工
 						printf("*********查询方式*********\n");
 						printf("**                      **\n");
 						printf("**0.     返    回       **\n");
@@ -4202,7 +4250,7 @@ int main()
 										choose();
 									}
 								break;
-							case 2://此处缺少中介查询
+							case 2:
 								printf("请输入您想搜索的中介姓名：\n");
 								char input[20];
 								scanf("%s", input);
@@ -4575,7 +4623,38 @@ int main()
 						}
 						break;
 					case 5:
-						//空闲中
+						//完工
+					{
+						int num = 0;
+						ap_p = ap_head->next;
+						while (ap_p != NULL)
+						{
+							if (ap_p->custom == cu_p1)
+								num++;
+							ap_p = ap_p->next;
+						}
+						printf("您的预约有%d个\n", num);
+						num = 0;
+						ap_p = ap_head->next;
+						while (ap_p != NULL)
+						{
+							if (ap_p->year == local->tm_year + 1900 && ap_p->month == local->tm_mon + 1 && ap_p->day == local->tm_mday && ap_p->custom == cu_p1)
+								num++;
+							ap_p = ap_p->next;
+						}
+						printf("今天的预约有%d个\n", num);
+						num = 0;
+						fl_p1 = fl_head->next;
+						while (fl_p1 != NULL)
+						{
+							if (fl_p1->custome == cu_p1)
+								num++;
+							fl_p1 = fl_p1->next;
+						}
+						printf("您租到的房源有%d个\n", num);
+						printf("回车以继续\n");
+						choose();
+					}
 						break;
 					case 6:
 						//完工

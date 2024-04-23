@@ -1,6 +1,6 @@
-
-[Warn]User login failed.
 [Info]A user logged in.
+<<<<<<< HEAD
+=======
 [Info]A user logged out.
 [Info]The file has been modified.
 [Info]A user logged in.
@@ -149,3 +149,140 @@
 >>>>>>> 0f0cc11c7bc0a227ed9fb243d93a18ffb52fc8cd
 >>>>>>> 243e45ac1a0947b1f6f3e22b68b61e7c9c9e08fb
 >>>>>>> 0a57a6c36a00065717d62eeb22beb806ba13ee95
+<<<<<<< HEAD
+=======
+>>>>>>> 80aeaa3cae3d2cdf86729136feff1e3200fa7190
+>>>>>>> 712a72f651ca50c9bf5d9b38ff6935f1466a08a1
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user has registered.
+[Info]A user logged in.
+[Info]A user deleted it.
+[Info]A user logged in.
+[Info]A user logged in.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[ERROR]A pointer points to NULL.
+[ERROR]A pointer points to NULL.
+[Info]A user has registered.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Warn]User login failed.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Info]A user logged in.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Warn]User login failed.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Warn]User login failed.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Info]The file has been modified.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Warn]User login failed.
+[Warn]User login failed.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Warn]User login failed.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Info]A user has registered.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Info]A user logged in.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Info]A user logged in.
+[Info]A user deleted it.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user has registered.
+[Info]A user logged in.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Warn]User login failed.
+[Info]A user has registered.
+[Info]A user logged in.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user has registered.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged in.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.

@@ -202,7 +202,7 @@ bool filecachFL_read(struct Flat** tailp,struct Agency* head, struct Customer* c
 		p1 = head->next;
 		while (p1 != NULL)
 		{
-			if (!strcmp((*tailp)->agposition, p1->Number))
+			if (!strcmp(p->agposition, p1->Number))
 				break;
 			p1 = p1->next;
 		}
@@ -210,7 +210,7 @@ bool filecachFL_read(struct Flat** tailp,struct Agency* head, struct Customer* c
 		p2 = chead->next;
 		while (p2 != NULL)
 		{
-			if (!strcmp((*tailp)->cuposition, p2->Account))
+			if (!strcmp(p->cuposition, p2->Account))
 				break;
 			p2 = p2->next;
 		}
