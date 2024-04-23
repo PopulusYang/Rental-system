@@ -149,6 +149,20 @@ int checkRecurAG(char* num, struct Agency* aghead)
 	}
 	return 0;
 }
+
+int checkRecurAP(char* num, struct Appointment* aphead)
+{
+
+	struct Appointment* p;
+	p = aphead->next;
+	while (p != NULL)
+	{
+		if (!strcmp(num, p->Number))
+			return 1;
+		p = p->next;
+	}
+	return 0;
+}
 //去掉数组中的重复数据
 void removeDuplicates(int* arr, int* length) 
 {

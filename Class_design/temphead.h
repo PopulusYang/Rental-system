@@ -45,6 +45,8 @@ int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
 
 //链表排序（冒泡)(房子面积）
 void bubbleSort_Area(Flat** head, int jug);
+//多属性排序
+int bubbleSort_more(Flat** head, int jug1, int jug2);
 
 /***************
 来自listwriting
@@ -67,7 +69,7 @@ int fl_change(list_1 fl_p1);
 //jug为正序or倒序
 int range_search_Area(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2);//以房产面积为例子
 //延长extendApm链表
-int extendApm(struct Appointment* p, struct Appointment* tail, int year, int month, int day, struct Flat* flat, struct Customer* custom);
+int extendApm(struct Appointment* p, struct Appointment* tail, struct Appintment* head, int year, int month, int day, struct Flat* flat, struct Customer* custom);
 
 
 /***********
@@ -83,6 +85,7 @@ char* radom_number(int n);
 
 int checkRecurFL(char* num, struct Flat* head);
 int checkRecurAG(char* num, struct Agency* aghead);
+int checkRecurAP(char* num, struct Appointment* aphead);
 
 int countNumberAD(struct Admin* head);
 
@@ -127,7 +130,7 @@ bool filecachCU_write(struct Customer* head);
 bool filecachCU_read(struct Customer** tailp);
 
 bool filecachFL_write(struct Flat* head);
-bool filecachFL_read(struct Flat** tailp, struct Agency* head);
+bool filecachFL_read(struct Flat** tailp, struct Agency* head, struct Customer* chead);
 
 bool filecachAP_write(struct Appointment* head);
 bool filecachAP_read(struct Appointment** tailp, struct Customer* chead, struct Flat* fhead);
