@@ -179,9 +179,10 @@ bool filecachFL_write(struct Flat* head)
 	fclose(fp);
 	return true;
 }
-bool filecachFL_read(struct Flat** tailp,struct Agency* head)
+bool filecachFL_read(struct Flat** tailp,struct Agency* head, struct Customer* chead)
 {
 	struct Agency* p1;
+	struct Customer* p2;
 	p1 = NULL;
 	FILE* fp;
 	fp = fopen("flat.bin", "rb");
@@ -204,8 +205,16 @@ bool filecachFL_read(struct Flat** tailp,struct Agency* head)
 			if (!strcmp((*tailp)->agposition, p1->Number))
 				break;
 			p1 = p1->next;
-		}				
-		(*tailp)->agency = p1;
+		}
+		p->agency = p1;
+		p2 = chead->next;
+		while (p2 != NULL)
+		{
+			if (!strcmp((*tailp)->cuposition, p2->Account))
+				break;
+			p2 = p2->next;
+		}
+		p->custome = p2;
 		(*tailp)->next = p;
 		p->prev = (*tailp);
 		(*tailp) = p;
@@ -271,10 +280,11 @@ bool filecachAP_read(struct Appointment** tailp, struct Customer* chead, struct 
 		fp = fhead->next;
 		while (fp != NULL)
 		{
-			if (strcmp(p->flposition, fp->number))
-			break;
+			if (!strcmp(p->flposition, fp->number))
+				break;
 			fp = fp->next;
-		}				
+		}			
+		p->flat = fp;
 		(*tailp)->next = p;
 		p->prev = (*tailp);
 		(*tailp) = p;

@@ -85,6 +85,7 @@ int extend_writeFlat(list_1 p1, list_1 head, list_1 tail, char* city, float area
         strcpy(p1->agposition, ag->Number);
     p1->agency = ag;
     p1->statment = true;
+    p1->custome = NULL;
     //数据修改都在上面
     p1->prev = tail;
     tail->next = p1;
@@ -172,7 +173,7 @@ int extendCustomer(char* Account, char* key, struct Customer* p1, struct Custome
 }
 
 //延长预约信息
-int extendApm(struct Appointment* p, struct Appointment* tail, int year, int month, int day, struct Flat* flat, struct Customer* custom)
+int extendApm(struct Appointment* p, struct Appointment* tail, struct Appintment *head,int year, int month, int day, struct Flat* flat, struct Customer* custom)
 {
     p = (struct Appointment*)malloc(sizeof(struct Appointment));
     if (p == NULL)//注意安全
@@ -187,7 +188,19 @@ int extendApm(struct Appointment* p, struct Appointment* tail, int year, int mon
     p->flat = flat;
     strcpy(p->cuposition, custom->Account);
     strcpy(p->flposition, flat->number);
+    char* temp;
+    temp = radom_number(8);//生成编号
+
+    while (checkRecurAP(temp, head))//查重
+    {
+        free(temp);
+        temp = radom_number(8);
+    }
+    strcpy(p->Number, temp);//复制
+    p->statment = 1;
+    free(temp);
     tail->next = p;
+    p->next = NULL;
     return 0;
 }
 
