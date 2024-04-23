@@ -45,6 +45,8 @@ int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
 
 //链表排序（冒泡)(房子面积）
 void bubbleSort_Area(Flat** head, int jug);
+//多属性排序
+int bubbleSort_more(Flat** head, int jug1, int jug2);
 
 /***************
 来自listwriting

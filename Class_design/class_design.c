@@ -1795,28 +1795,94 @@ int main()
 						printf("**                      **\n");
 						printf("**************************\n");
 						scanf("%d", &choice_5);
-						if(choice_5==0)
+						if (choice_5 == 0)
 						{
 							choose();
-							break;
 						}
 						else
 						{
-							bubbleSort_Area(&fl_head, choice_5);
-							choose();
-							printf("*********排序方式*********\n");
+							printf("******是否多属性排序******\n");
 							printf("**                      **\n");
-							printf("**1.     从小到大       **\n");
-							printf("**2.     从大到小       **\n");
+							printf("**1.        是          **\n");
+							printf("**2.        否          **\n");
 							printf("**                      **\n");
 							printf("**************************\n");
-							scanf("%d", &jug7);
+							scanf("%d", &jug9);
 							choose();
-							list_printfl(fl_head, fl_tail, jug7);
-							printf("按下回车以继续");
-							choose();
-							break;
+							if (jug9 == 1)
+							{
+								printf("*********选择属性*********\n");
+								printf("**                      **\n");
+								printf("**1.     租    金       **\n");
+								printf("**2.     层    数       **\n");
+								printf("**3.     房产面积       **\n");
+								printf("**                      **\n");
+								printf("**************************\n");
+								scanf("%d", &choice_6);
+								choose();
+								int t;//局部变量用于返回值判断
+								t = bubbleSort_more(&fl_head, choice_5, choice_6);
+								if (t == 1)
+								{
+									printf("*********排序方式*********\n");
+									printf("**                      **\n");
+									printf("**1.     从小到大       **\n");
+									printf("**2.     从大到小       **\n");
+									printf("**                      **\n");
+									printf("**************************\n");
+									scanf("%d", &jug7);
+									choose();
+									list_printfl_cu(fl_head, fl_tail, jug7);
+									printf("按下回车以继续\n");
+									getchar();
+									choose();
+								}
+								if (t == 2)
+								{
+									printf("您两次选择的属性相同,已默认为单属性排序\n");
+									bubbleSort_Area(&fl_head, choice_5);
+									printf("*********排序方式*********\n");
+									printf("**                      **\n");
+									printf("**1.     从小到大       **\n");
+									printf("**2.     从大到小       **\n");
+									printf("**                      **\n");
+									printf("**************************\n");
+									scanf("%d", &jug7);
+									choose();
+									list_printfl_cu(fl_head, fl_tail, jug7);
+									printf("按下回车以继续\n");
+									getchar();
+									choose();
+								}
+								if (t == 3)
+								{
+									printf("请正确输入\n");
+									printf("按下回车以继续\n");
+									getchar();
+									choose();
+								}
+
+
+							}
+							if (jug9 == 2)
+							{
+								bubbleSort_Area(&fl_head, choice_5);
+								choose();
+								printf("*********排序方式*********\n");
+								printf("**                      **\n");
+								printf("**1.     从小到大       **\n");
+								printf("**2.     从大到小       **\n");
+								printf("**                      **\n");
+								printf("**************************\n");
+								scanf("%d", &jug7);
+								choose();
+								list_printfl_cu(fl_head, fl_tail, jug7);
+								printf("按下回车以继续\n");
+								getchar();
+								choose();
+							}
 						}
+						break;
 					case 5://信息统计
 						//完工
 						printf("访问人数：我们没有接入互联网\n");
@@ -3152,24 +3218,89 @@ int main()
 						if (choice_5 == 0)
 						{
 							choose();
-							break;
 						}
 						else
 						{
-							bubbleSort_Area(&fl_head, choice_5);
-							choose();
-							printf("*********排序方式*********\n");
+							printf("******是否多属性排序******\n");
 							printf("**                      **\n");
-							printf("**1.     从小到大       **\n");
-							printf("**2.     从大到小       **\n");
+							printf("**1.        是          **\n");
+							printf("**2.        否          **\n");
 							printf("**                      **\n");
 							printf("**************************\n");
-							scanf("%d", &jug7);
+							scanf("%d", &jug9);
 							choose();
-							list_printfl_ag(fl_head, fl_tail, jug7);
-							printf("按下回车以继续");
-							choose();
-							break;
+							if (jug9 == 1)
+							{
+								printf("*********选择属性*********\n");
+								printf("**                      **\n");
+								printf("**1.     租    金       **\n");
+								printf("**2.     层    数       **\n");
+								printf("**3.     房产面积       **\n");
+								printf("**                      **\n");
+								printf("**************************\n");
+								scanf("%d", &choice_6);
+								choose();
+								int t;//局部变量用于返回值判断
+								t = bubbleSort_more(&fl_head, choice_5, choice_6);
+								if (t == 1)
+								{
+									printf("*********排序方式*********\n");
+									printf("**                      **\n");
+									printf("**1.     从小到大       **\n");
+									printf("**2.     从大到小       **\n");
+									printf("**                      **\n");
+									printf("**************************\n");
+									scanf("%d", &jug7);
+									choose();
+									list_printfl_cu(fl_head, fl_tail, jug7);
+									printf("按下回车以继续\n");
+									getchar();
+									choose();
+								}
+								if (t == 2)
+								{
+									printf("您两次选择的属性相同,已默认为单属性排序\n");
+									bubbleSort_Area(&fl_head, choice_5);
+									printf("*********排序方式*********\n");
+									printf("**                      **\n");
+									printf("**1.     从小到大       **\n");
+									printf("**2.     从大到小       **\n");
+									printf("**                      **\n");
+									printf("**************************\n");
+									scanf("%d", &jug7);
+									choose();
+									list_printfl_cu(fl_head, fl_tail, jug7);
+									printf("按下回车以继续\n");
+									getchar();
+									choose();
+								}
+								if (t == 3)
+								{
+									printf("请正确输入\n");
+									printf("按下回车以继续\n");
+									getchar();
+									choose();
+								}
+
+
+							}
+							if (jug9 == 2)
+							{
+								bubbleSort_Area(&fl_head, choice_5);
+								choose();
+								printf("*********排序方式*********\n");
+								printf("**                      **\n");
+								printf("**1.     从小到大       **\n");
+								printf("**2.     从大到小       **\n");
+								printf("**                      **\n");
+								printf("**************************\n");
+								scanf("%d", &jug7);
+								choose();
+								list_printfl_cu(fl_head, fl_tail, jug7);
+								printf("按下回车以继续\n");
+								getchar();
+								choose();
+							}
 						}
 						break;
 					case 5:
@@ -4209,28 +4340,95 @@ int main()
 						printf("**3.     房产面积       **\n");
 						printf("**                      **\n");
 						printf("**************************\n");
-						scanf("%d", &choice_5);
+						scanf("%d", &choice_5);	
 						if (choice_5 == 0)
 						{
 							choose();
-							break;
 						}
+
+
 						else
-						{
-							bubbleSort_Area(&fl_head, choice_5);
-							choose();
-							printf("*********排序方式*********\n");
+						{		
+							printf("******是否多属性排序******\n");
 							printf("**                      **\n");
-							printf("**1.     从小到大       **\n");
-							printf("**2.     从大到小       **\n");
+							printf("**1.        是          **\n");
+							printf("**2.        否          **\n");
 							printf("**                      **\n");
 							printf("**************************\n");
-							scanf("%d", &jug7);
+							scanf("%d", &jug9);
 							choose();
-							list_printfl_cu(fl_head, fl_tail, jug7);
-							printf("按下回车以继续");
-							choose();
-							break;
+							if (jug9 == 1)
+							{						
+									printf("*********选择属性*********\n");
+									printf("**                      **\n");
+									printf("**1.     租    金       **\n");
+									printf("**2.     层    数       **\n");
+									printf("**3.     房产面积       **\n");
+									printf("**                      **\n");
+									printf("**************************\n");
+									scanf("%d", &choice_6);
+									choose();
+									int t;//局部变量用于返回值判断
+									t = bubbleSort_more(&fl_head, choice_5, choice_6);
+									if (t == 1)
+									{
+										printf("*********排序方式*********\n");
+										printf("**                      **\n");
+										printf("**1.     从小到大       **\n");
+										printf("**2.     从大到小       **\n");
+										printf("**                      **\n");
+										printf("**************************\n");
+										scanf("%d", &jug7);
+										choose();
+										list_printfl_cu(fl_head, fl_tail, jug7);
+										printf("按下回车以继续\n");
+										getchar();
+										choose();
+									}
+									if (t == 2)
+									{
+										printf("您两次选择的属性相同,已默认为单属性排序\n");
+										bubbleSort_Area(&fl_head, choice_5);
+										printf("*********排序方式*********\n");
+										printf("**                      **\n");
+										printf("**1.     从小到大       **\n");
+										printf("**2.     从大到小       **\n");
+										printf("**                      **\n");
+										printf("**************************\n");
+										scanf("%d", &jug7);
+										choose();
+										list_printfl_cu(fl_head, fl_tail, jug7);
+										printf("按下回车以继续\n");
+										getchar();
+										choose();
+									}
+									if (t == 3)
+									{
+										printf("请正确输入\n");
+										printf("按下回车以继续\n");
+										getchar();
+										choose();
+									}
+
+
+							}
+							if (jug9 == 2)
+							{
+								bubbleSort_Area(&fl_head, choice_5);
+								choose();
+								printf("*********排序方式*********\n");
+								printf("**                      **\n");
+								printf("**1.     从小到大       **\n");
+								printf("**2.     从大到小       **\n");
+								printf("**                      **\n");
+								printf("**************************\n");
+								scanf("%d", &jug7);
+								choose();
+								list_printfl_cu(fl_head, fl_tail, jug7);
+								printf("按下回车以继续\n");
+								getchar();
+								choose();
+							}
 						}
 						break;
 					case 5:
