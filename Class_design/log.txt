@@ -135,3 +135,7 @@
 [Info]The file has been modified.
 =======
 >>>>>>> 7f6bf72aff52686b541c3998c7d1c9c29b9c1a1b
+[Info]A user logged in.
+[Info]A user logged in.
+[Info]A user logged out.
+[Info]The file has been modified.

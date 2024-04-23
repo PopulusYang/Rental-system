@@ -2690,6 +2690,7 @@ int main()
 									}
 									printf("\n");
 								}
+								fl_p1 = fl_p1->next;
 							}
 							printf("回车以继续\n");
 							choose();
@@ -2750,6 +2751,7 @@ int main()
 									choose();
 									break;
 								}
+								fl_p1 = fl_p1->next;
 							}
 							if (fl_p1 == NULL)
 							{
@@ -2845,6 +2847,7 @@ int main()
 									choose();
 									break;
 								}
+								fl_p1 = fl_p1->next;
 							}
 							if (fl_p1 == NULL)
 							{
@@ -3400,7 +3403,115 @@ int main()
 						switch (choice_6)
 						{
 						case 3:
-							
+							ap_p = ap_head->next;
+							printf("编号\t\t日期\t\t房源编号\t\t中介电话\n");
+							while (ap_p != NULL)
+							{
+								if (ap_p->custom == cu_p1)
+								{
+									printf("%s\t%d-%d-%d\t%s\t\t", ap_p->Number, ap_p->year, ap_p->month, ap_p->day, ap_p->flat->number);
+									if (ap_p->flat->agency == NULL)
+										printf("无中介\n");
+									else
+										printf("%s\n", ap_p->flat->agency->phone_n);
+								}
+								ap_p = ap_p->next;
+							}
+							printf("请输入房源编号：");
+							memset(input_string, 0, sizeof(input_string));
+							scanf("%s", input_string);
+							fl_p1 = fl_head->next;
+							while (fl_p1 != NULL)
+							{
+								if (!strcmp(fl_p1->number, input_string) && fl_p1->agency == ag_p1)
+								{
+									printf("%s\t", fl_p1->number);
+									printf("%4.2f平方米\t", fl_p1->Area);
+									printf("%d室%d厅\t", fl_p1->shi, fl_p1->ting);
+									printf("%d层\t", fl_p1->floor);
+									printf("%s\t", fl_p1->city);
+									printf("租金为%6.2f\t\t", fl_p1->rent);
+									switch ((int)fl_p1->toward)
+									{
+									case 1:
+										printf("东\t");
+										break;
+									case 2:
+										printf("南\t");
+										break;
+									case 3:
+										printf("西\t");
+										break;
+									case 4:
+										printf("北\t");
+										break;
+									case 5:
+										printf("东南\t");
+										break;
+									case 6:
+										printf("东北\t");
+										break;
+									case 7:
+										printf("西南\t");
+										break;
+									case 8:
+										printf("西北\t");
+										break;
+									}
+									if (fl_p1->statment == true)
+										printf("未租出");
+									else
+										printf("已租出");
+									printf("\n");
+									printf("确定改变状态吗？1确定  2取消：");
+									scanf("%d", &jug6);
+									if (jug6 == 1)
+									{
+										fl_p1->statment = !(fl_p1->statment);
+										if (fl_p1->statment)
+										{
+											memset(fl_p1->cuposition, 0, sizeof(fl_p1->cuposition));
+											fl_p1->custome = NULL;
+											printf("操作成功\n");
+										}
+										else
+										{
+											ap_p = ap_head->next;
+											jug6 = 0;
+											while (ap_p != NULL)
+											{
+												if (ap_p->flat == fl_p1)
+												{
+													jug6 = 1;
+													break;
+												}
+												ap_p = ap_p->next;
+											}
+											if (jug6)
+											{
+												fl_p1->custome = ap_p->custom;
+												strcpy(fl_p1->cuposition, fl_p1->custome->Account);
+												printf("操作成功\n");
+											}
+											else
+												printf("操作失败\n");
+										}
+									}
+									printf("回车以继续\n");
+									getchar();
+									choose();
+									break;
+								}
+								fl_p1 = fl_p1->next;
+							}
+							if (fl_p1 == NULL)
+							{
+								printf("找不到对象\n");
+								printf("回车以继续\n");
+								getchar();
+								choose();
+								break;
+							}
 							break;
 						case 0:
 							choose();
