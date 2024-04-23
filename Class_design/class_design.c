@@ -2811,7 +2811,34 @@ int main()
 									if (jug6 == 1)
 									{
 										fl_p1->statment = !(fl_p1->statment);
-										printf("操作成功\n");
+										if (fl_p1->statment)
+										{
+											memset(fl_p1->cuposition, 0, sizeof(fl_p1->cuposition));
+											fl_p1->custome = NULL;
+											printf("操作成功\n");
+										}
+										else
+										{
+											ap_p = ap_head->next;
+											jug6 = 0;
+											while (ap_p != NULL)
+											{
+												if (ap_p->flat == fl_p1)
+												{
+													jug6 = 1;
+													break;
+												}
+												ap_p = ap_p -> next;
+											}
+											if (jug6)
+											{
+												fl_p1->custome = ap_p->custom;
+												strcpy(fl_p1->cuposition, fl_p1->custome->Account);
+												printf("操作成功\n");
+											}
+											else
+												printf("操作失败\n");
+										}										
 									}
 									printf("回车以继续\n");
 									getchar();
@@ -3314,10 +3341,9 @@ int main()
 						printf("*********信息修改*********\n");
 						printf("**                      **\n");
 						printf("**0.     返    回       **\n");
-						printf("**1.     账    号       **\n");
-						printf("**2.     电    话       **\n");
-						printf("**3.     姓    名       **\n");
-						printf("**4.     城    市       **\n");
+						printf("**1.     电    话       **\n");
+						printf("**2.     姓    名       **\n");
+						printf("**3.     城    市       **\n");
 						printf("**                      **\n");
 						printf("**************************\n");
 						scanf("%d", &choice_6);
@@ -3327,14 +3353,6 @@ int main()
 							choose();
 							break;
 						case 1:
-							//完工
-							printf("请输入新的账号：");
-							scanf("%s", cu_p1->Account);
-							printf("修改成功！\n");
-							printf("回车以继续\n");
-							choose();
-							break;
-						case 2:
 							memset(input_phonenumber, 0, sizeof(input_phonenumber));
 							printf("请输入电话号码：(11位)");
 							scanf("%s", input_phonenumber);
@@ -3351,14 +3369,14 @@ int main()
 							printf("回车以继续\n");
 							choose();
 							break;
-						case 3:
+						case 2:
 							printf("请输入新的姓名：");
 							scanf("%s", cu_p1->Name);
 							printf("修改成功！\n");
 							printf("回车以继续\n");
 							choose();
 							break;
-						case 4:
+						case 3:
 							printf("请输入新的城市：");
 							scanf("%s", cu_p1->city);
 							printf("修改成功！\n");
@@ -3373,6 +3391,7 @@ int main()
 						printf("**0.     返    回       **\n");
 						printf("**1.     我的预约       **\n");
 						printf("**2.     添加预约       **\n");
+						printf("**3.     我要租房       **\n");
 						printf("**                      **\n");
 						printf("**************************\n");
 						printf("请选择功能：");
@@ -3380,6 +3399,9 @@ int main()
 						choose();
 						switch (choice_6)
 						{
+						case 3:
+							
+							break;
 						case 0:
 							choose();
 							break;
@@ -3665,7 +3687,6 @@ int main()
 						tempIntPtr = NULL;
 							break;
 						}
-					
 						break;
 					case 3:
 						//施工
