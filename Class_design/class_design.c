@@ -408,6 +408,7 @@ int main()
 											else
 												if (*(tempIntPtr - 1) == 0)
 												{
+													logWarning(1);
 													printf("找不到您输入的内容。\n");
 													printf("按下回车以继续");
 													getchar();
@@ -492,6 +493,7 @@ int main()
 											else
 												if (*(tempIntPtr - 1) == 0)
 												{
+													logWarning(1);
 													printf("找不到您输入的内容。\n");
 													printf("按下回车以继续\n");
 													getchar();
@@ -724,6 +726,7 @@ int main()
 											else
 												if (*(tempIntPtr - 1) == 0)
 												{
+													logWarning(1);
 													printf("找不到您输入的内容。\n");
 													printf("按下回车以继续\n");
 													getchar();
@@ -807,6 +810,7 @@ int main()
 											else
 												if (*(tempIntPtr - 1) == 0)
 												{
+													logWarning(1);
 													printf("找不到您输入的内容。\n");
 													printf("按下回车以继续\n");
 													getchar();
@@ -1140,6 +1144,7 @@ int main()
 										else
 											if (*(tempIntPtr - 1) == 0)
 											{
+												logWarning(1);
 												printf("找不到您输入的内容。\n");
 												printf("按下回车以继续\n");
 												getchar();
@@ -1266,6 +1271,7 @@ int main()
 							tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 3);
 							if (*tempIntPtr == 0)
 							{
+								logWarning(1);
 								printf("找不到该预约信息");
 								printf("回车以继续");
 								getchar();
@@ -1357,6 +1363,7 @@ int main()
 							else
 								if (*(tempIntPtr - 1) == 0)
 								{
+									logWarning(1);
 									printf("找不到您输入的内容。\n");
 									printf("按下回车以继续\n");
 									getchar();
@@ -1387,6 +1394,7 @@ int main()
 							tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 1);
 							if (*tempIntPtr == 0)
 							{
+								logWarning(1);
 								printf("找不到该预约信息");
 								printf("回车以继续");
 								getchar();
@@ -1396,6 +1404,7 @@ int main()
 							tempIntPtr++;
 							if (*(tempIntPtr - 1) == 0)
 							{
+								logWarning(1);
 								printf("找不到您输入的内容。\n");
 								printf("按下回车以继续\n");
 								getchar();
@@ -1559,6 +1568,7 @@ int main()
 									else
 										if (*(tempIntPtr - 1) == 0)
 										{
+											logWarning(1);
 											printf("找不到您输入的内容。\n");
 											printf("按下回车以继续\n");
 											getchar();
@@ -1710,6 +1720,7 @@ int main()
 									else
 										if (*(tempIntPtr - 1) == 0)
 										{
+											logWarning(1);
 											printf("找不到您输入的内容。\n");
 											printf("按下回车以继续\n");
 											getchar();
@@ -2509,6 +2520,7 @@ int main()
 							}
 							else
 							{
+								logWarning(1);
 								printf("找不到对象\n");
 								printf("回车以继续\n");
 								getchar();
@@ -2632,6 +2644,7 @@ int main()
 						tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
 						if (*tempIntPtr == 0)
 						{
+							logWarning(1);
 							printf("找不到房源\n");
 							printf("回车以继续\n");
 							getchar();
@@ -2718,6 +2731,7 @@ int main()
 						else
 							if (*(tempIntPtr - 1) == 0)
 							{
+								logWarning(1);
 								printf("找不到您输入的内容。\n");
 								printf("按下回车以继续\n");
 								getchar();
@@ -2883,6 +2897,7 @@ int main()
 							}
 							if (fl_p1 == NULL)
 							{
+								logWarning(1);
 								printf("找不到对象\n");
 								printf("回车以继续\n");
 								getchar();
@@ -2979,6 +2994,7 @@ int main()
 							}
 							if (fl_p1 == NULL)
 							{
+								logWarning(1);
 								printf("找不到对象\n");
 								printf("回车以继续\n");
 								getchar();
@@ -3111,6 +3127,7 @@ int main()
 								else
 									if (*(tempIntPtr - 1) == 0)
 									{
+										logWarning(1);
 										printf("找不到您输入的内容。\n");
 										printf("按下回车以继续\n");
 										getchar();
@@ -3192,6 +3209,7 @@ int main()
 								else
 									if (*(tempIntPtr - 1) == 0)
 									{
+										logWarning(1);
 										printf("找不到您输入的内容。\n");
 										printf("按下回车以继续\n");
 										getchar();
@@ -3785,6 +3803,7 @@ int main()
 							}
 							if (fl_p1 == NULL)
 							{
+								logWarning(1);
 								printf("找不到对象\n");
 								printf("回车以继续\n");
 								getchar();
@@ -3951,6 +3970,7 @@ int main()
 						tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
 						if (*tempIntPtr == 0)
 						{
+							logWarning(1);
 							printf("找不到房源\n");
 							printf("回车以继续\n");
 							getchar();
@@ -4039,6 +4059,7 @@ int main()
 						else
 							if (*(tempIntPtr - 1) == 0)
 							{
+								logWarning(1);
 								printf("找不到您输入的内容。\n");
 								printf("按下回车以继续\n");
 								getchar();
@@ -4231,6 +4252,7 @@ int main()
 								else
 									if (*(tempIntPtr - 1) == 0)
 									{
+										logWarning(1);
 										printf("找不到您输入的内容。\n");
 										printf("按下回车以继续\n");
 										getchar();
@@ -4394,6 +4416,7 @@ int main()
 								else
 									if (*(tempIntPtr - 1) == 0)
 									{
+										logWarning(1);
 										printf("找不到您输入的内容。\n");
 										printf("按下回车以继续\n");
 										getchar();
