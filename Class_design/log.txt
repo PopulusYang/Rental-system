@@ -289,6 +289,7 @@
 [Info]The file has been modified.
 =======
 >>>>>>> f3a6619568b1fe6b21ae8f6acc17f48e339fd685
+<<<<<<< HEAD
 [Info]A user logged in.
 [Info]A user logged in.
 [Info]The file has been modified.
@@ -297,3 +298,5 @@
 [Info]A user logged in.
 [Info]A user logged out.
 [Info]The file has been modified.
+=======
+>>>>>>> 7ee6c5578d2da56ebfe8384216c89e6a203448c3
