@@ -1878,6 +1878,7 @@ int main()
 								scanf("%d", &choice_6);
 								choose();
 								int t;//局部变量用于返回值判断
+								bubbleSort_Area(&fl_head, choice_5);
 								t = bubbleSort_more(&fl_head, choice_5, choice_6);
 								if (t == 1)
 								{
@@ -3359,6 +3360,7 @@ int main()
 								scanf("%d", &choice_6);
 								choose();
 								int t;//局部变量用于返回值判断
+								bubbleSort_Area(&fl_head, choice_5);
 								t = bubbleSort_more(&fl_head, choice_5, choice_6);
 								if (t == 1)
 								{
@@ -4560,6 +4562,7 @@ int main()
 									scanf("%d", &choice_6);
 									choose();
 									int t;//局部变量用于返回值判断
+									bubbleSort_Area(&fl_head, choice_5);
 									t = bubbleSort_more(&fl_head, choice_5, choice_6);
 									if (t == 1)
 									{
