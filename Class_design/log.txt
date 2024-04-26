@@ -12,3 +12,17 @@
 [ERROR]A pointer points to NULL.
 2024-4-26 12:25:3
 [Info]The file has been modified.
+2024-4-27 10:11:39
+[Info]A user logged in.
+2024-4-27 10:11:47
+[Info]A user logged out.
+2024-4-27 10:11:48
+[Info]The file has been modified.
+2024-4-27 10:13:0
+[Warn]User login failed.
+2024-4-27 10:13:8
+[Info]A user logged in.
+2024-4-27 10:13:50
+[Info]A user logged out.
+2024-4-27 10:13:51
+[Info]The file has been modified.

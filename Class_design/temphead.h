@@ -10,6 +10,7 @@
 #include<Windows.h>
 #include<assert.h>
 #include <stdbool.h>
+#include<Windows.h>
 typedef struct Flat Flat, * list_1;
 
 
@@ -99,6 +100,8 @@ int countNumberAP(struct Appointment* head);
 
 
 void removeDuplicates(int* arr, int* length);
+
+void hideInput(char* buffer, int maxLength);
 /**********
 À´×Ôcolor.c
 ***********/

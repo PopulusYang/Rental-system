@@ -184,7 +184,7 @@ int main()
 					if (!strcmp(input_account, ad_p1->Account))
 					{
 						printf("ÇëÊäÈëÃÜÂë£¨key£©:");
-						scanf("%s", input_key);
+						hideInput(input_key, 19);
 						if (!strcmp(input_key, ad_p1->Key))
 						{
 							logInfo(1);
@@ -352,9 +352,9 @@ int main()
 														memset(input_key, 0, sizeof(input_key));
 														memset(input_key_2, 0, sizeof(input_key_2));
 														printf("ÇëÊäÈëÃÜÂë£º");
-														scanf("%s", input_key);
+														hideInput(input_key, 19);
 														printf("ÇëÈ·ÈÏÃÜÂë£º");
-														scanf("%s", input_key_2);
+														hideInput(input_key_2, 19);
 														if (!strcmp(input_key, input_key_2))
 														{
 															strcpy(ag_p1->Key, input_key);
@@ -541,9 +541,9 @@ int main()
 													if (ag_p1 == NULL)
 													{
 														printf("ÇëÊäÈëÃÜÂë£º");
-														scanf("%s", input_key);
+														hideInput(input_key, 19);
 														printf("ÇëÈ·ÈÏÃÜÂë£º");
-														scanf("%s", input_key_2);
+														hideInput(input_key_2, 19);
 														if (!strcmp(input_key, input_key_2))
 														{
 															extendAgency(input_account, input_key, ag_p1, ag_head, ag_tail);
@@ -661,9 +661,9 @@ int main()
 														memset(input_key, 0, sizeof(input_key));
 														memset(input_key_2, 0, sizeof(input_key_2));
 														printf("ÇëÊäÈëÃÜÂë£º");
-														scanf("%s", input_key);
+														hideInput(input_key, 19);
 														printf("ÇëÈ·ÈÏÃÜÂë£º");
-														scanf("%s", input_key_2);
+														hideInput(input_key_2, 19);
 														if (!strcmp(input_key, input_key_2))
 														{
 															strcpy(cu_p1->Key, input_key);
@@ -858,9 +858,9 @@ int main()
 													if (cu_p1 == NULL)
 													{
 														printf("ÇëÊäÈëÃÜÂë£º");
-														scanf("%s", input_key);
+														hideInput(input_key, 19);
 														printf("ÇëÈ·ÈÏÃÜÂë£º");
-														scanf("%s", input_key_2);
+														hideInput(input_key_2, 19);
 														if (!strcmp(input_key, input_key_2))
 														{
 															extendCustomer(input_account, input_key, cu_p1, cu_p2, cu_tail);
@@ -2261,9 +2261,9 @@ int main()
 							memset(input_key, 0, sizeof(input_key));
 							memset(input_key_2, 0, sizeof(input_key_2));
 							printf("ÇëÊäÈëÃÜÂë£º");
-							scanf("%s", input_key);
+							hideInput(input_key, 19);
 							printf("ÇëÈ·ÈÏÃÜÂë£º");
-							scanf("%s", input_key_2);
+							hideInput(input_key_2, 19);
 							if (!strcmp(input_key, input_key_2))
 							{
 								strcpy(ad_p1->Key, input_key);
@@ -2345,7 +2345,7 @@ int main()
 					if (!strcmp(input_account, ag_p1->Account))
 					{
 						printf("ÇëÊäÈëÃÜÂë£¨key£©:");
-						scanf("%s", input_key);
+						hideInput(input_key, 19);
 						if (!strcmp(input_key, ag_p1->Key))
 						{
 							logInfo(1);
@@ -3501,9 +3501,9 @@ int main()
 							memset(input_key, 0, sizeof(input_key));
 							memset(input_key_2, 0, sizeof(input_key_2));
 							printf("ÇëÊäÈëÃÜÂë£º");
-							scanf("%s", input_key);
+							hideInput(input_key, 19);
 							printf("ÇëÈ·ÈÏÃÜÂë£º");
-							scanf("%s", input_key_2);
+							hideInput(input_key_2, 19);
 							if (!strcmp(input_key, input_key_2))
 							{
 								strcpy(ag_p1->Key, input_key);
@@ -3565,7 +3565,7 @@ int main()
 					if (!strcmp(input_account, cu_p1->Account))
 					{
 						printf("ÇëÊäÈëÃÜÂë£¨key£©:");
-						scanf("%s", input_key);
+						hideInput(input_key, 19);
 						if (cu_p1->statment == 0)
 						{
 							printf("±§Ç¸£¬ÄúÒòÎªÎ¥·´ÎÒÃÇµÄÌõÀı¶ø±»·â½û¡£ÈçÓĞÎÊÌâÇëÁªÏµ¹ÜÀíÔ±\n");
@@ -4689,9 +4689,9 @@ int main()
 							memset(input_key, 0, sizeof(input_key));
 							memset(input_key_2, 0, sizeof(input_key_2));
 							printf("ÇëÊäÈëÃÜÂë£º");
-							scanf("%s", input_key);
+							hideInput(input_key, 19);
 							printf("ÇëÈ·ÈÏÃÜÂë£º");
-							scanf("%s", input_key_2);
+							hideInput(input_key_2, 19);
 							if (!strcmp(input_key, input_key_2))
 							{
 								strcpy(cu_p1->Key, input_key);
@@ -4777,9 +4777,9 @@ int main()
 							if (ad_p1 == NULL)
 							{
 								printf("ÇëÊäÈëÃÜÂë£º");
-								scanf("%s", input_key);
+								hideInput(input_key, 19);
 								printf("ÇëÈ·ÈÏÃÜÂë£º");
-								scanf("%s", input_key_2);
+								hideInput(input_key_2, 19);
 								if (!strcmp(input_key, input_key_2))
 								{
 									ad_p2->effective = 0;
@@ -4868,9 +4868,9 @@ int main()
 							if (ag_p1 == NULL)
 							{
 								printf("ÇëÊäÈëÃÜÂë£º");
-								scanf("%s", input_key);
+								hideInput(input_key, 19);
 								printf("ÇëÈ·ÈÏÃÜÂë£º");
-								scanf("%s", input_key_2);
+								hideInput(input_key_2, 19);
 								if (!strcmp(input_key, input_key_2))
 								{
 									ad_p2->effective = 0;
@@ -4952,9 +4952,9 @@ int main()
 						if (cu_p1 == NULL)
 						{
 							printf("ÇëÊäÈëÃÜÂë£º");
-							scanf("%s", input_key);
+							hideInput(input_key, 19);
 							printf("ÇëÈ·ÈÏÃÜÂë£º");
-							scanf("%s", input_key_2);
+							hideInput(input_key_2, 19);
 							if (!strcmp(input_key, input_key_2))
 							{
 								extendCustomer(input_account, input_key, cu_p1, cu_p2, cu_tail);
