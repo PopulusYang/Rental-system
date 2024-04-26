@@ -9,6 +9,7 @@ int list_printfl(list_1 mylist_head, list_1 mylist_tail, int judge)
 {
     int n = 0;
     struct Flat* p1;
+    //²âÊÔ
     if (mylist_head->next == NULL)
     {
         logError(0);
