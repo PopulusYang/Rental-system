@@ -11,7 +11,6 @@ kind是搜索字符串来自那个链表，1是agency，2是customer
 *********************************************/
 int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Flat* fh, struct Appointment* aph, int kind)
 {
-	logInfo(6);
 	int max;
 	int geshu = 0;//有效数据的个数
 	int* position;
@@ -648,6 +647,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 	if (temp2 != NULL)
 		free(temp2);
 	free(arr);
+	logInfo(6);
 	return position;
 }
 

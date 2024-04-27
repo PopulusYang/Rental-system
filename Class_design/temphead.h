@@ -102,6 +102,8 @@ int countNumberAP(struct Appointment* head);
 void removeDuplicates(int* arr, int* length);
 
 void hideInput(char* buffer, int maxLength);
+
+bool checkDate(int year, int month, int day);
 /**********
 À´×Ôcolor.c
 ***********/
