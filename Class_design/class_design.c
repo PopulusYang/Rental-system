@@ -120,7 +120,7 @@ int main()
 	ap_p = ap_head->next;
 	while (ap_p != NULL)
 	{
-		if (ap_p->year < local->tm_year || (ap_p->year == local->tm_year && ap_p->month < local->tm_mon) || (ap_p->year == local->tm_year && ap_p->month == local->tm_mon && ap_p->day < local->tm_mday) && ap_p->statment != 0)
+		if (ap_p->year < local->tm_year +1900 || (ap_p->year == local->tm_year +1900&& ap_p->month < local->tm_mon+1) || (ap_p->year == local->tm_year +1900&& ap_p->month == local->tm_mon +1&& ap_p->day < local->tm_mday) && ap_p->statment != 0)
 		{
 			ap_p->statment = 2;
 		}
@@ -245,6 +245,7 @@ int main()
 						break;
 					case 1:
 						//已完成
+						jug8 = 1;
 						while (jug8)
 						{
 							printf("*********信息管理*********\n");
@@ -264,6 +265,7 @@ int main()
 								break;
 							case 1://人员管理
 								//完工
+								jug9 = 1;
 								while (jug9)
 								{
 									printf("*********人员管理*********\n");
@@ -1341,7 +1343,7 @@ int main()
 									scanf("%d%d%d", &year, &month, &day);
 									time_t now = time(NULL);
 									struct tm* local = localtime(&now);
-									if (year < local->tm_year || (year == local->tm_year && month < local->tm_mon) || (year == local->tm_year && month == local->tm_mon && day < local->tm_mday))
+									if (year < local->tm_year || (year == local->tm_year && month < local->tm_mon) || (year == local->tm_year && month == local->tm_mon && day < local->tm_mday)||!checkDate(year,month,day))
 										printf("无效的时间\n");
 									else
 									{
@@ -2019,15 +2021,24 @@ int main()
 						case 2:
 							printf("请输入开始时间（年 月 日）:");
 							scanf("%d%d%d", &year, &month, &day);
-							int year2=0, month2=0, day2=0;
-							printf("请输入结束时间（年 月 日）:");
-							scanf("%d%d%d", &year2, &month2, &day2);
-							if (year > year2 || (year == year2 && month > month) || (year == year2 && month == month2 && day > day2))
+							if (year < local->tm_year || (year == local->tm_year && month < local->tm_mon) || (year == local->tm_year && month == local->tm_mon && day < local->tm_mday) || !checkDate(year, month, day))
 							{
 								printf("无效的时间\n");
 								printf("按下回车以继续\n");
 								getchar();
 								choose();
+								break;
+							}
+							int year2=0, month2=0, day2=0;
+							printf("请输入结束时间（年 月 日）:");
+							scanf("%d%d%d", &year2, &month2, &day2);
+							if (year2 < local->tm_year || (year2 == local->tm_year && month2 < local->tm_mon) || (year2 == local->tm_year && month2 == local->tm_mon && day2 < local->tm_mday) || !checkDate(year2, month2, day2))
+							{
+								printf("无效的时间\n");
+								printf("按下回车以继续\n");
+								getchar();
+								choose();
+								break;
 								break;
 							}
 							int a = 0;
@@ -2501,8 +2512,14 @@ int main()
 									scanf("%d%d%d", &year, &month, &day);
 									time_t now = time(NULL);
 									struct tm* local = localtime(&now);
-									if (year < local->tm_year || (year == local->tm_year && month < local->tm_mon) || (year == local->tm_year && month == local->tm_mon && day < local->tm_mday))
+									if (year < local->tm_year || (year == local->tm_year && month < local->tm_mon) || (year == local->tm_year && month == local->tm_mon && day < local->tm_mday) || !checkDate(year, month, day))
+									{
 										printf("无效的时间\n");
+										printf("按下回车以继续\n");
+										getchar();
+										choose();
+										break;
+									}
 									else
 									{
 										ap_p->year = year;
@@ -4040,8 +4057,14 @@ int main()
 								scanf("%d%d%d", &year, &month, &day);
 								time_t now = time(NULL);
 								struct tm* local = localtime(&now);
-								if (year < local->tm_year || (year == local->tm_year && month < local->tm_mon) || (year == local->tm_year && month == local->tm_mon && day < local->tm_mday))
+								if (year < local->tm_year || (year == local->tm_year && month < local->tm_mon) || (year == local->tm_year && month == local->tm_mon && day < local->tm_mday) || !checkDate(year, month, day))
+								{
 									printf("无效的时间\n");
+									printf("按下回车以继续\n");
+									getchar();
+									choose();
+									break;
+								}
 								else
 								{
 									extendApm(ap_p, ap_tail, ap_head, year, month, day, fl_p1, cu_p1);
@@ -5010,18 +5033,5 @@ int main()
 	filecachAP_write(ap_head);
 	filecachFL_write(fl_head);
 	logInfo(5);
-
-
-
-
 	return 0;
-}
-static void choose()//用于清屏
-{
-	char wait;
-	scanf("%c", &wait);
-	if (wait == '\n')
-		system("cls");
-	else
-		choose();
 }

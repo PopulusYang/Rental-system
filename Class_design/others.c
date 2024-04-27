@@ -215,3 +215,12 @@ void hideInput(char* buffer, int maxLength)
 	fflush(stdout);
 }
 
+void choose()//”√”⁄«Â∆¡
+{
+	char wait;
+	scanf("%c", &wait);
+	if (wait == '\n')
+		system("cls");
+	else
+		choose();
+}

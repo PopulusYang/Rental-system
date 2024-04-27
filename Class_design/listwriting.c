@@ -173,7 +173,7 @@ int extendCustomer(char* Account, char* key, struct Customer* p1, struct Custome
 }
 
 //延长预约信息
-int extendApm(struct Appointment* p, struct Appointment* tail, struct Appintment *head,int year, int month, int day, struct Flat* flat, struct Customer* custom)
+int extendApm(struct Appointment* p, struct Appointment* tail, struct Appointment *head,int year, int month, int day, struct Flat* flat, struct Customer* custom)
 {
     p = (struct Appointment*)malloc(sizeof(struct Appointment));
     if (p == NULL)//注意安全

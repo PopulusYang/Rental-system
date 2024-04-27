@@ -70,14 +70,14 @@ int fl_change(list_1 fl_p1);
 //jug为正序or倒序
 int range_search_Area(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2);//以房产面积为例子
 //延长extendApm链表
-int extendApm(struct Appointment* p, struct Appointment* tail, struct Appintment* head, int year, int month, int day, struct Flat* flat, struct Customer* custom);
+int extendApm(struct Appointment* p, struct Appointment* tail, struct Appointment* head, int year, int month, int day, struct Flat* flat, struct Customer* custom);
 
 
 /***********
 来自others.c
 ************/
 
-
+void choose();
 //n为字符个数,返回字符串地址
 char* radom_string(int n);
 
@@ -102,6 +102,8 @@ int countNumberAP(struct Appointment* head);
 void removeDuplicates(int* arr, int* length);
 
 void hideInput(char* buffer, int maxLength);
+
+bool checkDate(int year, int month, int day);
 /**********
 来自color.c
 ***********/

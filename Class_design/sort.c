@@ -15,10 +15,9 @@ void bubbleSort_Area(Flat** head,int jug)
 		{
 			swapped = 0; // 标记本轮是否有交换发生  
 			Flat* ptr1 = *head;
-			Flat* end = NULL; // 用于记录当前轮比较的终点  
 
 			// 注意：我们不需要lptr，因为我们总是从头开始比较  
-			while (ptr1->next != end)
+			while (ptr1->next != NULL)
 			{
 				if (ptr1->rent > ptr1->next->rent)
 				{
@@ -31,14 +30,14 @@ void bubbleSort_Area(Flat** head,int jug)
 					{
 						ptr1->next->prev = ptr1;
 					}
-
 					// 更新temp的prev指针  
 					temp->prev = ptr1->prev;
 					if (temp->prev != NULL)
 					{
 						temp->prev->next = temp;
 					}
-					else {
+					else 
+					{
 						// 如果temp是新的头节点，更新头指针  
 						*head = temp;
 					}
@@ -46,25 +45,12 @@ void bubbleSort_Area(Flat** head,int jug)
 					// 将temp插入到ptr1之前  
 					temp->next = ptr1;
 					ptr1->prev = temp;
-
-					// 如果ptr1是上一轮比较的终点，更新end  
-					if (ptr1 == end)
-					{
-						end = temp;
-					}
-
 					swapped = 1; // 标记发生了交换  
 				}
 				else
 				{
 					// 如果没有交换，移动ptr1到下一个节点  
 					ptr1 = ptr1->next;
-
-					// 如果ptr1是上一轮比较的终点，更新end  
-					if (ptr1 == end)
-					{
-						end = end->next;
-					}
 				}
 			}
 		} while (swapped); // 如果本轮没有交换，则排序完成  
@@ -570,5 +556,28 @@ int  bubbleSort_more(Flat** head, int jug1,int jug2)
 	else
 	{
 		return 3;
-		}
+	}
+}
+bool isLeapYear(int year) 
+{
+	if (year % 4 != 0) return false;
+	if (year % 100 != 0) return true;
+	return (year % 400 == 0);
+}
+
+bool checkDate(int year, int month, int day) 
+{
+	if (year <= 0) return false;  // 年份必须是正数  
+	if (month < 1 || month > 12) return false;  // 月份必须在1-12之间  
+
+	int daysInMonth[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	if (isLeapYear(year)) {
+		daysInMonth[1] = 29;  // 如果是闰年，二月有29天  
+	}
+
+	if (day < 1 || day > daysInMonth[month - 1]) {
+		return false;  // 日期必须在该月的有效范围内  
+	}
+
+	return true;  // 如果所有条件都满足，则日期是有效的  
 }
