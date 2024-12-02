@@ -7,7 +7,6 @@
 - [项目概述](#项目概述)
 - [目录结构](#目录结构)
 - [编译与运行](#编译与运行)
-- [贡献指南](#贡献指南)
 - [许可证](#许可证)
 
 ## 项目概述
@@ -23,8 +22,8 @@
 ## 编译与运行
 要编译和运行此项目，请确保您已安装C编译器（如GCC）。然后在项目根目录下运行以下命令：
 sh
-gcc -o Class_design Class_design.c -I.
-./Class_design
+- gcc -o Class_design Class_design.c -I.
+- ./Class_design
 
 ## 许可证
 此项目使用MIT许可证，详情见[LICENSE](LICENSE)文件。
