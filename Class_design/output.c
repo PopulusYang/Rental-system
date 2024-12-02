@@ -3,13 +3,13 @@
 
 
 
-//Á´±í´òÓ¡
-//judgeÓÃÓÚÅĞ¶ÏÕı·´Ïò´òÓ¡
+//é“¾è¡¨æ‰“å°
+//judgeç”¨äºåˆ¤æ–­æ­£åå‘æ‰“å°
 int list_printfl(list_1 mylist_head, list_1 mylist_tail, int judge)
 {
     int n = 0;
     struct Flat* p1;
-    //²âÊÔ
+    //æµ‹è¯•
     if (mylist_head->next == NULL)
     {
         logError(0);
@@ -20,38 +20,38 @@ int list_printfl(list_1 mylist_head, list_1 mylist_tail, int judge)
     {
         n++;
         printf("%d:\t", n);
-        printf("%s\t", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
-        printf("%4.2fÆ½·½Ã×\n", p1->Area);
-        printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-        printf("%d²ã\t", p1->floor);
-        printf("ÔÚ%s³ÇÊĞ\t", p1->city);
-        printf("×â½ğÎª%6.2f\t", p1->rent);
-        printf("³¯ÏòÎª");
+        printf("%s\t", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
+        printf("%4.2få¹³æ–¹ç±³\n", p1->Area);
+        printf("%då®¤%då…\t", p1->shi, p1->ting);
+        printf("%då±‚\t", p1->floor);
+        printf("åœ¨%såŸå¸‚\t", p1->city);
+        printf("ç§Ÿé‡‘ä¸º%6.2f\t", p1->rent);
+        printf("æœå‘ä¸º");
         switch ((int)p1->toward)
         {
         case 1:
-            printf("¶«\n");
+            printf("ä¸œ\n");
             break;
         case 2:
-            printf("ÄÏ\n");
+            printf("å—\n");
             break;
         case 3:
-            printf("Î÷\n");
+            printf("è¥¿\n");
             break;
         case 4:
-            printf("±±\n");
+            printf("åŒ—\n");
             break;
         case 5:
-            printf("¶«ÄÏ\n");
+            printf("ä¸œå—\n");
             break;
         case 6:
-            printf("¶«±±\n");
+            printf("ä¸œåŒ—\n");
             break;
         case 7:
-            printf("Î÷ÄÏ\n");
+            printf("è¥¿å—\n");
             break;
         case 8:
-            printf("Î÷±±\n");
+            printf("è¥¿åŒ—\n");
             break;
         }
         p1 = p1->next;
@@ -63,38 +63,38 @@ int list_printfl(list_1 mylist_head, list_1 mylist_tail, int judge)
         n++;
         printf("%d:\t", n);
         assert(p1);
-        printf("%s\t", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
-        printf("%4.2fÆ½·½Ã×\n", p1->Area);
-        printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-        printf("%d²ã\t", p1->floor);
-        printf("ÔÚ%s³ÇÊĞ\t", p1->city);
-        printf("×â½ğÎª%6.2f\t", p1->rent);
-        printf("³¯ÏòÎª");
+        printf("%s\t", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
+        printf("%4.2få¹³æ–¹ç±³\n", p1->Area);
+        printf("%då®¤%då…\t", p1->shi, p1->ting);
+        printf("%då±‚\t", p1->floor);
+        printf("åœ¨%såŸå¸‚\t", p1->city);
+        printf("ç§Ÿé‡‘ä¸º%6.2f\t", p1->rent);
+        printf("æœå‘ä¸º");
         switch ((int)mylist_tail->toward)
         {
         case 1:
-            printf("¶«\n");
+            printf("ä¸œ\n");
             break;
         case 2:
-            printf("Î÷\n");
+            printf("è¥¿\n");
             break;
         case 3:
-            printf("ÄÏ\n");
+            printf("å—\n");
             break;
         case 4:
-            printf("±±\n");
+            printf("åŒ—\n");
             break;
         case 5:
-            printf("¶«ÄÏ\n");
+            printf("ä¸œå—\n");
             break;
         case 6:
-            printf("¶«±±\n");
+            printf("ä¸œåŒ—\n");
             break;
         case 7:
-            printf("Î÷ÄÏ\n");
+            printf("è¥¿å—\n");
             break;
         case 8:
-            printf("Î÷±±\n");
+            printf("è¥¿åŒ—\n");
             break;
         }
         p1 = p1->prev;
@@ -118,38 +118,38 @@ int list_printfl_ag(list_1 mylist_head, list_1 mylist_tail, int judge)
         {
             n++;
             printf("%d:\t", n);
-            printf("%s\t", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
-            printf("%4.2fÆ½·½Ã×\n", p1->Area);
-            printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-            printf("%d²ã\t", p1->floor);
-            printf("ÔÚ%s³ÇÊĞ\t", p1->city);
-            printf("×â½ğÎª%6.2f\t", p1->rent);
-            printf("³¯ÏòÎª");
+            printf("%s\t", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
+            printf("%4.2få¹³æ–¹ç±³\n", p1->Area);
+            printf("%då®¤%då…\t", p1->shi, p1->ting);
+            printf("%då±‚\t", p1->floor);
+            printf("åœ¨%såŸå¸‚\t", p1->city);
+            printf("ç§Ÿé‡‘ä¸º%6.2f\t", p1->rent);
+            printf("æœå‘ä¸º");
             switch ((int)p1->toward)
             {
             case 1:
-                printf("¶«\n");
+                printf("ä¸œ\n");
                 break;
             case 2:
-                printf("ÄÏ\n");
+                printf("å—\n");
                 break;
             case 3:
-                printf("Î÷\n");
+                printf("è¥¿\n");
                 break;
             case 4:
-                printf("±±\n");
+                printf("åŒ—\n");
                 break;
             case 5:
-                printf("¶«ÄÏ\n");
+                printf("ä¸œå—\n");
                 break;
             case 6:
-                printf("¶«±±\n");
+                printf("ä¸œåŒ—\n");
                 break;
             case 7:
-                printf("Î÷ÄÏ\n");
+                printf("è¥¿å—\n");
                 break;
             case 8:
-                printf("Î÷±±\n");
+                printf("è¥¿åŒ—\n");
                 break;
             }
         }
@@ -164,38 +164,38 @@ int list_printfl_ag(list_1 mylist_head, list_1 mylist_tail, int judge)
             n++;
             printf("%d:\t", n);
             assert(p1);
-            printf("%s\t", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
-            printf("%4.2fÆ½·½Ã×\n", p1->Area);
-            printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-            printf("%d²ã\t", p1->floor);
-            printf("ÔÚ%s³ÇÊĞ\t", p1->city);
-            printf("×â½ğÎª%6.2f\t", p1->rent);
-            printf("³¯ÏòÎª");
+            printf("%s\t", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
+            printf("%4.2få¹³æ–¹ç±³\n", p1->Area);
+            printf("%då®¤%då…\t", p1->shi, p1->ting);
+            printf("%då±‚\t", p1->floor);
+            printf("åœ¨%såŸå¸‚\t", p1->city);
+            printf("ç§Ÿé‡‘ä¸º%6.2f\t", p1->rent);
+            printf("æœå‘ä¸º");
             switch ((int)mylist_tail->toward)
             {
             case 1:
-                printf("¶«\n");
+                printf("ä¸œ\n");
                 break;
             case 2:
-                printf("ÄÏ\n");
+                printf("å—\n");
                 break;
             case 3:
-                printf("Î÷\n");
+                printf("è¥¿\n");
                 break;
             case 4:
-                printf("±±\n");
+                printf("åŒ—\n");
                 break;
             case 5:
-                printf("¶«ÄÏ\n");
+                printf("ä¸œå—\n");
                 break;
             case 6:
-                printf("¶«±±\n");
+                printf("ä¸œåŒ—\n");
                 break;
             case 7:
-                printf("Î÷ÄÏ\n");
+                printf("è¥¿å—\n");
                 break;
             case 8:
-                printf("Î÷±±\n");
+                printf("è¥¿åŒ—\n");
                 break;
             }
         }
@@ -219,38 +219,38 @@ int list_printfl_cu(list_1 mylist_head, list_1 mylist_tail, int judge)
         {
             n++;
             printf("%d:\t", n);
-            printf("%s\t", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
-            printf("%4.2fÆ½·½Ã×\n", p1->Area);
-            printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-            printf("%d²ã\t", p1->floor);
-            printf("ÔÚ%s³ÇÊĞ\t", p1->city);
-            printf("×â½ğÎª%6.2f\t", p1->rent);
-            printf("³¯ÏòÎª");
+            printf("%s\t", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
+            printf("%4.2få¹³æ–¹ç±³\n", p1->Area);
+            printf("%då®¤%då…\t", p1->shi, p1->ting);
+            printf("%då±‚\t", p1->floor);
+            printf("åœ¨%såŸå¸‚\t", p1->city);
+            printf("ç§Ÿé‡‘ä¸º%6.2f\t", p1->rent);
+            printf("æœå‘ä¸º");
             switch ((int)p1->toward)
             {
             case 1:
-                printf("¶«\n");
+                printf("ä¸œ\n");
                 break;
             case 2:
-                printf("ÄÏ\n");
+                printf("å—\n");
                 break;
             case 3:
-                printf("Î÷\n");
+                printf("è¥¿\n");
                 break;
             case 4:
-                printf("±±\n");
+                printf("åŒ—\n");
                 break;
             case 5:
-                printf("¶«ÄÏ\n");
+                printf("ä¸œå—\n");
                 break;
             case 6:
-                printf("¶«±±\n");
+                printf("ä¸œåŒ—\n");
                 break;
             case 7:
-                printf("Î÷ÄÏ\n");
+                printf("è¥¿å—\n");
                 break;
             case 8:
-                printf("Î÷±±\n");
+                printf("è¥¿åŒ—\n");
                 break;
             }
         }
@@ -265,38 +265,38 @@ int list_printfl_cu(list_1 mylist_head, list_1 mylist_tail, int judge)
             n++;
             printf("%d:\t", n);
             assert(p1);
-            printf("%s\t", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
-            printf("%4.2fÆ½·½Ã×\n", p1->Area);
-            printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-            printf("%d²ã\t", p1->floor);
-            printf("ÔÚ%s³ÇÊĞ\t", p1->city);
-            printf("×â½ğÎª%6.2f\t", p1->rent);
-            printf("³¯ÏòÎª");
+            printf("%s\t", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
+            printf("%4.2få¹³æ–¹ç±³\n", p1->Area);
+            printf("%då®¤%då…\t", p1->shi, p1->ting);
+            printf("%då±‚\t", p1->floor);
+            printf("åœ¨%såŸå¸‚\t", p1->city);
+            printf("ç§Ÿé‡‘ä¸º%6.2f\t", p1->rent);
+            printf("æœå‘ä¸º");
             switch ((int)mylist_tail->toward)
             {
             case 1:
-                printf("¶«\n");
+                printf("ä¸œ\n");
                 break;
             case 2:
-                printf("ÄÏ\n");
+                printf("å—\n");
                 break;
             case 3:
-                printf("Î÷\n");
+                printf("è¥¿\n");
                 break;
             case 4:
-                printf("±±\n");
+                printf("åŒ—\n");
                 break;
             case 5:
-                printf("¶«ÄÏ\n");
+                printf("ä¸œå—\n");
                 break;
             case 6:
-                printf("¶«±±\n");
+                printf("ä¸œåŒ—\n");
                 break;
             case 7:
-                printf("Î÷ÄÏ\n");
+                printf("è¥¿å—\n");
                 break;
             case 8:
-                printf("Î÷±±\n");
+                printf("è¥¿åŒ—\n");
                 break;
             }
         }

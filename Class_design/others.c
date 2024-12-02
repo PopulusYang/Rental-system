@@ -4,7 +4,7 @@
 
 
 
-//nÎª×Ö·û¸öÊı,·µ»Ø×Ö·û´®µØÖ·
+//nä¸ºå­—ç¬¦ä¸ªæ•°,è¿”å›å­—ç¬¦ä¸²åœ°å€
 char* radom_string(int n)
 {
 	char* str;
@@ -17,7 +17,7 @@ char* radom_string(int n)
 	}
 	memset(str, 0, (n) * sizeof(char));
 	const char charset[] = "abcdefghijklmnopqrstuvwxyz0123456789";
-	size_t len = sizeof(charset) - 1;//Éú³ÉÖÖ×Ó
+	size_t len = sizeof(charset) - 1;//ç”Ÿæˆç§å­
 	unsigned int seed;
 	seed = (unsigned int)time(NULL);
 	srand(seed);
@@ -29,7 +29,7 @@ char* radom_string(int n)
 	return str;
 }
 
-//nÎªÊı×Ö¸öÊı,·µ»Ø×Ö·û´®µØÖ·
+//nä¸ºæ•°å­—ä¸ªæ•°,è¿”å›å­—ç¬¦ä¸²åœ°å€
 char* radom_number(int n)
 {
 	char* str;
@@ -42,7 +42,7 @@ char* radom_number(int n)
 	}
 	memset(str, 0, (n) * sizeof(char));
 	const char charset[] = "0123456789";
-	size_t len = sizeof(charset) - 1;//Éú³ÉÖÖ×Ó
+	size_t len = sizeof(charset) - 1;//ç”Ÿæˆç§å­
 	unsigned int seed;
 	seed = (unsigned int)time(NULL);
 	srand(seed);
@@ -67,7 +67,7 @@ int countNumberAD(struct Admin* head)
 	return number;
 }
 
-//¼ÆËãÁ´±íÖĞÔªËØ¸öÊı£¨·¿×Ó£©
+//è®¡ç®—é“¾è¡¨ä¸­å…ƒç´ ä¸ªæ•°ï¼ˆæˆ¿å­ï¼‰
 int countNumberFL(struct Flat* head)
 {
 	struct Flat* p;
@@ -81,7 +81,7 @@ int countNumberFL(struct Flat* head)
 	return number;
 }
 
-//¼ÆËãÁ´±íÖĞÔªËØ¸öÊı£¨ÖĞ½é£©
+//è®¡ç®—é“¾è¡¨ä¸­å…ƒç´ ä¸ªæ•°ï¼ˆä¸­ä»‹ï¼‰
 int countNumberAG(struct Agency* head)
 {
 	struct Agency* p;
@@ -94,7 +94,7 @@ int countNumberAG(struct Agency* head)
 	}
 	return number;
 }
-//¼ÆËãÁ´±íÖĞÔªËØ¸öÊı£¨×â¿Í£©
+//è®¡ç®—é“¾è¡¨ä¸­å…ƒç´ ä¸ªæ•°ï¼ˆç§Ÿå®¢ï¼‰
 int countNumberCU(struct Customer* head)
 {
 	struct Customer* p;
@@ -108,7 +108,7 @@ int countNumberCU(struct Customer* head)
 	return number;
 }
 
-//¼ÆËãÁ´±íÖĞÔªËØ¸öÊı£¨Ô¤Ô¼ĞÅÏ¢£©
+//è®¡ç®—é“¾è¡¨ä¸­å…ƒç´ ä¸ªæ•°ï¼ˆé¢„çº¦ä¿¡æ¯ï¼‰
 int countNumberAP(struct Appointment* head)
 {
 	struct Appointment* p;
@@ -122,7 +122,7 @@ int countNumberAP(struct Appointment* head)
 	return number;
 }
 
-//±àºÅ²éÖØ
+//ç¼–å·æŸ¥é‡
 int checkRecurFL(char* num, struct Flat* fhead)
 {
 
@@ -163,7 +163,7 @@ int checkRecurAP(char* num, struct Appointment* aphead)
 	}
 	return 0;
 }
-//È¥µôÊı×éÖĞµÄÖØ¸´Êı¾İ
+//å»æ‰æ•°ç»„ä¸­çš„é‡å¤æ•°æ®
 void removeDuplicates(int* arr, int* length) 
 {
 	for (int i = 0; i < *length; i++)
@@ -215,7 +215,7 @@ void hideInput(char* buffer, int maxLength)
 	fflush(stdout);
 }
 
-void choose()//ÓÃÓÚÇåÆÁ
+void choose()//ç”¨äºæ¸…å±
 {
 	char wait;
 	scanf("%c", &wait);

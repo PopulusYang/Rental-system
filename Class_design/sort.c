@@ -1,36 +1,36 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "temphead.h"
-//Á´±íÅÅĞò£¨Ã°Åİ)(·¿×ÓÃæ»ı£©
-//jugÓÃÓÚÅĞ¶Ï¾ßÌåÅÅÊ²Ã´µÄË³Ğò
+//é“¾è¡¨æ’åºï¼ˆå†’æ³¡)(æˆ¿å­é¢ç§¯ï¼‰
+//jugç”¨äºåˆ¤æ–­å…·ä½“æ’ä»€ä¹ˆçš„é¡ºåº
 void bubbleSort_Area(Flat** head,int jug) 
 {
 	if (*head == NULL || (*head)->next == NULL) 
 	{
-		return; // ¿ÕÁ´±í»òÖ»ÓĞÒ»¸ö½Úµã£¬ÎŞĞèÅÅĞò  
+		return; // ç©ºé“¾è¡¨æˆ–åªæœ‰ä¸€ä¸ªèŠ‚ç‚¹ï¼Œæ— éœ€æ’åº  
 	}
 	int swapped;
 	if (jug == 1)
 	{
 		do
 		{
-			swapped = 0; // ±ê¼Ç±¾ÂÖÊÇ·ñÓĞ½»»»·¢Éú  
+			swapped = 0; // æ ‡è®°æœ¬è½®æ˜¯å¦æœ‰äº¤æ¢å‘ç”Ÿ  
 			Flat* ptr1 = *head;
 
-			// ×¢Òâ£ºÎÒÃÇ²»ĞèÒªlptr£¬ÒòÎªÎÒÃÇ×ÜÊÇ´ÓÍ·¿ªÊ¼±È½Ï  
+			// æ³¨æ„ï¼šæˆ‘ä»¬ä¸éœ€è¦lptrï¼Œå› ä¸ºæˆ‘ä»¬æ€»æ˜¯ä»å¤´å¼€å§‹æ¯”è¾ƒ  
 			while (ptr1->next != NULL)
 			{
 				if (ptr1->rent > ptr1->next->rent)
 				{
-					// ½»»»ptr1ºÍptr1->next½Úµã  
+					// äº¤æ¢ptr1å’Œptr1->nextèŠ‚ç‚¹  
 					Flat* temp = ptr1->next;
 
-					// ¸üĞÂptr1µÄnextÖ¸Õë  
+					// æ›´æ–°ptr1çš„nextæŒ‡é’ˆ  
 					ptr1->next = temp->next;
 					if (ptr1->next != NULL)
 					{
 						ptr1->next->prev = ptr1;
 					}
-					// ¸üĞÂtempµÄprevÖ¸Õë  
+					// æ›´æ–°tempçš„prevæŒ‡é’ˆ  
 					temp->prev = ptr1->prev;
 					if (temp->prev != NULL)
 					{
@@ -38,515 +38,515 @@ void bubbleSort_Area(Flat** head,int jug)
 					}
 					else 
 					{
-						// Èç¹ûtempÊÇĞÂµÄÍ·½Úµã£¬¸üĞÂÍ·Ö¸Õë  
+						// å¦‚æœtempæ˜¯æ–°çš„å¤´èŠ‚ç‚¹ï¼Œæ›´æ–°å¤´æŒ‡é’ˆ  
 						*head = temp;
 					}
 
-					// ½«temp²åÈëµ½ptr1Ö®Ç°  
+					// å°†tempæ’å…¥åˆ°ptr1ä¹‹å‰  
 					temp->next = ptr1;
 					ptr1->prev = temp;
-					swapped = 1; // ±ê¼Ç·¢ÉúÁË½»»»  
+					swapped = 1; // æ ‡è®°å‘ç”Ÿäº†äº¤æ¢  
 				}
 				else
 				{
-					// Èç¹ûÃ»ÓĞ½»»»£¬ÒÆ¶¯ptr1µ½ÏÂÒ»¸ö½Úµã  
+					// å¦‚æœæ²¡æœ‰äº¤æ¢ï¼Œç§»åŠ¨ptr1åˆ°ä¸‹ä¸€ä¸ªèŠ‚ç‚¹  
 					ptr1 = ptr1->next;
 				}
 			}
-		} while (swapped); // Èç¹û±¾ÂÖÃ»ÓĞ½»»»£¬ÔòÅÅĞòÍê³É  
+		} while (swapped); // å¦‚æœæœ¬è½®æ²¡æœ‰äº¤æ¢ï¼Œåˆ™æ’åºå®Œæˆ  
 	}
 	if (jug == 2)
 	{
 		do
 		{
-			swapped = 0; // ±ê¼Ç±¾ÂÖÊÇ·ñÓĞ½»»»·¢Éú  
+			swapped = 0; // æ ‡è®°æœ¬è½®æ˜¯å¦æœ‰äº¤æ¢å‘ç”Ÿ  
 			Flat* ptr1 = *head;
-			Flat* end = NULL; // ÓÃÓÚ¼ÇÂ¼µ±Ç°ÂÖ±È½ÏµÄÖÕµã  
+			Flat* end = NULL; // ç”¨äºè®°å½•å½“å‰è½®æ¯”è¾ƒçš„ç»ˆç‚¹  
 
-			// ×¢Òâ£ºÎÒÃÇ²»ĞèÒªlptr£¬ÒòÎªÎÒÃÇ×ÜÊÇ´ÓÍ·¿ªÊ¼±È½Ï  
+			// æ³¨æ„ï¼šæˆ‘ä»¬ä¸éœ€è¦lptrï¼Œå› ä¸ºæˆ‘ä»¬æ€»æ˜¯ä»å¤´å¼€å§‹æ¯”è¾ƒ  
 			while (ptr1->next != end)
 			{
 				if (ptr1->floor > ptr1->next->floor)
 				{
-					// ½»»»ptr1ºÍptr1->next½Úµã  
+					// äº¤æ¢ptr1å’Œptr1->nextèŠ‚ç‚¹  
 					Flat* temp = ptr1->next;
 
-					// ¸üĞÂptr1µÄnextÖ¸Õë  
+					// æ›´æ–°ptr1çš„nextæŒ‡é’ˆ  
 					ptr1->next = temp->next;
 					if (ptr1->next != NULL)
 					{
 						ptr1->next->prev = ptr1;
 					}
 
-					// ¸üĞÂtempµÄprevÖ¸Õë  
+					// æ›´æ–°tempçš„prevæŒ‡é’ˆ  
 					temp->prev = ptr1->prev;
 					if (temp->prev != NULL)
 					{
 						temp->prev->next = temp;
 					}
 					else {
-						// Èç¹ûtempÊÇĞÂµÄÍ·½Úµã£¬¸üĞÂÍ·Ö¸Õë  
+						// å¦‚æœtempæ˜¯æ–°çš„å¤´èŠ‚ç‚¹ï¼Œæ›´æ–°å¤´æŒ‡é’ˆ  
 						*head = temp;
 					}
 
-					// ½«temp²åÈëµ½ptr1Ö®Ç°  
+					// å°†tempæ’å…¥åˆ°ptr1ä¹‹å‰  
 					temp->next = ptr1;
 					ptr1->prev = temp;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = temp;
 					}
 
-					swapped = 1; // ±ê¼Ç·¢ÉúÁË½»»»  
+					swapped = 1; // æ ‡è®°å‘ç”Ÿäº†äº¤æ¢  
 				}
 				else
 				{
-					// Èç¹ûÃ»ÓĞ½»»»£¬ÒÆ¶¯ptr1µ½ÏÂÒ»¸ö½Úµã  
+					// å¦‚æœæ²¡æœ‰äº¤æ¢ï¼Œç§»åŠ¨ptr1åˆ°ä¸‹ä¸€ä¸ªèŠ‚ç‚¹  
 					ptr1 = ptr1->next;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = end->next;
 					}
 				}
 			}
-		} while (swapped); // Èç¹û±¾ÂÖÃ»ÓĞ½»»»£¬ÔòÅÅĞòÍê³É  
+		} while (swapped); // å¦‚æœæœ¬è½®æ²¡æœ‰äº¤æ¢ï¼Œåˆ™æ’åºå®Œæˆ  
 	}
 	if (jug == 3)
 	{
 		do
 		{
-			swapped = 0; // ±ê¼Ç±¾ÂÖÊÇ·ñÓĞ½»»»·¢Éú  
+			swapped = 0; // æ ‡è®°æœ¬è½®æ˜¯å¦æœ‰äº¤æ¢å‘ç”Ÿ  
 			Flat* ptr1 = *head;
-			Flat* end = NULL; // ÓÃÓÚ¼ÇÂ¼µ±Ç°ÂÖ±È½ÏµÄÖÕµã  
+			Flat* end = NULL; // ç”¨äºè®°å½•å½“å‰è½®æ¯”è¾ƒçš„ç»ˆç‚¹  
 
-			// ×¢Òâ£ºÎÒÃÇ²»ĞèÒªlptr£¬ÒòÎªÎÒÃÇ×ÜÊÇ´ÓÍ·¿ªÊ¼±È½Ï  
+			// æ³¨æ„ï¼šæˆ‘ä»¬ä¸éœ€è¦lptrï¼Œå› ä¸ºæˆ‘ä»¬æ€»æ˜¯ä»å¤´å¼€å§‹æ¯”è¾ƒ  
 			while (ptr1->next != end)
 			{
 				if (ptr1->Area > ptr1->next->Area)
 				{
-					// ½»»»ptr1ºÍptr1->next½Úµã  
+					// äº¤æ¢ptr1å’Œptr1->nextèŠ‚ç‚¹  
 					Flat* temp = ptr1->next;
 
-					// ¸üĞÂptr1µÄnextÖ¸Õë  
+					// æ›´æ–°ptr1çš„nextæŒ‡é’ˆ  
 					ptr1->next = temp->next;
 					if (ptr1->next != NULL)
 					{
 						ptr1->next->prev = ptr1;
 					}
 
-					// ¸üĞÂtempµÄprevÖ¸Õë  
+					// æ›´æ–°tempçš„prevæŒ‡é’ˆ  
 					temp->prev = ptr1->prev;
 					if (temp->prev != NULL)
 					{
 						temp->prev->next = temp;
 					}
 					else {
-						// Èç¹ûtempÊÇĞÂµÄÍ·½Úµã£¬¸üĞÂÍ·Ö¸Õë  
+						// å¦‚æœtempæ˜¯æ–°çš„å¤´èŠ‚ç‚¹ï¼Œæ›´æ–°å¤´æŒ‡é’ˆ  
 						*head = temp;
 					}
 
-					// ½«temp²åÈëµ½ptr1Ö®Ç°  
+					// å°†tempæ’å…¥åˆ°ptr1ä¹‹å‰  
 					temp->next = ptr1;
 					ptr1->prev = temp;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = temp;
 					}
 
-					swapped = 1; // ±ê¼Ç·¢ÉúÁË½»»»  
+					swapped = 1; // æ ‡è®°å‘ç”Ÿäº†äº¤æ¢  
 				}
 				else
 				{
-					// Èç¹ûÃ»ÓĞ½»»»£¬ÒÆ¶¯ptr1µ½ÏÂÒ»¸ö½Úµã  
+					// å¦‚æœæ²¡æœ‰äº¤æ¢ï¼Œç§»åŠ¨ptr1åˆ°ä¸‹ä¸€ä¸ªèŠ‚ç‚¹  
 					ptr1 = ptr1->next;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = end->next;
 					}
 				}
 			}
-		} while (swapped); // Èç¹û±¾ÂÖÃ»ÓĞ½»»»£¬ÔòÅÅĞòÍê³É  
+		} while (swapped); // å¦‚æœæœ¬è½®æ²¡æœ‰äº¤æ¢ï¼Œåˆ™æ’åºå®Œæˆ  
 	}
 }
 int  bubbleSort_more(Flat** head, int jug1,int jug2)
 {
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		return; // ¿ÕÁ´±í»òÖ»ÓĞÒ»¸ö½Úµã£¬ÎŞĞèÅÅĞò  
+		return; // ç©ºé“¾è¡¨æˆ–åªæœ‰ä¸€ä¸ªèŠ‚ç‚¹ï¼Œæ— éœ€æ’åº  
 	}
 	int swapped;
 	if (jug1 == 1 && jug2 == 2)
 	{
 		do
 		{
-			swapped = 0; // ±ê¼Ç±¾ÂÖÊÇ·ñÓĞ½»»»·¢Éú  
+			swapped = 0; // æ ‡è®°æœ¬è½®æ˜¯å¦æœ‰äº¤æ¢å‘ç”Ÿ  
 			Flat* ptr1 = *head;
-			Flat* end = NULL; // ÓÃÓÚ¼ÇÂ¼µ±Ç°ÂÖ±È½ÏµÄÖÕµã  
+			Flat* end = NULL; // ç”¨äºè®°å½•å½“å‰è½®æ¯”è¾ƒçš„ç»ˆç‚¹  
 
-			// ×¢Òâ£ºÎÒÃÇ²»ĞèÒªlptr£¬ÒòÎªÎÒÃÇ×ÜÊÇ´ÓÍ·¿ªÊ¼±È½Ï  
+			// æ³¨æ„ï¼šæˆ‘ä»¬ä¸éœ€è¦lptrï¼Œå› ä¸ºæˆ‘ä»¬æ€»æ˜¯ä»å¤´å¼€å§‹æ¯”è¾ƒ  
 			while (ptr1->next != end)
 			{
 				if (ptr1->rent == ptr1->next->rent&&ptr1->floor>ptr1->next->floor)
 				{
-					// ½»»»ptr1ºÍptr1->next½Úµã  
+					// äº¤æ¢ptr1å’Œptr1->nextèŠ‚ç‚¹  
 					Flat* temp = ptr1->next;
 
-					// ¸üĞÂptr1µÄnextÖ¸Õë  
+					// æ›´æ–°ptr1çš„nextæŒ‡é’ˆ  
 					ptr1->next = temp->next;
 					if (ptr1->next != NULL)
 					{
 						ptr1->next->prev = ptr1;
 					}
 
-					// ¸üĞÂtempµÄprevÖ¸Õë  
+					// æ›´æ–°tempçš„prevæŒ‡é’ˆ  
 					temp->prev = ptr1->prev;
 					if (temp->prev != NULL)
 					{
 						temp->prev->next = temp;
 					}
 					else {
-						// Èç¹ûtempÊÇĞÂµÄÍ·½Úµã£¬¸üĞÂÍ·Ö¸Õë  
+						// å¦‚æœtempæ˜¯æ–°çš„å¤´èŠ‚ç‚¹ï¼Œæ›´æ–°å¤´æŒ‡é’ˆ  
 						*head = temp;
 					}
 
-					// ½«temp²åÈëµ½ptr1Ö®Ç°  
+					// å°†tempæ’å…¥åˆ°ptr1ä¹‹å‰  
 					temp->next = ptr1;
 					ptr1->prev = temp;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = temp;
 					}
 
-					swapped = 1; // ±ê¼Ç·¢ÉúÁË½»»»  
+					swapped = 1; // æ ‡è®°å‘ç”Ÿäº†äº¤æ¢  
 				}
 				else
 				{
-					// Èç¹ûÃ»ÓĞ½»»»£¬ÒÆ¶¯ptr1µ½ÏÂÒ»¸ö½Úµã  
+					// å¦‚æœæ²¡æœ‰äº¤æ¢ï¼Œç§»åŠ¨ptr1åˆ°ä¸‹ä¸€ä¸ªèŠ‚ç‚¹  
 					ptr1 = ptr1->next;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = end->next;
 					}
 				}
 			}
-		} while (swapped); // Èç¹û±¾ÂÖÃ»ÓĞ½»»»£¬ÔòÅÅĞòÍê³É  
+		} while (swapped); // å¦‚æœæœ¬è½®æ²¡æœ‰äº¤æ¢ï¼Œåˆ™æ’åºå®Œæˆ  
 		return 1;
 	}
 	else if (jug1 == 1 && jug2 == 3)
 	{
 		do
 		{
-			swapped = 0; // ±ê¼Ç±¾ÂÖÊÇ·ñÓĞ½»»»·¢Éú  
+			swapped = 0; // æ ‡è®°æœ¬è½®æ˜¯å¦æœ‰äº¤æ¢å‘ç”Ÿ  
 			Flat* ptr1 = *head;
-			Flat* end = NULL; // ÓÃÓÚ¼ÇÂ¼µ±Ç°ÂÖ±È½ÏµÄÖÕµã  
+			Flat* end = NULL; // ç”¨äºè®°å½•å½“å‰è½®æ¯”è¾ƒçš„ç»ˆç‚¹  
 
-			// ×¢Òâ£ºÎÒÃÇ²»ĞèÒªlptr£¬ÒòÎªÎÒÃÇ×ÜÊÇ´ÓÍ·¿ªÊ¼±È½Ï  
+			// æ³¨æ„ï¼šæˆ‘ä»¬ä¸éœ€è¦lptrï¼Œå› ä¸ºæˆ‘ä»¬æ€»æ˜¯ä»å¤´å¼€å§‹æ¯”è¾ƒ  
 			while (ptr1->next != end)
 			{
 				if (ptr1->rent == ptr1->next->rent && ptr1->Area > ptr1->next->Area)
 				{
-					// ½»»»ptr1ºÍptr1->next½Úµã  
+					// äº¤æ¢ptr1å’Œptr1->nextèŠ‚ç‚¹  
 					Flat* temp = ptr1->next;
 
-					// ¸üĞÂptr1µÄnextÖ¸Õë  
+					// æ›´æ–°ptr1çš„nextæŒ‡é’ˆ  
 					ptr1->next = temp->next;
 					if (ptr1->next != NULL)
 					{
 						ptr1->next->prev = ptr1;
 					}
 
-					// ¸üĞÂtempµÄprevÖ¸Õë  
+					// æ›´æ–°tempçš„prevæŒ‡é’ˆ  
 					temp->prev = ptr1->prev;
 					if (temp->prev != NULL)
 					{
 						temp->prev->next = temp;
 					}
 					else {
-						// Èç¹ûtempÊÇĞÂµÄÍ·½Úµã£¬¸üĞÂÍ·Ö¸Õë  
+						// å¦‚æœtempæ˜¯æ–°çš„å¤´èŠ‚ç‚¹ï¼Œæ›´æ–°å¤´æŒ‡é’ˆ  
 						*head = temp;
 					}
 
-					// ½«temp²åÈëµ½ptr1Ö®Ç°  
+					// å°†tempæ’å…¥åˆ°ptr1ä¹‹å‰  
 					temp->next = ptr1;
 					ptr1->prev = temp;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = temp;
 					}
 
-					swapped = 1; // ±ê¼Ç·¢ÉúÁË½»»»  
+					swapped = 1; // æ ‡è®°å‘ç”Ÿäº†äº¤æ¢  
 				}
 				else
 				{
-					// Èç¹ûÃ»ÓĞ½»»»£¬ÒÆ¶¯ptr1µ½ÏÂÒ»¸ö½Úµã  
+					// å¦‚æœæ²¡æœ‰äº¤æ¢ï¼Œç§»åŠ¨ptr1åˆ°ä¸‹ä¸€ä¸ªèŠ‚ç‚¹  
 					ptr1 = ptr1->next;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = end->next;
 					}
 				}
 			}
-		} while (swapped); // Èç¹û±¾ÂÖÃ»ÓĞ½»»»£¬ÔòÅÅĞòÍê³É  
+		} while (swapped); // å¦‚æœæœ¬è½®æ²¡æœ‰äº¤æ¢ï¼Œåˆ™æ’åºå®Œæˆ  
 		return 1;
 	}
 	else if (jug1 == 2 && jug2 == 1)
 	{
 		do
 		{
-			swapped = 0; // ±ê¼Ç±¾ÂÖÊÇ·ñÓĞ½»»»·¢Éú  
+			swapped = 0; // æ ‡è®°æœ¬è½®æ˜¯å¦æœ‰äº¤æ¢å‘ç”Ÿ  
 			Flat* ptr1 = *head;
-			Flat* end = NULL; // ÓÃÓÚ¼ÇÂ¼µ±Ç°ÂÖ±È½ÏµÄÖÕµã  
+			Flat* end = NULL; // ç”¨äºè®°å½•å½“å‰è½®æ¯”è¾ƒçš„ç»ˆç‚¹  
 
-			// ×¢Òâ£ºÎÒÃÇ²»ĞèÒªlptr£¬ÒòÎªÎÒÃÇ×ÜÊÇ´ÓÍ·¿ªÊ¼±È½Ï  
+			// æ³¨æ„ï¼šæˆ‘ä»¬ä¸éœ€è¦lptrï¼Œå› ä¸ºæˆ‘ä»¬æ€»æ˜¯ä»å¤´å¼€å§‹æ¯”è¾ƒ  
 			while (ptr1->next != end)
 			{
 				if (ptr1->floor == ptr1->next->floor && ptr1->rent > ptr1->next->rent)
 				{
-					// ½»»»ptr1ºÍptr1->next½Úµã  
+					// äº¤æ¢ptr1å’Œptr1->nextèŠ‚ç‚¹  
 					Flat* temp = ptr1->next;
 
-					// ¸üĞÂptr1µÄnextÖ¸Õë  
+					// æ›´æ–°ptr1çš„nextæŒ‡é’ˆ  
 					ptr1->next = temp->next;
 					if (ptr1->next != NULL)
 					{
 						ptr1->next->prev = ptr1;
 					}
 
-					// ¸üĞÂtempµÄprevÖ¸Õë  
+					// æ›´æ–°tempçš„prevæŒ‡é’ˆ  
 					temp->prev = ptr1->prev;
 					if (temp->prev != NULL)
 					{
 						temp->prev->next = temp;
 					}
 					else {
-						// Èç¹ûtempÊÇĞÂµÄÍ·½Úµã£¬¸üĞÂÍ·Ö¸Õë  
+						// å¦‚æœtempæ˜¯æ–°çš„å¤´èŠ‚ç‚¹ï¼Œæ›´æ–°å¤´æŒ‡é’ˆ  
 						*head = temp;
 					}
 
-					// ½«temp²åÈëµ½ptr1Ö®Ç°  
+					// å°†tempæ’å…¥åˆ°ptr1ä¹‹å‰  
 					temp->next = ptr1;
 					ptr1->prev = temp;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = temp;
 					}
 
-					swapped = 1; // ±ê¼Ç·¢ÉúÁË½»»»  
+					swapped = 1; // æ ‡è®°å‘ç”Ÿäº†äº¤æ¢  
 				}
 				else
 				{
-					// Èç¹ûÃ»ÓĞ½»»»£¬ÒÆ¶¯ptr1µ½ÏÂÒ»¸ö½Úµã  
+					// å¦‚æœæ²¡æœ‰äº¤æ¢ï¼Œç§»åŠ¨ptr1åˆ°ä¸‹ä¸€ä¸ªèŠ‚ç‚¹  
 					ptr1 = ptr1->next;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = end->next;
 					}
 				}
 			}
-		} while (swapped); // Èç¹û±¾ÂÖÃ»ÓĞ½»»»£¬ÔòÅÅĞòÍê³É  
+		} while (swapped); // å¦‚æœæœ¬è½®æ²¡æœ‰äº¤æ¢ï¼Œåˆ™æ’åºå®Œæˆ  
 		return 1;
 	}
 	else if (jug1 == 2 && jug2 == 3)
 	{
 		do
 		{
-			swapped = 0; // ±ê¼Ç±¾ÂÖÊÇ·ñÓĞ½»»»·¢Éú  
+			swapped = 0; // æ ‡è®°æœ¬è½®æ˜¯å¦æœ‰äº¤æ¢å‘ç”Ÿ  
 			Flat* ptr1 = *head;
-			Flat* end = NULL; // ÓÃÓÚ¼ÇÂ¼µ±Ç°ÂÖ±È½ÏµÄÖÕµã  
+			Flat* end = NULL; // ç”¨äºè®°å½•å½“å‰è½®æ¯”è¾ƒçš„ç»ˆç‚¹  
 
-			// ×¢Òâ£ºÎÒÃÇ²»ĞèÒªlptr£¬ÒòÎªÎÒÃÇ×ÜÊÇ´ÓÍ·¿ªÊ¼±È½Ï  
+			// æ³¨æ„ï¼šæˆ‘ä»¬ä¸éœ€è¦lptrï¼Œå› ä¸ºæˆ‘ä»¬æ€»æ˜¯ä»å¤´å¼€å§‹æ¯”è¾ƒ  
 			while (ptr1->next != end)
 			{
 				if (ptr1->floor == ptr1->next->floor && ptr1->Area > ptr1->next->Area)
 				{
-					// ½»»»ptr1ºÍptr1->next½Úµã  
+					// äº¤æ¢ptr1å’Œptr1->nextèŠ‚ç‚¹  
 					Flat* temp = ptr1->next;
 
-					// ¸üĞÂptr1µÄnextÖ¸Õë  
+					// æ›´æ–°ptr1çš„nextæŒ‡é’ˆ  
 					ptr1->next = temp->next;
 					if (ptr1->next != NULL)
 					{
 						ptr1->next->prev = ptr1;
 					}
 
-					// ¸üĞÂtempµÄprevÖ¸Õë  
+					// æ›´æ–°tempçš„prevæŒ‡é’ˆ  
 					temp->prev = ptr1->prev;
 					if (temp->prev != NULL)
 					{
 						temp->prev->next = temp;
 					}
 					else {
-						// Èç¹ûtempÊÇĞÂµÄÍ·½Úµã£¬¸üĞÂÍ·Ö¸Õë  
+						// å¦‚æœtempæ˜¯æ–°çš„å¤´èŠ‚ç‚¹ï¼Œæ›´æ–°å¤´æŒ‡é’ˆ  
 						*head = temp;
 					}
 
-					// ½«temp²åÈëµ½ptr1Ö®Ç°  
+					// å°†tempæ’å…¥åˆ°ptr1ä¹‹å‰  
 					temp->next = ptr1;
 					ptr1->prev = temp;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = temp;
 					}
 
-					swapped = 1; // ±ê¼Ç·¢ÉúÁË½»»»  
+					swapped = 1; // æ ‡è®°å‘ç”Ÿäº†äº¤æ¢  
 				}
 				else
 				{
-					// Èç¹ûÃ»ÓĞ½»»»£¬ÒÆ¶¯ptr1µ½ÏÂÒ»¸ö½Úµã  
+					// å¦‚æœæ²¡æœ‰äº¤æ¢ï¼Œç§»åŠ¨ptr1åˆ°ä¸‹ä¸€ä¸ªèŠ‚ç‚¹  
 					ptr1 = ptr1->next;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = end->next;
 					}
 				}
 			}
-		} while (swapped); // Èç¹û±¾ÂÖÃ»ÓĞ½»»»£¬ÔòÅÅĞòÍê³É  
+		} while (swapped); // å¦‚æœæœ¬è½®æ²¡æœ‰äº¤æ¢ï¼Œåˆ™æ’åºå®Œæˆ  
 		return 1;
 	}
 	else if (jug1 == 3 && jug2 == 1)
 	{
 		do
 		{
-			swapped = 0; // ±ê¼Ç±¾ÂÖÊÇ·ñÓĞ½»»»·¢Éú  
+			swapped = 0; // æ ‡è®°æœ¬è½®æ˜¯å¦æœ‰äº¤æ¢å‘ç”Ÿ  
 			Flat* ptr1 = *head;
-			Flat* end = NULL; // ÓÃÓÚ¼ÇÂ¼µ±Ç°ÂÖ±È½ÏµÄÖÕµã  
+			Flat* end = NULL; // ç”¨äºè®°å½•å½“å‰è½®æ¯”è¾ƒçš„ç»ˆç‚¹  
 
-			// ×¢Òâ£ºÎÒÃÇ²»ĞèÒªlptr£¬ÒòÎªÎÒÃÇ×ÜÊÇ´ÓÍ·¿ªÊ¼±È½Ï  
+			// æ³¨æ„ï¼šæˆ‘ä»¬ä¸éœ€è¦lptrï¼Œå› ä¸ºæˆ‘ä»¬æ€»æ˜¯ä»å¤´å¼€å§‹æ¯”è¾ƒ  
 			while (ptr1->next != end)
 			{
 				if (ptr1->Area == ptr1->next->Area && ptr1->rent > ptr1->next->rent)
 				{
-					// ½»»»ptr1ºÍptr1->next½Úµã  
+					// äº¤æ¢ptr1å’Œptr1->nextèŠ‚ç‚¹  
 					Flat* temp = ptr1->next;
 
-					// ¸üĞÂptr1µÄnextÖ¸Õë  
+					// æ›´æ–°ptr1çš„nextæŒ‡é’ˆ  
 					ptr1->next = temp->next;
 					if (ptr1->next != NULL)
 					{
 						ptr1->next->prev = ptr1;
 					}
 
-					// ¸üĞÂtempµÄprevÖ¸Õë  
+					// æ›´æ–°tempçš„prevæŒ‡é’ˆ  
 					temp->prev = ptr1->prev;
 					if (temp->prev != NULL)
 					{
 						temp->prev->next = temp;
 					}
 					else {
-						// Èç¹ûtempÊÇĞÂµÄÍ·½Úµã£¬¸üĞÂÍ·Ö¸Õë  
+						// å¦‚æœtempæ˜¯æ–°çš„å¤´èŠ‚ç‚¹ï¼Œæ›´æ–°å¤´æŒ‡é’ˆ  
 						*head = temp;
 					}
 
-					// ½«temp²åÈëµ½ptr1Ö®Ç°  
+					// å°†tempæ’å…¥åˆ°ptr1ä¹‹å‰  
 					temp->next = ptr1;
 					ptr1->prev = temp;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = temp;
 					}
 
-					swapped = 1; // ±ê¼Ç·¢ÉúÁË½»»»  
+					swapped = 1; // æ ‡è®°å‘ç”Ÿäº†äº¤æ¢  
 				}
 				else
 				{
-					// Èç¹ûÃ»ÓĞ½»»»£¬ÒÆ¶¯ptr1µ½ÏÂÒ»¸ö½Úµã  
+					// å¦‚æœæ²¡æœ‰äº¤æ¢ï¼Œç§»åŠ¨ptr1åˆ°ä¸‹ä¸€ä¸ªèŠ‚ç‚¹  
 					ptr1 = ptr1->next;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = end->next;
 					}
 				}
 			}
-		} while (swapped); // Èç¹û±¾ÂÖÃ»ÓĞ½»»»£¬ÔòÅÅĞòÍê³É  
+		} while (swapped); // å¦‚æœæœ¬è½®æ²¡æœ‰äº¤æ¢ï¼Œåˆ™æ’åºå®Œæˆ  
 		return 1;
 	}
 	else if (jug1 == 3 && jug2 == 2)
 	{
 		do
 		{
-			swapped = 0; // ±ê¼Ç±¾ÂÖÊÇ·ñÓĞ½»»»·¢Éú  
+			swapped = 0; // æ ‡è®°æœ¬è½®æ˜¯å¦æœ‰äº¤æ¢å‘ç”Ÿ  
 			Flat* ptr1 = *head;
-			Flat* end = NULL; // ÓÃÓÚ¼ÇÂ¼µ±Ç°ÂÖ±È½ÏµÄÖÕµã  
+			Flat* end = NULL; // ç”¨äºè®°å½•å½“å‰è½®æ¯”è¾ƒçš„ç»ˆç‚¹  
 
-			// ×¢Òâ£ºÎÒÃÇ²»ĞèÒªlptr£¬ÒòÎªÎÒÃÇ×ÜÊÇ´ÓÍ·¿ªÊ¼±È½Ï  
+			// æ³¨æ„ï¼šæˆ‘ä»¬ä¸éœ€è¦lptrï¼Œå› ä¸ºæˆ‘ä»¬æ€»æ˜¯ä»å¤´å¼€å§‹æ¯”è¾ƒ  
 			while (ptr1->next != end)
 			{
 				if (ptr1->Area == ptr1->next->Area && ptr1->floor > ptr1->next->floor)
 				{
-					// ½»»»ptr1ºÍptr1->next½Úµã  
+					// äº¤æ¢ptr1å’Œptr1->nextèŠ‚ç‚¹  
 					Flat* temp = ptr1->next;
 
-					// ¸üĞÂptr1µÄnextÖ¸Õë  
+					// æ›´æ–°ptr1çš„nextæŒ‡é’ˆ  
 					ptr1->next = temp->next;
 					if (ptr1->next != NULL)
 					{
 						ptr1->next->prev = ptr1;
 					}
 
-					// ¸üĞÂtempµÄprevÖ¸Õë  
+					// æ›´æ–°tempçš„prevæŒ‡é’ˆ  
 					temp->prev = ptr1->prev;
 					if (temp->prev != NULL)
 					{
 						temp->prev->next = temp;
 					}
 					else {
-						// Èç¹ûtempÊÇĞÂµÄÍ·½Úµã£¬¸üĞÂÍ·Ö¸Õë  
+						// å¦‚æœtempæ˜¯æ–°çš„å¤´èŠ‚ç‚¹ï¼Œæ›´æ–°å¤´æŒ‡é’ˆ  
 						*head = temp;
 					}
 
-					// ½«temp²åÈëµ½ptr1Ö®Ç°  
+					// å°†tempæ’å…¥åˆ°ptr1ä¹‹å‰  
 					temp->next = ptr1;
 					ptr1->prev = temp;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = temp;
 					}
 
-					swapped = 1; // ±ê¼Ç·¢ÉúÁË½»»»  
+					swapped = 1; // æ ‡è®°å‘ç”Ÿäº†äº¤æ¢  
 				}
 				else
 				{
-					// Èç¹ûÃ»ÓĞ½»»»£¬ÒÆ¶¯ptr1µ½ÏÂÒ»¸ö½Úµã  
+					// å¦‚æœæ²¡æœ‰äº¤æ¢ï¼Œç§»åŠ¨ptr1åˆ°ä¸‹ä¸€ä¸ªèŠ‚ç‚¹  
 					ptr1 = ptr1->next;
 
-					// Èç¹ûptr1ÊÇÉÏÒ»ÂÖ±È½ÏµÄÖÕµã£¬¸üĞÂend  
+					// å¦‚æœptr1æ˜¯ä¸Šä¸€è½®æ¯”è¾ƒçš„ç»ˆç‚¹ï¼Œæ›´æ–°end  
 					if (ptr1 == end)
 					{
 						end = end->next;
 					}
 				}
 			}
-		} while (swapped); // Èç¹û±¾ÂÖÃ»ÓĞ½»»»£¬ÔòÅÅĞòÍê³É  
+		} while (swapped); // å¦‚æœæœ¬è½®æ²¡æœ‰äº¤æ¢ï¼Œåˆ™æ’åºå®Œæˆ  
 		return 1;
 	}
 	else if(jug1==jug2)
@@ -567,17 +567,17 @@ bool isLeapYear(int year)
 
 bool checkDate(int year, int month, int day) 
 {
-	if (year <= 0) return false;  // Äê·İ±ØĞëÊÇÕıÊı  
-	if (month < 1 || month > 12) return false;  // ÔÂ·İ±ØĞëÔÚ1-12Ö®¼ä  
+	if (year <= 0) return false;  // å¹´ä»½å¿…é¡»æ˜¯æ­£æ•°  
+	if (month < 1 || month > 12) return false;  // æœˆä»½å¿…é¡»åœ¨1-12ä¹‹é—´  
 
 	int daysInMonth[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 	if (isLeapYear(year)) {
-		daysInMonth[1] = 29;  // Èç¹ûÊÇÈòÄê£¬¶şÔÂÓĞ29Ìì  
+		daysInMonth[1] = 29;  // å¦‚æœæ˜¯é—°å¹´ï¼ŒäºŒæœˆæœ‰29å¤©  
 	}
 
 	if (day < 1 || day > daysInMonth[month - 1]) {
-		return false;  // ÈÕÆÚ±ØĞëÔÚ¸ÃÔÂµÄÓĞĞ§·¶Î§ÄÚ  
+		return false;  // æ—¥æœŸå¿…é¡»åœ¨è¯¥æœˆçš„æœ‰æ•ˆèŒƒå›´å†…  
 	}
 
-	return true;  // Èç¹ûËùÓĞÌõ¼ş¶¼Âú×ã£¬ÔòÈÕÆÚÊÇÓĞĞ§µÄ  
+	return true;  // å¦‚æœæ‰€æœ‰æ¡ä»¶éƒ½æ»¡è¶³ï¼Œåˆ™æ—¥æœŸæ˜¯æœ‰æ•ˆçš„  
 }

@@ -3,59 +3,59 @@
 #include <stdbool.h>
 #pragma warning(disable:6031) 
 typedef struct Flat Flat, * list_1;
-//Á´±íÉùÃ÷
-enum Toward//³¯Ïò£¬°üÀ¨¶«ÄÏÎ÷±±¶«ÄÏ¶«±±Î÷ÄÏÎ÷±±
+//é“¾è¡¨å£°æ˜
+enum Toward//æœå‘ï¼ŒåŒ…æ‹¬ä¸œå—è¥¿åŒ—ä¸œå—ä¸œåŒ—è¥¿å—è¥¿åŒ—
 {
     E = 1, S, W, N, SE, NE, SW, NW
 };
 
-struct Admin//¹ÜÀíÔ±
+struct Admin//ç®¡ç†å‘˜
 {
     char Account[20];
     char Key[20];
     struct Admin* prev;
     struct Admin* next;
-    char invitation[20];//ÑûÇëÂë£¬Ã¿¸ö¹ÜÀíÔ±ÏŞÓĞÒ»¸ö
-    int effective;//ÑûÇëÂëµÄÓĞĞ§ĞÔ
+    char invitation[20];//é‚€è¯·ç ï¼Œæ¯ä¸ªç®¡ç†å‘˜é™æœ‰ä¸€ä¸ª
+    int effective;//é‚€è¯·ç çš„æœ‰æ•ˆæ€§
 };
 
-struct Agency//ÖĞ½é
+struct Agency//ä¸­ä»‹
 {
-    char Account[20];//ÖĞ½éIDÖ±½Ó×÷ÎªÆäÕË»§
+    char Account[20];//ä¸­ä»‹IDç›´æ¥ä½œä¸ºå…¶è´¦æˆ·
     char phone_n[12];
-    char Key[20];//ÃÜÂë
-    char Name[50];//ĞÕÃû
+    char Key[20];//å¯†ç 
+    char Name[50];//å§“å
     char Number[9];
     struct Agency* prev;
     struct Agency* next;
 };
 
-struct Customer//×â¿Í
+struct Customer//ç§Ÿå®¢
 {
     char Account[20];
     char Key[20];
     char phone_n[12];
-    char Name[50];//ĞÕÃû
+    char Name[50];//å§“å
     struct Customer* prev;
     struct Customer* next;
     int statment;
     char city[20];
 };
 
-struct Flat//·¿ÖÌ
+struct Flat//æˆ¿ç—”
 {
     struct Flat* prev;
     struct Flat* next;
-    float Area;//Ãæ»ı
-    char city[20];//ËùÔÚÎ»ÖÃ
-    char number[9];//±àºÅ
-    enum Toward toward;//³¯Ïò
+    float Area;//é¢ç§¯
+    char city[20];//æ‰€åœ¨ä½ç½®
+    char number[9];//ç¼–å·
+    enum Toward toward;//æœå‘
     int shi;
-    int ting;//¼¸ÊÒ¼¸Ìü
-    int floor;//ÔÚ¼¸Â¥
-    float rent, agency_fee, deposit;//·ÑÓÃ£¬°üÀ¨×â½ğ¡¢ÖĞ½é·Ñ¡¢Ñº½ğ
-    struct Agency* agency;//ÖĞ½é
-    struct Customer* custome;//×â¿Í
+    int ting;//å‡ å®¤å‡ å…
+    int floor;//åœ¨å‡ æ¥¼
+    float rent, agency_fee, deposit;//è´¹ç”¨ï¼ŒåŒ…æ‹¬ç§Ÿé‡‘ã€ä¸­ä»‹è´¹ã€æŠ¼é‡‘
+    struct Agency* agency;//ä¸­ä»‹
+    struct Customer* custome;//ç§Ÿå®¢
     char cuposition[20];
     char agposition[9];
     bool statment;
@@ -63,7 +63,7 @@ struct Flat//·¿ÖÌ
 };
 
 
-struct Appointment//Ô¤Ô¼
+struct Appointment//é¢„çº¦
 {
     struct Appointment* next;
     struct Appointment* prev;
@@ -75,5 +75,5 @@ struct Appointment//Ô¤Ô¼
     struct Flat* flat;
     char cuposition[20];
     char flposition[9];
-    int statment;//0ÒÑÍê³É£¬1ÓĞĞ§ÖĞ£¬2¹ıÆÚÎ´´¦Àí
+    int statment;//0å·²å®Œæˆï¼Œ1æœ‰æ•ˆä¸­ï¼Œ2è¿‡æœŸæœªå¤„ç†
 };

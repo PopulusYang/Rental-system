@@ -15,73 +15,73 @@ typedef struct Flat Flat, * list_1;
 
 
 /*********
-*À´×Ôlog.c
+*æ¥è‡ªlog.c
 *************/
 void logError(int kind);
 void logInfo(int kind);
 void logWarning(int kind);
 
 /***********************
-À´×Ôinformation_search.c
+æ¥è‡ªinformation_search.c
 ************************/
 
 
 int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Flat* fh, struct Appointment* aph, int kind);
 
-int toward_search(list_1 mylist_head, int i);//³¯Ïò²éÕÒ
+int toward_search(list_1 mylist_head, int i);//æœå‘æŸ¥æ‰¾
 
-//³¯ÏòËÑË÷ÓĞÖĞ½éµÄ·¿²ú
+//æœå‘æœç´¢æœ‰ä¸­ä»‹çš„æˆ¿äº§
 int toward_search_cu(list_1 mylist_head, int i);
-//³¯ÏòËÑË÷Ã»ÓĞÖĞ½éµÄ·¿²ú
+//æœå‘æœç´¢æ²¡æœ‰ä¸­ä»‹çš„æˆ¿äº§
 int toward_search_ag(list_1 mylist_head, int i);
 
-//·¶Î§ËÑË÷ÓĞÖĞ½éµÄ·¿²ú
+//èŒƒå›´æœç´¢æœ‰ä¸­ä»‹çš„æˆ¿äº§
 int range_search_cu(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2);
-//·¶Î§ËÑË÷Ã»ÓĞÖĞ½éµÄ·¿²ú
+//èŒƒå›´æœç´¢æ²¡æœ‰ä¸­ä»‹çš„æˆ¿äº§
 int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2);
 /*********
-À´×Ôsort.c
+æ¥è‡ªsort.c
 **********/
 
 
-//Á´±íÅÅĞò£¨Ã°Åİ)(·¿×ÓÃæ»ı£©
+//é“¾è¡¨æ’åºï¼ˆå†’æ³¡)(æˆ¿å­é¢ç§¯ï¼‰
 void bubbleSort_Area(Flat** head, int jug);
-//¶àÊôĞÔÅÅĞò
+//å¤šå±æ€§æ’åº
 int bubbleSort_more(Flat** head, int jug1, int jug2);
 
 /***************
-À´×Ôlistwriting
+æ¥è‡ªlistwriting
 ***************/
 
-//É¾³ıÌØ¶¨Êı¾İ
-int DelListall(list_1 mylist, int t); //iÎªÉ¾³ıµÄĞòºÅ
-//ÑÓ³¤CustomerÁ´±í
+//åˆ é™¤ç‰¹å®šæ•°æ®
+int DelListall(list_1 mylist, int t); //iä¸ºåˆ é™¤çš„åºå·
+//å»¶é•¿Customeré“¾è¡¨
 int extendCustomer(char* Account, char* key, struct Customer* p1, struct Customer* p2, struct Customer* tail);
-//ÑÓ³¤AgencyÁ´±í
+//å»¶é•¿Agencyé“¾è¡¨
 int extendAgency(char* Account, char* key, struct Agency* p1, struct Agency* head, struct Agency* tail);
-//ÑÓ³¤AdminÁ´±í
+//å»¶é•¿Adminé“¾è¡¨
 int extendAdmin(char* Account, char* key, struct Admin* p1, struct Admin* p2, struct Admin* tail);
-//ÑÓ³¤FlatÁ´±í²¢Ğ´Èë
+//å»¶é•¿Flaté“¾è¡¨å¹¶å†™å…¥
 int extend_writeFlat(list_1 p1, list_1 head, list_1 tail, char* city, float area, int t, int floor, float rent, int shi, int ting,struct Agency* ag);
-//¸ü¸Ä·¿²úĞÅÏ¢
+//æ›´æ”¹æˆ¿äº§ä¿¡æ¯
 int fl_change(list_1 fl_p1);
-//²éÕÒ²Ù×÷£¬²éÕÒÒ»¸ö·¶Î§ÄÚµÄ·¿²úĞÅÏ¢
-//lºÍrÎª×óÓÒ¶Ëµã
-//jugÎªÕıĞòorµ¹Ğò
-int range_search_Area(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2);//ÒÔ·¿²úÃæ»ıÎªÀı×Ó
-//ÑÓ³¤extendApmÁ´±í
+//æŸ¥æ‰¾æ“ä½œï¼ŒæŸ¥æ‰¾ä¸€ä¸ªèŒƒå›´å†…çš„æˆ¿äº§ä¿¡æ¯
+//lå’Œrä¸ºå·¦å³ç«¯ç‚¹
+//jugä¸ºæ­£åºorå€’åº
+int range_search_Area(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2);//ä»¥æˆ¿äº§é¢ç§¯ä¸ºä¾‹å­
+//å»¶é•¿extendApmé“¾è¡¨
 int extendApm(struct Appointment* p, struct Appointment* tail, struct Appointment* head, int year, int month, int day, struct Flat* flat, struct Customer* custom);
 
 
 /***********
-À´×Ôothers.c
+æ¥è‡ªothers.c
 ************/
 
 void choose();
-//nÎª×Ö·û¸öÊı,·µ»Ø×Ö·û´®µØÖ·
+//nä¸ºå­—ç¬¦ä¸ªæ•°,è¿”å›å­—ç¬¦ä¸²åœ°å€
 char* radom_string(int n);
 
-//nÎªÊı×Ö¸öÊı,·µ»Ø×Ö·û´®µØÖ·
+//nä¸ºæ•°å­—ä¸ªæ•°,è¿”å›å­—ç¬¦ä¸²åœ°å€
 char* radom_number(int n);
 
 int checkRecurFL(char* num, struct Flat* head);
@@ -105,24 +105,24 @@ void hideInput(char* buffer, int maxLength);
 
 bool checkDate(int year, int month, int day);
 /**********
-À´×Ôcolor.c
+æ¥è‡ªcolor.c
 ***********/
 void color(short x);
 void loading();
 
 /************
-À´×Ôoutput.c
+æ¥è‡ªoutput.c
 ************/
 
-//Êä³ö·¿ÖÌ
-int list_printfl(list_1 mylist_head, list_1 mylist_tail, int judge);//´òÓ¡Á´±í
+//è¾“å‡ºæˆ¿ç—”
+int list_printfl(list_1 mylist_head, list_1 mylist_tail, int judge);//æ‰“å°é“¾è¡¨
 
-//´òÓ¡ÓĞÖĞ½éµÄ·¿²ú
+//æ‰“å°æœ‰ä¸­ä»‹çš„æˆ¿äº§
 int list_printfl_ag(list_1 mylist_head, list_1 mylist_tail, int judge);
-//´òÓ¡Ã»ÓĞÖĞ½éµÄ·¿²ú
+//æ‰“å°æ²¡æœ‰ä¸­ä»‹çš„æˆ¿äº§
 int list_printfl_cu(list_1 mylist_head, list_1 mylist_tail, int judge);
 /************
-À´×Ôfilecach.h
+æ¥è‡ªfilecach.h
 *************/
 
 bool filecachAD_write(struct Admin* head);

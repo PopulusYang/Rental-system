@@ -3,16 +3,16 @@
 #include"list.h"
 #pragma warning(disable:6031) 
 typedef struct Flat Flat, * list_1;
-//ÑÓ³¤FlatÁ´±í²¢Ğ´Èë
+//å»¶é•¿Flaté“¾è¡¨å¹¶å†™å…¥
 int extend_writeFlat(list_1 p1, list_1 head, list_1 tail, char* city, float area, int t, int floor, float rent,int shi,int ting,struct Agency* ag)
 {
     p1 = (struct Flat*)malloc(sizeof(struct Flat));
-    if (p1 == NULL)//ÅĞ¶ÏÉêÇëµÄ¿Õ¼äÊÇ·ñÎª¿Õ£¨NULL£©
+    if (p1 == NULL)//åˆ¤æ–­ç”³è¯·çš„ç©ºé—´æ˜¯å¦ä¸ºç©ºï¼ˆNULLï¼‰
     {
         logError(0);
         return -1;
     }
-    int debug = 0;//ÊÖ»¬µÄÌØÊâÇé¿ö
+    int debug = 0;//æ‰‹æ»‘çš„ç‰¹æ®Šæƒ…å†µ
     strcpy(p1->city, city);
     p1->Area = area;
     p1->shi = shi;
@@ -21,8 +21,8 @@ int extend_writeFlat(list_1 p1, list_1 head, list_1 tail, char* city, float area
     {
         if (debug == 1)
         {
-            printf("ÇëÕıÈ·ÊäÈë³¯Ïò£¡£¡£¡\n");
-            printf("ÇëÊäÈë³¯Ïò£º\n");
+            printf("è¯·æ­£ç¡®è¾“å…¥æœå‘ï¼ï¼ï¼\n");
+            printf("è¯·è¾“å…¥æœå‘ï¼š\n");
             scanf("%d", &t);
         }
         switch (t)
@@ -66,8 +66,8 @@ int extend_writeFlat(list_1 p1, list_1 head, list_1 tail, char* city, float area
     } while (debug != 0);
     p1->floor = floor;
     p1->rent = rent;
-    p1->agency_fee = p1->rent * 0.01f;//ÊÖĞø·ÑÎª×Ü×â½ğµÄ°Ù·ÖÖ®Ò»
-    p1->deposit = p1->rent * 3;//Ñº½ğÎªÈı¸öÔÂ×â½ğ
+    p1->agency_fee = p1->rent * 0.01f;//æ‰‹ç»­è´¹ä¸ºæ€»ç§Ÿé‡‘çš„ç™¾åˆ†ä¹‹ä¸€
+    p1->deposit = p1->rent * 3;//æŠ¼é‡‘ä¸ºä¸‰ä¸ªæœˆç§Ÿé‡‘
     char* temp;
     temp = radom_number(8);
     while (checkRecurFL(temp, head))
@@ -86,7 +86,7 @@ int extend_writeFlat(list_1 p1, list_1 head, list_1 tail, char* city, float area
     p1->agency = ag;
     p1->statment = true;
     p1->custome = NULL;
-    //Êı¾İĞŞ¸Ä¶¼ÔÚÉÏÃæ
+    //æ•°æ®ä¿®æ”¹éƒ½åœ¨ä¸Šé¢
     p1->prev = tail;
     tail->next = p1;
     p1->next = NULL;
@@ -94,11 +94,11 @@ int extend_writeFlat(list_1 p1, list_1 head, list_1 tail, char* city, float area
     return 0;
 }
 
-//ÑÓ³¤AdminÁ´±í
+//å»¶é•¿Adminé“¾è¡¨
 int extendAdmin(char* Account, char* key, struct Admin* p1, struct Admin* p2, struct Admin* tail)
 {
     p1 = (struct Admin*)malloc(sizeof(struct Admin));
-    if (p1 == NULL)//ÅĞ¶ÏÉêÇëµÄ¿Õ¼äÊÇ·ñÎª¿Õ£¨NULL£©
+    if (p1 == NULL)//åˆ¤æ–­ç”³è¯·çš„ç©ºé—´æ˜¯å¦ä¸ºç©ºï¼ˆNULLï¼‰
     {
         logError(0);
         return -1;
@@ -108,20 +108,20 @@ int extendAdmin(char* Account, char* key, struct Admin* p1, struct Admin* p2, st
     strcpy(p1->Key, key);
 
 
-    //Êı¾İĞŞ¸Ä¶¼ÔÚÉÏÃæ
+    //æ•°æ®ä¿®æ”¹éƒ½åœ¨ä¸Šé¢
     tail->next = p1;
     tail = p1;
     tail->next = NULL;
     p1->prev = p2;
-    p2 = p1;//ÑÓ³¤Á´±í
+    p2 = p1;//å»¶é•¿é“¾è¡¨
     return 0;
 }
 
-//ÑÓ³¤AgencyÁ´±í
+//å»¶é•¿Agencyé“¾è¡¨
 int extendAgency(char* Account, char* key, struct Agency* p1, struct Agency* head, struct Agency* tail)
 {
     p1 = (struct Agency*)malloc(sizeof(struct Agency));
-    if (p1 == NULL)//ÅĞ¶ÏÉêÇëµÄ¿Õ¼äÊÇ·ñÎª¿Õ£¨NULL£©
+    if (p1 == NULL)//åˆ¤æ–­ç”³è¯·çš„ç©ºé—´æ˜¯å¦ä¸ºç©ºï¼ˆNULLï¼‰
     {
         logError(0);
         return -1;
@@ -130,17 +130,17 @@ int extendAgency(char* Account, char* key, struct Agency* p1, struct Agency* hea
     strcpy(p1->Account, Account);
     strcpy(p1->Key, key);
     char* temp;
-    temp = radom_number(8);//Éú³É±àºÅ
+    temp = radom_number(8);//ç”Ÿæˆç¼–å·
 
-    while (checkRecurAG(temp, head))//²éÖØ
+    while (checkRecurAG(temp, head))//æŸ¥é‡
     {
         free(temp);
         temp = radom_number(8);
     }
-    strcpy(p1->Number,temp);//¸´ÖÆ
+    strcpy(p1->Number,temp);//å¤åˆ¶
     free(temp);
 
-    //Êı¾İĞŞ¸Ä¶¼ÔÚÉÏÃæ
+    //æ•°æ®ä¿®æ”¹éƒ½åœ¨ä¸Šé¢
     tail->next = p1;
     p1->prev = tail;
     tail = p1;
@@ -149,11 +149,11 @@ int extendAgency(char* Account, char* key, struct Agency* p1, struct Agency* hea
 }
 
 
-//ÑÓ³¤CustomerÁ´±í
+//å»¶é•¿Customeré“¾è¡¨
 int extendCustomer(char* Account, char* key, struct Customer* p1, struct Customer* p2, struct Customer* tail)
 {
     p1 = (struct Customer*)malloc(sizeof(struct Customer));
-    if (p1 == NULL)//ÅĞ¶ÏÉêÇëµÄ¿Õ¼äÊÇ·ñÎª¿Õ£¨NULL£©
+    if (p1 == NULL)//åˆ¤æ–­ç”³è¯·çš„ç©ºé—´æ˜¯å¦ä¸ºç©ºï¼ˆNULLï¼‰
     {
         logError(0);
         return -1;
@@ -163,20 +163,20 @@ int extendCustomer(char* Account, char* key, struct Customer* p1, struct Custome
     strcpy(p1->Key, key);
     p1->statment = 1;
 
-    //Êı¾İĞŞ¸Ä¶¼ÔÚÉÏÃæ
+    //æ•°æ®ä¿®æ”¹éƒ½åœ¨ä¸Šé¢
     tail->next = p1;
     tail = p1;
     tail->next = NULL;
     p1->prev = p2;
-    p2 = p1;//ÑÓ³¤Á´±í
+    p2 = p1;//å»¶é•¿é“¾è¡¨
     return 0;
 }
 
-//ÑÓ³¤Ô¤Ô¼ĞÅÏ¢
+//å»¶é•¿é¢„çº¦ä¿¡æ¯
 int extendApm(struct Appointment* p, struct Appointment* tail, struct Appointment *head,int year, int month, int day, struct Flat* flat, struct Customer* custom)
 {
     p = (struct Appointment*)malloc(sizeof(struct Appointment));
-    if (p == NULL)//×¢Òâ°²È«
+    if (p == NULL)//æ³¨æ„å®‰å…¨
     {
         logError(0);
         return -1;
@@ -189,14 +189,14 @@ int extendApm(struct Appointment* p, struct Appointment* tail, struct Appointmen
     strcpy(p->cuposition, custom->Account);
     strcpy(p->flposition, flat->number);
     char* temp;
-    temp = radom_number(8);//Éú³É±àºÅ
+    temp = radom_number(8);//ç”Ÿæˆç¼–å·
 
-    while (checkRecurAP(temp, head))//²éÖØ
+    while (checkRecurAP(temp, head))//æŸ¥é‡
     {
         free(temp);
         temp = radom_number(8);
     }
-    strcpy(p->Number, temp);//¸´ÖÆ
+    strcpy(p->Number, temp);//å¤åˆ¶
     p->statment = 1;
     free(temp);
     tail->next = p;
@@ -204,7 +204,7 @@ int extendApm(struct Appointment* p, struct Appointment* tail, struct Appointmen
     return 0;
 }
 
-int DelListall(list_1 mylist, int t) //tÎªÉ¾³ıµÄĞòºÅ
+int DelListall(list_1 mylist, int t) //tä¸ºåˆ é™¤çš„åºå·
 {
     if (mylist->next == NULL)
     {
@@ -234,18 +234,18 @@ int DelListall(list_1 mylist, int t) //tÎªÉ¾³ıµÄĞòºÅ
     temp = NULL;
     return 0;
 }
-//²éÕÒ²Ù×÷£¬²éÕÒÒ»¸ö·¶Î§ÄÚµÄ·¿²úĞÅÏ¢
-//lºÍrÎª×óÓÒ¶Ëµã
-//jugÎªÕıĞòorµ¹Ğò
-//jug2ÅĞ¶ÏÅÅÊ²Ã´µÄË³Ğò
-int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,int jug2)//ÒÔ·¿²úÃæ»ıÎªÀı×Ó
+//æŸ¥æ‰¾æ“ä½œï¼ŒæŸ¥æ‰¾ä¸€ä¸ªèŒƒå›´å†…çš„æˆ¿äº§ä¿¡æ¯
+//lå’Œrä¸ºå·¦å³ç«¯ç‚¹
+//jugä¸ºæ­£åºorå€’åº
+//jug2åˆ¤æ–­æ’ä»€ä¹ˆçš„é¡ºåº
+int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,int jug2)//ä»¥æˆ¿äº§é¢ç§¯ä¸ºä¾‹å­
 {
     Flat* temp;
     temp = mylist_head;
     bubbleSort_Area(&temp,jug2);
     struct Flat* p1;
     int t = 0;
-    //ÕıĞò
+    //æ­£åº
     if (mylist_head->next == NULL)
     {
         logError(0);
@@ -257,83 +257,83 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
     {
         while (p1 != NULL && jug == 1)
         {
-            //Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+            //è¿™å—éœ€è¦åŠ å…¥æ‰“å°
             if (p1->rent >= l && p1->rent <= r)
             {
                 t++;
                 printf("%d:\t", t);
-                printf("%sÆ½·½Ã×\n", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
+                printf("%så¹³æ–¹ç±³\n", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
                 printf("%4.2f\t", p1->Area);
-                printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-                printf("³¯ÏòÎª");
+                printf("%då®¤%då…\t", p1->shi, p1->ting);
+                printf("æœå‘ä¸º");
                 switch ((int)p1->toward)
                 {
                 case 1:
-                    printf("¶«\n");
+                    printf("ä¸œ\n");
                     break;
                 case 2:
-                    printf("ÄÏ\n");
+                    printf("å—\n");
                     break;
                 case 3:
-                    printf("Î÷\n");
+                    printf("è¥¿\n");
                     break;
                 case 4:
-                    printf("±±\n");
+                    printf("åŒ—\n");
                     break;
                 case 5:
-                    printf("¶«ÄÏ\n");
+                    printf("ä¸œå—\n");
                     break;
                 case 6:
-                    printf("¶«±±\n");
+                    printf("ä¸œåŒ—\n");
                     break;
                 case 7:
-                    printf("Î÷ÄÏ\n");
+                    printf("è¥¿å—\n");
                     break;
                 case 8:
-                    printf("Î÷±±\n");
+                    printf("è¥¿åŒ—\n");
                     break;
 
                 }
             }
             p1 = p1->next;
         }
-        //µ¹Ğò
+        //å€’åº
         while (mylist_tail->prev != NULL && jug == 2)
         {
-            //Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+            //è¿™å—éœ€è¦åŠ å…¥æ‰“å°
             if (mylist_tail->rent >= l && mylist_tail->rent <= r)
             {
                 t++;
                 printf("%d:\t", t);
-                printf("%s\t", mylist_tail->number);//¸Ä³ÉĞòºÅ
-                printf("%4.2fÆ½·½Ã×\n", mylist_tail->Area);
-                printf("%dÊÒ%dÌü\t", mylist_tail->shi, mylist_tail->ting);
-                printf("³¯ÏòÎª");
+                printf("%s\t", mylist_tail->number);//æ”¹æˆåºå·
+                printf("%4.2få¹³æ–¹ç±³\n", mylist_tail->Area);
+                printf("%då®¤%då…\t", mylist_tail->shi, mylist_tail->ting);
+                printf("æœå‘ä¸º");
                 switch ((int)mylist_tail->toward)
                 {
                 case 1:
-                    printf("¶«\n");
+                    printf("ä¸œ\n");
                     break;
                 case 2:
-                    printf("ÄÏ\n");
+                    printf("å—\n");
                     break;
                 case 3:
-                    printf("Î÷\n");
+                    printf("è¥¿\n");
                     break;
                 case 4:
-                    printf("±±\n");
+                    printf("åŒ—\n");
                     break;
                 case 5:
-                    printf("¶«ÄÏ\n");
+                    printf("ä¸œå—\n");
                     break;
                 case 6:
-                    printf("¶«±±\n");
+                    printf("ä¸œåŒ—\n");
                     break;
                 case 7:
-                    printf("Î÷ÄÏ\n");
+                    printf("è¥¿å—\n");
                     break;
                 case 8:
-                    printf("Î÷±±\n");
+                    printf("è¥¿åŒ—\n");
                     break;
 
                 }
@@ -345,83 +345,83 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
     {
         while (p1!= NULL && jug == 1)
         {
-            //Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+            //è¿™å—éœ€è¦åŠ å…¥æ‰“å°
             if (p1->floor >= l && p1->floor <= r)
             {
                 t++;
                 printf("%d:\t", t);
-                printf("%sÆ½·½Ã×\n", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
+                printf("%så¹³æ–¹ç±³\n", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
                 printf("%4.2f\t", p1->Area);
-                printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-                printf("³¯ÏòÎª");
+                printf("%då®¤%då…\t", p1->shi, p1->ting);
+                printf("æœå‘ä¸º");
                 switch ((int)p1->toward)
                 {
                 case 1:
-                    printf("¶«\n");
+                    printf("ä¸œ\n");
                     break;
                 case 2:
-                    printf("ÄÏ\n");
+                    printf("å—\n");
                     break;
                 case 3:
-                    printf("Î÷\n");
+                    printf("è¥¿\n");
                     break;
                 case 4:
-                    printf("±±\n");
+                    printf("åŒ—\n");
                     break;
                 case 5:
-                    printf("¶«ÄÏ\n");
+                    printf("ä¸œå—\n");
                     break;
                 case 6:
-                    printf("¶«±±\n");
+                    printf("ä¸œåŒ—\n");
                     break;
                 case 7:
-                    printf("Î÷ÄÏ\n");
+                    printf("è¥¿å—\n");
                     break;
                 case 8:
-                    printf("Î÷±±\n");
+                    printf("è¥¿åŒ—\n");
                     break;
 
                 }
             }
             p1 = p1->next;
         }
-        //µ¹Ğò
+        //å€’åº
         while (mylist_tail->prev != NULL && jug == 2)
         {
-            //Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+            //è¿™å—éœ€è¦åŠ å…¥æ‰“å°
             if (mylist_tail->floor >= l && mylist_tail->floor <= r)
             {
                 t++;
                 printf("%d:\t", t);
-                printf("%sÆ½·½Ã×\n", mylist_tail->number);//¸Ä³ÉĞòºÅ
+                printf("%så¹³æ–¹ç±³\n", mylist_tail->number);//æ”¹æˆåºå·
                 printf("%4.2f\t", mylist_tail->Area);
-                printf("%dÊÒ%dÌü\t", mylist_tail->shi, mylist_tail->ting);
-                printf("³¯ÏòÎª");
+                printf("%då®¤%då…\t", mylist_tail->shi, mylist_tail->ting);
+                printf("æœå‘ä¸º");
                 switch ((int)mylist_tail->toward)
                 {
                 case 1:
-                    printf("¶«\n");
+                    printf("ä¸œ\n");
                     break;
                 case 2:
-                    printf("ÄÏ\n");
+                    printf("å—\n");
                     break;
                 case 3:
-                    printf("Î÷\n");
+                    printf("è¥¿\n");
                     break;
                 case 4:
-                    printf("±±\n");
+                    printf("åŒ—\n");
                     break;
                 case 5:
-                    printf("¶«ÄÏ\n");
+                    printf("ä¸œå—\n");
                     break;
                 case 6:
-                    printf("¶«±±\n");
+                    printf("ä¸œåŒ—\n");
                     break;
                 case 7:
-                    printf("Î÷ÄÏ\n");
+                    printf("è¥¿å—\n");
                     break;
                 case 8:
-                    printf("Î÷±±\n");
+                    printf("è¥¿åŒ—\n");
                     break;
 
                 }
@@ -433,83 +433,83 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
     {
         while (p1 != NULL && jug == 1)
         {
-            //Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+            //è¿™å—éœ€è¦åŠ å…¥æ‰“å°
             if (p1->Area >= l && p1->Area <= r)
             {
                 t++;
                 printf("%d:\t", t);
-                printf("%sÆ½·½Ã×\n", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
+                printf("%så¹³æ–¹ç±³\n", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
                 printf("%4.2f\t", p1->Area);
-                printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-                printf("³¯ÏòÎª");
+                printf("%då®¤%då…\t", p1->shi, p1->ting);
+                printf("æœå‘ä¸º");
                 switch ((int)p1->toward)
                 {
                 case 1:
-                    printf("¶«\n");
+                    printf("ä¸œ\n");
                     break;
                 case 2:
-                    printf("ÄÏ\n");
+                    printf("å—\n");
                     break;
                 case 3:
-                    printf("Î÷\n");
+                    printf("è¥¿\n");
                     break;
                 case 4:
-                    printf("±±\n");
+                    printf("åŒ—\n");
                     break;
                 case 5:
-                    printf("¶«ÄÏ\n");
+                    printf("ä¸œå—\n");
                     break;
                 case 6:
-                    printf("¶«±±\n");
+                    printf("ä¸œåŒ—\n");
                     break;
                 case 7:
-                    printf("Î÷ÄÏ\n");
+                    printf("è¥¿å—\n");
                     break;
                 case 8:
-                    printf("Î÷±±\n");
+                    printf("è¥¿åŒ—\n");
                     break;
 
                 }
             }
             p1 = p1->next;
         }
-        //µ¹Ğò
+        //å€’åº
         while (mylist_tail->prev != NULL && jug == 2)
         {
-            //Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+            //è¿™å—éœ€è¦åŠ å…¥æ‰“å°
             if (mylist_tail->Area >= l && mylist_tail->Area <= r)
             {
                 t++;
                 printf("%d:\t", t);
-                printf("%s\t", mylist_tail->number);//¸Ä³ÉĞòºÅ
-                printf("%4.2fÆ½·½Ã×\n", mylist_tail->Area);
-                printf("%dÊÒ%dÌü\t", mylist_tail->shi, mylist_tail->ting);
-                printf("³¯ÏòÎª");
+                printf("%s\t", mylist_tail->number);//æ”¹æˆåºå·
+                printf("%4.2få¹³æ–¹ç±³\n", mylist_tail->Area);
+                printf("%då®¤%då…\t", mylist_tail->shi, mylist_tail->ting);
+                printf("æœå‘ä¸º");
                 switch ((int)mylist_tail->toward)
                 {
                 case 1:
-                    printf("¶«\n");
+                    printf("ä¸œ\n");
                     break;
                 case 2:
-                    printf("ÄÏ\n");
+                    printf("å—\n");
                     break;
                 case 3:
-                    printf("Î÷\n");
+                    printf("è¥¿\n");
                     break;
                 case 4:
-                    printf("±±\n");
+                    printf("åŒ—\n");
                     break;
                 case 5:
-                    printf("¶«ÄÏ\n");
+                    printf("ä¸œå—\n");
                     break;
                 case 6:
-                    printf("¶«±±\n");
+                    printf("ä¸œåŒ—\n");
                     break;
                 case 7:
-                    printf("Î÷ÄÏ\n");
+                    printf("è¥¿å—\n");
                     break;
                 case 8:
-                    printf("Î÷±±\n");
+                    printf("è¥¿åŒ—\n");
                     break;
 
                 }
@@ -519,10 +519,10 @@ int range_search_Area(int l,int r,Flat* mylist_head,list_1 mylist_tail, int jug,
     }
     return t;
 }
-int fl_change(list_1 fl_p1)//ÓÃÓÚ¸ü¸Ä·¿×ÓĞÅÏ¢
+int fl_change(list_1 fl_p1)//ç”¨äºæ›´æ”¹æˆ¿å­ä¿¡æ¯
 {
-    printf("³É¹¦ÕÒµ½¶ÔÏó\n");
-    printf("Çë°´ÕÕĞòºÅ/³ÇÊĞ/Ãæ»ı/ÊÒ/Ìü/³¯Ïò/Â¥²ã/×â½ğË³ĞòÊäÈë¸ü¸ÄºóµÄĞÅÏ¢\n");
+    printf("æˆåŠŸæ‰¾åˆ°å¯¹è±¡\n");
+    printf("è¯·æŒ‰ç…§åºå·/åŸå¸‚/é¢ç§¯/å®¤/å…/æœå‘/æ¥¼å±‚/ç§Ÿé‡‘é¡ºåºè¾“å…¥æ›´æ”¹åçš„ä¿¡æ¯\n");
     char number[9] = { '\0' };
     char city[20] = { '\0' };
     float Area;
@@ -539,13 +539,13 @@ int fl_change(list_1 fl_p1)//ÓÃÓÚ¸ü¸Ä·¿×ÓĞÅÏ¢
     fl_p1->Area = Area;
     fl_p1->shi = shi;
     fl_p1->ting = ting;
-    int debug = 0;//ÊÖ»¬µÄÌØÊâÇé¿ö
+    int debug = 0;//æ‰‹æ»‘çš„ç‰¹æ®Šæƒ…å†µ
     do
     {
         if (debug == 1)
         {
-            printf("ÇëÕıÈ·ÊäÈë³¯Ïò£¡£¡£¡\n");
-            printf("ÇëÊäÈë³¯Ïò£º\n");
+            printf("è¯·æ­£ç¡®è¾“å…¥æœå‘ï¼ï¼ï¼\n");
+            printf("è¯·è¾“å…¥æœå‘ï¼š\n");
             scanf("%d", &t);
         }
         switch (t)
@@ -589,7 +589,7 @@ int fl_change(list_1 fl_p1)//ÓÃÓÚ¸ü¸Ä·¿×ÓĞÅÏ¢
     } while (debug != 0);
     fl_p1->floor = floor;
     fl_p1->rent = rent;
-    fl_p1->agency_fee = fl_p1->rent * 0.01f;//ÊÖĞø·ÑÎª×Ü×â½ğµÄ°Ù·ÖÖ®Ò»
-    fl_p1->deposit = fl_p1->rent * 3;//Ñº½ğÎªÈı¸öÔÂ×â½ğ¡¢
+    fl_p1->agency_fee = fl_p1->rent * 0.01f;//æ‰‹ç»­è´¹ä¸ºæ€»ç§Ÿé‡‘çš„ç™¾åˆ†ä¹‹ä¸€
+    fl_p1->deposit = fl_p1->rent * 3;//æŠ¼é‡‘ä¸ºä¸‰ä¸ªæœˆç§Ÿé‡‘ã€
     return 0;
 }

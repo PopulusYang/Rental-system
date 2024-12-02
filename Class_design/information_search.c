@@ -2,28 +2,28 @@
 #include "temphead.h"	
 
 /*********************************************
-×Ö·û´®ËÑË÷£¬ÒÀÈ»ÊÇ·µ»ØÆäµØÖ·£¬»¹ÊÇĞèÒªfreeÊÍ·Å
-ĞèÒªÊäÈëÖĞ½é¡¢×â¿Í¡¢Ô¤Ô¼Èı¸öÁ´±íµÄhead
-kindÊÇËÑË÷×Ö·û´®À´×ÔÄÇ¸öÁ´±í£¬1ÊÇagency£¬2ÊÇcustomer
-3ÊÇappointment,4ÊÇflat
-×¢Òâ£º±¾º¯Êı²»¾ß±¸ÆÕ±éĞÔ
-Êı×éµÚÒ»¸öÊıÊÇÊı×éÖĞµÄÔªËØ¸öÊı£¨²»°üÀ¨µÚÒ»¸ö£©
+å­—ç¬¦ä¸²æœç´¢ï¼Œä¾ç„¶æ˜¯è¿”å›å…¶åœ°å€ï¼Œè¿˜æ˜¯éœ€è¦freeé‡Šæ”¾
+éœ€è¦è¾“å…¥ä¸­ä»‹ã€ç§Ÿå®¢ã€é¢„çº¦ä¸‰ä¸ªé“¾è¡¨çš„head
+kindæ˜¯æœç´¢å­—ç¬¦ä¸²æ¥è‡ªé‚£ä¸ªé“¾è¡¨ï¼Œ1æ˜¯agencyï¼Œ2æ˜¯customer
+3æ˜¯appointment,4æ˜¯flat
+æ³¨æ„ï¼šæœ¬å‡½æ•°ä¸å…·å¤‡æ™®éæ€§
+æ•°ç»„ç¬¬ä¸€ä¸ªæ•°æ˜¯æ•°ç»„ä¸­çš„å…ƒç´ ä¸ªæ•°ï¼ˆä¸åŒ…æ‹¬ç¬¬ä¸€ä¸ªï¼‰
 *********************************************/
 int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Flat* fh, struct Appointment* aph, int kind)
 {
 	int max;
-	int geshu = 0;//ÓĞĞ§Êı¾İµÄ¸öÊı
+	int geshu = 0;//æœ‰æ•ˆæ•°æ®çš„ä¸ªæ•°
 	int* position;
 	char* temp2;
 	int* arr;
 	arr = NULL;
 	temp2 = NULL;
 	position = NULL;
-	//¹¹½¨ÁÙÊ±Á´±í
+	//æ„å»ºä¸´æ—¶é“¾è¡¨
 	struct MyStruct
 	{
 		char string[20];
-		int time;//Ïà¹Ø¶È
+		int time;//ç›¸å…³åº¦
 		struct MyStruct* next;
 		int position;
 	};
@@ -44,8 +44,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		max = countNumberAG(ah);
 		struct Agency* ap;
 		ap = ah;
-		temp2 = (char*)malloc(51 * sizeof(char));//ÁÙÊ±´¢´æÓëÊäÈë×Ö·û´®³¤¶ÈÏàÍ¬µÄÊı¾İ
-		if (temp2 == NULL)//¶¯Ì¬·ÖÅäµÄÄÚ´æ²»ÊÇNULL
+		temp2 = (char*)malloc(51 * sizeof(char));//ä¸´æ—¶å‚¨å­˜ä¸è¾“å…¥å­—ç¬¦ä¸²é•¿åº¦ç›¸åŒçš„æ•°æ®
+		if (temp2 == NULL)//åŠ¨æ€åˆ†é…çš„å†…å­˜ä¸æ˜¯NULL
 		{
 			logError(0);
 			return NULL;
@@ -54,8 +54,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		for (int a = 0; a != max; a++)
 		{
 			ap = ap->next;
-			int jug = 0;//ÅĞ¶ÏÊı¾İÓëÊäÈëÏîÊÇ·ñÓĞ¹ØÁª£¬0ÎŞ¹ØÁª£¬1ÓĞ¹ØÁª
-			int time = 0;//timeÔ½Ğ¡¹ØÁªĞÔÔ½¸ß
+			int jug = 0;//åˆ¤æ–­æ•°æ®ä¸è¾“å…¥é¡¹æ˜¯å¦æœ‰å…³è”ï¼Œ0æ— å…³è”ï¼Œ1æœ‰å…³è”
+			int time = 0;//timeè¶Šå°å…³è”æ€§è¶Šé«˜
 			for (int i = 0; i <= (int)strlen(ap->Account) - (int)strlen(input); i++)
 			{
 				int k = 0;
@@ -66,7 +66,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 					jug = 1;
 					break;
 				}
-				time++;//Ã¿¼ì²éÒ»´Î£¬time+1
+				time++;//æ¯æ£€æŸ¥ä¸€æ¬¡ï¼Œtime+1
 			}
 			if (jug)
 			{
@@ -81,7 +81,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				p->position = a;
 				tail->next = p;
 				tail = p;
-				tail->next = NULL;//ÑÓ³¤Á´±í
+				tail->next = NULL;//å»¶é•¿é“¾è¡¨
 				geshu++;
 				jug = 0;
 			}
@@ -90,8 +90,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		for (int a = 0; a != max; a++)
 		{
 			ap = ap->next;
-			int jug = 0;//ÅĞ¶ÏÊı¾İÓëÊäÈëÏîÊÇ·ñÓĞ¹ØÁª£¬0ÎŞ¹ØÁª£¬1ÓĞ¹ØÁª
-			int time = 0;//timeÔ½Ğ¡¹ØÁªĞÔÔ½¸ß
+			int jug = 0;//åˆ¤æ–­æ•°æ®ä¸è¾“å…¥é¡¹æ˜¯å¦æœ‰å…³è”ï¼Œ0æ— å…³è”ï¼Œ1æœ‰å…³è”
+			int time = 0;//timeè¶Šå°å…³è”æ€§è¶Šé«˜
 			for (int i = 0; i <= (int)strlen(ap->phone_n) - (int)strlen(input); i++)
 			{
 				int k = 0;
@@ -102,7 +102,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 					jug = 1;
 					break;
 				}
-				time++;//Ã¿¼ì²éÒ»´Î£¬time+1
+				time++;//æ¯æ£€æŸ¥ä¸€æ¬¡ï¼Œtime+1
 			}
 			if (jug)
 			{
@@ -117,7 +117,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				p->position = a;
 				tail->next = p;
 				tail = p;
-				tail->next = NULL;//ÑÓ³¤Á´±í
+				tail->next = NULL;//å»¶é•¿é“¾è¡¨
 				geshu++;
 				jug = 0;
 			}
@@ -126,8 +126,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		for (int a = 0; a != max; a++)
 		{
 			ap = ap->next;
-			int jug = 0;//ÅĞ¶ÏÊı¾İÓëÊäÈëÏîÊÇ·ñÓĞ¹ØÁª£¬0ÎŞ¹ØÁª£¬1ÓĞ¹ØÁª
-			int time = 0;//timeÔ½Ğ¡¹ØÁªĞÔÔ½¸ß
+			int jug = 0;//åˆ¤æ–­æ•°æ®ä¸è¾“å…¥é¡¹æ˜¯å¦æœ‰å…³è”ï¼Œ0æ— å…³è”ï¼Œ1æœ‰å…³è”
+			int time = 0;//timeè¶Šå°å…³è”æ€§è¶Šé«˜
 			for (int i = 0; i <= (int)strlen(ap->Name) - (int)strlen(input); i++)
 			{
 				int k = 0;
@@ -138,7 +138,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 					jug = 1;
 					break;
 				}
-				time++;//Ã¿¼ì²éÒ»´Î£¬time+1
+				time++;//æ¯æ£€æŸ¥ä¸€æ¬¡ï¼Œtime+1
 			}
 			if (jug)
 			{
@@ -153,7 +153,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				p->position = a;
 				tail->next = p;
 				tail = p;
-				tail->next = NULL;//ÑÓ³¤Á´±í
+				tail->next = NULL;//å»¶é•¿é“¾è¡¨
 				geshu++;
 				jug = 0;
 			}
@@ -162,8 +162,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		for (int a = 0; a != max; a++)
 		{
 			ap = ap->next;
-			int jug = 0;//ÅĞ¶ÏÊı¾İÓëÊäÈëÏîÊÇ·ñÓĞ¹ØÁª£¬0ÎŞ¹ØÁª£¬1ÓĞ¹ØÁª
-			int time = 0;//timeÔ½Ğ¡¹ØÁªĞÔÔ½¸ß
+			int jug = 0;//åˆ¤æ–­æ•°æ®ä¸è¾“å…¥é¡¹æ˜¯å¦æœ‰å…³è”ï¼Œ0æ— å…³è”ï¼Œ1æœ‰å…³è”
+			int time = 0;//timeè¶Šå°å…³è”æ€§è¶Šé«˜
 			for (int i = 0; i <= (int)strlen(ap->Number) - (int)strlen(input); i++)
 			{
 				int k = 0;
@@ -174,7 +174,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 					jug = 1;
 					break;
 				}
-				time++;//Ã¿¼ì²éÒ»´Î£¬time+1
+				time++;//æ¯æ£€æŸ¥ä¸€æ¬¡ï¼Œtime+1
 			}
 			if (jug)
 			{
@@ -189,7 +189,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				p->position = a;
 				tail->next = p;
 				tail = p;
-				tail->next = NULL;//ÑÓ³¤Á´±í
+				tail->next = NULL;//å»¶é•¿é“¾è¡¨
 				geshu++;
 				jug = 0;
 			}
@@ -199,8 +199,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		max = countNumberCU(ch);
 		struct Customer* cp;
 		cp = ch;
-		temp2 = (char*)malloc(51 * sizeof(char));//ÁÙÊ±´¢´æÓëÊäÈë×Ö·û´®³¤¶ÈÏàÍ¬µÄÊı¾İ
-		if (temp2 == NULL)//¶¯Ì¬·ÖÅäµÄÄÚ´æ²»ÊÇNULL
+		temp2 = (char*)malloc(51 * sizeof(char));//ä¸´æ—¶å‚¨å­˜ä¸è¾“å…¥å­—ç¬¦ä¸²é•¿åº¦ç›¸åŒçš„æ•°æ®
+		if (temp2 == NULL)//åŠ¨æ€åˆ†é…çš„å†…å­˜ä¸æ˜¯NULL
 		{
 			logError(0);
 			return NULL;
@@ -209,8 +209,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		for (int a = 0; a != max; a++)
 		{
 			cp = cp->next;
-			int jug = 0;//ÅĞ¶ÏÊı¾İÓëÊäÈëÏîÊÇ·ñÓĞ¹ØÁª£¬0ÎŞ¹ØÁª£¬1ÓĞ¹ØÁª
-			int time = 0;//timeÔ½Ğ¡¹ØÁªĞÔÔ½¸ß
+			int jug = 0;//åˆ¤æ–­æ•°æ®ä¸è¾“å…¥é¡¹æ˜¯å¦æœ‰å…³è”ï¼Œ0æ— å…³è”ï¼Œ1æœ‰å…³è”
+			int time = 0;//timeè¶Šå°å…³è”æ€§è¶Šé«˜
 			for (int i = 0; i <= (int)strlen(cp->Account) - (int)strlen(input); i++)
 			{
 				int k = 0;
@@ -221,7 +221,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 					jug = 1;
 					break;
 				}
-				time++;//Ã¿¼ì²éÒ»´Î£¬time+1
+				time++;//æ¯æ£€æŸ¥ä¸€æ¬¡ï¼Œtime+1
 			}
 			if (jug)
 			{
@@ -236,7 +236,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				p->position = a;
 				tail->next = p;
 				tail = p;
-				tail->next = NULL;//ÑÓ³¤Á´±í
+				tail->next = NULL;//å»¶é•¿é“¾è¡¨
 				geshu++;
 				jug = 0;
 			}
@@ -245,8 +245,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		for (int a = 0; a != max; a++)
 		{
 			cp = cp->next;
-			int jug = 0;//ÅĞ¶ÏÊı¾İÓëÊäÈëÏîÊÇ·ñÓĞ¹ØÁª£¬0ÎŞ¹ØÁª£¬1ÓĞ¹ØÁª
-			int time = 0;//timeÔ½Ğ¡¹ØÁªĞÔÔ½¸ß
+			int jug = 0;//åˆ¤æ–­æ•°æ®ä¸è¾“å…¥é¡¹æ˜¯å¦æœ‰å…³è”ï¼Œ0æ— å…³è”ï¼Œ1æœ‰å…³è”
+			int time = 0;//timeè¶Šå°å…³è”æ€§è¶Šé«˜
 			for (int i = 0; i <= (int)strlen(cp->phone_n) - (int)strlen(input); i++)
 			{
 				int k = 0;
@@ -257,7 +257,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 					jug = 1;
 					break;
 				}
-				time++;//Ã¿¼ì²éÒ»´Î£¬time+1
+				time++;//æ¯æ£€æŸ¥ä¸€æ¬¡ï¼Œtime+1
 			}
 			if (jug)
 			{
@@ -272,7 +272,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				p->position = a;
 				tail->next = p;
 				tail = p;
-				tail->next = NULL;//ÑÓ³¤Á´±í
+				tail->next = NULL;//å»¶é•¿é“¾è¡¨
 				geshu++;
 				jug = 0;
 			}
@@ -281,8 +281,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		for (int a = 0; a != max; a++)
 		{
 			cp = cp->next;
-			int jug = 0;//ÅĞ¶ÏÊı¾İÓëÊäÈëÏîÊÇ·ñÓĞ¹ØÁª£¬0ÎŞ¹ØÁª£¬1ÓĞ¹ØÁª
-			int time = 0;//timeÔ½Ğ¡¹ØÁªĞÔÔ½¸ß
+			int jug = 0;//åˆ¤æ–­æ•°æ®ä¸è¾“å…¥é¡¹æ˜¯å¦æœ‰å…³è”ï¼Œ0æ— å…³è”ï¼Œ1æœ‰å…³è”
+			int time = 0;//timeè¶Šå°å…³è”æ€§è¶Šé«˜
 			for (int i = 0; i <= (int)strlen(cp->Name) - (int)strlen(input); i++)
 			{
 				int k = 0;
@@ -293,7 +293,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 					jug = 1;
 					break;
 				}
-				time++;//Ã¿¼ì²éÒ»´Î£¬time+1
+				time++;//æ¯æ£€æŸ¥ä¸€æ¬¡ï¼Œtime+1
 			}
 			if (jug)
 			{
@@ -308,7 +308,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				p->position = a;
 				tail->next = p;
 				tail = p;
-				tail->next = NULL;//ÑÓ³¤Á´±í
+				tail->next = NULL;//å»¶é•¿é“¾è¡¨
 				geshu++;
 				jug = 0;
 			}
@@ -318,8 +318,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		max = countNumberAP(aph);
 		struct Appointment* app;
 		app = aph;
-		temp2 = (char*)malloc(51 * sizeof(char));//ÁÙÊ±´¢´æÓëÊäÈë×Ö·û´®³¤¶ÈÏàÍ¬µÄÊı¾İ
-		if (temp2 == NULL)//¶¯Ì¬·ÖÅäµÄÄÚ´æ²»ÊÇNULL
+		temp2 = (char*)malloc(51 * sizeof(char));//ä¸´æ—¶å‚¨å­˜ä¸è¾“å…¥å­—ç¬¦ä¸²é•¿åº¦ç›¸åŒçš„æ•°æ®
+		if (temp2 == NULL)//åŠ¨æ€åˆ†é…çš„å†…å­˜ä¸æ˜¯NULL
 		{
 			logError(0);
 			return NULL;
@@ -328,8 +328,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		for (int a = 0; a != max; a++)
 		{
 			app = app->next;
-			int jug = 0;//ÅĞ¶ÏÊı¾İÓëÊäÈëÏîÊÇ·ñÓĞ¹ØÁª£¬0ÎŞ¹ØÁª£¬1ÓĞ¹ØÁª
-			int time = 0;//timeÔ½Ğ¡¹ØÁªĞÔÔ½¸ß
+			int jug = 0;//åˆ¤æ–­æ•°æ®ä¸è¾“å…¥é¡¹æ˜¯å¦æœ‰å…³è”ï¼Œ0æ— å…³è”ï¼Œ1æœ‰å…³è”
+			int time = 0;//timeè¶Šå°å…³è”æ€§è¶Šé«˜
 			for (int i = 0; i <= (int)strlen(app->Number) - (int)strlen(input); i++)
 			{
 				int k = 0;
@@ -340,7 +340,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 					jug = 1;
 					break;
 				}
-				time++;//Ã¿¼ì²éÒ»´Î£¬time+1
+				time++;//æ¯æ£€æŸ¥ä¸€æ¬¡ï¼Œtime+1
 			}
 			if (jug)
 			{
@@ -355,7 +355,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				p->position = a;
 				tail->next = p;
 				tail = p;
-				tail->next = NULL;//ÑÓ³¤Á´±í
+				tail->next = NULL;//å»¶é•¿é“¾è¡¨
 				geshu++;
 				jug = 0;
 			}
@@ -364,8 +364,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		for (int a = 0; a != max; a++)
 		{
 			app = app->next;
-			int jug = 0;//ÅĞ¶ÏÊı¾İÓëÊäÈëÏîÊÇ·ñÓĞ¹ØÁª£¬0ÎŞ¹ØÁª£¬1ÓĞ¹ØÁª
-			int time = 0;//timeÔ½Ğ¡¹ØÁªĞÔÔ½¸ß
+			int jug = 0;//åˆ¤æ–­æ•°æ®ä¸è¾“å…¥é¡¹æ˜¯å¦æœ‰å…³è”ï¼Œ0æ— å…³è”ï¼Œ1æœ‰å…³è”
+			int time = 0;//timeè¶Šå°å…³è”æ€§è¶Šé«˜
 			for (int i = 0; i <= (int)strlen(app->custom->Account) - (int)strlen(input); i++)
 			{
 				int k = 0;
@@ -376,7 +376,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 					jug = 1;
 					break;
 				}
-				time++;//Ã¿¼ì²éÒ»´Î£¬time+1
+				time++;//æ¯æ£€æŸ¥ä¸€æ¬¡ï¼Œtime+1
 			}
 			if (jug)
 			{
@@ -391,7 +391,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				p->position = a;
 				tail->next = p;
 				tail = p;
-				tail->next = NULL;//ÑÓ³¤Á´±í
+				tail->next = NULL;//å»¶é•¿é“¾è¡¨
 				geshu++;
 				jug = 0;
 			}
@@ -400,8 +400,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		for (int a = 0; a != max; a++)
 		{
 			app = app->next;
-			int jug = 0;//ÅĞ¶ÏÊı¾İÓëÊäÈëÏîÊÇ·ñÓĞ¹ØÁª£¬0ÎŞ¹ØÁª£¬1ÓĞ¹ØÁª
-			int time = 0;//timeÔ½Ğ¡¹ØÁªĞÔÔ½¸ß
+			int jug = 0;//åˆ¤æ–­æ•°æ®ä¸è¾“å…¥é¡¹æ˜¯å¦æœ‰å…³è”ï¼Œ0æ— å…³è”ï¼Œ1æœ‰å…³è”
+			int time = 0;//timeè¶Šå°å…³è”æ€§è¶Šé«˜
 			for (int i = 0; i <= (int)strlen(app->custom->Name) - (int)strlen(input); i++)
 			{
 				int k = 0;
@@ -412,7 +412,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 					jug = 1;
 					break;
 				}
-				time++;//Ã¿¼ì²éÒ»´Î£¬time+1
+				time++;//æ¯æ£€æŸ¥ä¸€æ¬¡ï¼Œtime+1
 			}
 			if (jug)
 			{
@@ -427,7 +427,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				p->position = a;
 				tail->next = p;
 				tail = p;
-				tail->next = NULL;//ÑÓ³¤Á´±í
+				tail->next = NULL;//å»¶é•¿é“¾è¡¨
 				geshu++;
 				jug = 0;
 			}
@@ -436,8 +436,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		for (int a = 0; a != max; a++)
 		{
 			app = app->next;
-			int jug = 0;//ÅĞ¶ÏÊı¾İÓëÊäÈëÏîÊÇ·ñÓĞ¹ØÁª£¬0ÎŞ¹ØÁª£¬1ÓĞ¹ØÁª
-			int time = 0;//timeÔ½Ğ¡¹ØÁªĞÔÔ½¸ß
+			int jug = 0;//åˆ¤æ–­æ•°æ®ä¸è¾“å…¥é¡¹æ˜¯å¦æœ‰å…³è”ï¼Œ0æ— å…³è”ï¼Œ1æœ‰å…³è”
+			int time = 0;//timeè¶Šå°å…³è”æ€§è¶Šé«˜
 			for (int i = 0; i <= (int)strlen(app->custom->phone_n) - (int)strlen(input); i++)
 			{
 				int k = 0;
@@ -448,7 +448,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 					jug = 1;
 					break;
 				}
-				time++;//Ã¿¼ì²éÒ»´Î£¬time+1
+				time++;//æ¯æ£€æŸ¥ä¸€æ¬¡ï¼Œtime+1
 			}
 			if (jug)
 			{
@@ -463,7 +463,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				p->position = a;
 				tail->next = p;
 				tail = p;
-				tail->next = NULL;//ÑÓ³¤Á´±í
+				tail->next = NULL;//å»¶é•¿é“¾è¡¨
 				geshu++;
 				jug = 0;
 			}
@@ -472,8 +472,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		for (int a = 0; a != max; a++)
 		{
 			app = app->next;
-			int jug = 0;//ÅĞ¶ÏÊı¾İÓëÊäÈëÏîÊÇ·ñÓĞ¹ØÁª£¬0ÎŞ¹ØÁª£¬1ÓĞ¹ØÁª
-			int time = 0;//timeÔ½Ğ¡¹ØÁªĞÔÔ½¸ß
+			int jug = 0;//åˆ¤æ–­æ•°æ®ä¸è¾“å…¥é¡¹æ˜¯å¦æœ‰å…³è”ï¼Œ0æ— å…³è”ï¼Œ1æœ‰å…³è”
+			int time = 0;//timeè¶Šå°å…³è”æ€§è¶Šé«˜
 			for (int i = 0; i <= (int)strlen(app->flat->number) - (int)strlen(input); i++)
 			{
 				int k = 0;
@@ -484,7 +484,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 					jug = 1;
 					break;
 				}
-				time++;//Ã¿¼ì²éÒ»´Î£¬time+1
+				time++;//æ¯æ£€æŸ¥ä¸€æ¬¡ï¼Œtime+1
 			}
 			if (jug)
 			{
@@ -499,7 +499,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				p->position = a;
 				tail->next = p;
 				tail = p;
-				tail->next = NULL;//ÑÓ³¤Á´±í
+				tail->next = NULL;//å»¶é•¿é“¾è¡¨
 				geshu++;
 				jug = 0;
 			}
@@ -509,8 +509,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		max = countNumberFL(fh);
 		struct Flat* fp;
 		fp = fh;
-		temp2 = (char*)malloc(51 * sizeof(char));//ÁÙÊ±´¢´æÓëÊäÈë×Ö·û´®³¤¶ÈÏàÍ¬µÄÊı¾İ
-		if (temp2 == NULL)//¶¯Ì¬·ÖÅäµÄÄÚ´æ²»ÊÇNULL
+		temp2 = (char*)malloc(51 * sizeof(char));//ä¸´æ—¶å‚¨å­˜ä¸è¾“å…¥å­—ç¬¦ä¸²é•¿åº¦ç›¸åŒçš„æ•°æ®
+		if (temp2 == NULL)//åŠ¨æ€åˆ†é…çš„å†…å­˜ä¸æ˜¯NULL
 		{
 			logError(0);
 			return NULL;
@@ -519,8 +519,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		for (int a = 0; a != max; a++)
 		{
 			fp = fp->next;
-			int jug = 0;//ÅĞ¶ÏÊı¾İÓëÊäÈëÏîÊÇ·ñÓĞ¹ØÁª£¬0ÎŞ¹ØÁª£¬1ÓĞ¹ØÁª
-			int time = 0;//timeÔ½Ğ¡¹ØÁªĞÔÔ½¸ß
+			int jug = 0;//åˆ¤æ–­æ•°æ®ä¸è¾“å…¥é¡¹æ˜¯å¦æœ‰å…³è”ï¼Œ0æ— å…³è”ï¼Œ1æœ‰å…³è”
+			int time = 0;//timeè¶Šå°å…³è”æ€§è¶Šé«˜
 			for (int i = 0; i <= (int)strlen(fp->number) - (int)strlen(input); i++)
 			{
 				int k = 0;
@@ -531,7 +531,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 					jug = 1;
 					break;
 				}
-				time++;//Ã¿¼ì²éÒ»´Î£¬time+1
+				time++;//æ¯æ£€æŸ¥ä¸€æ¬¡ï¼Œtime+1
 			}
 			if (jug)
 			{
@@ -546,7 +546,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				p->position = a;
 				tail->next = p;
 				tail = p;
-				tail->next = NULL;//ÑÓ³¤Á´±í
+				tail->next = NULL;//å»¶é•¿é“¾è¡¨
 				geshu++;
 				jug = 0;
 			}			
@@ -555,8 +555,8 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 		for (int a = 0; a != max; a++)
 		{
 			fp = fp->next;
-			int jug = 0;//ÅĞ¶ÏÊı¾İÓëÊäÈëÏîÊÇ·ñÓĞ¹ØÁª£¬0ÎŞ¹ØÁª£¬1ÓĞ¹ØÁª
-			int time = 0;//timeÔ½Ğ¡¹ØÁªĞÔÔ½¸ß
+			int jug = 0;//åˆ¤æ–­æ•°æ®ä¸è¾“å…¥é¡¹æ˜¯å¦æœ‰å…³è”ï¼Œ0æ— å…³è”ï¼Œ1æœ‰å…³è”
+			int time = 0;//timeè¶Šå°å…³è”æ€§è¶Šé«˜
 			for (int i = 0; i <= (int)strlen(fp->city) - (int)strlen(input); i++)
 			{
 				int k = 0;
@@ -567,7 +567,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 					jug = 1;
 					break;
 				}
-				time++;//Ã¿¼ì²éÒ»´Î£¬time+1
+				time++;//æ¯æ£€æŸ¥ä¸€æ¬¡ï¼Œtime+1
 			}
 			if (jug)
 			{
@@ -582,7 +582,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 				p->position = a;
 				tail->next = p;
 				tail = p;
-				tail->next = NULL;//ÑÓ³¤Á´±í
+				tail->next = NULL;//å»¶é•¿é“¾è¡¨
 				geshu++;
 				jug = 0;
 			}
@@ -611,7 +611,7 @@ int* string_seach(char* input, struct Agency* ah, struct Customer* ch, struct Fl
 			if (i == p->time)
 			{
 				*(arr+(j++)) = p->position;
-				//´Ë´¦»¹¿ÉÊµÏÖÆäËû¹¦ÄÜ
+				//æ­¤å¤„è¿˜å¯å®ç°å…¶ä»–åŠŸèƒ½
 				geshu--;
 			}
 			if (p->next == NULL)
@@ -663,40 +663,40 @@ int toward_search(list_1 mylist_head, int i)
 	p1 = mylist_head->next;
 	while (p1 != NULL)
 	{
-		//Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+		//è¿™å—éœ€è¦åŠ å…¥æ‰“å°
 		if ((int)p1->toward == i)
 		{
 			n++;
 			printf("%d:\t", n);
-			printf("%s\t", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
+			printf("%s\t", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
 			printf("%4.2f\t", p1->Area);
-			printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-			printf("³¯ÏòÎª");
+			printf("%då®¤%då…\t", p1->shi, p1->ting);
+			printf("æœå‘ä¸º");
 			switch ((int)p1->toward)
 			{
 			case 1:
-				printf("¶«\n");
+				printf("ä¸œ\n");
 				break;
 			case 2:
-				printf("ÄÏ\n");
+				printf("å—\n");
 				break;
 			case 3:
-				printf("Î÷\n");
+				printf("è¥¿\n");
 				break;
 			case 4:
-				printf("±±\n");
+				printf("åŒ—\n");
 				break;
 			case 5:
-				printf("¶«ÄÏ\n");
+				printf("ä¸œå—\n");
 				break;
 			case 6:
-				printf("¶«±±\n");
+				printf("ä¸œåŒ—\n");
 				break;
 			case 7:
-				printf("Î÷ÄÏ\n");
+				printf("è¥¿å—\n");
 				break;
 			case 8:
-				printf("Î÷±±\n");
+				printf("è¥¿åŒ—\n");
 				break;
 
 			}
@@ -719,40 +719,40 @@ int toward_search_ag(list_1 mylist_head, int i)
 	p1 = mylist_head->next;
 	while (p1 != NULL)
 	{
-		//Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+		//è¿™å—éœ€è¦åŠ å…¥æ‰“å°
 		if ((int)p1->toward == i && p1->agency == NULL)
 		{
 			n++;
 			printf("%d:\t", n);
-			printf("%sÆ½·½Ã×\n", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
+			printf("%så¹³æ–¹ç±³\n", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
 			printf("%4.2f\t", p1->Area);
-			printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-			printf("³¯ÏòÎª");
+			printf("%då®¤%då…\t", p1->shi, p1->ting);
+			printf("æœå‘ä¸º");
 			switch ((int)p1->toward)
 			{
 			case 1:
-				printf("¶«\n");
+				printf("ä¸œ\n");
 				break;
 			case 2:
-				printf("ÄÏ\n");
+				printf("å—\n");
 				break;
 			case 3:
-				printf("Î÷\n");
+				printf("è¥¿\n");
 				break;
 			case 4:
-				printf("±±\n");
+				printf("åŒ—\n");
 				break;
 			case 5:
-				printf("¶«ÄÏ\n");
+				printf("ä¸œå—\n");
 				break;
 			case 6:
-				printf("¶«±±\n");
+				printf("ä¸œåŒ—\n");
 				break;
 			case 7:
-				printf("Î÷ÄÏ\n");
+				printf("è¥¿å—\n");
 				break;
 			case 8:
-				printf("Î÷±±\n");
+				printf("è¥¿åŒ—\n");
 				break;
 
 			}
@@ -773,40 +773,40 @@ int toward_search_cu(list_1 mylist_head, int i)
 	p1 = mylist_head->next;
 	while (p1 != NULL)
 	{
-		//Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+		//è¿™å—éœ€è¦åŠ å…¥æ‰“å°
 		if ((int)p1->toward == i && p1->agency != NULL)
 		{
 			n++;
 			printf("%d:\t", n);
-			printf("%sÆ½·½Ã×\n", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
+			printf("%så¹³æ–¹ç±³\n", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
 			printf("%4.2f\t", p1->Area);
-			printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-			printf("³¯ÏòÎª");
+			printf("%då®¤%då…\t", p1->shi, p1->ting);
+			printf("æœå‘ä¸º");
 			switch ((int)p1->toward)
 			{
 			case 1:
-				printf("¶«\n");
+				printf("ä¸œ\n");
 				break;
 			case 2:
-				printf("ÄÏ\n");
+				printf("å—\n");
 				break;
 			case 3:
-				printf("Î÷\n");
+				printf("è¥¿\n");
 				break;
 			case 4:
-				printf("±±\n");
+				printf("åŒ—\n");
 				break;
 			case 5:
-				printf("¶«ÄÏ\n");
+				printf("ä¸œå—\n");
 				break;
 			case 6:
-				printf("¶«±±\n");
+				printf("ä¸œåŒ—\n");
 				break;
 			case 7:
-				printf("Î÷ÄÏ\n");
+				printf("è¥¿å—\n");
 				break;
 			case 8:
-				printf("Î÷±±\n");
+				printf("è¥¿åŒ—\n");
 				break;
 
 			}
@@ -816,14 +816,14 @@ int toward_search_cu(list_1 mylist_head, int i)
 	return n;
 }
 
-int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2)//ÒÔ·¿²úÃæ»ıÎªÀı×Ó
+int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2)//ä»¥æˆ¿äº§é¢ç§¯ä¸ºä¾‹å­
 {
 	Flat* temp;
 	temp = mylist_head;
 	bubbleSort_Area(&temp, jug2);
 	struct Flat* p1;
 	int t = 0;
-	//ÕıĞò
+	//æ­£åº
 	if (mylist_head->next == NULL)
 	{
 		logError(0);
@@ -835,83 +835,83 @@ int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
 	{
 		while (p1 != NULL && jug == 1)
 		{
-			//Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+			//è¿™å—éœ€è¦åŠ å…¥æ‰“å°
 			if (p1->rent >= l && p1->rent <= r && p1->agency == NULL)
 			{
 				t++;
 				printf("%d:\t", t);
-				printf("%sÆ½·½Ã×\n", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
+				printf("%så¹³æ–¹ç±³\n", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
 				printf("%4.2f\t", p1->Area);
-				printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-				printf("³¯ÏòÎª");
+				printf("%då®¤%då…\t", p1->shi, p1->ting);
+				printf("æœå‘ä¸º");
 				switch ((int)p1->toward)
 				{
 				case 1:
-					printf("¶«\n");
+					printf("ä¸œ\n");
 					break;
 				case 2:
-					printf("ÄÏ\n");
+					printf("å—\n");
 					break;
 				case 3:
-					printf("Î÷\n");
+					printf("è¥¿\n");
 					break;
 				case 4:
-					printf("±±\n");
+					printf("åŒ—\n");
 					break;
 				case 5:
-					printf("¶«ÄÏ\n");
+					printf("ä¸œå—\n");
 					break;
 				case 6:
-					printf("¶«±±\n");
+					printf("ä¸œåŒ—\n");
 					break;
 				case 7:
-					printf("Î÷ÄÏ\n");
+					printf("è¥¿å—\n");
 					break;
 				case 8:
-					printf("Î÷±±\n");
+					printf("è¥¿åŒ—\n");
 					break;
 
 				}
 			}
 			p1 = p1->next;
 		}
-		//µ¹Ğò
+		//å€’åº
 		while (mylist_tail->prev != NULL && jug == 2)
 		{
-			//Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+			//è¿™å—éœ€è¦åŠ å…¥æ‰“å°
 			if (mylist_tail->rent >= l && mylist_tail->rent <= r && mylist_tail->agency == NULL)
 			{
 				t++;
 				printf("%d:\t", t);
-				printf("%s\t", mylist_tail->number);//¸Ä³ÉĞòºÅ
-				printf("%4.2fÆ½·½Ã×\n", mylist_tail->Area);
-				printf("%dÊÒ%dÌü\t", mylist_tail->shi, mylist_tail->ting);
-				printf("³¯ÏòÎª");
+				printf("%s\t", mylist_tail->number);//æ”¹æˆåºå·
+				printf("%4.2få¹³æ–¹ç±³\n", mylist_tail->Area);
+				printf("%då®¤%då…\t", mylist_tail->shi, mylist_tail->ting);
+				printf("æœå‘ä¸º");
 				switch ((int)mylist_tail->toward)
 				{
 				case 1:
-					printf("¶«\n");
+					printf("ä¸œ\n");
 					break;
 				case 2:
-					printf("ÄÏ\n");
+					printf("å—\n");
 					break;
 				case 3:
-					printf("Î÷\n");
+					printf("è¥¿\n");
 					break;
 				case 4:
-					printf("±±\n");
+					printf("åŒ—\n");
 					break;
 				case 5:
-					printf("¶«ÄÏ\n");
+					printf("ä¸œå—\n");
 					break;
 				case 6:
-					printf("¶«±±\n");
+					printf("ä¸œåŒ—\n");
 					break;
 				case 7:
-					printf("Î÷ÄÏ\n");
+					printf("è¥¿å—\n");
 					break;
 				case 8:
-					printf("Î÷±±\n");
+					printf("è¥¿åŒ—\n");
 					break;
 
 				}
@@ -923,83 +923,83 @@ int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
 	{
 		while (p1 != NULL && jug == 1)
 		{
-			//Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+			//è¿™å—éœ€è¦åŠ å…¥æ‰“å°
 			if (p1->floor >= l && p1->floor <= r && p1->agency == NULL)
 			{
 				t++;
 				printf("%d:\t", t);
-				printf("%sÆ½·½Ã×\n", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
+				printf("%så¹³æ–¹ç±³\n", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
 				printf("%4.2f\t", p1->Area);
-				printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-				printf("³¯ÏòÎª");
+				printf("%då®¤%då…\t", p1->shi, p1->ting);
+				printf("æœå‘ä¸º");
 				switch ((int)p1->toward)
 				{
 				case 1:
-					printf("¶«\n");
+					printf("ä¸œ\n");
 					break;
 				case 2:
-					printf("ÄÏ\n");
+					printf("å—\n");
 					break;
 				case 3:
-					printf("Î÷\n");
+					printf("è¥¿\n");
 					break;
 				case 4:
-					printf("±±\n");
+					printf("åŒ—\n");
 					break;
 				case 5:
-					printf("¶«ÄÏ\n");
+					printf("ä¸œå—\n");
 					break;
 				case 6:
-					printf("¶«±±\n");
+					printf("ä¸œåŒ—\n");
 					break;
 				case 7:
-					printf("Î÷ÄÏ\n");
+					printf("è¥¿å—\n");
 					break;
 				case 8:
-					printf("Î÷±±\n");
+					printf("è¥¿åŒ—\n");
 					break;
 
 				}
 			}
 			p1 = p1->next;
 		}
-		//µ¹Ğò
+		//å€’åº
 		while (mylist_tail->prev != NULL && jug == 2)
 		{
-			//Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+			//è¿™å—éœ€è¦åŠ å…¥æ‰“å°
 			if (mylist_tail->floor >= l && mylist_tail->floor <= r && mylist_tail->agency == NULL)
 			{
 				t++;
 				printf("%d:\t", t);
-				printf("%sÆ½·½Ã×\n", mylist_tail->number);//¸Ä³ÉĞòºÅ
+				printf("%så¹³æ–¹ç±³\n", mylist_tail->number);//æ”¹æˆåºå·
 				printf("%4.2f\t", mylist_tail->Area);
-				printf("%dÊÒ%dÌü\t", mylist_tail->shi, mylist_tail->ting);
-				printf("³¯ÏòÎª");
+				printf("%då®¤%då…\t", mylist_tail->shi, mylist_tail->ting);
+				printf("æœå‘ä¸º");
 				switch ((int)mylist_tail->toward)
 				{
 				case 1:
-					printf("¶«\n");
+					printf("ä¸œ\n");
 					break;
 				case 2:
-					printf("ÄÏ\n");
+					printf("å—\n");
 					break;
 				case 3:
-					printf("Î÷\n");
+					printf("è¥¿\n");
 					break;
 				case 4:
-					printf("±±\n");
+					printf("åŒ—\n");
 					break;
 				case 5:
-					printf("¶«ÄÏ\n");
+					printf("ä¸œå—\n");
 					break;
 				case 6:
-					printf("¶«±±\n");
+					printf("ä¸œåŒ—\n");
 					break;
 				case 7:
-					printf("Î÷ÄÏ\n");
+					printf("è¥¿å—\n");
 					break;
 				case 8:
-					printf("Î÷±±\n");
+					printf("è¥¿åŒ—\n");
 					break;
 
 				}
@@ -1011,83 +1011,83 @@ int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
 	{
 		while (p1 != NULL && jug == 1)
 		{
-			//Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+			//è¿™å—éœ€è¦åŠ å…¥æ‰“å°
 			if (p1->Area >= l && p1->Area <= r && p1->agency == NULL)
 			{
 				t++;
 				printf("%d:\t", t);
-				printf("%sÆ½·½Ã×\n", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
+				printf("%så¹³æ–¹ç±³\n", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
 				printf("%4.2f\t", p1->Area);
-				printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-				printf("³¯ÏòÎª");
+				printf("%då®¤%då…\t", p1->shi, p1->ting);
+				printf("æœå‘ä¸º");
 				switch ((int)p1->toward)
 				{
 				case 1:
-					printf("¶«\n");
+					printf("ä¸œ\n");
 					break;
 				case 2:
-					printf("ÄÏ\n");
+					printf("å—\n");
 					break;
 				case 3:
-					printf("Î÷\n");
+					printf("è¥¿\n");
 					break;
 				case 4:
-					printf("±±\n");
+					printf("åŒ—\n");
 					break;
 				case 5:
-					printf("¶«ÄÏ\n");
+					printf("ä¸œå—\n");
 					break;
 				case 6:
-					printf("¶«±±\n");
+					printf("ä¸œåŒ—\n");
 					break;
 				case 7:
-					printf("Î÷ÄÏ\n");
+					printf("è¥¿å—\n");
 					break;
 				case 8:
-					printf("Î÷±±\n");
+					printf("è¥¿åŒ—\n");
 					break;
 
 				}
 			}
 			p1 = p1->next;
 		}
-		//µ¹Ğò
+		//å€’åº
 		while (mylist_tail->prev != NULL && jug == 2)
 		{
-			//Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+			//è¿™å—éœ€è¦åŠ å…¥æ‰“å°
 			if (mylist_tail->Area >= l && mylist_tail->Area <= r && mylist_tail->agency == NULL)
 			{
 				t++;
 				printf("%d:\t", t);
-				printf("%s\t", mylist_tail->number);//¸Ä³ÉĞòºÅ
-				printf("%4.2fÆ½·½Ã×\n", mylist_tail->Area);
-				printf("%dÊÒ%dÌü\t", mylist_tail->shi, mylist_tail->ting);
-				printf("³¯ÏòÎª");
+				printf("%s\t", mylist_tail->number);//æ”¹æˆåºå·
+				printf("%4.2få¹³æ–¹ç±³\n", mylist_tail->Area);
+				printf("%då®¤%då…\t", mylist_tail->shi, mylist_tail->ting);
+				printf("æœå‘ä¸º");
 				switch ((int)mylist_tail->toward)
 				{
 				case 1:
-					printf("¶«\n");
+					printf("ä¸œ\n");
 					break;
 				case 2:
-					printf("ÄÏ\n");
+					printf("å—\n");
 					break;
 				case 3:
-					printf("Î÷\n");
+					printf("è¥¿\n");
 					break;
 				case 4:
-					printf("±±\n");
+					printf("åŒ—\n");
 					break;
 				case 5:
-					printf("¶«ÄÏ\n");
+					printf("ä¸œå—\n");
 					break;
 				case 6:
-					printf("¶«±±\n");
+					printf("ä¸œåŒ—\n");
 					break;
 				case 7:
-					printf("Î÷ÄÏ\n");
+					printf("è¥¿å—\n");
 					break;
 				case 8:
-					printf("Î÷±±\n");
+					printf("è¥¿åŒ—\n");
 					break;
 
 				}
@@ -1097,14 +1097,14 @@ int range_search_ag(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
 	}
 	return t;
 }
-int range_search_cu(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2)//ÒÔ·¿²úÃæ»ıÎªÀı×Ó
+int range_search_cu(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug, int jug2)//ä»¥æˆ¿äº§é¢ç§¯ä¸ºä¾‹å­
 {
 	Flat* temp;
 	temp = mylist_head;
 	bubbleSort_Area(&temp, jug2);
 	struct Flat* p1;
 	int t = 0;
-	//ÕıĞò
+	//æ­£åº
 	if (mylist_head->next == NULL)
 	{
 		logError(0);
@@ -1116,83 +1116,83 @@ int range_search_cu(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
 	{
 		while (p1 != NULL && jug == 1)
 		{
-			//Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+			//è¿™å—éœ€è¦åŠ å…¥æ‰“å°
 			if (p1->rent >= l && p1->rent <= r && p1->agency != NULL)
 			{
 				t++;
 				printf("%d:\t", t);
-				printf("%sÆ½·½Ã×\n", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
+				printf("%så¹³æ–¹ç±³\n", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
 				printf("%4.2f\t", p1->Area);
-				printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-				printf("³¯ÏòÎª");
+				printf("%då®¤%då…\t", p1->shi, p1->ting);
+				printf("æœå‘ä¸º");
 				switch ((int)p1->toward)
 				{
 				case 1:
-					printf("¶«\n");
+					printf("ä¸œ\n");
 					break;
 				case 2:
-					printf("ÄÏ\n");
+					printf("å—\n");
 					break;
 				case 3:
-					printf("Î÷\n");
+					printf("è¥¿\n");
 					break;
 				case 4:
-					printf("±±\n");
+					printf("åŒ—\n");
 					break;
 				case 5:
-					printf("¶«ÄÏ\n");
+					printf("ä¸œå—\n");
 					break;
 				case 6:
-					printf("¶«±±\n");
+					printf("ä¸œåŒ—\n");
 					break;
 				case 7:
-					printf("Î÷ÄÏ\n");
+					printf("è¥¿å—\n");
 					break;
 				case 8:
-					printf("Î÷±±\n");
+					printf("è¥¿åŒ—\n");
 					break;
 
 				}
 			}
 			p1 = p1->next;
 		}
-		//µ¹Ğò
+		//å€’åº
 		while (mylist_tail->prev != NULL && jug == 2)
 		{
-			//Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+			//è¿™å—éœ€è¦åŠ å…¥æ‰“å°
 			if (mylist_tail->rent >= l && mylist_tail->rent <= r && mylist_tail->agency != NULL)
 			{
 				t++;
 				printf("%d:\t", t);
-				printf("%s\t", mylist_tail->number);//¸Ä³ÉĞòºÅ
-				printf("%4.2fÆ½·½Ã×\n", mylist_tail->Area);
-				printf("%dÊÒ%dÌü\t", mylist_tail->shi, mylist_tail->ting);
-				printf("³¯ÏòÎª");
+				printf("%s\t", mylist_tail->number);//æ”¹æˆåºå·
+				printf("%4.2få¹³æ–¹ç±³\n", mylist_tail->Area);
+				printf("%då®¤%då…\t", mylist_tail->shi, mylist_tail->ting);
+				printf("æœå‘ä¸º");
 				switch ((int)mylist_tail->toward)
 				{
 				case 1:
-					printf("¶«\n");
+					printf("ä¸œ\n");
 					break;
 				case 2:
-					printf("ÄÏ\n");
+					printf("å—\n");
 					break;
 				case 3:
-					printf("Î÷\n");
+					printf("è¥¿\n");
 					break;
 				case 4:
-					printf("±±\n");
+					printf("åŒ—\n");
 					break;
 				case 5:
-					printf("¶«ÄÏ\n");
+					printf("ä¸œå—\n");
 					break;
 				case 6:
-					printf("¶«±±\n");
+					printf("ä¸œåŒ—\n");
 					break;
 				case 7:
-					printf("Î÷ÄÏ\n");
+					printf("è¥¿å—\n");
 					break;
 				case 8:
-					printf("Î÷±±\n");
+					printf("è¥¿åŒ—\n");
 					break;
 
 				}
@@ -1204,83 +1204,83 @@ int range_search_cu(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
 	{
 		while (p1 != NULL && jug == 1)
 		{
-			//Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+			//è¿™å—éœ€è¦åŠ å…¥æ‰“å°
 			if (p1->floor >= l && p1->floor <= r && p1->agency != NULL)
 			{
 				t++;
 				printf("%d:\t", t);
-				printf("%sÆ½·½Ã×\n", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
+				printf("%så¹³æ–¹ç±³\n", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
 				printf("%4.2f\t", p1->Area);
-				printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-				printf("³¯ÏòÎª");
+				printf("%då®¤%då…\t", p1->shi, p1->ting);
+				printf("æœå‘ä¸º");
 				switch ((int)p1->toward)
 				{
 				case 1:
-					printf("¶«\n");
+					printf("ä¸œ\n");
 					break;
 				case 2:
-					printf("ÄÏ\n");
+					printf("å—\n");
 					break;
 				case 3:
-					printf("Î÷\n");
+					printf("è¥¿\n");
 					break;
 				case 4:
-					printf("±±\n");
+					printf("åŒ—\n");
 					break;
 				case 5:
-					printf("¶«ÄÏ\n");
+					printf("ä¸œå—\n");
 					break;
 				case 6:
-					printf("¶«±±\n");
+					printf("ä¸œåŒ—\n");
 					break;
 				case 7:
-					printf("Î÷ÄÏ\n");
+					printf("è¥¿å—\n");
 					break;
 				case 8:
-					printf("Î÷±±\n");
+					printf("è¥¿åŒ—\n");
 					break;
 
 				}
 			}
 			p1 = p1->next;
 		}
-		//µ¹Ğò
+		//å€’åº
 		while (mylist_tail->prev != NULL && jug == 2)
 		{
-			//Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+			//è¿™å—éœ€è¦åŠ å…¥æ‰“å°
 			if (mylist_tail->floor >= l && mylist_tail->floor <= r && mylist_tail->agency != NULL)
 			{
 				t++;
 				printf("%d:\t", t);
-				printf("%sÆ½·½Ã×\n", mylist_tail->number);//¸Ä³ÉĞòºÅ
+				printf("%så¹³æ–¹ç±³\n", mylist_tail->number);//æ”¹æˆåºå·
 				printf("%4.2f\t", mylist_tail->Area);
-				printf("%dÊÒ%dÌü\t", mylist_tail->shi, mylist_tail->ting);
-				printf("³¯ÏòÎª");
+				printf("%då®¤%då…\t", mylist_tail->shi, mylist_tail->ting);
+				printf("æœå‘ä¸º");
 				switch ((int)mylist_tail->toward)
 				{
 				case 1:
-					printf("¶«\n");
+					printf("ä¸œ\n");
 					break;
 				case 2:
-					printf("ÄÏ\n");
+					printf("å—\n");
 					break;
 				case 3:
-					printf("Î÷\n");
+					printf("è¥¿\n");
 					break;
 				case 4:
-					printf("±±\n");
+					printf("åŒ—\n");
 					break;
 				case 5:
-					printf("¶«ÄÏ\n");
+					printf("ä¸œå—\n");
 					break;
 				case 6:
-					printf("¶«±±\n");
+					printf("ä¸œåŒ—\n");
 					break;
 				case 7:
-					printf("Î÷ÄÏ\n");
+					printf("è¥¿å—\n");
 					break;
 				case 8:
-					printf("Î÷±±\n");
+					printf("è¥¿åŒ—\n");
 					break;
 
 				}
@@ -1292,83 +1292,83 @@ int range_search_cu(int l, int r, Flat* mylist_head, list_1 mylist_tail, int jug
 	{
 		while (p1 != NULL && jug == 1)
 		{
-			//Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+			//è¿™å—éœ€è¦åŠ å…¥æ‰“å°
 			if (p1->Area >= l && p1->Area <= r && p1->agency != NULL)
 			{
 				t++;
 				printf("%d:\t", t);
-				printf("%sÆ½·½Ã×\n", p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
+				printf("%så¹³æ–¹ç±³\n", p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
 				printf("%4.2f\t", p1->Area);
-				printf("%dÊÒ%dÌü\t", p1->shi, p1->ting);
-				printf("³¯ÏòÎª");
+				printf("%då®¤%då…\t", p1->shi, p1->ting);
+				printf("æœå‘ä¸º");
 				switch ((int)p1->toward)
 				{
 				case 1:
-					printf("¶«\n");
+					printf("ä¸œ\n");
 					break;
 				case 2:
-					printf("ÄÏ\n");
+					printf("å—\n");
 					break;
 				case 3:
-					printf("Î÷\n");
+					printf("è¥¿\n");
 					break;
 				case 4:
-					printf("±±\n");
+					printf("åŒ—\n");
 					break;
 				case 5:
-					printf("¶«ÄÏ\n");
+					printf("ä¸œå—\n");
 					break;
 				case 6:
-					printf("¶«±±\n");
+					printf("ä¸œåŒ—\n");
 					break;
 				case 7:
-					printf("Î÷ÄÏ\n");
+					printf("è¥¿å—\n");
 					break;
 				case 8:
-					printf("Î÷±±\n");
+					printf("è¥¿åŒ—\n");
 					break;
 
 				}
 			}
 			p1 = p1->next;
 		}
-		//µ¹Ğò
+		//å€’åº
 		while (mylist_tail->prev != NULL && jug == 2)
 		{
-			//Õâ¿éĞèÒª¼ÓÈë´òÓ¡
+			//è¿™å—éœ€è¦åŠ å…¥æ‰“å°
 			if (mylist_tail->Area >= l && mylist_tail->Area <= r && mylist_tail->agency != NULL)
 			{
 				t++;
 				printf("%d:\t", t);
-				printf("%s\t", mylist_tail->number);//¸Ä³ÉĞòºÅ
-				printf("%4.2fÆ½·½Ã×\n", mylist_tail->Area);
-				printf("%dÊÒ%dÌü\t", mylist_tail->shi, mylist_tail->ting);
-				printf("³¯ÏòÎª");
+				printf("%s\t", mylist_tail->number);//æ”¹æˆåºå·
+				printf("%4.2få¹³æ–¹ç±³\n", mylist_tail->Area);
+				printf("%då®¤%då…\t", mylist_tail->shi, mylist_tail->ting);
+				printf("æœå‘ä¸º");
 				switch ((int)mylist_tail->toward)
 				{
 				case 1:
-					printf("¶«\n");
+					printf("ä¸œ\n");
 					break;
 				case 2:
-					printf("ÄÏ\n");
+					printf("å—\n");
 					break;
 				case 3:
-					printf("Î÷\n");
+					printf("è¥¿\n");
 					break;
 				case 4:
-					printf("±±\n");
+					printf("åŒ—\n");
 					break;
 				case 5:
-					printf("¶«ÄÏ\n");
+					printf("ä¸œå—\n");
 					break;
 				case 6:
-					printf("¶«±±\n");
+					printf("ä¸œåŒ—\n");
 					break;
 				case 7:
-					printf("Î÷ÄÏ\n");
+					printf("è¥¿å—\n");
 					break;
 				case 8:
-					printf("Î÷±±\n");
+					printf("è¥¿åŒ—\n");
 					break;
 
 				}

@@ -6,44 +6,44 @@ typedef struct Flat Flat, * list_1;
 
 int main()
 {
-	struct Admin* ad_p1, * ad_p2, * ad_tail, * ad_head;//¹¹½¨Á´±í
-	ad_p1 = (struct Admin*)malloc(sizeof(struct Admin));//ÉêÇë¿Õ¼ä
-	if (ad_p1 == NULL)//ÅĞ¶ÏÉêÇëµÄ¿Õ¼äÊÇ·ñÎª¿Õ£¨NULL£©
+	struct Admin* ad_p1, * ad_p2, * ad_tail, * ad_head;//æ„å»ºé“¾è¡¨
+	ad_p1 = (struct Admin*)malloc(sizeof(struct Admin));//ç”³è¯·ç©ºé—´
+	if (ad_p1 == NULL)//åˆ¤æ–­ç”³è¯·çš„ç©ºé—´æ˜¯å¦ä¸ºç©ºï¼ˆNULLï¼‰
 	{
 		logError(0);
 		return -1;
 
 	}
-	ad_tail = ad_p1;//±ê¼ÇÍ·Î²
+	ad_tail = ad_p1;//æ ‡è®°å¤´å°¾
 	ad_head = ad_p1;
 	ad_p2 = ad_p1;
 	ad_tail->next = NULL;
 	ad_head->prev = NULL;
 
 
-	struct Agency* ag_p1, * ag_p2, * ag_tail, * ag_head;//¹¹½¨Á´±í
-	ag_p1 = (struct Agency*)malloc(sizeof(struct Agency));//ÉêÇë¿Õ¼ä
-	if (ag_p1 == NULL)//ÅĞ¶ÏÉêÇëµÄ¿Õ¼äÊÇ·ñÎª¿Õ£¨NULL£©
+	struct Agency* ag_p1, * ag_p2, * ag_tail, * ag_head;//æ„å»ºé“¾è¡¨
+	ag_p1 = (struct Agency*)malloc(sizeof(struct Agency));//ç”³è¯·ç©ºé—´
+	if (ag_p1 == NULL)//åˆ¤æ–­ç”³è¯·çš„ç©ºé—´æ˜¯å¦ä¸ºç©ºï¼ˆNULLï¼‰
 	{
 		logError(0);
 		return -1;
 
 	}
-	ag_tail = ag_p1;//±ê¼ÇÍ·Î²
+	ag_tail = ag_p1;//æ ‡è®°å¤´å°¾
 	ag_head = ag_p1;
 	ag_p2 = ag_p1;
 	ag_tail->next = NULL;
 	ag_head->prev = NULL;
 
 
-	struct Customer* cu_p1, * cu_p2, * cu_tail, * cu_head;//¹¹½¨Á´±í
-	cu_p1 = (struct Customer*)malloc(sizeof(struct Customer));//ÉêÇë¿Õ¼ä
-	if (cu_p1 == NULL)//ÅĞ¶ÏÉêÇëµÄ¿Õ¼äÊÇ·ñÎª¿Õ£¨NULL£©
+	struct Customer* cu_p1, * cu_p2, * cu_tail, * cu_head;//æ„å»ºé“¾è¡¨
+	cu_p1 = (struct Customer*)malloc(sizeof(struct Customer));//ç”³è¯·ç©ºé—´
+	if (cu_p1 == NULL)//åˆ¤æ–­ç”³è¯·çš„ç©ºé—´æ˜¯å¦ä¸ºç©ºï¼ˆNULLï¼‰
 	{
 		logError(0);
 		return -1;
 	}
-	cu_tail = cu_p1;//±ê¼ÇÍ·Î²
+	cu_tail = cu_p1;//æ ‡è®°å¤´å°¾
 	cu_head = cu_p1;
 	cu_p2 = cu_p1;
 	cu_tail->next = NULL;
@@ -51,32 +51,32 @@ int main()
 
 
 
-	struct Flat* fl_p1, * fl_p2, * fl_tail, * fl_head;//¹¹½¨Á´±í
-	fl_p1 = (struct Flat*)malloc(sizeof(struct Flat));//ÉêÇë¿Õ¼ä
-	if (fl_p1 == NULL)//ÅĞ¶ÏÉêÇëµÄ¿Õ¼äÊÇ·ñÎª¿Õ£¨NULL£©
+	struct Flat* fl_p1, * fl_p2, * fl_tail, * fl_head;//æ„å»ºé“¾è¡¨
+	fl_p1 = (struct Flat*)malloc(sizeof(struct Flat));//ç”³è¯·ç©ºé—´
+	if (fl_p1 == NULL)//åˆ¤æ–­ç”³è¯·çš„ç©ºé—´æ˜¯å¦ä¸ºç©ºï¼ˆNULLï¼‰
 	{
 		logError(0);
 		return -1;
 	}
-	fl_tail = fl_p1;//±ê¼ÇÍ·Î²
+	fl_tail = fl_p1;//æ ‡è®°å¤´å°¾
 	fl_head = fl_p1;
 	fl_p2 = fl_p1;
 	fl_tail->next = NULL;
 	fl_head->prev = NULL;
 
-	struct Appointment* ap_p, * ap_tail, * ap_head,* ap_p2;//¹¹½¨Ô¤Ô¼ĞÅÏ¢Á´±í
+	struct Appointment* ap_p, * ap_tail, * ap_head,* ap_p2;//æ„å»ºé¢„çº¦ä¿¡æ¯é“¾è¡¨
 	ap_p2 = NULL;
 	ap_p = (struct Appointment*)malloc(sizeof(struct Appointment));
-	if (ap_p == NULL)//×¢Òâ°²È«ÃşÃşßÕ
+	if (ap_p == NULL)//æ³¨æ„å®‰å…¨æ‘¸æ‘¸å“’
 	{
 		logError(0);
 		return -1;
 	}
-	ap_tail = ap_p;//±ê¼ÇÍ·Î²
+	ap_tail = ap_p;//æ ‡è®°å¤´å°¾
 	ap_head = ap_p;
 	ap_tail->next = NULL;
 	ap_head->prev = NULL;
-	//Êı¾İ¶ÁÈ¡
+	//æ•°æ®è¯»å–
 	filecachAD_read(&ad_tail);
 	filecachAG_read(&ag_tail);
 	filecachCU_read(&cu_tail);
@@ -85,17 +85,17 @@ int main()
 
 	void choose();
 	int choice_0 = 1, choice_1, choice_2, choice_3, choice_4;
-	//0:µÇÂ¼½çÃæ 1£ºÉí·İÖ÷²Ëµ¥ 2£º¹ÜÀíÔ±Ö÷²Ëµ¥ 3£ºÖĞ½éÖ÷²Ëµ¥ 4£º×â¿ÍÖ÷²Ëµ¥
-	int choice_5;//Ñ¡ÔñÅÅĞò·½Ê½ÓÃ
-	int choice_6;//Ñ¡Ôñ¾ßÌå²éÑ¯ÄÚÈİ
-	int jug = 0;//Éí·İÑéÖ¤ÓÃ//×Ö·û´®²éÕÒÓÃ
-	int jug2 = 1, jug3 = 1;//×¢²áÓÃ
-	int jug4 = 1;//ÈÃad_p1->effectiveÖ»Ö´ĞĞÒ»´Î
-	int jug5 = 0;//ËÑË÷ÓÃ
-	int jug6 = 0;//Ñ¡ÔñÓÃ
-	int jug7 = 0;//Ñ¡ÔñÕı·´ÅÅĞòÓÃ
-	int jug8 = 1;//¹¦ÄÜ¹ÜÀíÏÂ¼¶
-	int jug9 = 1;//ĞÅÏ¢¹ÜÀíÖĞÏÂ¼¶
+	//0:ç™»å½•ç•Œé¢ 1ï¼šèº«ä»½ä¸»èœå• 2ï¼šç®¡ç†å‘˜ä¸»èœå• 3ï¼šä¸­ä»‹ä¸»èœå• 4ï¼šç§Ÿå®¢ä¸»èœå•
+	int choice_5;//é€‰æ‹©æ’åºæ–¹å¼ç”¨
+	int choice_6;//é€‰æ‹©å…·ä½“æŸ¥è¯¢å†…å®¹
+	int jug = 0;//èº«ä»½éªŒè¯ç”¨//å­—ç¬¦ä¸²æŸ¥æ‰¾ç”¨
+	int jug2 = 1, jug3 = 1;//æ³¨å†Œç”¨
+	int jug4 = 1;//è®©ad_p1->effectiveåªæ‰§è¡Œä¸€æ¬¡
+	int jug5 = 0;//æœç´¢ç”¨
+	int jug6 = 0;//é€‰æ‹©ç”¨
+	int jug7 = 0;//é€‰æ‹©æ­£åæ’åºç”¨
+	int jug8 = 1;//åŠŸèƒ½ç®¡ç†ä¸‹çº§
+	int jug9 = 1;//ä¿¡æ¯ç®¡ç†ä¸­ä¸‹çº§
 
 	float f_number=0.0f;
 
@@ -114,7 +114,7 @@ int main()
 
 
 	int year = 0, month = 0, day = 0;
-	//²éÕÒ¹ıÆÚµÄÔ¤Ô¼
+	//æŸ¥æ‰¾è¿‡æœŸçš„é¢„çº¦
 	time_t now = time(NULL);
 	struct tm* local = localtime(&now);
 	ap_p = ap_head->next;
@@ -129,22 +129,22 @@ int main()
 
 
 	loading();
-	printf("Êı¾İ¼ÓÔØÍê³É£¬°´ÏÂ»Ø³µÒÔ¼ÌĞø");
+	printf("æ•°æ®åŠ è½½å®Œæˆï¼ŒæŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­");
 	choose();
 	while (choice_0)
 	{
 		time_t now = time(NULL);
 		struct tm* local = localtime(&now);
-		printf("µ±Ç°Ê±¼ä: %d-%02d-%02d\n",
+		printf("å½“å‰æ—¶é—´: %d-%02d-%02d\n",
 			local->tm_year + 1900, local->tm_mon + 1, local->tm_mday);
-		printf("******µÇ    Â¼******\n");
+		printf("******ç™»    å½•******\n");
 		printf("**                **\n");
-		printf("**0.  ¹Ø    ±Õ    **\n");
-		printf("**1.  µÇ    Â¼    **\n");
-		printf("**2.  ×¢    ²á    **\n");
+		printf("**0.  å…³    é—­    **\n");
+		printf("**1.  ç™»    å½•    **\n");
+		printf("**2.  æ³¨    å†Œ    **\n");
 		printf("**                **\n");
 		printf("********************\n");
-		printf("ÇëÑ¡Ôñ¹¦ÄÜ£º");
+		printf("è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
 		scanf_s("%d", &choice_0);
 		choose();
 		switch (choice_0)
@@ -152,26 +152,26 @@ int main()
 		case 0:
 			break;
 		case 1:
-			printf("******Éí·İÑ¡Ôñ******\n");
+			printf("******èº«ä»½é€‰æ‹©******\n");
 			printf("**                **\n");
-			printf("**0.  ÍË    ³ö    **\n");
-			printf("**1.  ¹Ü Àí Ô±    **\n");
-			printf("**2.  ÖĞ    ½é    **\n");
-			printf("**3.  ×â    ¿Í    **\n");
+			printf("**0.  é€€    å‡º    **\n");
+			printf("**1.  ç®¡ ç† å‘˜    **\n");
+			printf("**2.  ä¸­    ä»‹    **\n");
+			printf("**3.  ç§Ÿ    å®¢    **\n");
 			printf("**                **\n");
 			printf("********************\n");
-			printf("ÇëÑ¡ÔñÉí·İ£º");
+			printf("è¯·é€‰æ‹©èº«ä»½ï¼š");
 			scanf_s("%d", &choice_1);
 			choose();
 
 
-			//µ÷ÓÃº¯Êı
+			//è°ƒç”¨å‡½æ•°
 			switch (choice_1)
 			{
 			case 0:
 				break;
-			case 1://¹ÜÀíÔ±
-				printf("ÇëÊäÈëÕË»§£¨account£©£º");
+			case 1://ç®¡ç†å‘˜
+				printf("è¯·è¾“å…¥è´¦æˆ·ï¼ˆaccountï¼‰ï¼š");
 				scanf("%s", input_account);
 				ad_p1 = ad_head->next;
 				if (ad_p1 == NULL)
@@ -183,13 +183,13 @@ int main()
 				{
 					if (!strcmp(input_account, ad_p1->Account))
 					{
-						printf("ÇëÊäÈëÃÜÂë£¨key£©:");
+						printf("è¯·è¾“å…¥å¯†ç ï¼ˆkeyï¼‰:");
 						hideInput(input_key, 19);
 						if (!strcmp(input_key, ad_p1->Key))
 						{
 							logInfo(1);
-							printf("µÇÂ¼³É¹¦£¬»¶Ó­£¬¹ÜÀíÔ±%s\n", ad_p1->Account);
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							printf("ç™»å½•æˆåŠŸï¼Œæ¬¢è¿ï¼Œç®¡ç†å‘˜%s\n", ad_p1->Account);
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							jug = 1;
 							choose();
@@ -197,8 +197,8 @@ int main()
 						else
 						{
 							logWarning(2);
-							printf("ÃÜÂë´íÎó\n");
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							printf("å¯†ç é”™è¯¯\n");
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							jug = 0;
 							choose();
@@ -209,8 +209,8 @@ int main()
 					if (ad_p1 == NULL)
 					{
 						logWarning(2);
-						printf("ÕÒ²»µ½¶ÔÏó\n");
-						printf("»Ø³µÒÔ¼ÌĞø\n");
+						printf("æ‰¾ä¸åˆ°å¯¹è±¡\n");
+						printf("å›è½¦ä»¥ç»§ç»­\n");
 						getchar();
 						jug = 0;
 						choose();
@@ -219,20 +219,20 @@ int main()
 				}
 				while (jug && ad_p1 != NULL)
 				{
-					printf("*********¹¦ÄÜ²Ëµ¥*********\n");
+					printf("*********åŠŸèƒ½èœå•*********\n");
 					printf("**                      **\n");
-					printf("**0.     ×¢    Ïú       **\n");
-					printf("**1.     ĞÅÏ¢¹ÜÀí       **\n");//Íê¹¤
-					printf("**2.     ¿´·¿¹ÜÀí       **\n");//Î´Ê¿¶ÒÒÑÍê¹¤
-					printf("**3.     ĞÅÏ¢²éÑ¯       **\n");//Íê¹¤
-					printf("**4.     ĞÅÏ¢ÅÅĞò       **\n");//Î´Ê¿¶ÒÒÑÍê¹¤
-					printf("**5.     ĞÅÏ¢Í³¼Æ       **\n");//Íê¹¤
-					printf("**6.     ¸ü¸ÄÃÜÂë       **\n");//Íê¹¤
-					printf("**7.    Éú³ÉÑûÇëÂë      **\n");//Íê¹¤
-					printf("**8.     É¾³ıÕË»§       **\n");//Íê¹¤
+					printf("**0.     æ³¨    é”€       **\n");
+					printf("**1.     ä¿¡æ¯ç®¡ç†       **\n");//å®Œå·¥
+					printf("**2.     çœ‹æˆ¿ç®¡ç†       **\n");//æœªå£«å…‘å·²å®Œå·¥
+					printf("**3.     ä¿¡æ¯æŸ¥è¯¢       **\n");//å®Œå·¥
+					printf("**4.     ä¿¡æ¯æ’åº       **\n");//æœªå£«å…‘å·²å®Œå·¥
+					printf("**5.     ä¿¡æ¯ç»Ÿè®¡       **\n");//å®Œå·¥
+					printf("**6.     æ›´æ”¹å¯†ç        **\n");//å®Œå·¥
+					printf("**7.    ç”Ÿæˆé‚€è¯·ç       **\n");//å®Œå·¥
+					printf("**8.     åˆ é™¤è´¦æˆ·       **\n");//å®Œå·¥
 					printf("**                      **\n");
 					printf("**************************\n");
-					printf("ÇëÑ¡Ôñ¹¦ÄÜ£º");
+					printf("è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
 					scanf_s("%d", &choice_2);
 					choose();
 
@@ -244,18 +244,18 @@ int main()
 						logInfo(2);
 						break;
 					case 1:
-						//ÒÑÍê³É
+						//å·²å®Œæˆ
 						jug8 = 1;
 						while (jug8)
 						{
-							printf("*********ĞÅÏ¢¹ÜÀí*********\n");
+							printf("*********ä¿¡æ¯ç®¡ç†*********\n");
 							printf("**                      **\n");
-							printf("**0.     ·µ    »Ø       **\n");
-							printf("**1.     ÈËÔ±¹ÜÀí       **\n");
-							printf("**2.     ·¿Ô´¹ÜÀí       **\n");
+							printf("**0.     è¿”    å›       **\n");
+							printf("**1.     äººå‘˜ç®¡ç†       **\n");
+							printf("**2.     æˆ¿æºç®¡ç†       **\n");
 							printf("**                      **\n");
 							printf("**************************\n");
-							printf("ÇëÑ¡Ôñ¹¦ÄÜ£º");
+							printf("è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
 							scanf_s("%d", &choice_2);
 							choose();
 							switch (choice_2)
@@ -263,19 +263,19 @@ int main()
 							case 0:
 								jug8 = 0;
 								break;
-							case 1://ÈËÔ±¹ÜÀí
-								//Íê¹¤
+							case 1://äººå‘˜ç®¡ç†
+								//å®Œå·¥
 								jug9 = 1;
 								while (jug9)
 								{
-									printf("*********ÈËÔ±¹ÜÀí*********\n");
+									printf("*********äººå‘˜ç®¡ç†*********\n");
 									printf("**                      **\n");
-									printf("**0.     ·µ    »Ø       **\n");
-									printf("**1.     Ô±¹¤¹ÜÀí       **\n");
-									printf("**2.   ×â¿ÍĞÅÏ¢¹ÜÀí     **\n");
+									printf("**0.     è¿”    å›       **\n");
+									printf("**1.     å‘˜å·¥ç®¡ç†       **\n");
+									printf("**2.   ç§Ÿå®¢ä¿¡æ¯ç®¡ç†     **\n");
 									printf("**                      **\n");
 									printf("**************************\n");
-									printf("ÇëÑ¡Ôñ¹¦ÄÜ£º");
+									printf("è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
 									scanf_s("%d", &choice_2);
 									choose();
 									switch (choice_2)
@@ -284,16 +284,16 @@ int main()
 										jug9 = 0;
 										break;
 									case 1:
-										//Íê¹¤
-										printf("*********Ô±¹¤¹ÜÀí*********\n");
+										//å®Œå·¥
+										printf("*********å‘˜å·¥ç®¡ç†*********\n");
 										printf("**                      **\n");
-										printf("**0.     ·µ    »Ø       **\n");
-										printf("**1.     ĞÅÏ¢ĞŞ¸Ä       **\n");
-										printf("**2.     É¾³ıÔ±¹¤       **\n");
-										printf("**3.     Ôö¼ÓÔ±¹¤       **\n");
+										printf("**0.     è¿”    å›       **\n");
+										printf("**1.     ä¿¡æ¯ä¿®æ”¹       **\n");
+										printf("**2.     åˆ é™¤å‘˜å·¥       **\n");
+										printf("**3.     å¢åŠ å‘˜å·¥       **\n");
 										printf("**                      **\n");
 										printf("**************************\n");
-										printf("ÇëÑ¡Ôñ¹¦ÄÜ£º");
+										printf("è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
 										scanf_s("%d", &choice_2);
 										choose();
 										switch (choice_2)
@@ -301,16 +301,16 @@ int main()
 										case 0:
 											break;
 										case 1:
-											//Íê¹¤
-											//ËÑË÷
+											//å®Œå·¥
+											//æœç´¢
 											memset(input_string, 0, sizeof(input_string));
-											printf("ÇëÊäÈëÔ±¹¤ĞÅÏ¢£¨×î¶à50¸ö×Ö·û£©£º");
+											printf("è¯·è¾“å…¥å‘˜å·¥ä¿¡æ¯ï¼ˆæœ€å¤š50ä¸ªå­—ç¬¦ï¼‰ï¼š");
 											scanf("%s", input_string);
 											tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 1);
 											if (*tempIntPtr == 0)
 											{
-												printf("ºÜÆà²Ò£¬ÎÒÃÇµÄÓ¦ÓÃÃ»ÓĞÈËÔÚÓÃ¡£\n");
-												printf("»Ø³µÒÔ¼ÌĞø\n");
+												printf("å¾ˆå‡„æƒ¨ï¼Œæˆ‘ä»¬çš„åº”ç”¨æ²¡æœ‰äººåœ¨ç”¨ã€‚\n");
+												printf("å›è½¦ä»¥ç»§ç»­\n");
 												getchar();
 												choose();
 												break;
@@ -330,18 +330,18 @@ int main()
 											if (jug5)
 											{
 												choose(0);
-												printf("³É¹¦ÕÒµ½¶ÔÏó\n");
-												printf("±àºÅ\t\tĞÕÃû\t\tÕËºÅ\t\tµç»°\n");
+												printf("æˆåŠŸæ‰¾åˆ°å¯¹è±¡\n");
+												printf("ç¼–å·\t\tå§“å\t\tè´¦å·\t\tç”µè¯\n");
 												printf("%s\t%s\t\t%s\t\t%s\n", ag_p1->Number, ag_p1->Name, ag_p1->Account, ag_p1->phone_n);
-												printf("*********ĞÅÏ¢ĞŞ¸Ä*********\n");
+												printf("*********ä¿¡æ¯ä¿®æ”¹*********\n");
 												printf("**                      **\n");
-												printf("**0.     ·µ    »Ø       **\n");
-												printf("**1.     ÖØÖÃÃÜÂë       **\n");
-												printf("**2.     ĞŞ¸ÄĞÕÃû       **\n");
-												printf("**3.     ĞŞ¸Äµç»°       **\n");
+												printf("**0.     è¿”    å›       **\n");
+												printf("**1.     é‡ç½®å¯†ç        **\n");
+												printf("**2.     ä¿®æ”¹å§“å       **\n");
+												printf("**3.     ä¿®æ”¹ç”µè¯       **\n");
 												printf("**                      **\n");
 												printf("**************************\n");
-												printf("ÇëÑ¡Ôñ¹¦ÄÜ£º");
+												printf("è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
 												scanf_s("%d", &choice_2);
 												choose();
 												switch (choice_2)
@@ -353,23 +353,23 @@ int main()
 													{
 														memset(input_key, 0, sizeof(input_key));
 														memset(input_key_2, 0, sizeof(input_key_2));
-														printf("ÇëÊäÈëÃÜÂë£º");
+														printf("è¯·è¾“å…¥å¯†ç ï¼š");
 														hideInput(input_key, 19);
-														printf("ÇëÈ·ÈÏÃÜÂë£º");
+														printf("è¯·ç¡®è®¤å¯†ç ï¼š");
 														hideInput(input_key_2, 19);
 														if (!strcmp(input_key, input_key_2))
 														{
 															strcpy(ag_p1->Key, input_key);
-															printf("ĞŞ¸Ä³É¹¦!\n");
-															printf("»Ø³µÒÔ¼ÌĞø\n");
+															printf("ä¿®æ”¹æˆåŠŸ!\n");
+															printf("å›è½¦ä»¥ç»§ç»­\n");
 															getchar();
 															choose();
 															break;
 														}
 														else
 														{
-															printf("Á½´ÎÊäÈë²»Ò»ÑùµÄàÏ\n");
-															printf("»Ø³µÒÔ¼ÌĞø\n");
+															printf("ä¸¤æ¬¡è¾“å…¥ä¸ä¸€æ ·çš„å˜\n");
+															printf("å›è½¦ä»¥ç»§ç»­\n");
 															getchar();
 															choose();
 															break;
@@ -378,48 +378,48 @@ int main()
 													break;
 												case 2:
 													memset(input_string, 0, sizeof(input_string));
-													printf("ÇëÊäÈëĞÂµÄĞÕÃû:");
+													printf("è¯·è¾“å…¥æ–°çš„å§“å:");
 													scanf("%s", input_string);
 													strcpy(ag_p1->Name, input_string);
-													printf("ĞŞ¸Ä³É¹¦£¡\n");
-													printf("»Ø³µÒÔ¼ÌĞø\n");
+													printf("ä¿®æ”¹æˆåŠŸï¼\n");
+													printf("å›è½¦ä»¥ç»§ç»­\n");
 													getchar();
 													choose();
 													break;
 												case 3:
 													memset(input_string, 0, sizeof(input_string));
-													printf("ÇëÊäÈëĞÂµÄµç»°ºÅÂë:");
+													printf("è¯·è¾“å…¥æ–°çš„ç”µè¯å·ç :");
 													scanf("%s", input_string);
 													while (strlen(input_string) != 11)
 													{
 														choose();
-														printf("ÎŞĞ§µÄµç»°ºÅÂë£¡\n");
-														printf("ÇëÊäÈëÕıÈ·µÄµÄµç»°ºÅÂë:");
+														printf("æ— æ•ˆçš„ç”µè¯å·ç ï¼\n");
+														printf("è¯·è¾“å…¥æ­£ç¡®çš„çš„ç”µè¯å·ç :");
 														memset(input_string, 0, sizeof(input_string));
 														scanf("%s", input_string);
 													}
 													strcpy(ag_p1->phone_n, input_string);
-													printf("ĞŞ¸Ä³É¹¦£¡\n");
-													printf("»Ø³µÒÔ¼ÌĞø\n");
+													printf("ä¿®æ”¹æˆåŠŸï¼\n");
+													printf("å›è½¦ä»¥ç»§ç»­\n");
 													getchar();
 													choose();
 													break;
 												}
-												jug5 = 0;//³õÊ¼»¯
+												jug5 = 0;//åˆå§‹åŒ–
 											}
 											else
 												if (*(tempIntPtr - 1) == 0)
 												{
 													logWarning(1);
-													printf("ÕÒ²»µ½ÄúÊäÈëµÄÄÚÈİ¡£\n");
-													printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø");
+													printf("æ‰¾ä¸åˆ°æ‚¨è¾“å…¥çš„å†…å®¹ã€‚\n");
+													printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­");
 													getchar();
 													choose();
 												}
 												else
 												{
-													printf("ÄúÊäÈëµÄÄÚÈİ±È½ÏÄ£ºı£¬ÎªÄúÕÒµ½ÒÔÏÂÄÚÈİ\n");
-													printf("ĞòºÅ\t\t±àºÅ\t\tĞÕÃû\t\tÕËºÅ\t\tµç»°\n");
+													printf("æ‚¨è¾“å…¥çš„å†…å®¹æ¯”è¾ƒæ¨¡ç³Šï¼Œä¸ºæ‚¨æ‰¾åˆ°ä»¥ä¸‹å†…å®¹\n");
+													printf("åºå·\t\tç¼–å·\t\tå§“å\t\tè´¦å·\t\tç”µè¯\n");
 													for (int i = 0; i < *(tempIntPtr - 1); i++)
 													{
 														ag_p1 = ag_head->next;
@@ -427,7 +427,7 @@ int main()
 															ag_p1 = ag_p1->next;
 														printf("%d\t\t%s\t%s\t\t%s\t\t%s\n", i + 1, ag_p1->Number, ag_p1->Name, ag_p1->Account, ag_p1->phone_n);
 													}
-													printf("»Ø³µÒÔ¼ÌĞø\n");
+													printf("å›è½¦ä»¥ç»§ç»­\n");
 													getchar();
 													choose();
 												}
@@ -435,15 +435,15 @@ int main()
 											tempIntPtr = NULL;
 											break;
 										case 2:
-											//Íê¹¤
+											//å®Œå·¥
 											memset(input_string, 0, sizeof(input_string));
-											printf("ÇëÊäÈëÔ±¹¤ĞÅÏ¢£¨×î¶à50¸ö×Ö·û£©£º");
+											printf("è¯·è¾“å…¥å‘˜å·¥ä¿¡æ¯ï¼ˆæœ€å¤š50ä¸ªå­—ç¬¦ï¼‰ï¼š");
 											scanf("%s", input_string);
 											tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 1);
 											if (*tempIntPtr == 0)
 											{
-												printf("ºÜÆà²Ò£¬ÎÒÃÇµÄÓ¦ÓÃÃ»ÓĞÈËÔÚÓÃ¡£\n");
-												printf("»Ø³µÒÔ¼ÌĞø\n");
+												printf("å¾ˆå‡„æƒ¨ï¼Œæˆ‘ä»¬çš„åº”ç”¨æ²¡æœ‰äººåœ¨ç”¨ã€‚\n");
+												printf("å›è½¦ä»¥ç»§ç»­\n");
 												getchar();
 												choose();
 												break;
@@ -463,11 +463,11 @@ int main()
 											if (jug5)
 											{
 												choose();
-												printf("³É¹¦ÕÒµ½¶ÔÏó\n");
-												printf("±àºÅ\t\tĞÕÃû\t\tÕËºÅ\t\tµç»°\n");
+												printf("æˆåŠŸæ‰¾åˆ°å¯¹è±¡\n");
+												printf("ç¼–å·\t\tå§“å\t\tè´¦å·\t\tç”µè¯\n");
 												printf("%s\t%s\t\t%s\t\t%s\n", ag_p1->Number, ag_p1->Name, ag_p1->Account, ag_p1->phone_n);
-												printf("ÄúÈ·¶¨ÒªÉ¾³ı¸ÃÔ±¹¤Âğ£¿\n1È·ÈÏ\t 2È¡Ïû£º\n");
-												printf("ÄúµÄÑ¡Ôñ£º");
+												printf("æ‚¨ç¡®å®šè¦åˆ é™¤è¯¥å‘˜å·¥å—ï¼Ÿ\n1ç¡®è®¤\t 2å–æ¶ˆï¼š\n");
+												printf("æ‚¨çš„é€‰æ‹©ï¼š");
 												scanf("%d", &jug6);
 												if (jug6 == 1)
 												{
@@ -486,9 +486,9 @@ int main()
 													ag_p1 = NULL;
 												}
 												jug6 = 0;
-												jug5 = 0;//³õÊ¼»¯
-												printf("É¾³ı³É¹¦£¡\n");
-												printf("»Ø³µÒÔ¼ÌĞø\n");
+												jug5 = 0;//åˆå§‹åŒ–
+												printf("åˆ é™¤æˆåŠŸï¼\n");
+												printf("å›è½¦ä»¥ç»§ç»­\n");
 												getchar();
 												choose();
 											}
@@ -496,15 +496,15 @@ int main()
 												if (*(tempIntPtr - 1) == 0)
 												{
 													logWarning(1);
-													printf("ÕÒ²»µ½ÄúÊäÈëµÄÄÚÈİ¡£\n");
-													printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+													printf("æ‰¾ä¸åˆ°æ‚¨è¾“å…¥çš„å†…å®¹ã€‚\n");
+													printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 													getchar();
 													choose();
 												}
 												else
 												{
-													printf("ÄúÊäÈëµÄÄÚÈİ±È½ÏÄ£ºı£¬ÎªÄúÕÒµ½ÒÔÏÂÄÚÈİ\n");
-													printf("ĞòºÅ\t\t±àºÅ\t\tĞÕÃû\t\tÕËºÅ\t\tµç»°\n");
+													printf("æ‚¨è¾“å…¥çš„å†…å®¹æ¯”è¾ƒæ¨¡ç³Šï¼Œä¸ºæ‚¨æ‰¾åˆ°ä»¥ä¸‹å†…å®¹\n");
+													printf("åºå·\t\tç¼–å·\t\tå§“å\t\tè´¦å·\t\tç”µè¯\n");
 													for (int i = 0; i < *(tempIntPtr - 1); i++)
 													{
 														ag_p1 = ag_head->next;
@@ -512,7 +512,7 @@ int main()
 															ag_p1 = ag_p1->next;
 														printf("%d\t\t%s\t%s\t\t%s\t\t%s\n", i + 1, ag_p1->Number, ag_p1->Name, ag_p1->Account, ag_p1->phone_n);
 													}
-													printf("»Ø³µÒÔ¼ÌĞø\n");
+													printf("å›è½¦ä»¥ç»§ç»­\n");
 													getchar();
 													choose();
 												}
@@ -520,31 +520,31 @@ int main()
 											tempIntPtr = NULL;
 											break;
 										case 3:
-											//Íê¹¤
+											//å®Œå·¥
 											while (jug2)
 											{
 												memset(input_account, 0, sizeof(input_account));
 												memset(input_phonenumber, 0, sizeof(input_phonenumber));
-												printf("ÇëÊäÈëµç»°ºÅÂë£º(11Î»)");
+												printf("è¯·è¾“å…¥ç”µè¯å·ç ï¼š(11ä½)");
 												scanf("%s", input_phonenumber);
 												while (strlen(input_phonenumber) != 11)
 												{
 													choose();
-													printf("ÎŞĞ§µÄµç»°ºÅÂë£¡\n");
-													printf("ÇëÊäÈëÕıÈ·µÄµÄµç»°ºÅÂë:");
+													printf("æ— æ•ˆçš„ç”µè¯å·ç ï¼\n");
+													printf("è¯·è¾“å…¥æ­£ç¡®çš„çš„ç”µè¯å·ç :");
 													memset(input_phonenumber, 0, sizeof(input_phonenumber));
 													scanf("%s", input_phonenumber);
 												}
-												printf("ÇëÊäÈëÕË»§£º£¨20¸ö×Ö·û£©");
+												printf("è¯·è¾“å…¥è´¦æˆ·ï¼šï¼ˆ20ä¸ªå­—ç¬¦ï¼‰");
 												scanf("%s", input_account);
 												ag_p1 = ag_head->next;
 												while (1)
 												{
 													if (ag_p1 == NULL)
 													{
-														printf("ÇëÊäÈëÃÜÂë£º");
+														printf("è¯·è¾“å…¥å¯†ç ï¼š");
 														hideInput(input_key, 19);
-														printf("ÇëÈ·ÈÏÃÜÂë£º");
+														printf("è¯·ç¡®è®¤å¯†ç ï¼š");
 														hideInput(input_key_2, 19);
 														if (!strcmp(input_key, input_key_2))
 														{
@@ -552,11 +552,11 @@ int main()
 															ag_tail = ag_tail->next;
 															ag_p1 = ag_tail;
 															strcpy(ag_p1->phone_n, input_phonenumber);
-															printf("×¢²á³É¹¦£¡\n");
-															printf("¸ÃÓÃ»§µÄ±àºÅÎª%s\n", ag_p1->Number);
-															printf("ÇëÊäÈëÓÃ»§µÄĞÕÃû£º");
+															printf("æ³¨å†ŒæˆåŠŸï¼\n");
+															printf("è¯¥ç”¨æˆ·çš„ç¼–å·ä¸º%s\n", ag_p1->Number);
+															printf("è¯·è¾“å…¥ç”¨æˆ·çš„å§“åï¼š");
 															scanf("%s", ag_p1->Name);
-															printf("»Ø³µÒÔ¼ÌĞø\n");
+															printf("å›è½¦ä»¥ç»§ç»­\n");
 															getchar();
 															choose();
 															jug2 = 0;
@@ -564,8 +564,8 @@ int main()
 														}
 														else
 														{
-															printf("Á½´ÎÊäÈë²»Ò»ÑùµÄàÏ");
-															printf("»Ø³µÒÔ¼ÌĞø");
+															printf("ä¸¤æ¬¡è¾“å…¥ä¸ä¸€æ ·çš„å˜");
+															printf("å›è½¦ä»¥ç»§ç»­");
 															getchar();
 															choose();
 															ag_p1 = ag_head->next;
@@ -575,8 +575,8 @@ int main()
 													if (!strcmp(input_account, ag_p1->Account) || !strcmp(input_phonenumber, ag_p1->phone_n))
 													{
 														ag_p1 = ag_head->next;
-														printf("¸ÃÓÃ»§ÒÑ¾­´æÔÚ\n");
-														printf("°´»Ø³µÒÔ¼ÌĞø\n");
+														printf("è¯¥ç”¨æˆ·å·²ç»å­˜åœ¨\n");
+														printf("æŒ‰å›è½¦ä»¥ç»§ç»­\n");
 														getchar();
 														choose();
 														break;
@@ -590,17 +590,17 @@ int main()
 										}
 										break;
 									case 2:
-										//Íê¹¤
-										printf("*******×â¿ÍĞÅÏ¢¹ÜÀí*******\n");
+										//å®Œå·¥
+										printf("*******ç§Ÿå®¢ä¿¡æ¯ç®¡ç†*******\n");
 										printf("**                      **\n");
-										printf("**0.     ·µ    »Ø       **\n");
-										printf("**1.     ĞÅÏ¢ĞŞ¸Ä       **\n");
-										printf("**2.     É¾³ıÕË»§       **\n");
-										printf("**3.     Ôö¼ÓÕË»§       **\n");
-										printf("**4.   ·â½ûĞÅÏ¢¹ÜÀí     **\n");
+										printf("**0.     è¿”    å›       **\n");
+										printf("**1.     ä¿¡æ¯ä¿®æ”¹       **\n");
+										printf("**2.     åˆ é™¤è´¦æˆ·       **\n");
+										printf("**3.     å¢åŠ è´¦æˆ·       **\n");
+										printf("**4.   å°ç¦ä¿¡æ¯ç®¡ç†     **\n");
 										printf("**                      **\n");
 										printf("**************************\n");
-										printf("ÇëÑ¡Ôñ¹¦ÄÜ£º");
+										printf("è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
 										scanf_s("%d", &choice_2);
 										choose();
 										switch (choice_2)
@@ -609,15 +609,15 @@ int main()
 											choice_2 = 1;
 											break;
 										case 1:
-											//Íê¹¤
+											//å®Œå·¥
 											memset(input_string, 0, sizeof(input_string));
-											printf("ÇëÊäÈëÓÃ»§ĞÅÏ¢£¨×î¶à50¸ö×Ö·û£©£º");
+											printf("è¯·è¾“å…¥ç”¨æˆ·ä¿¡æ¯ï¼ˆæœ€å¤š50ä¸ªå­—ç¬¦ï¼‰ï¼š");
 											scanf("%s", input_string);
 											tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 2);
 											if (*tempIntPtr == 0)
 											{
-												printf("ºÜÆà²Ò£¬ÎÒÃÇµÄÓ¦ÓÃÃ»ÓĞÈËÔÚÓÃ¡£");
-												printf("»Ø³µÒÔ¼ÌĞø");
+												printf("å¾ˆå‡„æƒ¨ï¼Œæˆ‘ä»¬çš„åº”ç”¨æ²¡æœ‰äººåœ¨ç”¨ã€‚");
+												printf("å›è½¦ä»¥ç»§ç»­");
 												getchar();
 												choose();
 												break;
@@ -637,19 +637,19 @@ int main()
 											if (jug5)
 											{
 												choose(0);
-												printf("³É¹¦ÕÒµ½¶ÔÏó\n");
-												printf("ĞÕÃû\t\tÕËºÅ\t\tµç»°\n");
+												printf("æˆåŠŸæ‰¾åˆ°å¯¹è±¡\n");
+												printf("å§“å\t\tè´¦å·\t\tç”µè¯\n");
 												printf("%s\t\t%s\t\t%s\n", cu_p1->Name, cu_p1->Account, cu_p1->phone_n);
-												printf("*********ĞÅÏ¢ĞŞ¸Ä*********\n");
+												printf("*********ä¿¡æ¯ä¿®æ”¹*********\n");
 												printf("**                      **\n");
-												printf("**0.     ·µ    »Ø       **\n");
-												printf("**1.     ÖØÖÃÃÜÂë       **\n");
-												printf("**2.     ĞŞ¸ÄĞÕÃû       **\n");
-												printf("**3.     ĞŞ¸Äµç»°       **\n");
-												printf("**4.     ĞŞ¸Ä³ÇÊĞ       **\n");
+												printf("**0.     è¿”    å›       **\n");
+												printf("**1.     é‡ç½®å¯†ç        **\n");
+												printf("**2.     ä¿®æ”¹å§“å       **\n");
+												printf("**3.     ä¿®æ”¹ç”µè¯       **\n");
+												printf("**4.     ä¿®æ”¹åŸå¸‚       **\n");
 												printf("**                      **\n");
 												printf("**************************\n");
-												printf("ÇëÑ¡Ôñ¹¦ÄÜ£º");
+												printf("è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
 												scanf_s("%d", &choice_2);
 												choose();
 												switch (choice_2)
@@ -662,23 +662,23 @@ int main()
 													{
 														memset(input_key, 0, sizeof(input_key));
 														memset(input_key_2, 0, sizeof(input_key_2));
-														printf("ÇëÊäÈëÃÜÂë£º");
+														printf("è¯·è¾“å…¥å¯†ç ï¼š");
 														hideInput(input_key, 19);
-														printf("ÇëÈ·ÈÏÃÜÂë£º");
+														printf("è¯·ç¡®è®¤å¯†ç ï¼š");
 														hideInput(input_key_2, 19);
 														if (!strcmp(input_key, input_key_2))
 														{
 															strcpy(cu_p1->Key, input_key);
-															printf("ĞŞ¸Ä³É¹¦!\n");
-															printf("»Ø³µÒÔ¼ÌĞø\n");
+															printf("ä¿®æ”¹æˆåŠŸ!\n");
+															printf("å›è½¦ä»¥ç»§ç»­\n");
 															getchar();
 															choose();
 															break;
 														}
 														else
 														{
-															printf("Á½´ÎÊäÈë²»Ò»ÑùµÄàÏ");
-															printf("»Ø³µÒÔ¼ÌĞø");
+															printf("ä¸¤æ¬¡è¾“å…¥ä¸ä¸€æ ·çš„å˜");
+															printf("å›è½¦ä»¥ç»§ç»­");
 															getchar();
 															choose();
 															break;
@@ -687,57 +687,57 @@ int main()
 													break;
 												case 2:
 													memset(input_string, 0, sizeof(input_string));
-													printf("ÇëÊäÈëĞÂµÄĞÕÃû:");
+													printf("è¯·è¾“å…¥æ–°çš„å§“å:");
 													scanf("%s", input_string);
 													strcpy(cu_p1->Name, input_string);
-													printf("ĞŞ¸Ä³É¹¦£¡\n");
-													printf("»Ø³µÒÔ¼ÌĞø\n");
+													printf("ä¿®æ”¹æˆåŠŸï¼\n");
+													printf("å›è½¦ä»¥ç»§ç»­\n");
 													getchar();
 													choose();
 													break;
 												case 3:
 													memset(input_string, 0, sizeof(input_string));
-													printf("ÇëÊäÈëĞÂµÄµç»°ºÅÂë:");
+													printf("è¯·è¾“å…¥æ–°çš„ç”µè¯å·ç :");
 													scanf("%s", input_string);
 													while (strlen(input_string) != 11)
 													{
 														choose();
-														printf("ÎŞĞ§µÄµç»°ºÅÂë£¡\n");
-														printf("ÇëÊäÈëÕıÈ·µÄµÄµç»°ºÅÂë:");
+														printf("æ— æ•ˆçš„ç”µè¯å·ç ï¼\n");
+														printf("è¯·è¾“å…¥æ­£ç¡®çš„çš„ç”µè¯å·ç :");
 														memset(input_string, 0, sizeof(input_string));
 														scanf("%s", input_string);
 													}
 													strcpy(cu_p1->phone_n, input_string);
-													printf("ĞŞ¸Ä³É¹¦£¡\n");
-													printf("»Ø³µÒÔ¼ÌĞø\n");
+													printf("ä¿®æ”¹æˆåŠŸï¼\n");
+													printf("å›è½¦ä»¥ç»§ç»­\n");
 													getchar();
 													choose();
 													break;
 												case 4:
 													memset(input_string, 0, sizeof(input_string));
-													printf("ÇëÊäÈëĞÂµÄ³ÇÊĞ:");
+													printf("è¯·è¾“å…¥æ–°çš„åŸå¸‚:");
 													scanf("%s", input_string);
 													strcpy(cu_p1->city, input_string);
-													printf("ĞŞ¸Ä³É¹¦£¡\n");
-													printf("»Ø³µÒÔ¼ÌĞø\n");
+													printf("ä¿®æ”¹æˆåŠŸï¼\n");
+													printf("å›è½¦ä»¥ç»§ç»­\n");
 													getchar();
 													choose();
 												}
-												jug5 = 0;//³õÊ¼»¯
+												jug5 = 0;//åˆå§‹åŒ–
 											}
 											else
 												if (*(tempIntPtr - 1) == 0)
 												{
 													logWarning(1);
-													printf("ÕÒ²»µ½ÄúÊäÈëµÄÄÚÈİ¡£\n");
-													printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+													printf("æ‰¾ä¸åˆ°æ‚¨è¾“å…¥çš„å†…å®¹ã€‚\n");
+													printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 													getchar();
 													choose();
 												}
 												else
 												{
-													printf("ÄúÊäÈëµÄÄÚÈİ±È½ÏÄ£ºı£¬ÎªÄúÕÒµ½ÒÔÏÂÄÚÈİ\n");
-													printf("ĞòºÅ\t\tĞÕÃû\t\tÕËºÅ\t\tµç»°\n");
+													printf("æ‚¨è¾“å…¥çš„å†…å®¹æ¯”è¾ƒæ¨¡ç³Šï¼Œä¸ºæ‚¨æ‰¾åˆ°ä»¥ä¸‹å†…å®¹\n");
+													printf("åºå·\t\tå§“å\t\tè´¦å·\t\tç”µè¯\n");
 													for (int i = 0; i < *(tempIntPtr - 1); i++)
 													{
 														cu_p1 = cu_head->next;
@@ -745,7 +745,7 @@ int main()
 															cu_p1 = cu_p1->next;
 														printf("%d\t\t%s\t\t%s\t\t%s\n", i + 1, cu_p1->Name, cu_p1->Account, cu_p1->phone_n);
 													}
-													printf("»Ø³µÒÔ¼ÌĞø\n");
+													printf("å›è½¦ä»¥ç»§ç»­\n");
 													getchar();
 													choose();
 												}
@@ -753,15 +753,15 @@ int main()
 											tempIntPtr = NULL;
 											break;
 										case 2:
-											//Íê¹¤
+											//å®Œå·¥
 											memset(input_string, 0, sizeof(input_string));
-											printf("ÇëÊäÈëÓÃ»§ĞÅÏ¢£¨×î¶à50¸ö×Ö·û£©£º");
+											printf("è¯·è¾“å…¥ç”¨æˆ·ä¿¡æ¯ï¼ˆæœ€å¤š50ä¸ªå­—ç¬¦ï¼‰ï¼š");
 											scanf("%s", input_string);
 											tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 2);
 											if (*tempIntPtr == 0)
 											{
-												printf("ºÜÆà²Ò£¬ÎÒÃÇµÄÓ¦ÓÃÃ»ÓĞÈËÔÚÓÃ¡£");
-												printf("»Ø³µÒÔ¼ÌĞø");
+												printf("å¾ˆå‡„æƒ¨ï¼Œæˆ‘ä»¬çš„åº”ç”¨æ²¡æœ‰äººåœ¨ç”¨ã€‚");
+												printf("å›è½¦ä»¥ç»§ç»­");
 												getchar();
 												choose();
 												break;
@@ -781,10 +781,10 @@ int main()
 											if (jug5)
 											{
 												choose(0);
-												printf("³É¹¦ÕÒµ½¶ÔÏó\n");
-												printf("ĞÕÃû\t\tÕËºÅ\t\tµç»°\n");
+												printf("æˆåŠŸæ‰¾åˆ°å¯¹è±¡\n");
+												printf("å§“å\t\tè´¦å·\t\tç”µè¯\n");
 												printf("%s\t\t%s\t\t%s\n", cu_p1->Name, cu_p1->Account, cu_p1->phone_n);
-												printf("ÄúÈ·¶¨ÒªÉ¾³ı¸ÃÓÃ»§Âğ£¿1È·ÈÏ 2È¡Ïû£º");
+												printf("æ‚¨ç¡®å®šè¦åˆ é™¤è¯¥ç”¨æˆ·å—ï¼Ÿ1ç¡®è®¤ 2å–æ¶ˆï¼š");
 												scanf("%d", &jug6);
 												if (jug6 == 1)
 												{
@@ -803,9 +803,9 @@ int main()
 													cu_p1 = NULL;
 												}
 												jug6 = 0;
-												jug5 = 0;//³õÊ¼»¯
-												printf("É¾³ı³É¹¦£¡\n");
-												printf("»Ø³µÒÔ¼ÌĞø\n");
+												jug5 = 0;//åˆå§‹åŒ–
+												printf("åˆ é™¤æˆåŠŸï¼\n");
+												printf("å›è½¦ä»¥ç»§ç»­\n");
 												getchar();
 												choose();
 											}
@@ -813,15 +813,15 @@ int main()
 												if (*(tempIntPtr - 1) == 0)
 												{
 													logWarning(1);
-													printf("ÕÒ²»µ½ÄúÊäÈëµÄÄÚÈİ¡£\n");
-													printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+													printf("æ‰¾ä¸åˆ°æ‚¨è¾“å…¥çš„å†…å®¹ã€‚\n");
+													printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 													getchar();
 													choose();
 												}
 												else
 												{
-													printf("ÄúÊäÈëµÄÄÚÈİ±È½ÏÄ£ºı£¬ÎªÄúÕÒµ½ÒÔÏÂÄÚÈİ\n");
-													printf("ĞòºÅ\t\tĞÕÃû\t\tÕËºÅ\t\tµç»°\n");
+													printf("æ‚¨è¾“å…¥çš„å†…å®¹æ¯”è¾ƒæ¨¡ç³Šï¼Œä¸ºæ‚¨æ‰¾åˆ°ä»¥ä¸‹å†…å®¹\n");
+													printf("åºå·\t\tå§“å\t\tè´¦å·\t\tç”µè¯\n");
 													for (int i = 0; i < *(tempIntPtr - 1); i++)
 													{
 														cu_p1 = cu_head->next;
@@ -829,7 +829,7 @@ int main()
 															cu_p1 = cu_p1->next;
 														printf("%d\t\t%s\t\t%s\t\t%s\n", i + 1, cu_p1->Name, cu_p1->Account, cu_p1->phone_n);
 													}
-													printf("»Ø³µÒÔ¼ÌĞø\n");
+													printf("å›è½¦ä»¥ç»§ç»­\n");
 													getchar();
 													choose();
 												}
@@ -837,31 +837,31 @@ int main()
 											tempIntPtr = NULL;
 											break;
 										case 3:
-											//Íê¹¤
+											//å®Œå·¥
 											while (jug2)
 											{
 												memset(input_account, 0, sizeof(input_account));
 												memset(input_phonenumber, 0, sizeof(input_phonenumber));
-												printf("ÇëÊäÈëµç»°ºÅÂë£º(11Î»)");
+												printf("è¯·è¾“å…¥ç”µè¯å·ç ï¼š(11ä½)");
 												scanf("%s", input_phonenumber);
 												while (strlen(input_phonenumber) != 11)
 												{
 													choose();
-													printf("ÎŞĞ§µÄµç»°ºÅÂë£¡\n");
-													printf("ÇëÊäÈëÕıÈ·µÄµÄµç»°ºÅÂë:");
+													printf("æ— æ•ˆçš„ç”µè¯å·ç ï¼\n");
+													printf("è¯·è¾“å…¥æ­£ç¡®çš„çš„ç”µè¯å·ç :");
 													memset(input_phonenumber, 0, sizeof(input_phonenumber));
 													scanf("%s", input_phonenumber);
 												}
-												printf("ÇëÊäÈëÕË»§£º£¨20¸ö×Ö·û£©");
+												printf("è¯·è¾“å…¥è´¦æˆ·ï¼šï¼ˆ20ä¸ªå­—ç¬¦ï¼‰");
 												scanf("%s", input_account);
 												cu_p1 = cu_head->next;
 												while (1)
 												{
 													if (cu_p1 == NULL)
 													{
-														printf("ÇëÊäÈëÃÜÂë£º");
+														printf("è¯·è¾“å…¥å¯†ç ï¼š");
 														hideInput(input_key, 19);
-														printf("ÇëÈ·ÈÏÃÜÂë£º");
+														printf("è¯·ç¡®è®¤å¯†ç ï¼š");
 														hideInput(input_key_2, 19);
 														if (!strcmp(input_key, input_key_2))
 														{
@@ -869,12 +869,12 @@ int main()
 															cu_tail = cu_tail->next;
 															cu_p1 = cu_tail;
 															strcpy(cu_p1->phone_n, input_phonenumber);
-															printf("×¢²á³É¹¦£¡\n");
-															printf("ÇëÊäÈëÓÃ»§µÄĞÕÃû£º");
+															printf("æ³¨å†ŒæˆåŠŸï¼\n");
+															printf("è¯·è¾“å…¥ç”¨æˆ·çš„å§“åï¼š");
 															scanf("%s", cu_p1->Name);
-															printf("ÇëÊäÈë³ÇÊĞ£º");
+															printf("è¯·è¾“å…¥åŸå¸‚ï¼š");
 															scanf("%s", cu_p1->city);
-															printf("»Ø³µÒÔ¼ÌĞø\n");
+															printf("å›è½¦ä»¥ç»§ç»­\n");
 															getchar();
 															choose();
 															jug2 = 0;
@@ -882,8 +882,8 @@ int main()
 														}
 														else
 														{
-															printf("Á½´ÎÊäÈë²»Ò»ÑùµÄàÏ");
-															printf("»Ø³µÒÔ¼ÌĞø");
+															printf("ä¸¤æ¬¡è¾“å…¥ä¸ä¸€æ ·çš„å˜");
+															printf("å›è½¦ä»¥ç»§ç»­");
 															getchar();
 															choose();
 															cu_p1 = cu_head->next;
@@ -893,8 +893,8 @@ int main()
 													if (!strcmp(input_account, cu_p1->Account) || !strcmp(input_phonenumber, cu_p1->phone_n))
 													{
 														cu_p1 = cu_head->next;
-														printf("¸ÃÓÃ»§ÒÑ¾­´æÔÚ\n");
-														printf("°´»Ø³µÒÔ¼ÌĞø\n");
+														printf("è¯¥ç”¨æˆ·å·²ç»å­˜åœ¨\n");
+														printf("æŒ‰å›è½¦ä»¥ç»§ç»­\n");
 														getchar();
 														choose();
 														break;
@@ -905,15 +905,15 @@ int main()
 											jug2 = 1;
 											break;
 										case 4:
-											//Íê¹¤
-											printf("*******·â½ûĞÅÏ¢¹ÜÀí*******\n");
+											//å®Œå·¥
+											printf("*******å°ç¦ä¿¡æ¯ç®¡ç†*******\n");
 											printf("**                      **\n");
-											printf("**0.     ·µ    »Ø       **\n");
-											printf("**1.     ·â½ûÕË»§       **\n");
-											printf("**2.     ½â·âÕË»§       **\n");
+											printf("**0.     è¿”    å›       **\n");
+											printf("**1.     å°ç¦è´¦æˆ·       **\n");
+											printf("**2.     è§£å°è´¦æˆ·       **\n");
 											printf("**                      **\n");
 											printf("**************************\n");
-											printf("ÇëÑ¡Ôñ¹¦ÄÜ£º");
+											printf("è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
 											scanf_s("%d", &choice_2);
 											choose();
 											switch (choice_2)
@@ -922,15 +922,15 @@ int main()
 												choice_2 = 1;
 												break;
 											case 1:
-												//Íê¹¤
+												//å®Œå·¥
 												memset(input_string, 0, sizeof(input_string));
-												printf("ÇëÊäÈëÓÃ»§ĞÅÏ¢£¨×î¶à50¸ö×Ö·û£©£º");
+												printf("è¯·è¾“å…¥ç”¨æˆ·ä¿¡æ¯ï¼ˆæœ€å¤š50ä¸ªå­—ç¬¦ï¼‰ï¼š");
 												scanf("%s", input_string);
 												tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 2);
 												if (*tempIntPtr == 0)
 												{
-													printf("ºÜÆà²Ò£¬ÎÒÃÇµÄÓ¦ÓÃÃ»ÓĞÈËÔÚÓÃ¡£");
-													printf("»Ø³µÒÔ¼ÌĞø");
+													printf("å¾ˆå‡„æƒ¨ï¼Œæˆ‘ä»¬çš„åº”ç”¨æ²¡æœ‰äººåœ¨ç”¨ã€‚");
+													printf("å›è½¦ä»¥ç»§ç»­");
 													getchar();
 													choose();
 													break;
@@ -950,33 +950,33 @@ int main()
 												if (jug5)
 												{
 													choose();
-													printf("³É¹¦ÕÒµ½¶ÔÏó\n");
-													printf("ĞÕÃû\t\tÕËºÅ\t\tµç»°\t\t×´Ì¬\n");
+													printf("æˆåŠŸæ‰¾åˆ°å¯¹è±¡\n");
+													printf("å§“å\t\tè´¦å·\t\tç”µè¯\t\tçŠ¶æ€\n");
 													printf("%s\t\t%s\t\t%s\t\t", cu_p1->Name, cu_p1->Account, cu_p1->phone_n);
 													switch (cu_p1->statment)
 													{
 													case 1:
-														printf("Õı³£\n");
+														printf("æ­£å¸¸\n");
 														break;
 													case 0:
-														printf("·â½û\n");
+														printf("å°ç¦\n");
 													}
 													if (cu_p1->statment == 0)
 													{
-														printf("¸ÃÓÃ»§ÒÑ±»·â½û");
-														printf("»Ø³µÒÔ¼ÌĞø\n");
+														printf("è¯¥ç”¨æˆ·å·²è¢«å°ç¦");
+														printf("å›è½¦ä»¥ç»§ç»­\n");
 														getchar();
 														choose();
 													}
 													if (cu_p1->statment == 1)
 													{
-														printf("ÄúÈ·¶¨Òª·â½û¸ÃÓÃ»§Âğ£¿1È·ÈÏ 2È¡Ïû£º");
+														printf("æ‚¨ç¡®å®šè¦å°ç¦è¯¥ç”¨æˆ·å—ï¼Ÿ1ç¡®è®¤ 2å–æ¶ˆï¼š");
 														scanf("%d", &jug6);
 														if (jug6 == 1)
 														{
 															cu_p1->statment = 0;
-															printf("²Ù×÷³É¹¦£¡\n");
-															printf("»Ø³µÒÔ¼ÌĞø\n");
+															printf("æ“ä½œæˆåŠŸï¼\n");
+															printf("å›è½¦ä»¥ç»§ç»­\n");
 															getchar();
 															choose();
 														}
@@ -984,15 +984,15 @@ int main()
 												}
 												break;
 											case 2:
-												//Íê¹¤
+												//å®Œå·¥
 												memset(input_string, 0, sizeof(input_string));
-												printf("ÇëÊäÈëÓÃ»§ĞÅÏ¢£¨×î¶à50¸ö×Ö·û£©£º");
+												printf("è¯·è¾“å…¥ç”¨æˆ·ä¿¡æ¯ï¼ˆæœ€å¤š50ä¸ªå­—ç¬¦ï¼‰ï¼š");
 												scanf("%s", input_string);
 												tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 2);
 												if (*tempIntPtr == 0)
 												{
-													printf("ºÜÆà²Ò£¬ÎÒÃÇµÄÓ¦ÓÃÃ»ÓĞÈËÔÚÓÃ¡£");
-													printf("»Ø³µÒÔ¼ÌĞø");
+													printf("å¾ˆå‡„æƒ¨ï¼Œæˆ‘ä»¬çš„åº”ç”¨æ²¡æœ‰äººåœ¨ç”¨ã€‚");
+													printf("å›è½¦ä»¥ç»§ç»­");
 													getchar();
 													choose();
 													break;
@@ -1012,33 +1012,33 @@ int main()
 												if (jug5)
 												{
 													choose(0);
-													printf("³É¹¦ÕÒµ½¶ÔÏó\n");
-													printf("ĞÕÃû\t\tÕËºÅ\t\tµç»°\t\t×´Ì¬\n");
+													printf("æˆåŠŸæ‰¾åˆ°å¯¹è±¡\n");
+													printf("å§“å\t\tè´¦å·\t\tç”µè¯\t\tçŠ¶æ€\n");
 													printf("%s\t\t%s\t\t%s\t\t", cu_p1->Name, cu_p1->Account, cu_p1->phone_n);
 													switch (cu_p1->statment)
 													{
 													case 1:
-														printf("Õı³£\n");
+														printf("æ­£å¸¸\n");
 														break;
 													case 0:
-														printf("·â½û\n");
+														printf("å°ç¦\n");
 													}
 													if (cu_p1->statment == 0)
 													{
-														printf("¸ÃÓÃ»§×´Ì¬Õı³£");
-														printf("»Ø³µÒÔ¼ÌĞø\n");
+														printf("è¯¥ç”¨æˆ·çŠ¶æ€æ­£å¸¸");
+														printf("å›è½¦ä»¥ç»§ç»­\n");
 														getchar();
 														choose();
 													}
 													if (cu_p1->statment == 1)
 													{
-														printf("ÄúÈ·¶¨Òª½â·â¸ÃÓÃ»§Âğ£¿1È·ÈÏ 2È¡Ïû£º");
+														printf("æ‚¨ç¡®å®šè¦è§£å°è¯¥ç”¨æˆ·å—ï¼Ÿ1ç¡®è®¤ 2å–æ¶ˆï¼š");
 														scanf("%d", &jug6);
 														if (jug6 == 1)
 														{
 															cu_p1->statment = 1;
-															printf("²Ù×÷³É¹¦£¡\n");
-															printf("»Ø³µÒÔ¼ÌĞø\n");
+															printf("æ“ä½œæˆåŠŸï¼\n");
+															printf("å›è½¦ä»¥ç»§ç»­\n");
 															getchar();
 															choose();
 														}
@@ -1053,24 +1053,24 @@ int main()
 								}
 						   
 								break;
-							case 2://·¿Ô´¹ÜÀí
-								//ÒÑÍê³É
+							case 2://æˆ¿æºç®¡ç†
+								//å·²å®Œæˆ
 								jug9 = 1;
 								while (jug9 != 0)
 								{
 									if (fl_number == 0)
 									{
-										printf("ºÜÒÅº¶£¬Ä¿Ç°²¢Ã»ÓĞ·¿Ô´\n");
-										printf("ÊÇ·ñÂ¼Èë·¿Ô´\n");
-										printf("1:ÊÇ\t2:·ñ\n");
+										printf("å¾ˆé—æ†¾ï¼Œç›®å‰å¹¶æ²¡æœ‰æˆ¿æº\n");
+										printf("æ˜¯å¦å½•å…¥æˆ¿æº\n");
+										printf("1:æ˜¯\t2:å¦\n");
 										scanf("%d", &choice_2);
 										if (choice_2 == 1)
 										{
 											int input_number;
-											printf("ÇëÊäÈëÔö¼Ó·¿Ô´ÊıÁ¿£º");
+											printf("è¯·è¾“å…¥å¢åŠ æˆ¿æºæ•°é‡ï¼š");
 											scanf("%d", &input_number);
 											fl_number = fl_number + input_number;
-											printf("Çë°´ÕÕ³ÇÊĞ/Ãæ»ı/ÊÒ/Ìü/³¯Ïò/Â¥²ã/×â½ğË³ĞòÊäÈë\n");
+											printf("è¯·æŒ‰ç…§åŸå¸‚/é¢ç§¯/å®¤/å…/æœå‘/æ¥¼å±‚/ç§Ÿé‡‘é¡ºåºè¾“å…¥\n");
 											for (int i = 0; i < input_number; i++)
 											{
 												char city[20];
@@ -1084,10 +1084,10 @@ int main()
 												scanf("%f %d %d %d %d %f", &Area, &shi, &ting, &t, &floor, &rent);
 												extend_writeFlat(fl_p1, fl_head, fl_tail, city, Area, t, floor, rent, shi, ting, NULL);
 												fl_tail = fl_tail->next;
-												printf("ĞÅÏ¢Â¼Èë³É¹¦\n");
+												printf("ä¿¡æ¯å½•å…¥æˆåŠŸ\n");
 											}
-											printf("Ä¿Ç°ÓĞ%d¸ö·¿Ô´\n", fl_number);
-											printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+											printf("ç›®å‰æœ‰%dä¸ªæˆ¿æº\n", fl_number);
+											printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 											getchar();
 											choose();
 										}
@@ -1099,15 +1099,15 @@ int main()
 
 
 									}
-									printf("*********·¿Ô´¹ÜÀí*********\n");
+									printf("*********æˆ¿æºç®¡ç†*********\n");
 									printf("**                      **\n");
-									printf("**0.     ·µ    »Ø       **\n");
-									printf("**1.     ĞÅÏ¢ĞŞ¸Ä       **\n");
-									printf("**2.     É¾³ı·¿Ô´       **\n");
-									printf("**3.     Ôö¼Ó·¿Ô´       **\n");
+									printf("**0.     è¿”    å›       **\n");
+									printf("**1.     ä¿¡æ¯ä¿®æ”¹       **\n");
+									printf("**2.     åˆ é™¤æˆ¿æº       **\n");
+									printf("**3.     å¢åŠ æˆ¿æº       **\n");
 									printf("**                      **\n");
 									printf("**************************\n");
-									printf("ÇëÑ¡Ôñ¹¦ÄÜ£º");
+									printf("è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
 									scanf_s("%d", &choice_2);
 									choose();
 									switch (choice_2)
@@ -1117,9 +1117,9 @@ int main()
 										jug9 = 0;
 										break;
 									}
-									case 1://ĞÅÏ¢ĞŞ¸Ä
+									case 1://ä¿¡æ¯ä¿®æ”¹
 									{
-										printf("ÇëÊäÈëÏ£ÍûĞŞ¸ÄµÄ·¿ÎİĞòºÅ£¨×î¶à10¸ö×Ö·û£©£º");
+										printf("è¯·è¾“å…¥å¸Œæœ›ä¿®æ”¹çš„æˆ¿å±‹åºå·ï¼ˆæœ€å¤š10ä¸ªå­—ç¬¦ï¼‰ï¼š");
 										scanf("%s", input_string);
 										tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
 										tempIntPtr++;
@@ -1137,53 +1137,53 @@ int main()
 										if (jug5)
 										{
 											fl_change(fl_p1);
-											printf("·¿ÎİĞÅÏ¢ÒÑĞŞ¸Ä\n");
-											printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+											printf("æˆ¿å±‹ä¿¡æ¯å·²ä¿®æ”¹\n");
+											printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 											getchar();
 											choose();
-											jug5 = 0;//³õÊ¼»¯
+											jug5 = 0;//åˆå§‹åŒ–
 										}
 										else
 											if (*(tempIntPtr - 1) == 0)
 											{
 												logWarning(1);
-												printf("ÕÒ²»µ½ÄúÊäÈëµÄÄÚÈİ¡£\n");
-												printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+												printf("æ‰¾ä¸åˆ°æ‚¨è¾“å…¥çš„å†…å®¹ã€‚\n");
+												printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 												getchar();
 												choose();
 											}
 											else
 											{
-												printf("ÄúÊäÈëµÄÄÚÈİ±È½ÏÄ£ºı£¬ÎªÄúÕÒµ½ÒÔÏÂÄÚÈİ\n");
-												printf("ĞòºÅ\t\t±àºÅ\t\tÃæ»ı\t\tÊÒÌüÇé¿ö\t\t·ÑÓÃ\n");
+												printf("æ‚¨è¾“å…¥çš„å†…å®¹æ¯”è¾ƒæ¨¡ç³Šï¼Œä¸ºæ‚¨æ‰¾åˆ°ä»¥ä¸‹å†…å®¹\n");
+												printf("åºå·\t\tç¼–å·\t\té¢ç§¯\t\tå®¤å…æƒ…å†µ\t\tè´¹ç”¨\n");
 												for (int i = 0; i < *(tempIntPtr - 1); i++)
 												{
 													fl_p1 = fl_head->next;
 													for (int j = 0; j < *(tempIntPtr + i); j++)
 														fl_p1 = fl_p1->next;
-													printf("%d\t\t%s\t\t%6.2f\t\t%dÊÒ%dÌü\t\t%6.2f\n", i + 1, fl_p1->number,fl_p1->Area, fl_p1->shi,fl_p1->ting, fl_p1->rent);
+													printf("%d\t\t%s\t\t%6.2f\t\t%då®¤%då…\t\t%6.2f\n", i + 1, fl_p1->number,fl_p1->Area, fl_p1->shi,fl_p1->ting, fl_p1->rent);
 												}
-												printf("»Ø³µÒÔ¼ÌĞø\n");
+												printf("å›è½¦ä»¥ç»§ç»­\n");
 												getchar();
 												choose();
 											}
 										break;
 									}
-									case 2://É¾³ı·¿Ô´
+									case 2://åˆ é™¤æˆ¿æº
 									{
-										printf("ÇëÊäÈëÏ£ÍûÉ¾³ıµÄ·¿ÎİĞòºÅ£¨×î¶à10¸ö×Ö·û£©£º");
+										printf("è¯·è¾“å…¥å¸Œæœ›åˆ é™¤çš„æˆ¿å±‹åºå·ï¼ˆæœ€å¤š10ä¸ªå­—ç¬¦ï¼‰ï¼š");
 										scanf("%s", input_string);
 										tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
 										if (*tempIntPtr == 0)
 										{
-											printf("ºÜÆà²Ò£¬ÎÒÃÇµÄÓ¦ÓÃÃ»ÓĞ·¿ÔÚÓÃ¡£");
-											printf("»Ø³µÒÔ¼ÌĞø");
+											printf("å¾ˆå‡„æƒ¨ï¼Œæˆ‘ä»¬çš„åº”ç”¨æ²¡æœ‰æˆ¿åœ¨ç”¨ã€‚");
+											printf("å›è½¦ä»¥ç»§ç»­");
 											getchar();
 											choose();
 											break;
 										}
 										tempIntPtr++;
-										int t = 0;//É¾³ıµÄÁ´±íĞòºÅ
+										int t = 0;//åˆ é™¤çš„é“¾è¡¨åºå·
 										for (int i = 0; i != *(tempIntPtr - 1); i++)
 										{
 											fl_p1 = fl_head->next;
@@ -1201,10 +1201,10 @@ int main()
 											{
 												DelListall(fl_head, t);
 												fl_number--;
-												jug5 = 0;//³õÊ¼»¯
-												printf("¸ÃĞÅÏ¢ÒÑ¾­É¾³ı\n");
-												printf("Ä¿Ç°ÓĞ%d¸ö·¿Ô´\n", fl_number);
-												printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+												jug5 = 0;//åˆå§‹åŒ–
+												printf("è¯¥ä¿¡æ¯å·²ç»åˆ é™¤\n");
+												printf("ç›®å‰æœ‰%dä¸ªæˆ¿æº\n", fl_number);
+												printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 												getchar();
 												choose();
 												break;
@@ -1212,16 +1212,16 @@ int main()
 										}
 										break;
 									}
-									case 3://Ôö¼Ó·¿Ô´
-									{//´Ë´¦´óÀ¨ºÅÊÇÒòÎªÉùÃ÷¾Ö²¿±äÁ¿
+									case 3://å¢åŠ æˆ¿æº
+									{//æ­¤å¤„å¤§æ‹¬å·æ˜¯å› ä¸ºå£°æ˜å±€éƒ¨å˜é‡
 										int input_number;
-										printf("ÇëÊäÈëÔö¼Ó·¿Ô´ÊıÁ¿£º");
+										printf("è¯·è¾“å…¥å¢åŠ æˆ¿æºæ•°é‡ï¼š");
 										scanf("%d", &input_number);
 										fl_number = fl_number + input_number;
-										printf("Çë°´ÕÕ³ÇÊĞ/Ãæ»ı/ÊÒ/Ìü/³¯Ïò/Â¥²ã/×â½ğË³ĞòÊäÈë\n");
+										printf("è¯·æŒ‰ç…§åŸå¸‚/é¢ç§¯/å®¤/å…/æœå‘/æ¥¼å±‚/ç§Ÿé‡‘é¡ºåºè¾“å…¥\n");
 										for (int i = 0; i < input_number; i++)
 										{
-											printf("ÇëÊäÈë\n");
+											printf("è¯·è¾“å…¥\n");
 											char city[20];
 											float Area;
 											int shi;
@@ -1233,11 +1233,11 @@ int main()
 											scanf("%f %d %d %d %d %f", &Area, &shi, &ting, &t, &floor, &rent);
 											extend_writeFlat(fl_p1, fl_head, fl_tail, city, Area, t, floor, rent, shi, ting, NULL);
 											fl_tail = fl_tail->next;
-											printf("ĞÅÏ¢Â¼Èë³É¹¦\n");
-											printf("Æä±àºÅÎª%s\n", fl_tail->number);
+											printf("ä¿¡æ¯å½•å…¥æˆåŠŸ\n");
+											printf("å…¶ç¼–å·ä¸º%s\n", fl_tail->number);
 										}
-										printf("Ä¿Ç°ÓĞ%d¸ö·¿Ô´\n", fl_number);
-										printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+										printf("ç›®å‰æœ‰%dä¸ªæˆ¿æº\n", fl_number);
+										printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 										getchar();
 										choose();
 										break;
@@ -1250,13 +1250,13 @@ int main()
 						}
 						jug8 = 1;
 						break;
-					case 2://¿´·¿¹ÜÀí
-						//ÒÑÍê¹¤
-						printf("*********¿´·¿¹ÜÀí*********\n");
+					case 2://çœ‹æˆ¿ç®¡ç†
+						//å·²å®Œå·¥
+						printf("*********çœ‹æˆ¿ç®¡ç†*********\n");
 						printf("**                      **\n");
-						printf("**0.     ·µ    »Ø       **\n");
-						printf("**1.   Ô¤Ô¼ĞÅÏ¢´¦Àí     **\n");
-						printf("**2.   Ô¤Ô¼ĞÅÏ¢²éÑ¯     **\n");
+						printf("**0.     è¿”    å›       **\n");
+						printf("**1.   é¢„çº¦ä¿¡æ¯å¤„ç†     **\n");
+						printf("**2.   é¢„çº¦ä¿¡æ¯æŸ¥è¯¢     **\n");
 						printf("**                      **\n");
 						printf("**************************\n");
 						scanf("%d", &choice_2);
@@ -1267,15 +1267,15 @@ int main()
 							choose();
 							break;
 						case 1:
-							printf("ÇëÊäÈëÄúÏëÒª´¦ÀíµÄÔ¤Ô¼ĞÅÏ¢:");
+							printf("è¯·è¾“å…¥æ‚¨æƒ³è¦å¤„ç†çš„é¢„çº¦ä¿¡æ¯:");
 							memset(input_string, 0, sizeof(input_string));
 							scanf("%s", input_string);
 							tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 3);
 							if (*tempIntPtr == 0)
 							{
 								logWarning(1);
-								printf("ÕÒ²»µ½¸ÃÔ¤Ô¼ĞÅÏ¢");
-								printf("»Ø³µÒÔ¼ÌĞø");
+								printf("æ‰¾ä¸åˆ°è¯¥é¢„çº¦ä¿¡æ¯");
+								printf("å›è½¦ä»¥ç»§ç»­");
 								getchar();
 								choose();
 								break;
@@ -1295,14 +1295,14 @@ int main()
 							if (jug5)
 							{
 								choose();
-								printf("³É¹¦ÕÒµ½¶ÔÏó\n");
-								printf("±àºÅ\t\tÊ±¼ä\t\t×â¿Í\t\t·¿Ô´±àºÅ\n");
+								printf("æˆåŠŸæ‰¾åˆ°å¯¹è±¡\n");
+								printf("ç¼–å·\t\tæ—¶é—´\t\tç§Ÿå®¢\t\tæˆ¿æºç¼–å·\n");
 								printf("%s\t%d-%d-%d\t%s\t\t%s\n", ap_p->Number, ap_p->year,ap_p->month,ap_p->day, ap_p->custom->Account, ap_p->flat->number);
-								printf("*********Ô¤Ô¼ĞÅÏ¢*********\n");
+								printf("*********é¢„çº¦ä¿¡æ¯*********\n");
 								printf("**                      **\n");
-								printf("**0.     ·µ    »Ø       **\n");
-								printf("**1.     É¾    ³ı       **\n");
-								printf("**2.     ĞŞ¸ÄÊ±¼ä       **\n");
+								printf("**0.     è¿”    å›       **\n");
+								printf("**1.     åˆ     é™¤       **\n");
+								printf("**2.     ä¿®æ”¹æ—¶é—´       **\n");
 								printf("**                      **\n");
 								printf("**************************\n");
 								scanf("%d", &choice_2);
@@ -1313,7 +1313,7 @@ int main()
 									break;
 									
 								case 1:
-									printf("ÄúÈ·¶¨ÒªÉ¾³ı¸ÃÔ¤Ô¼ĞÅÏ¢Âğ£¿1È·ÈÏ 2È¡Ïû£º");
+									printf("æ‚¨ç¡®å®šè¦åˆ é™¤è¯¥é¢„çº¦ä¿¡æ¯å—ï¼Ÿ1ç¡®è®¤ 2å–æ¶ˆï¼š");
 									scanf("%d", &jug6);
 									if (jug6 == 1)
 									{
@@ -1331,50 +1331,50 @@ int main()
 										}
 										ap_p = NULL;
 									}
-									printf("É¾³ı³É¹¦£¡\n");
-									printf("»Ø³µÒÔ¼ÌĞø\n");
+									printf("åˆ é™¤æˆåŠŸï¼\n");
+									printf("å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 									break;
 								case 2:
 								{
-									printf("ÇëÊäÈëĞÂÊ±¼ä£¨Äê ÔÂ ÈÕ£©:");
+									printf("è¯·è¾“å…¥æ–°æ—¶é—´ï¼ˆå¹´ æœˆ æ—¥ï¼‰:");
 									year, month, day;
 									scanf("%d%d%d", &year, &month, &day);
 									time_t now = time(NULL);
 									struct tm* local = localtime(&now);
 									if (year < local->tm_year || (year == local->tm_year && month < local->tm_mon) || (year == local->tm_year && month == local->tm_mon && day < local->tm_mday)||!checkDate(year,month,day))
-										printf("ÎŞĞ§µÄÊ±¼ä\n");
+										printf("æ— æ•ˆçš„æ—¶é—´\n");
 									else
 									{
 										ap_p->year = year;
 										ap_p->month = month;
 										ap_p->day = day;
 										ap_p->statment = 1;
-										printf("ĞŞ¸Ä³É¹¦£¡\n");
+										printf("ä¿®æ”¹æˆåŠŸï¼\n");
 									}
 								}
-									printf("»Ø³µÒÔ¼ÌĞø\n");
+									printf("å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 									break;
 								}
 								jug6 = 0;
-								jug5 = 0;//³õÊ¼»¯
+								jug5 = 0;//åˆå§‹åŒ–
 							}
 							else
 								if (*(tempIntPtr - 1) == 0)
 								{
 									logWarning(1);
-									printf("ÕÒ²»µ½ÄúÊäÈëµÄÄÚÈİ¡£\n");
-									printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+									printf("æ‰¾ä¸åˆ°æ‚¨è¾“å…¥çš„å†…å®¹ã€‚\n");
+									printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 								}
 								else
 								{
-									printf("ÄúÊäÈëµÄÄÚÈİ±È½ÏÄ£ºı£¬ÎªÄúÕÒµ½ÒÔÏÂÄÚÈİ\n");
-									printf("±àºÅ\t\tÊ±¼ä\t\t×â¿Í\t\t·¿Ô´±àºÅ\n");
+									printf("æ‚¨è¾“å…¥çš„å†…å®¹æ¯”è¾ƒæ¨¡ç³Šï¼Œä¸ºæ‚¨æ‰¾åˆ°ä»¥ä¸‹å†…å®¹\n");
+									printf("ç¼–å·\t\tæ—¶é—´\t\tç§Ÿå®¢\t\tæˆ¿æºç¼–å·\n");
 									for (int i = 0; i < *(tempIntPtr - 1); i++)
 									{
 										ap_p = ap_head->next;
@@ -1382,7 +1382,7 @@ int main()
 											ap_p = ap_p->next;
 										printf("%s\t%d-%d-%d\t%s\t\t%s\n", ap_p->Number, ap_p->year, ap_p->month, ap_p->day, ap_p->custom->Account, ap_p->flat->number);
 									}
-									printf("»Ø³µÒÔ¼ÌĞø\n");
+									printf("å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 								}
@@ -1390,15 +1390,15 @@ int main()
 							tempIntPtr = NULL;
 							break;
 						case 2:
-							printf("ÇëÊäÈëĞÅÏ¢:");
+							printf("è¯·è¾“å…¥ä¿¡æ¯:");
 							memset(input_string, 0, sizeof(input_string));
 							scanf("%s", input_string);
 							tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 1);
 							if (*tempIntPtr == 0)
 							{
 								logWarning(1);
-								printf("ÕÒ²»µ½¸ÃÔ¤Ô¼ĞÅÏ¢");
-								printf("»Ø³µÒÔ¼ÌĞø");
+								printf("æ‰¾ä¸åˆ°è¯¥é¢„çº¦ä¿¡æ¯");
+								printf("å›è½¦ä»¥ç»§ç»­");
 								getchar();
 								choose();
 								break;
@@ -1407,15 +1407,15 @@ int main()
 							if (*(tempIntPtr - 1) == 0)
 							{
 								logWarning(1);
-								printf("ÕÒ²»µ½ÄúÊäÈëµÄÄÚÈİ¡£\n");
-								printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+								printf("æ‰¾ä¸åˆ°æ‚¨è¾“å…¥çš„å†…å®¹ã€‚\n");
+								printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 							}
 							else
 							{
-								printf("ÎªÄúÕÒµ½ÒÔÏÂÄÚÈİ\n");
-								printf("±àºÅ\t\tÊ±¼ä\t\t×â¿Í\t\t·¿Ô´±àºÅ\t×´Ì¬\n");
+								printf("ä¸ºæ‚¨æ‰¾åˆ°ä»¥ä¸‹å†…å®¹\n");
+								printf("ç¼–å·\t\tæ—¶é—´\t\tç§Ÿå®¢\t\tæˆ¿æºç¼–å·\tçŠ¶æ€\n");
 								for (int i = 0; i < *(tempIntPtr - 1); i++)
 								{
 									ap_p = ap_head->next;
@@ -1425,17 +1425,17 @@ int main()
 									switch (ap_p->statment)
 									{
 									case 0:
-										strcpy(statment, "Íê³É");
+										strcpy(statment, "å®Œæˆ");
 										break;
 									case 1:
-										strcpy(statment, "ÓĞĞ§");
+										strcpy(statment, "æœ‰æ•ˆ");
 										break;
 									case 2:
-										strcpy(statment, "¹ıÆÚ");
+										strcpy(statment, "è¿‡æœŸ");
 									}
 									printf("%s\t%d-%d-%d\t%s\t\t%s\t%s\n", ap_p->Number, ap_p->year, ap_p->month, ap_p->day, ap_p->custom->Account, ap_p->flat->number, statment);
 								}
-								printf("»Ø³µÒÔ¼ÌĞø\n");
+								printf("å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 							}
@@ -1444,13 +1444,13 @@ int main()
 							break;
 						}
 						break;
-					case 3://ĞÅÏ¢²éÑ¯
-							printf("*********²éÑ¯·½Ê½*********\n");
+					case 3://ä¿¡æ¯æŸ¥è¯¢
+							printf("*********æŸ¥è¯¢æ–¹å¼*********\n");
 							printf("**                      **\n");
-							printf("**0.     ·µ    »Ø       **\n");
-							printf("**1.     ·¶Î§²éÕÒ       **\n");
-							printf("**2.     ¾ßÌå²éÕÒ       **\n");
-							printf("**3.     ×éºÏ²éÕÒ       **\n");
+							printf("**0.     è¿”    å›       **\n");
+							printf("**1.     èŒƒå›´æŸ¥æ‰¾       **\n");
+							printf("**2.     å…·ä½“æŸ¥æ‰¾       **\n");
+							printf("**3.     ç»„åˆæŸ¥æ‰¾       **\n");
 							printf("**                      **\n");
 							printf("**************************\n");
 							scanf("%d", &choice_6);
@@ -1461,11 +1461,11 @@ int main()
 								choose();
 								break;
 							case 1:
-								printf("*********²éÑ¯·½Ê½*********\n");
+								printf("*********æŸ¥è¯¢æ–¹å¼*********\n");
 								printf("**                      **\n");
-								printf("**1.     ×â    ½ğ       **\n");
-								printf("**2.     Â¥    ²ã       **\n");
-								printf("**3.     Ãæ    »ı       **\n");
+								printf("**1.     ç§Ÿ    é‡‘       **\n");
+								printf("**2.     æ¥¼    å±‚       **\n");
+								printf("**3.     é¢    ç§¯       **\n");
 								printf("**                      **\n");
 								printf("**************************\n");
 								scanf("%d", &choice_6);
@@ -1473,33 +1473,33 @@ int main()
 								int left = 0;
 								int right = 0;
 
-                                printf("*********ÅÅĞò·½Ê½*********\n");
+                                printf("*********æ’åºæ–¹å¼*********\n");
                                 printf("**                      **\n");
-                                printf("**1.     ´ÓĞ¡µ½´ó       **\n");
-                                printf("**2.     ´Ó´óµ½Ğ¡       **\n");
+                                printf("**1.     ä»å°åˆ°å¤§       **\n");
+                                printf("**2.     ä»å¤§åˆ°å°       **\n");
                                 printf("**                      **\n");
                                 printf("**************************\n");
                                 scanf("%d", &jug7);
-                                printf("ÇëÊäÈë×óÓÒ·¶Î§:\n");
-                                printf("×ó:");
+                                printf("è¯·è¾“å…¥å·¦å³èŒƒå›´:\n");
+                                printf("å·¦:");
                                 scanf("%d", &left);
-                                printf("\nÓÒ:");
+                                printf("\nå³:");
                                 scanf("%d", &right);
                                 choose();
                                 int t;
                                 t=range_search_Area(left, right, fl_head, fl_tail, jug7, choice_6);
-                                printf("¹²ÓĞ%d¼ä·¿×Ó·ûºÏ±ê×¼\n",t);
-                                printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+                                printf("å…±æœ‰%dé—´æˆ¿å­ç¬¦åˆæ ‡å‡†\n",t);
+                                printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
                                 getchar();
                                 choose();
                                 break;
                             case 2:
-                                printf("*********²éÑ¯·½Ê½*********\n");
+                                printf("*********æŸ¥è¯¢æ–¹å¼*********\n");
                                 printf("**                      **\n");
-                                printf("**1.     ³Ç    ÊĞ       **\n");
-                                printf("**2.     ÖĞ    ½é       **\n");
-                                printf("**3.     ±à    ºÅ       **\n");
-                                printf("**4.     ³¯    Ïò       **\n");
+                                printf("**1.     åŸ    å¸‚       **\n");
+                                printf("**2.     ä¸­    ä»‹       **\n");
+                                printf("**3.     ç¼–    å·       **\n");
+                                printf("**4.     æœ    å‘       **\n");
                                 printf("**                      **\n");
                                 printf("**************************\n");
                                 scanf("%d", &choice_6);
@@ -1510,7 +1510,7 @@ int main()
 									choose(0);
                                     break;
                                 case 1:
-									printf("ÇëÊäÈëÏ£Íû²éÕÒµÄ³ÇÊĞ£¨×î¶à10¸ö×Ö·û£©£º");
+									printf("è¯·è¾“å…¥å¸Œæœ›æŸ¥æ‰¾çš„åŸå¸‚ï¼ˆæœ€å¤š10ä¸ªå­—ç¬¦ï¼‰ï¼š");
 									scanf("%s", input_string);
 									tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
 									tempIntPtr++;
@@ -1529,71 +1529,71 @@ int main()
 									{
 
 										printf("%s\t", fl_p1->number);
-										printf("%4.2fÆ½·½Ã×\t", fl_p1->Area);
-										printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-										printf("%d²ã\t", fl_p1->floor);
-										printf("Î»ÓÚ%s\t", fl_p1->city);
-										printf("×â½ğÎª%6.2f\t", fl_p1->rent);
-										printf("³¯ÏòÎª");
+										printf("%4.2få¹³æ–¹ç±³\t", fl_p1->Area);
+										printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+										printf("%då±‚\t", fl_p1->floor);
+										printf("ä½äº%s\t", fl_p1->city);
+										printf("ç§Ÿé‡‘ä¸º%6.2f\t", fl_p1->rent);
+										printf("æœå‘ä¸º");
 										switch ((int)fl_p1->toward)
 										{
 										case 1:
-											printf("¶«\n");
+											printf("ä¸œ\n");
 											break;
 										case 2:
-											printf("ÄÏ\n");
+											printf("å—\n");
 											break;
 										case 3:
-											printf("Î÷\n");
+											printf("è¥¿\n");
 											break;
 										case 4:
-											printf("±±\n");
+											printf("åŒ—\n");
 											break;
 										case 5:
-											printf("¶«ÄÏ\n");
+											printf("ä¸œå—\n");
 											break;
 										case 6:
-											printf("¶«±±\n");
+											printf("ä¸œåŒ—\n");
 											break;
 										case 7:
-											printf("Î÷ÄÏ\n");
+											printf("è¥¿å—\n");
 											break;
 										case 8:
-											printf("Î÷±±\n");
+											printf("è¥¿åŒ—\n");
 											break;
 										}
-										printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+										printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 										getchar();
 										choose();
-										jug5 = 0;//³õÊ¼»¯
+										jug5 = 0;//åˆå§‹åŒ–
 									}
 									else
 										if (*(tempIntPtr - 1) == 0)
 										{
 											logWarning(1);
-											printf("ÕÒ²»µ½ÄúÊäÈëµÄÄÚÈİ¡£\n");
-											printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+											printf("æ‰¾ä¸åˆ°æ‚¨è¾“å…¥çš„å†…å®¹ã€‚\n");
+											printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 											getchar();
 											choose();
 										}
 										else
 										{
-											printf("ÄúÊäÈëµÄÄÚÈİ±È½ÏÄ£ºı£¬ÎªÄúÕÒµ½ÒÔÏÂÄÚÈİ\n");
-											printf("ĞòºÅ\t\t±àºÅ\t\tÃæ»ı\t\tÊÒÌüÇé¿ö\t\t·ÑÓÃ\n");
+											printf("æ‚¨è¾“å…¥çš„å†…å®¹æ¯”è¾ƒæ¨¡ç³Šï¼Œä¸ºæ‚¨æ‰¾åˆ°ä»¥ä¸‹å†…å®¹\n");
+											printf("åºå·\t\tç¼–å·\t\té¢ç§¯\t\tå®¤å…æƒ…å†µ\t\tè´¹ç”¨\n");
 											for (int i = 0; i < *(tempIntPtr - 1); i++)
 											{
 												fl_p1 = fl_head->next;
 												for (int j = 0; j < *(tempIntPtr + i); j++)
 													fl_p1 = fl_p1->next;
-												printf("%d\t\t%s\t\t%6.2f\t\t%dÊÒ%dÌü\t\t%6.2f\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
+												printf("%d\t\t%s\t\t%6.2f\t\t%då®¤%då…\t\t%6.2f\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
 											}
-											printf("»Ø³µÒÔ¼ÌĞø\n");
+											printf("å›è½¦ä»¥ç»§ç»­\n");
 											getchar();
 											choose();
 										}
                                     break;
-                                case 2://´Ë´¦È±ÉÙÖĞ½é²éÑ¯
-									printf("ÇëÊäÈëÄúÏëËÑË÷µÄÖĞ½éĞÕÃû£º\n");
+                                case 2://æ­¤å¤„ç¼ºå°‘ä¸­ä»‹æŸ¥è¯¢
+									printf("è¯·è¾“å…¥æ‚¨æƒ³æœç´¢çš„ä¸­ä»‹å§“åï¼š\n");
 									char input[20];
 									scanf("%s", input);
 									choose();
@@ -1603,17 +1603,17 @@ int main()
 									{
 										if (!strcmp(input, ag_p1->Name))
 										{
-											printf("±àºÅ£º");
+											printf("ç¼–å·ï¼š");
 											printf("%s\n",ag_p1->Number);
-											printf("ĞÕÃû£º");
+											printf("å§“åï¼š");
 											printf("%s\n", ag_p1->Name);
-											printf("µç»°£º");
+											printf("ç”µè¯ï¼š");
 											printf("%s\n", ag_p1->phone_n);
 											break;
 										}
 										ag_p1 = ag_p1->next;
 									}
-									printf("·¿²úĞÅÏ¢£º\n");
+									printf("æˆ¿äº§ä¿¡æ¯ï¼š\n");
 									int t = 0;
 									while (fl_p1 != NULL)
 									{
@@ -1623,47 +1623,47 @@ int main()
 											printf("%d:\t", t);
 											printf("%s\t", fl_p1->number);
 											printf("%4.2f\n", fl_p1->Area);
-											printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-											printf("%d²ã\t", fl_p1->floor);
-											printf("Î»ÓÚ%s\t", fl_p1->city);
-											printf("×â½ğÎª%6.2f", fl_p1->rent);
-											printf("³¯ÏòÎª");
+											printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+											printf("%då±‚\t", fl_p1->floor);
+											printf("ä½äº%s\t", fl_p1->city);
+											printf("ç§Ÿé‡‘ä¸º%6.2f", fl_p1->rent);
+											printf("æœå‘ä¸º");
 											switch ((int)fl_p1->toward)
 											{
 											case 1:
-												printf("¶«\n");
+												printf("ä¸œ\n");
 												break;
 											case 2:
-												printf("ÄÏ\n");
+												printf("å—\n");
 												break;
 											case 3:
-												printf("Î÷\n");
+												printf("è¥¿\n");
 												break;
 											case 4:
-												printf("±±\n");
+												printf("åŒ—\n");
 												break;
 											case 5:
-												printf("¶«ÄÏ\n");
+												printf("ä¸œå—\n");
 												break;
 											case 6:
-												printf("¶«±±\n");
+												printf("ä¸œåŒ—\n");
 												break;
 											case 7:
-												printf("Î÷ÄÏ\n");
+												printf("è¥¿å—\n");
 												break;
 											case 8:
-												printf("Î÷±±\n");
+												printf("è¥¿åŒ—\n");
 												break;
 											}
 										}
 										fl_p1 = fl_p1->next;
 									}
-									printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+									printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
                                     break;
                                 case 3:
-									printf("ÇëÊäÈëÏ£Íû²éÕÒµÄ·¿ÎİĞòºÅ£¨×î¶à10¸ö×Ö·û£©£º");
+									printf("è¯·è¾“å…¥å¸Œæœ›æŸ¥æ‰¾çš„æˆ¿å±‹åºå·ï¼ˆæœ€å¤š10ä¸ªå­—ç¬¦ï¼‰ï¼š");
 									scanf("%s", input_string);
 									tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
 									tempIntPtr++;
@@ -1680,130 +1680,130 @@ int main()
 									}
 									if (jug5)
 									{
-										printf("%s\t", fl_p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
-										printf("%4.2fÆ½·½Ã×\t", fl_p1->Area);
-										printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-										printf("%d²ã\t", fl_p1->floor);
-										printf("Î»ÓÚ%s\t", fl_p1->city);
-										printf("×â½ğÎª%6.2f\t", fl_p1->rent);
-										printf("³¯ÏòÎª");
+										printf("%s\t", fl_p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
+										printf("%4.2få¹³æ–¹ç±³\t", fl_p1->Area);
+										printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+										printf("%då±‚\t", fl_p1->floor);
+										printf("ä½äº%s\t", fl_p1->city);
+										printf("ç§Ÿé‡‘ä¸º%6.2f\t", fl_p1->rent);
+										printf("æœå‘ä¸º");
 										switch ((int)fl_p1->toward)
 										{
 										case 1:
-											printf("¶«\n");
+											printf("ä¸œ\n");
 											break;
 										case 2:
-											printf("ÄÏ\n");
+											printf("å—\n");
 											break;
 										case 3:
-											printf("Î÷\n");
+											printf("è¥¿\n");
 											break;
 										case 4:
-											printf("±±\n");
+											printf("åŒ—\n");
 											break;
 										case 5:
-											printf("¶«ÄÏ\n");
+											printf("ä¸œå—\n");
 											break;
 										case 6:
-											printf("¶«±±\n");
+											printf("ä¸œåŒ—\n");
 											break;
 										case 7:
-											printf("Î÷ÄÏ\n");
+											printf("è¥¿å—\n");
 											break;
 										case 8:
-											printf("Î÷±±\n");
+											printf("è¥¿åŒ—\n");
 											break;
 										}
-										printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+										printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 										getchar();
 										choose();
-										jug5 = 0;//³õÊ¼»¯
+										jug5 = 0;//åˆå§‹åŒ–
 									}
 									else
 										if (*(tempIntPtr - 1) == 0)
 										{
 											logWarning(1);
-											printf("ÕÒ²»µ½ÄúÊäÈëµÄÄÚÈİ¡£\n");
-											printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+											printf("æ‰¾ä¸åˆ°æ‚¨è¾“å…¥çš„å†…å®¹ã€‚\n");
+											printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 											getchar();
 											choose();
 										}
 										else
 										{
-											printf("ÄúÊäÈëµÄÄÚÈİ±È½ÏÄ£ºı£¬ÎªÄúÕÒµ½ÒÔÏÂÄÚÈİ\n");
-											printf("ĞòºÅ\t\t±àºÅ\t\tÃæ»ı\t\tÊÒÌüÇé¿ö\t\t·ÑÓÃ\n");
+											printf("æ‚¨è¾“å…¥çš„å†…å®¹æ¯”è¾ƒæ¨¡ç³Šï¼Œä¸ºæ‚¨æ‰¾åˆ°ä»¥ä¸‹å†…å®¹\n");
+											printf("åºå·\t\tç¼–å·\t\té¢ç§¯\t\tå®¤å…æƒ…å†µ\t\tè´¹ç”¨\n");
 											for (int i = 0; i < *(tempIntPtr - 1); i++)
 											{
 												fl_p1 = fl_head->next;
 												for (int j = 0; j < *(tempIntPtr + i); j++)
 													fl_p1 = fl_p1->next;
-												printf("%d\t\t%s\t\t%6.2f\t\t%dÊÒ%dÌü\t\t%6.2f\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
+												printf("%d\t\t%s\t\t%6.2f\t\t%då®¤%då…\t\t%6.2f\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
 											}
-											printf("»Ø³µÒÔ¼ÌĞø\n");
+											printf("å›è½¦ä»¥ç»§ç»­\n");
 											getchar();
 											choose();
 										}
                                     break;
-                                case 4://³¯Ïò²éÕÒ
-									printf("*********²éÑ¯·½Ê½*********\n");
+                                case 4://æœå‘æŸ¥æ‰¾
+									printf("*********æŸ¥è¯¢æ–¹å¼*********\n");
 									printf("**                      **\n");
-									printf("**1.        ¶«          **\n");
-									printf("**2.		ÄÏ          **\n");
-									printf("**3.        Î÷          **\n");
-									printf("**4.        ±±          **\n");
-									printf("**5.      ¶«  ÄÏ        **\n");
-									printf("**6.      ¶«  ±±        **\n");
-									printf("**7.      Î÷  ÄÏ        **\n");
-									printf("**8.      Î÷  ±±        **\n");
+									printf("**1.        ä¸œ          **\n");
+									printf("**2.		å—          **\n");
+									printf("**3.        è¥¿          **\n");
+									printf("**4.        åŒ—          **\n");
+									printf("**5.      ä¸œ  å—        **\n");
+									printf("**6.      ä¸œ  åŒ—        **\n");
+									printf("**7.      è¥¿  å—        **\n");
+									printf("**8.      è¥¿  åŒ—        **\n");
 									printf("**                      **\n");
 									printf("**************************\n");
 									scanf("%d", &choice_6);
 									choose();
 									int i;
 									i=toward_search(fl_head, choice_6);
-									printf("¹²ÓĞ%d¸ö·¿Ô´³¯Ïò", i);
+									printf("å…±æœ‰%dä¸ªæˆ¿æºæœå‘", i);
 									switch (choice_6)
 									{
 									case 1:
-										printf("¶«\n");
+										printf("ä¸œ\n");
 										break;
 									case 2:
-										printf("ÄÏ\n");
+										printf("å—\n");
 										break;
 									case 3:
-										printf("Î÷\n");
+										printf("è¥¿\n");
 										break;
 									case 4:
-										printf("±±\n");
+										printf("åŒ—\n");
 										break;
 									case 5:
-										printf("¶«ÄÏ\n");
+										printf("ä¸œå—\n");
 										break;
 									case 6:
-										printf("¶«±±\n");
+										printf("ä¸œåŒ—\n");
 										break;
 									case 7:
-										printf("Î÷ÄÏ\n");
+										printf("è¥¿å—\n");
 										break;
 									case 8:
-										printf("Î÷±±\n");
+										printf("è¥¿åŒ—\n");
 										break;
 									}
-									printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+									printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
                                     break;
 								}
 								break;
 							case 3:
-								printf("ÇëÊäÈëÄúÏëËÑË÷µÄ³ÇÊĞ£º\n");
+								printf("è¯·è¾“å…¥æ‚¨æƒ³æœç´¢çš„åŸå¸‚ï¼š\n");
 								char input1[20];
 								scanf("%s", input1);
-								printf("ÇëÊäÈëÃæ»ı·¶Î§£º");
+								printf("è¯·è¾“å…¥é¢ç§¯èŒƒå›´ï¼š");
 								int l, r;
-								printf("×ó£º\t");
+								printf("å·¦ï¼š\t");
 								scanf("%d", &l);
-								printf("ÓÒ£º\t");
+								printf("å³ï¼š\t");
 								scanf("%d", &r);
 								choose();
 								if (!strcmp(input1, fl_p1->city)&&fl_p1->Area>=l&&fl_p1->Area<=r)
@@ -1811,42 +1811,42 @@ int main()
 									t++;
 									printf("%d:\t", t);
 									printf("%s\t", fl_p1->number);
-									printf("%4.2fÆ½·½Ã×\n", fl_p1->Area);
-									printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-									printf("%d²ã\t", fl_p1->floor);
-									printf("Î»ÓÚ%s\t", fl_p1->city);
-									printf("×â½ğÎª%6.2f", fl_p1->rent);
-									printf("³¯ÏòÎª");
+									printf("%4.2få¹³æ–¹ç±³\n", fl_p1->Area);
+									printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+									printf("%då±‚\t", fl_p1->floor);
+									printf("ä½äº%s\t", fl_p1->city);
+									printf("ç§Ÿé‡‘ä¸º%6.2f", fl_p1->rent);
+									printf("æœå‘ä¸º");
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
-										printf("¶«\n");
+										printf("ä¸œ\n");
 										break;
 									case 2:
-										printf("ÄÏ\n");
+										printf("å—\n");
 										break;
 									case 3:
-										printf("Î÷\n");
+										printf("è¥¿\n");
 										break;
 									case 4:
-										printf("±±\n");
+										printf("åŒ—\n");
 										break;
 									case 5:
-										printf("¶«ÄÏ\n");
+										printf("ä¸œå—\n");
 										break;
 									case 6:
-										printf("¶«±±\n");
+										printf("ä¸œåŒ—\n");
 										break;
 									case 7:
-										printf("Î÷ÄÏ\n");
+										printf("è¥¿å—\n");
 										break;
 									case 8:
-										printf("Î÷±±\n");
+										printf("è¥¿åŒ—\n");
 										break;
 									}
 								}
 								fl_p1 = fl_p1->next;
-								printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+								printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 
@@ -1854,14 +1854,14 @@ int main()
 							}
 						break;
 
-					case 4://ĞÅÏ¢ÅÅĞò²¢Êä³ö
-						//Íê¹¤
-						printf("*********²é¿´·¿Ô´*********\n");
+					case 4://ä¿¡æ¯æ’åºå¹¶è¾“å‡º
+						//å®Œå·¥
+						printf("*********æŸ¥çœ‹æˆ¿æº*********\n");
 						printf("**                      **\n");
-						printf("**0.     ·µ    »Ø       **\n");
-						printf("**1.     ×â    ½ğ       **\n");
-						printf("**2.     ²ã    Êı       **\n");
-						printf("**3.     ·¿²úÃæ»ı       **\n");
+						printf("**0.     è¿”    å›       **\n");
+						printf("**1.     ç§Ÿ    é‡‘       **\n");
+						printf("**2.     å±‚    æ•°       **\n");
+						printf("**3.     æˆ¿äº§é¢ç§¯       **\n");
 						printf("**                      **\n");
 						printf("**************************\n");
 						scanf("%d", &choice_5);
@@ -1871,64 +1871,64 @@ int main()
 						}
 						else
 						{
-							printf("******ÊÇ·ñ¶àÊôĞÔÅÅĞò******\n");
+							printf("******æ˜¯å¦å¤šå±æ€§æ’åº******\n");
 							printf("**                      **\n");
-							printf("**1.        ÊÇ          **\n");
-							printf("**2.        ·ñ          **\n");
+							printf("**1.        æ˜¯          **\n");
+							printf("**2.        å¦          **\n");
 							printf("**                      **\n");
 							printf("**************************\n");
 							scanf("%d", &jug9);
 							choose();
 							if (jug9 == 1)
 							{
-								printf("*********Ñ¡ÔñÊôĞÔ*********\n");
+								printf("*********é€‰æ‹©å±æ€§*********\n");
 								printf("**                      **\n");
-								printf("**1.     ×â    ½ğ       **\n");
-								printf("**2.     ²ã    Êı       **\n");
-								printf("**3.     ·¿²úÃæ»ı       **\n");
+								printf("**1.     ç§Ÿ    é‡‘       **\n");
+								printf("**2.     å±‚    æ•°       **\n");
+								printf("**3.     æˆ¿äº§é¢ç§¯       **\n");
 								printf("**                      **\n");
 								printf("**************************\n");
 								scanf("%d", &choice_6);
 								choose();
-								int t;//¾Ö²¿±äÁ¿ÓÃÓÚ·µ»ØÖµÅĞ¶Ï
+								int t;//å±€éƒ¨å˜é‡ç”¨äºè¿”å›å€¼åˆ¤æ–­
 								bubbleSort_Area(&fl_head, choice_5);
 								t = bubbleSort_more(&fl_head, choice_5, choice_6);
 								if (t == 1)
 								{
-									printf("*********ÅÅĞò·½Ê½*********\n");
+									printf("*********æ’åºæ–¹å¼*********\n");
 									printf("**                      **\n");
-									printf("**1.     ´ÓĞ¡µ½´ó       **\n");
-									printf("**2.     ´Ó´óµ½Ğ¡       **\n");
+									printf("**1.     ä»å°åˆ°å¤§       **\n");
+									printf("**2.     ä»å¤§åˆ°å°       **\n");
 									printf("**                      **\n");
 									printf("**************************\n");
 									scanf("%d", &jug7);
 									choose();
 									list_printfl(fl_head, fl_tail, jug7);
-									printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+									printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 								}
 								if (t == 2)
 								{
-									printf("ÄúÁ½´ÎÑ¡ÔñµÄÊôĞÔÏàÍ¬,ÒÑÄ¬ÈÏÎªµ¥ÊôĞÔÅÅĞò\n");
+									printf("æ‚¨ä¸¤æ¬¡é€‰æ‹©çš„å±æ€§ç›¸åŒ,å·²é»˜è®¤ä¸ºå•å±æ€§æ’åº\n");
 									bubbleSort_Area(&fl_head, choice_5);
-									printf("*********ÅÅĞò·½Ê½*********\n");
+									printf("*********æ’åºæ–¹å¼*********\n");
 									printf("**                      **\n");
-									printf("**1.     ´ÓĞ¡µ½´ó       **\n");
-									printf("**2.     ´Ó´óµ½Ğ¡       **\n");
+									printf("**1.     ä»å°åˆ°å¤§       **\n");
+									printf("**2.     ä»å¤§åˆ°å°       **\n");
 									printf("**                      **\n");
 									printf("**************************\n");
 									scanf("%d", &jug7);
 									choose();
 									list_printfl(fl_head, fl_tail, jug7);
-									printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+									printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 								}
 								if (t == 3)
 								{
-									printf("ÇëÕıÈ·ÊäÈë\n");
-									printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+									printf("è¯·æ­£ç¡®è¾“å…¥\n");
+									printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 								}
@@ -1939,29 +1939,29 @@ int main()
 							{
 								bubbleSort_Area(&fl_head, choice_5);
 								choose();
-								printf("*********ÅÅĞò·½Ê½*********\n");
+								printf("*********æ’åºæ–¹å¼*********\n");
 								printf("**                      **\n");
-								printf("**1.     ´ÓĞ¡µ½´ó       **\n");
-								printf("**2.     ´Ó´óµ½Ğ¡       **\n");
+								printf("**1.     ä»å°åˆ°å¤§       **\n");
+								printf("**2.     ä»å¤§åˆ°å°       **\n");
 								printf("**                      **\n");
 								printf("**************************\n");
 								scanf("%d", &jug7);
 								choose();
 								list_printfl(fl_head, fl_tail, jug7);
-								printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+								printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 							}
 						}
 						break;
-					case 5://ĞÅÏ¢Í³¼Æ
-						//Íê¹¤
-						printf("·ÃÎÊÈËÊı£ºÎÒÃÇÃ»ÓĞ½ÓÈë»¥ÁªÍø\n");
-						printf("¹ÜÀíÔ±ÊıÁ¿£º%d\n", countNumberAD(ad_head));
-						printf("ÖĞ½éÈËÔ±ÊıÁ¿£º%d\n", countNumberAG(ag_head));
-						printf("×â¿ÍÈËÔ±ÊıÁ¿£º%d\n", countNumberCU(cu_head));
-						printf("·¿Ô´ÊıÁ¿£º%d\n", countNumberFL(fl_head));
-						printf("Ô¤Ô¼×ÜÊı£º%d\n", countNumberAP(ap_head));
+					case 5://ä¿¡æ¯ç»Ÿè®¡
+						//å®Œå·¥
+						printf("è®¿é—®äººæ•°ï¼šæˆ‘ä»¬æ²¡æœ‰æ¥å…¥äº’è”ç½‘\n");
+						printf("ç®¡ç†å‘˜æ•°é‡ï¼š%d\n", countNumberAD(ad_head));
+						printf("ä¸­ä»‹äººå‘˜æ•°é‡ï¼š%d\n", countNumberAG(ag_head));
+						printf("ç§Ÿå®¢äººå‘˜æ•°é‡ï¼š%d\n", countNumberCU(cu_head));
+						printf("æˆ¿æºæ•°é‡ï¼š%d\n", countNumberFL(fl_head));
+						printf("é¢„çº¦æ€»æ•°ï¼š%d\n", countNumberAP(ap_head));
 						int a = 0;
 						fl_p1 = fl_head->next;
 						while (fl_p1 != NULL)
@@ -1970,23 +1970,23 @@ int main()
 								a++;
 							fl_p1 = fl_p1->next;
 						}
-						printf("·¿Îİ³ö×âÂÊ£º%.2f%%\n\n", (float)a/(float)countNumberFL(fl_head)*100.0f);
-						printf("*********ĞÅÏ¢Í³¼Æ*********\n");
+						printf("æˆ¿å±‹å‡ºç§Ÿç‡ï¼š%.2f%%\n\n", (float)a/(float)countNumberFL(fl_head)*100.0f);
+						printf("*********ä¿¡æ¯ç»Ÿè®¡*********\n");
 						printf("**                      **\n");
-						printf("**0.     ·µ    »Ø       **\n");
+						printf("**0.     è¿”    å›       **\n");
 						printf("**                      **\n");
-						printf("*********Ô¤Ô¼ĞÅÏ¢*********\n");
+						printf("*********é¢„çº¦ä¿¡æ¯*********\n");
 						printf("**                      **\n");
-						printf("**1.     Õ¹    Ê¾       **\n");
-						printf("**2.     °´ Ê± ¼ä       **\n");
+						printf("**1.     å±•    ç¤º       **\n");
+						printf("**2.     æŒ‰ æ—¶ é—´       **\n");
 						printf("**                      **\n");
-						printf("*********·¿Ô´ĞÅÏ¢*********\n");
+						printf("*********æˆ¿æºä¿¡æ¯*********\n");
 						printf("**                      **\n");
-						printf("**3.     Õ¹    Ê¾       **\n");
-						printf("**4.     °´ Ãæ »ı       **\n");
-						printf("**5.     °´ ³¯ Ïò       **\n");
-						printf("**6.     °´ ³Ç ÊĞ       **\n");
-						printf("**7.     °´ ¸ñ ¾Ö       **\n");
+						printf("**3.     å±•    ç¤º       **\n");
+						printf("**4.     æŒ‰ é¢ ç§¯       **\n");
+						printf("**5.     æŒ‰ æœ å‘       **\n");
+						printf("**6.     æŒ‰ åŸ å¸‚       **\n");
+						printf("**7.     æŒ‰ æ ¼ å±€       **\n");
 						printf("**                      **\n");
 						printf("**************************\n");
 						scanf("%d", &choice_5);
@@ -2012,30 +2012,30 @@ int main()
 								}
 								ap_p = ap_p->next;
 							}
-							printf("Íê³ÉÊı£º%d\n", a);
-							printf("¹ıÆÚÊı£º%d\n", b);
-							printf("Íê³ÉÂÊ£º%.2f%%\n", (float)a / (float)countNumberAP(ap_head)*100.0f);
-							printf("¹ıÆÚÂÊ£º%.2f%%\n", (float)b / (float)countNumberAP(ap_head)*100.0f);
+							printf("å®Œæˆæ•°ï¼š%d\n", a);
+							printf("è¿‡æœŸæ•°ï¼š%d\n", b);
+							printf("å®Œæˆç‡ï¼š%.2f%%\n", (float)a / (float)countNumberAP(ap_head)*100.0f);
+							printf("è¿‡æœŸç‡ï¼š%.2f%%\n", (float)b / (float)countNumberAP(ap_head)*100.0f);
 						}
 							break;
 						case 2:
-							printf("ÇëÊäÈë¿ªÊ¼Ê±¼ä£¨Äê ÔÂ ÈÕ£©:");
+							printf("è¯·è¾“å…¥å¼€å§‹æ—¶é—´ï¼ˆå¹´ æœˆ æ—¥ï¼‰:");
 							scanf("%d%d%d", &year, &month, &day);
 							if (year < local->tm_year || (year == local->tm_year && month < local->tm_mon) || (year == local->tm_year && month == local->tm_mon && day < local->tm_mday) || !checkDate(year, month, day))
 							{
-								printf("ÎŞĞ§µÄÊ±¼ä\n");
-								printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+								printf("æ— æ•ˆçš„æ—¶é—´\n");
+								printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 								break;
 							}
 							int year2=0, month2=0, day2=0;
-							printf("ÇëÊäÈë½áÊøÊ±¼ä£¨Äê ÔÂ ÈÕ£©:");
+							printf("è¯·è¾“å…¥ç»“æŸæ—¶é—´ï¼ˆå¹´ æœˆ æ—¥ï¼‰:");
 							scanf("%d%d%d", &year2, &month2, &day2);
 							if (year2 < local->tm_year || (year2 == local->tm_year && month2 < local->tm_mon) || (year2 == local->tm_year && month2 == local->tm_mon && day2 < local->tm_mday) || !checkDate(year2, month2, day2))
 							{
-								printf("ÎŞĞ§µÄÊ±¼ä\n");
-								printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+								printf("æ— æ•ˆçš„æ—¶é—´\n");
+								printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 								break;
@@ -2065,13 +2065,13 @@ int main()
 								}
 								ap_p = ap_p->next;
 							}
-							printf("ÓĞĞ§µÄÔ¤Ô¼ÓĞ%d¸ö\n", a);
-							printf("¹ıÆÚµÄÔ¤Ô¼ÓĞ%d¸ö\n", c);
-							printf("Íê³ÉµÄÔ¤Ô¼ÓĞ%d¸ö\n", b);
-							printf("Íê³ÉÂÊÎª%.2f%%\n", (float)b / (float)num);
+							printf("æœ‰æ•ˆçš„é¢„çº¦æœ‰%dä¸ª\n", a);
+							printf("è¿‡æœŸçš„é¢„çº¦æœ‰%dä¸ª\n", c);
+							printf("å®Œæˆçš„é¢„çº¦æœ‰%dä¸ª\n", b);
+							printf("å®Œæˆç‡ä¸º%.2f%%\n", (float)b / (float)num);
 							break;
 						case 3:
-							//Íê¹¤
+							//å®Œå·¥
 							fl_p1 = fl_head->next;
 							int a1 = 0;
 							int b1 = 0;
@@ -2083,26 +2083,26 @@ int main()
 									b1++;
 								fl_p1 = fl_p1->next;
 							}
-							printf("Î´³ö×âµÄ·¿Ô´ÓĞ%d¸ö\n", a1);
-							printf("ÒÑ³ö×âµÄ·¿Ô´ÓĞ%d¸ö\n", b1);
+							printf("æœªå‡ºç§Ÿçš„æˆ¿æºæœ‰%dä¸ª\n", a1);
+							printf("å·²å‡ºç§Ÿçš„æˆ¿æºæœ‰%dä¸ª\n", b1);
 							break;
 						case 4:
-							//Ãæ»ı
+							//é¢ç§¯
 						{
 							int r = 0, l = 0;
-							printf("ÇëÊäÈë×óÖµ£¬ÓÒÖµ:");
+							printf("è¯·è¾“å…¥å·¦å€¼ï¼Œå³å€¼:");
 							scanf("%d%d", &r, &l);
-							if (r > l);//ĞŞÕı
+							if (r > l);//ä¿®æ­£
 							{
 								int t = r;
 								r = l;
 								l = t;
 							}
-							printf("Ãæ»ı´óÓÚ%dÆ½·½Ã×Ğ¡ÓÚ%dÆ½·½Ã×µÄÓĞ%d¸ö\n", r, l, range_search_Area(l, r, fl_head, fl_tail, 1, 3));
+							printf("é¢ç§¯å¤§äº%då¹³æ–¹ç±³å°äº%då¹³æ–¹ç±³çš„æœ‰%dä¸ª\n", r, l, range_search_Area(l, r, fl_head, fl_tail, 1, 3));
 						}
 							break;
 						case 5:
-							//³¯Ïò
+							//æœå‘
 						{
 							int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0;
 							fl_p1 = fl_head->next;
@@ -2137,11 +2137,11 @@ int main()
 								}
 								fl_p1 = fl_p1->next;
 							}
-							printf("¶«£º%d\tÄÏ£º%d\tÎ÷£º%d\t±±£º%d\t¶«ÄÏ£º%d\t¶«±±£º%d\tÎ÷ÄÏ£º%d\tÎ÷±±£º%d\n", a, b, c, d, e, f, g, h);
+							printf("ä¸œï¼š%d\tå—ï¼š%d\tè¥¿ï¼š%d\tåŒ—ï¼š%d\tä¸œå—ï¼š%d\tä¸œåŒ—ï¼š%d\tè¥¿å—ï¼š%d\tè¥¿åŒ—ï¼š%d\n", a, b, c, d, e, f, g, h);
 						}
 							break;
 						case 6:
-							//³ÇÊĞ
+							//åŸå¸‚
 						{
 							int j = 0;
 							typedef struct city
@@ -2187,7 +2187,7 @@ int main()
 							p = head->next;
 							while (p != NULL)
 							{
-								printf("%s£º%d\n", p->p, p->num);
+								printf("%sï¼š%d\n", p->p, p->num);
 								p = p->next;
 							}
 							p = head;
@@ -2201,13 +2201,13 @@ int main()
 						}
 							break;
 						case 7:
-							//¸ñ¾Ö
+							//æ ¼å±€
 						{
 							int j = 0;
 							typedef struct shiting
 							{
 								int shi;
-								int ting;//¼¸ÊÒ¼¸Ìü
+								int ting;//å‡ å®¤å‡ å…
 								int num;
 								struct shiting* next;
 							}Shiting;
@@ -2248,7 +2248,7 @@ int main()
 							p = head->next;
 							while (p != NULL)
 							{
-								printf("%dÊÒ%dÌü£º%d\n", p->shi, p->ting, p->num);
+								printf("%då®¤%då…ï¼š%d\n", p->shi, p->ting, p->num);
 								p = p->next;
 							}
 							p = head;
@@ -2262,7 +2262,7 @@ int main()
 						}
 							break;
 						}
-						printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+						printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 						getchar();
 						choose();
 						break;
@@ -2271,35 +2271,35 @@ int main()
 						{
 							memset(input_key, 0, sizeof(input_key));
 							memset(input_key_2, 0, sizeof(input_key_2));
-							printf("ÇëÊäÈëÃÜÂë£º");
+							printf("è¯·è¾“å…¥å¯†ç ï¼š");
 							hideInput(input_key, 19);
-							printf("ÇëÈ·ÈÏÃÜÂë£º");
+							printf("è¯·ç¡®è®¤å¯†ç ï¼š");
 							hideInput(input_key_2, 19);
 							if (!strcmp(input_key, input_key_2))
 							{
 								strcpy(ad_p1->Key, input_key);
-								printf("ĞŞ¸Ä³É¹¦!\n");
-								printf("»Ø³µÒÔ¼ÌĞø\n");
+								printf("ä¿®æ”¹æˆåŠŸ!\n");
+								printf("å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 								break;
 							}
 							else
 							{
-								printf("Á½´ÎÊäÈë²»Ò»ÑùµÄàÏ");
-								printf("»Ø³µÒÔ¼ÌĞø");
+								printf("ä¸¤æ¬¡è¾“å…¥ä¸ä¸€æ ·çš„å˜");
+								printf("å›è½¦ä»¥ç»§ç»­");
 								getchar();
 								choose();
 								break;
 							}
 						}
 						break;
-					case 7://Éú³ÉÑûÇëÂë
+					case 7://ç”Ÿæˆé‚€è¯·ç 
 						build_invitation = radom_string(19);
 						if (build_invitation == NULL)
 							return -1;
-						printf("ĞÂµÄÑûÇëÂëÎª£º%s\n", build_invitation);
-						printf("»Ø³µÒÔ¼ÌĞø\n");
+						printf("æ–°çš„é‚€è¯·ç ä¸ºï¼š%s\n", build_invitation);
+						printf("å›è½¦ä»¥ç»§ç»­\n");
 						strcpy(ad_p1->invitation, build_invitation);
 						ad_p1->effective = 1;
 						free(build_invitation);
@@ -2308,13 +2308,13 @@ int main()
 					case 8:
 						if (ad_p1->prev->prev == NULL && ad_p1->next == NULL)
 						{
-							printf("ÄãÊÇ×îºóÒ»¸ö¹ÜÀíÔ±£¬±ğÉ¾ÁËĞÖµÜ\n");
-							printf("»Ø³µÒÔ¼ÌĞø");
+							printf("ä½ æ˜¯æœ€åä¸€ä¸ªç®¡ç†å‘˜ï¼Œåˆ«åˆ äº†å…„å¼Ÿ\n");
+							printf("å›è½¦ä»¥ç»§ç»­");
 							getchar();
 							choose();
 							break;
 						}
-						printf("ÄúÈ·¶¨ÒªÉ¾³ıÄúµÄÕË»§Âğ£¿1È·¶¨ 2È¡Ïû£»");
+						printf("æ‚¨ç¡®å®šè¦åˆ é™¤æ‚¨çš„è´¦æˆ·å—ï¼Ÿ1ç¡®å®š 2å–æ¶ˆï¼›");
 						scanf("%d", &jug6);
 						if (jug6 == 1)
 						{
@@ -2331,9 +2331,9 @@ int main()
 								free(ad_p1);
 								ad_p1 = NULL;
 							}
-							printf("²Ù×÷³É¹¦\n");
+							printf("æ“ä½œæˆåŠŸ\n");
 							logInfo(4);
-							printf("»Ø³µÒÔ¼ÌĞø");
+							printf("å›è½¦ä»¥ç»§ç»­");
 							getchar();
 							choose();
 						}
@@ -2342,8 +2342,8 @@ int main()
 				   
 				}
 				break;
-			case 2://ÖĞ½é
-				printf("ÇëÊäÈëÕË»§£¨account£©£º");
+			case 2://ä¸­ä»‹
+				printf("è¯·è¾“å…¥è´¦æˆ·ï¼ˆaccountï¼‰ï¼š");
 				scanf("%s", input_account);
 				ag_p1 = ag_head->next;
 				if (ag_p1 == NULL)
@@ -2355,13 +2355,13 @@ int main()
 				{
 					if (!strcmp(input_account, ag_p1->Account))
 					{
-						printf("ÇëÊäÈëÃÜÂë£¨key£©:");
+						printf("è¯·è¾“å…¥å¯†ç ï¼ˆkeyï¼‰:");
 						hideInput(input_key, 19);
 						if (!strcmp(input_key, ag_p1->Key))
 						{
 							logInfo(1);
-							printf("µÇÂ¼³É¹¦£¬»¶Ó­£¬ÖĞ½éÔ±¹¤%s\n", ag_p1->Name);
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							printf("ç™»å½•æˆåŠŸï¼Œæ¬¢è¿ï¼Œä¸­ä»‹å‘˜å·¥%s\n", ag_p1->Name);
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							jug = 1;
 							choose();
@@ -2369,8 +2369,8 @@ int main()
 						else
 						{
 							logWarning(2);
-							printf("ÃÜÂë´íÎó\n");
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							printf("å¯†ç é”™è¯¯\n");
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							jug = 0;
 							choose();
@@ -2381,8 +2381,8 @@ int main()
 					if (ag_p1 == NULL)
 					{
 						logWarning(2);
-						printf("ÕÒ²»µ½¶ÔÏó\n");
-						printf("»Ø³µÒÔ¼ÌĞø\n");
+						printf("æ‰¾ä¸åˆ°å¯¹è±¡\n");
+						printf("å›è½¦ä»¥ç»§ç»­\n");
 						getchar();
 						jug = 0;
 						choose();
@@ -2391,19 +2391,19 @@ int main()
 				}
 				while (jug && ag_p1 != NULL)
 				{
-					printf("*********¹¦ÄÜ²Ëµ¥*********\n");
+					printf("*********åŠŸèƒ½èœå•*********\n");
 					printf("**                      **\n");
-					printf("**0.     ×¢    Ïú       **\n");
-					printf("**1.     ¿´·¿¹ÜÀí       **\n");//Íê¹¤
-					printf("**2.     ×â·¿¹ÜÀí       **\n");//Íê¹¤
-					printf("**3.     ĞÅÏ¢²éÑ¯       **\n");
-					printf("**4.     ĞÅÏ¢ÅÅĞò       **\n");
-					printf("**5.     ĞÅÏ¢Í³¼Æ       **\n");//Íê¹¤
-					printf("**6.     ¸ü¸ÄÃÜÂë       **\n");//Íê¹¤
-					printf("**7.     É¾³ıÕË»§       **\n");//Íê¹¤
+					printf("**0.     æ³¨    é”€       **\n");
+					printf("**1.     çœ‹æˆ¿ç®¡ç†       **\n");//å®Œå·¥
+					printf("**2.     ç§Ÿæˆ¿ç®¡ç†       **\n");//å®Œå·¥
+					printf("**3.     ä¿¡æ¯æŸ¥è¯¢       **\n");
+					printf("**4.     ä¿¡æ¯æ’åº       **\n");
+					printf("**5.     ä¿¡æ¯ç»Ÿè®¡       **\n");//å®Œå·¥
+					printf("**6.     æ›´æ”¹å¯†ç        **\n");//å®Œå·¥
+					printf("**7.     åˆ é™¤è´¦æˆ·       **\n");//å®Œå·¥
 					printf("**                      **\n");
 					printf("**************************\n");
-					printf("ÇëÑ¡Ôñ¹¦ÄÜ£º");
+					printf("è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
 					scanf_s("%d", &choice_3);
 					choose();
 					switch (choice_3)
@@ -2414,12 +2414,12 @@ int main()
 						logInfo(2);
 						break;
 					case 1:
-						//Íê¹¤
-						printf("*********¿´·¿¹ÜÀí*********\n");
+						//å®Œå·¥
+						printf("*********çœ‹æˆ¿ç®¡ç†*********\n");
 						printf("**                      **\n");
-						printf("**0.     ·µ    »Ø       **\n");
-						printf("**1.   Ô¤Ô¼ĞÅÏ¢´¦Àí     **\n");
-						printf("**2.   ÎÒµÄÔ¤Ô¼ĞÅÏ¢     **\n");
+						printf("**0.     è¿”    å›       **\n");
+						printf("**1.   é¢„çº¦ä¿¡æ¯å¤„ç†     **\n");
+						printf("**2.   æˆ‘çš„é¢„çº¦ä¿¡æ¯     **\n");
 						printf("**                      **\n");
 						printf("**************************\n");
 						scanf("%d", &choice_3);
@@ -2429,8 +2429,8 @@ int main()
 							choose();
 							break;
 						case 1:
-							//Íê¹¤
-							printf("±àºÅ\t\tÊ±¼ä\t\t×â¿Í\t\t·¿Ô´±àºÅ\n");
+							//å®Œå·¥
+							printf("ç¼–å·\t\tæ—¶é—´\t\tç§Ÿå®¢\t\tæˆ¿æºç¼–å·\n");
 							ap_p = ap_head->next;
 							jug6 = 0;
 							while (ap_p != NULL)
@@ -2444,12 +2444,12 @@ int main()
 							}
 							if (!jug6)
 							{
-								printf("Äú»¹Ã»ÓĞÔ¤Ô¼ĞÅÏ¢\n");
-								printf("»Ø³µÒÔ¼ÌĞø\n");
+								printf("æ‚¨è¿˜æ²¡æœ‰é¢„çº¦ä¿¡æ¯\n");
+								printf("å›è½¦ä»¥ç»§ç»­\n");
 								choose();
 								break;
 							}
-							printf("ÇëÊäÈëÄúÒª´¦ÀíµÄÔ¤Ô¼ĞÅÏ¢±àºÅ£º");
+							printf("è¯·è¾“å…¥æ‚¨è¦å¤„ç†çš„é¢„çº¦ä¿¡æ¯ç¼–å·ï¼š");
 							memset(input_string, 0, sizeof(input_string));
 							scanf("%s", input_string);
 							ap_p = ap_head->next;
@@ -2464,14 +2464,14 @@ int main()
 							}
 							if (jug6)
 							{
-								printf("³É¹¦ÕÒµ½¶ÔÏó\n");
-								printf("±àºÅ\t\tÊ±¼ä\t\t×â¿Í\t\t·¿Ô´±àºÅ\n");
+								printf("æˆåŠŸæ‰¾åˆ°å¯¹è±¡\n");
+								printf("ç¼–å·\t\tæ—¶é—´\t\tç§Ÿå®¢\t\tæˆ¿æºç¼–å·\n");
 								printf("%s\t%d:%d:%d\t%s\t\t%s\n", ap_p->Number, ap_p->year, ap_p->month, ap_p->day, ap_p->custom->Account, ap_p->flat->number);
-								printf("*********Ô¤Ô¼ĞÅÏ¢*********\n");
+								printf("*********é¢„çº¦ä¿¡æ¯*********\n");
 								printf("**                      **\n");
-								printf("**0.     ·µ    »Ø       **\n");
-								printf("**1.     É¾    ³ı       **\n");
-								printf("**2.     ĞŞ¸ÄÊ±¼ä       **\n");
+								printf("**0.     è¿”    å›       **\n");
+								printf("**1.     åˆ     é™¤       **\n");
+								printf("**2.     ä¿®æ”¹æ—¶é—´       **\n");
 								printf("**                      **\n");
 								printf("**************************\n");
 								scanf("%d", &choice_3);
@@ -2481,7 +2481,7 @@ int main()
 									break;
 
 								case 1:
-									printf("ÄúÈ·¶¨ÒªÉ¾³ı¸ÃÔ¤Ô¼ĞÅÏ¢Âğ£¿1È·ÈÏ 2È¡Ïû£º");
+									printf("æ‚¨ç¡®å®šè¦åˆ é™¤è¯¥é¢„çº¦ä¿¡æ¯å—ï¼Ÿ1ç¡®è®¤ 2å–æ¶ˆï¼š");
 									scanf("%d", &jug6);
 									if (jug6 == 1)
 									{
@@ -2499,23 +2499,23 @@ int main()
 										}
 										ap_p = NULL;
 									}
-									printf("É¾³ı³É¹¦£¡\n");
-									printf("»Ø³µÒÔ¼ÌĞø\n");
+									printf("åˆ é™¤æˆåŠŸï¼\n");
+									printf("å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 									jug6 = 0;
-									jug5 = 0;//³õÊ¼»¯
+									jug5 = 0;//åˆå§‹åŒ–
 									break;
 								case 2:
 								{
-									printf("ÇëÊäÈëĞÂÊ±¼ä£¨Äê ÔÂ ÈÕ£©:");
+									printf("è¯·è¾“å…¥æ–°æ—¶é—´ï¼ˆå¹´ æœˆ æ—¥ï¼‰:");
 									scanf("%d%d%d", &year, &month, &day);
 									time_t now = time(NULL);
 									struct tm* local = localtime(&now);
 									if (year < local->tm_year || (year == local->tm_year && month < local->tm_mon) || (year == local->tm_year && month == local->tm_mon && day < local->tm_mday) || !checkDate(year, month, day))
 									{
-										printf("ÎŞĞ§µÄÊ±¼ä\n");
-										printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+										printf("æ— æ•ˆçš„æ—¶é—´\n");
+										printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 										getchar();
 										choose();
 										break;
@@ -2525,27 +2525,27 @@ int main()
 										ap_p->year = year;
 										ap_p->month = month;
 										ap_p->day = day;
-										printf("ĞŞ¸Ä³É¹¦£¡\n");
+										printf("ä¿®æ”¹æˆåŠŸï¼\n");
 									}
 								}
-								printf("»Ø³µÒÔ¼ÌĞø\n");
+								printf("å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
-								jug5 = 0;//³õÊ¼»¯
+								jug5 = 0;//åˆå§‹åŒ–
 								break;
 								}
 							}
 							else
 							{
 								logWarning(1);
-								printf("ÕÒ²»µ½¶ÔÏó\n");
-								printf("»Ø³µÒÔ¼ÌĞø\n");
+								printf("æ‰¾ä¸åˆ°å¯¹è±¡\n");
+								printf("å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 							}
 							break;
 						case 2:
-							printf("±àºÅ\t\tÊ±¼ä\t\t×â¿Í\t\t·¿Ô´±àºÅ\n");
+							printf("ç¼–å·\t\tæ—¶é—´\t\tç§Ÿå®¢\t\tæˆ¿æºç¼–å·\n");
 							ap_p = ap_head->next;
 							jug6 = 0;
 							while (ap_p != NULL)
@@ -2558,24 +2558,24 @@ int main()
 								ap_p = ap_p->next;
 							}
 							if (!jug6)
-								printf("Äú»¹Ã»ÓĞÔ¤Ô¼ĞÅÏ¢\n");
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+								printf("æ‚¨è¿˜æ²¡æœ‰é¢„çº¦ä¿¡æ¯\n");
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							choose();
 						}
 						break;
 					case 2:
-						//Íê¹¤
-						printf("*********×â·¿¹ÜÀí*********\n");
+						//å®Œå·¥
+						printf("*********ç§Ÿæˆ¿ç®¡ç†*********\n");
 						printf("**                      **\n");
-						printf("**0.     ·µ    »Ø       **\n");
-						printf("**1.     Ìí¼Ó·¿Ô´       **\n");
-						printf("**2.	 ÎÒµÄ·¿Ô´       **\n");
-						printf("**3.     É¾³ı·¿Ô´       **\n");
-						printf("**4.   ·¿Ô´×´Ì¬ĞŞ¸Ä     **\n");
+						printf("**0.     è¿”    å›       **\n");
+						printf("**1.     æ·»åŠ æˆ¿æº       **\n");
+						printf("**2.	 æˆ‘çš„æˆ¿æº       **\n");
+						printf("**3.     åˆ é™¤æˆ¿æº       **\n");
+						printf("**4.   æˆ¿æºçŠ¶æ€ä¿®æ”¹     **\n");
 						printf("**                      **\n");
 						printf("**************************\n");
-						printf("ÇëÑ¡Ôñ¹¦ÄÜ£º");
+						printf("è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
 						scanf("%d", &choice_3);
 						switch (choice_3)
 						{
@@ -2589,10 +2589,10 @@ int main()
 							int* num = (int*)malloc(sizeof(int) * flnumber);
 							for (int i = 0; i < flnumber; i++)
 								num[i] = i;
-							printf("ÍÆ¼ö\n");
+							printf("æ¨è\n");
 							for (int i = 0; i < 5 && i < flnumber; i++)
 							{
-								unsigned long long len = flnumber;//Ëæ»úÊä³öÊ®Îå¸ö
+								unsigned long long len = flnumber;//éšæœºè¾“å‡ºåäº”ä¸ª
 								unsigned int seed;
 								seed = (unsigned int)time(NULL);
 								srand(seed);
@@ -2614,41 +2614,41 @@ int main()
 										fl_p1 = fl_p1->next;
 									printf("%s\t", fl_p1->number);
 									printf("%4.2f\t", fl_p1->Area);
-									printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-									printf("%d²ã\t", fl_p1->floor);
+									printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+									printf("%då±‚\t", fl_p1->floor);
 									printf("%s\t", fl_p1->city);
-									printf("×â½ğÎª%6.2f\t\t", fl_p1->rent);
+									printf("ç§Ÿé‡‘ä¸º%6.2f\t\t", fl_p1->rent);
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
-										printf("¶«\t");
+										printf("ä¸œ\t");
 										break;
 									case 2:
-										printf("ÄÏ\t");
+										printf("å—\t");
 										break;
 									case 3:
-										printf("Î÷\t");
+										printf("è¥¿\t");
 										break;
 									case 4:
-										printf("±±\t");
+										printf("åŒ—\t");
 										break;
 									case 5:
-										printf("¶«ÄÏ\t");
+										printf("ä¸œå—\t");
 										break;
 									case 6:
-										printf("¶«±±\t");
+										printf("ä¸œåŒ—\t");
 										break;
 									case 7:
-										printf("Î÷ÄÏ\t");
+										printf("è¥¿å—\t");
 										break;
 									case 8:
-										printf("Î÷±±\t");
+										printf("è¥¿åŒ—\t");
 										break;
 									}
 									if (fl_p1->agency == NULL)
-										printf("¿ÕÏĞÖĞ\n");
+										printf("ç©ºé—²ä¸­\n");
 									else
-										printf("ÒÑÕ¼ÓÃ\n");
+										printf("å·²å ç”¨\n");
 								}
 								else
 									i--;
@@ -2656,14 +2656,14 @@ int main()
 							free(num);
 						}
 						memset(input_string, 0, sizeof(input_string));
-						printf("ÇëÊäÈë·¿Ô´ĞÅÏ¢£¨×î¶à20¸ö×Ö·û£©£º");
+						printf("è¯·è¾“å…¥æˆ¿æºä¿¡æ¯ï¼ˆæœ€å¤š20ä¸ªå­—ç¬¦ï¼‰ï¼š");
 						scanf("%s", input_string);
 						tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
 						if (*tempIntPtr == 0)
 						{
 							logWarning(1);
-							printf("ÕÒ²»µ½·¿Ô´\n");
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							printf("æ‰¾ä¸åˆ°æˆ¿æº\n");
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							choose();
 							break;
@@ -2683,65 +2683,65 @@ int main()
 						if (jug5)
 						{
 							choose();
-							printf("³É¹¦ÕÒµ½¶ÔÏó\n");
+							printf("æˆåŠŸæ‰¾åˆ°å¯¹è±¡\n");
 							printf("%s\t", fl_p1->number);
-							printf("%4.2fÆ½·½Ã×\t", fl_p1->Area);
-							printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-							printf("%d²ã\t", fl_p1->floor);
+							printf("%4.2få¹³æ–¹ç±³\t", fl_p1->Area);
+							printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+							printf("%då±‚\t", fl_p1->floor);
 							printf("%s\t", fl_p1->city);
-							printf("×â½ğÎª%6.2f\t\t", fl_p1->rent);
+							printf("ç§Ÿé‡‘ä¸º%6.2f\t\t", fl_p1->rent);
 							switch ((int)fl_p1->toward)
 							{
 							case 1:
-								printf("¶«\t");
+								printf("ä¸œ\t");
 								break;
 							case 2:
-								printf("ÄÏ\t");
+								printf("å—\t");
 								break;
 							case 3:
-								printf("Î÷\t");
+								printf("è¥¿\t");
 								break;
 							case 4:
-								printf("±±\t");
+								printf("åŒ—\t");
 								break;
 							case 5:
-								printf("¶«ÄÏ\t");
+								printf("ä¸œå—\t");
 								break;
 							case 6:
-								printf("¶«±±\t");
+								printf("ä¸œåŒ—\t");
 								break;
 							case 7:
-								printf("Î÷ÄÏ\t");
+								printf("è¥¿å—\t");
 								break;
 							case 8:
-								printf("Î÷±±\t");
+								printf("è¥¿åŒ—\t");
 								break;
 							}
 							if (fl_p1->agency == NULL)
-								printf("¿ÕÏĞÖĞ\n");
+								printf("ç©ºé—²ä¸­\n");
 							else
-								printf("ÒÑÕ¼ÓÃ\n");
+								printf("å·²å ç”¨\n");
 							if (fl_p1->agency != NULL)
 							{
-								printf("¸Ã·¿Ô´ÒÔ±»Õ¼ÓÃ\n");
-								printf("»Ø³µÒÔ¼ÌĞø\n");
+								printf("è¯¥æˆ¿æºä»¥è¢«å ç”¨\n");
+								printf("å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 								break;
 							}
-							printf("ÄúÈ·¶¨Ìí¼Ó¸Ã·¿Ô´Âğ£¿\n1È·ÈÏ\t 2È¡Ïû£º\n");
-							printf("ÄúµÄÑ¡Ôñ£º");
+							printf("æ‚¨ç¡®å®šæ·»åŠ è¯¥æˆ¿æºå—ï¼Ÿ\n1ç¡®è®¤\t 2å–æ¶ˆï¼š\n");
+							printf("æ‚¨çš„é€‰æ‹©ï¼š");
 							scanf("%d", &jug6);
 							if (jug6 == 1)
 							{
-								//Ìî¶«Î÷
+								//å¡«ä¸œè¥¿
 								fl_p1->agency = ag_p1;
 								strcpy(fl_p1->agposition, ag_p1->Number);
 							}
 							jug6 = 0;
-							jug5 = 0;//³õÊ¼»¯
-							printf("²Ù×÷³É¹¦£¡\n");
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							jug5 = 0;//åˆå§‹åŒ–
+							printf("æ“ä½œæˆåŠŸï¼\n");
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							choose();
 						}
@@ -2749,58 +2749,58 @@ int main()
 							if (*(tempIntPtr - 1) == 0)
 							{
 								logWarning(1);
-								printf("ÕÒ²»µ½ÄúÊäÈëµÄÄÚÈİ¡£\n");
-								printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+								printf("æ‰¾ä¸åˆ°æ‚¨è¾“å…¥çš„å†…å®¹ã€‚\n");
+								printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 							}
 							else
 							{
-								printf("ÄúÊäÈëµÄÄÚÈİ±È½ÏÄ£ºı£¬ÎªÄúÕÒµ½ÒÔÏÂÄÚÈİ\n");
+								printf("æ‚¨è¾“å…¥çš„å†…å®¹æ¯”è¾ƒæ¨¡ç³Šï¼Œä¸ºæ‚¨æ‰¾åˆ°ä»¥ä¸‹å†…å®¹\n");
 								for (int i = 0; i < *(tempIntPtr - 1); i++)
 								{
 									fl_p1 = fl_head->next;
 									for (int j = 0; j < *(tempIntPtr + i); j++)
 										fl_p1 = fl_p1->next;
 									printf("%s\t", fl_p1->number);
-									printf("%4.2fÆ½·½Ã×\t", fl_p1->Area);
-									printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-									printf("%d²ã\t", fl_p1->floor);
+									printf("%4.2få¹³æ–¹ç±³\t", fl_p1->Area);
+									printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+									printf("%då±‚\t", fl_p1->floor);
 									printf("%s\t", fl_p1->city);
-									printf("×â½ğÎª%6.2f\t\t", fl_p1->rent);
+									printf("ç§Ÿé‡‘ä¸º%6.2f\t\t", fl_p1->rent);
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
-										printf("¶«\t");
+										printf("ä¸œ\t");
 										break;
 									case 2:
-										printf("ÄÏ\t");
+										printf("å—\t");
 										break;
 									case 3:
-										printf("Î÷\t");
+										printf("è¥¿\t");
 										break;
 									case 4:
-										printf("±±\t");
+										printf("åŒ—\t");
 										break;
 									case 5:
-										printf("¶«ÄÏ\t");
+										printf("ä¸œå—\t");
 										break;
 									case 6:
-										printf("¶«±±\t");
+										printf("ä¸œåŒ—\t");
 										break;
 									case 7:
-										printf("Î÷ÄÏ\t");
+										printf("è¥¿å—\t");
 										break;
 									case 8:
-										printf("Î÷±±\t");
+										printf("è¥¿åŒ—\t");
 										break;
 									}
 									if (fl_p1->agency == NULL)
-										printf("¿ÕÏĞÖĞ\n");
+										printf("ç©ºé—²ä¸­\n");
 									else
-										printf("ÒÑÕ¼ÓÃ\n");
+										printf("å·²å ç”¨\n");
 								}
-								printf("»Ø³µÒÔ¼ÌĞø\n");
+								printf("å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 							}
@@ -2814,48 +2814,48 @@ int main()
 								if (fl_p1->agency == ag_p1)
 								{
 									printf("%s\t", fl_p1->number);
-									printf("%4.2fÆ½·½Ã×\t", fl_p1->Area);
-									printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-									printf("%d²ã\t", fl_p1->floor);
+									printf("%4.2få¹³æ–¹ç±³\t", fl_p1->Area);
+									printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+									printf("%då±‚\t", fl_p1->floor);
 									printf("%s\t", fl_p1->city);
-									printf("×â½ğÎª%6.2f\t\t", fl_p1->rent);
+									printf("ç§Ÿé‡‘ä¸º%6.2f\t\t", fl_p1->rent);
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
-										printf("¶«\t");
+										printf("ä¸œ\t");
 										break;
 									case 2:
-										printf("ÄÏ\t");
+										printf("å—\t");
 										break;
 									case 3:
-										printf("Î÷\t");
+										printf("è¥¿\t");
 										break;
 									case 4:
-										printf("±±\t");
+										printf("åŒ—\t");
 										break;
 									case 5:
-										printf("¶«ÄÏ\t");
+										printf("ä¸œå—\t");
 										break;
 									case 6:
-										printf("¶«±±\t");
+										printf("ä¸œåŒ—\t");
 										break;
 									case 7:
-										printf("Î÷ÄÏ\t");
+										printf("è¥¿å—\t");
 										break;
 									case 8:
-										printf("Î÷±±\t");
+										printf("è¥¿åŒ—\t");
 										break;
 									}
 									printf("\n");
 								}
 								fl_p1 = fl_p1->next;
 							}
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							choose();
 							break;
 						case 3:
-							printf("ÇëÊäÈë±àºÅ£º");
+							printf("è¯·è¾“å…¥ç¼–å·ï¼š");
 							memset(input_string, 0, sizeof(input_string));
 							scanf("%s", input_string);
 							fl_p1 = fl_head->next;
@@ -2864,48 +2864,48 @@ int main()
 								if (!strcmp(fl_p1->number, input_string) && fl_p1->agency == ag_p1)
 								{
 									printf("%s\t", fl_p1->number);
-									printf("%4.2fÆ½·½Ã×\t", fl_p1->Area);
-									printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-									printf("%d²ã\t", fl_p1->floor);
+									printf("%4.2få¹³æ–¹ç±³\t", fl_p1->Area);
+									printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+									printf("%då±‚\t", fl_p1->floor);
 									printf("%s\t", fl_p1->city);
-									printf("×â½ğÎª%6.2f\t\t", fl_p1->rent);
+									printf("ç§Ÿé‡‘ä¸º%6.2f\t\t", fl_p1->rent);
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
-										printf("¶«\t");
+										printf("ä¸œ\t");
 										break;
 									case 2:
-										printf("ÄÏ\t");
+										printf("å—\t");
 										break;
 									case 3:
-										printf("Î÷\t");
+										printf("è¥¿\t");
 										break;
 									case 4:
-										printf("±±\t");
+										printf("åŒ—\t");
 										break;
 									case 5:
-										printf("¶«ÄÏ\t");
+										printf("ä¸œå—\t");
 										break;
 									case 6:
-										printf("¶«±±\t");
+										printf("ä¸œåŒ—\t");
 										break;
 									case 7:
-										printf("Î÷ÄÏ\t");
+										printf("è¥¿å—\t");
 										break;
 									case 8:
-										printf("Î÷±±\t");
+										printf("è¥¿åŒ—\t");
 										break;
 									}
 									printf("\n");
-									printf("È·¶¨É¾³ı¸Ã·¿Ô´Âğ£¿1È·¶¨  2È¡Ïû£º");
+									printf("ç¡®å®šåˆ é™¤è¯¥æˆ¿æºå—ï¼Ÿ1ç¡®å®š  2å–æ¶ˆï¼š");
 									scanf("%d", &jug6);
 									if (jug6 == 1)
 									{
 										fl_p1->agency = NULL;
 										memset(fl_p1->agposition, 0, sizeof(fl_p1->agposition));
-										printf("²Ù×÷³É¹¦\n");
+										printf("æ“ä½œæˆåŠŸ\n");
 									}
-									printf("»Ø³µÒÔ¼ÌĞø\n");
+									printf("å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 									break;
@@ -2915,14 +2915,14 @@ int main()
 							if (fl_p1 == NULL)
 							{
 								logWarning(1);
-								printf("ÕÒ²»µ½¶ÔÏó\n");
-								printf("»Ø³µÒÔ¼ÌĞø\n");
+								printf("æ‰¾ä¸åˆ°å¯¹è±¡\n");
+								printf("å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 								break;
 							}
 						case 4:
-							printf("ÇëÊäÈë±àºÅ£º");
+							printf("è¯·è¾“å…¥ç¼–å·ï¼š");
 							memset(input_string, 0, sizeof(input_string));
 							scanf("%s", input_string);
 							fl_p1 = fl_head->next;
@@ -2931,44 +2931,44 @@ int main()
 								if (!strcmp(fl_p1->number, input_string) && fl_p1->agency == ag_p1)
 								{
 									printf("%s\t", fl_p1->number);
-									printf("%4.2fÆ½·½Ã×\t", fl_p1->Area);
-									printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-									printf("%d²ã\t", fl_p1->floor);
+									printf("%4.2få¹³æ–¹ç±³\t", fl_p1->Area);
+									printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+									printf("%då±‚\t", fl_p1->floor);
 									printf("%s\t", fl_p1->city);
-									printf("×â½ğÎª%6.2f\t\t", fl_p1->rent);
+									printf("ç§Ÿé‡‘ä¸º%6.2f\t\t", fl_p1->rent);
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
-										printf("¶«\t");
+										printf("ä¸œ\t");
 										break;
 									case 2:
-										printf("ÄÏ\t");
+										printf("å—\t");
 										break;
 									case 3:
-										printf("Î÷\t");
+										printf("è¥¿\t");
 										break;
 									case 4:
-										printf("±±\t");
+										printf("åŒ—\t");
 										break;
 									case 5:
-										printf("¶«ÄÏ\t");
+										printf("ä¸œå—\t");
 										break;
 									case 6:
-										printf("¶«±±\t");
+										printf("ä¸œåŒ—\t");
 										break;
 									case 7:
-										printf("Î÷ÄÏ\t");
+										printf("è¥¿å—\t");
 										break;
 									case 8:
-										printf("Î÷±±\t");
+										printf("è¥¿åŒ—\t");
 										break;
 									}
 									if (fl_p1->statment == true)
-										printf("Î´×â³ö");
+										printf("æœªç§Ÿå‡º");
 									else
-										printf("ÒÑ×â³ö");
+										printf("å·²ç§Ÿå‡º");
 									printf("\n");
-									printf("È·¶¨¸Ä±ä×´Ì¬Âğ£¿1È·¶¨  2È¡Ïû£º");
+									printf("ç¡®å®šæ”¹å˜çŠ¶æ€å—ï¼Ÿ1ç¡®å®š  2å–æ¶ˆï¼š");
 									scanf("%d", &jug6);
 									if (jug6 == 1)
 									{
@@ -2976,7 +2976,7 @@ int main()
 										{
 											memset(fl_p1->cuposition, 0, sizeof(fl_p1->cuposition));
 											fl_p1->custome = NULL;
-											printf("²Ù×÷³É¹¦\n");
+											printf("æ“ä½œæˆåŠŸ\n");
 										}
 										else
 										{
@@ -2996,13 +2996,13 @@ int main()
 												fl_p1->statment = !(fl_p1->statment);
 												fl_p1->custome = ap_p->custom;
 												strcpy(fl_p1->cuposition, fl_p1->custome->Account);
-												printf("²Ù×÷³É¹¦\n");
+												printf("æ“ä½œæˆåŠŸ\n");
 											}
 											else
-												printf("²Ù×÷Ê§°Ü\n");
+												printf("æ“ä½œå¤±è´¥\n");
 										}										
 									}
-									printf("»Ø³µÒÔ¼ÌĞø\n");
+									printf("å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 									break;
@@ -3012,8 +3012,8 @@ int main()
 							if (fl_p1 == NULL)
 							{
 								logWarning(1);
-								printf("ÕÒ²»µ½¶ÔÏó\n");
-								printf("»Ø³µÒÔ¼ÌĞø\n");
+								printf("æ‰¾ä¸åˆ°å¯¹è±¡\n");
+								printf("å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 								break;
@@ -3021,13 +3021,13 @@ int main()
 						}
 						break;
 					case 3:
-						//Íê¹¤
-						printf("*********²éÑ¯·½Ê½*********\n");
+						//å®Œå·¥
+						printf("*********æŸ¥è¯¢æ–¹å¼*********\n");
 						printf("**                      **\n");
-						printf("**0.     ·µ    »Ø       **\n");
-						printf("**1.     ·¶Î§²éÕÒ       **\n");
-						printf("**2.     ¾ßÌå²éÕÒ       **\n");
-						printf("**3.     ×éºÏ²éÕÒ       **\n");
+						printf("**0.     è¿”    å›       **\n");
+						printf("**1.     èŒƒå›´æŸ¥æ‰¾       **\n");
+						printf("**2.     å…·ä½“æŸ¥æ‰¾       **\n");
+						printf("**3.     ç»„åˆæŸ¥æ‰¾       **\n");
 						printf("**                      **\n");
 						printf("**************************\n");
 						scanf("%d", &choice_6);
@@ -3037,11 +3037,11 @@ int main()
 						case 0:
 							break;
 						case 1:
-							printf("*********²éÑ¯·½Ê½*********\n");
+							printf("*********æŸ¥è¯¢æ–¹å¼*********\n");
 							printf("**                      **\n");
-							printf("**1.     ×â    ½ğ       **\n");
-							printf("**2.     Â¥    ²ã       **\n");
-							printf("**3.     Ãæ    »ı       **\n");
+							printf("**1.     ç§Ÿ    é‡‘       **\n");
+							printf("**2.     æ¥¼    å±‚       **\n");
+							printf("**3.     é¢    ç§¯       **\n");
 							printf("**                      **\n");
 							printf("**************************\n");
 							scanf("%d", &choice_6);
@@ -3049,32 +3049,32 @@ int main()
 							int left = 0;
 							int right = 0;
 
-							printf("*********ÅÅĞò·½Ê½*********\n");
+							printf("*********æ’åºæ–¹å¼*********\n");
 							printf("**                      **\n");
-							printf("**1.     ´ÓĞ¡µ½´ó       **\n");
-							printf("**2.     ´Ó´óµ½Ğ¡       **\n");
+							printf("**1.     ä»å°åˆ°å¤§       **\n");
+							printf("**2.     ä»å¤§åˆ°å°       **\n");
 							printf("**                      **\n");
 							printf("**************************\n");
 							scanf("%d", &jug7);
-							printf("ÇëÊäÈë×óÓÒ·¶Î§:\n");
-							printf("×ó:");
+							printf("è¯·è¾“å…¥å·¦å³èŒƒå›´:\n");
+							printf("å·¦:");
 							scanf("%d", &left);
-							printf("\nÓÒ:");
+							printf("\nå³:");
 							scanf("%d", &right);
 							choose();
 							int t;
 							t = range_search_ag(left, right, fl_head, fl_tail, jug7, choice_6);
-							printf("¹²ÓĞ%d¼ä·¿×Ó·ûºÏ±ê×¼\n", t);
-							printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+							printf("å…±æœ‰%dé—´æˆ¿å­ç¬¦åˆæ ‡å‡†\n", t);
+							printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							choose();
 							break;
 						case 2:
-							printf("*********²éÑ¯·½Ê½*********\n");
+							printf("*********æŸ¥è¯¢æ–¹å¼*********\n");
 							printf("**                      **\n");
-							printf("**1.     ³Ç    ÊĞ       **\n");
-							printf("**2.     ±à    ºÅ       **\n");
-							printf("**3.     ³¯    Ïò       **\n");
+							printf("**1.     åŸ    å¸‚       **\n");
+							printf("**2.     ç¼–    å·       **\n");
+							printf("**3.     æœ    å‘       **\n");
 							printf("**                      **\n");
 							printf("**************************\n");
 							scanf("%d", &choice_6);
@@ -3084,7 +3084,7 @@ int main()
 							case 0:
 								break;
 							case 1:
-								printf("ÇëÊäÈëÏ£Íû²éÕÒµÄ³ÇÊĞ£¨×î¶à10¸ö×Ö·û£©£º");
+								printf("è¯·è¾“å…¥å¸Œæœ›æŸ¥æ‰¾çš„åŸå¸‚ï¼ˆæœ€å¤š10ä¸ªå­—ç¬¦ï¼‰ï¼š");
 								scanf("%s", input_string);
 								tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
 								tempIntPtr++;
@@ -3103,71 +3103,71 @@ int main()
 								{
 
 									printf("%s\t", fl_p1->number);
-									printf("%4.2fÆ½·½Ã×\t", fl_p1->Area);
-									printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-									printf("%d²ã", fl_p1->floor);
-									printf("Î»ÓÚ%s", fl_p1->city);
-									printf("×â½ğÎª%6.2f", fl_p1->rent);
-									printf("³¯ÏòÎª");
+									printf("%4.2få¹³æ–¹ç±³\t", fl_p1->Area);
+									printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+									printf("%då±‚", fl_p1->floor);
+									printf("ä½äº%s", fl_p1->city);
+									printf("ç§Ÿé‡‘ä¸º%6.2f", fl_p1->rent);
+									printf("æœå‘ä¸º");
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
-										printf("¶«\n");
+										printf("ä¸œ\n");
 										break;
 									case 2:
-										printf("ÄÏ\n");
+										printf("å—\n");
 										break;
 									case 3:
-										printf("Î÷\n");
+										printf("è¥¿\n");
 										break;
 									case 4:
-										printf("±±\n");
+										printf("åŒ—\n");
 										break;
 									case 5:
-										printf("¶«ÄÏ\n");
+										printf("ä¸œå—\n");
 										break;
 									case 6:
-										printf("¶«±±\n");
+										printf("ä¸œåŒ—\n");
 										break;
 									case 7:
-										printf("Î÷ÄÏ\n");
+										printf("è¥¿å—\n");
 										break;
 									case 8:
-										printf("Î÷±±\n");
+										printf("è¥¿åŒ—\n");
 										break;
 									}
-									printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+									printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
-									jug5 = 0;//³õÊ¼»¯
+									jug5 = 0;//åˆå§‹åŒ–
 								}
 								else
 									if (*(tempIntPtr - 1) == 0)
 									{
 										logWarning(1);
-										printf("ÕÒ²»µ½ÄúÊäÈëµÄÄÚÈİ¡£\n");
-										printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+										printf("æ‰¾ä¸åˆ°æ‚¨è¾“å…¥çš„å†…å®¹ã€‚\n");
+										printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 										getchar();
 										choose();
 									}
 									else
 									{
-										printf("ÄúÊäÈëµÄÄÚÈİ±È½ÏÄ£ºı£¬ÎªÄúÕÒµ½ÒÔÏÂÄÚÈİ\n");
-										printf("ĞòºÅ\t\t±àºÅ\t\tÃæ»ı\t\tÊÒÌüÇé¿ö\t\t·ÑÓÃ\n");
+										printf("æ‚¨è¾“å…¥çš„å†…å®¹æ¯”è¾ƒæ¨¡ç³Šï¼Œä¸ºæ‚¨æ‰¾åˆ°ä»¥ä¸‹å†…å®¹\n");
+										printf("åºå·\t\tç¼–å·\t\té¢ç§¯\t\tå®¤å…æƒ…å†µ\t\tè´¹ç”¨\n");
 										for (int i = 0; i < *(tempIntPtr - 1); i++)
 										{
 											fl_p1 = fl_head->next;
 											for (int j = 0; j < *(tempIntPtr + i); j++)
 												fl_p1 = fl_p1->next;
-											printf("%d\t\t%s\t\t%6.2f\t\t%dÊÒ%dÌü\t\t%6.2f\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
+											printf("%d\t\t%s\t\t%6.2f\t\t%då®¤%då…\t\t%6.2f\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
 										}
-										printf("»Ø³µÒÔ¼ÌĞø\n");
+										printf("å›è½¦ä»¥ç»§ç»­\n");
 										getchar();
 										choose();
 									}
 								break;
 							case 2:
-								printf("ÇëÊäÈëÏ£Íû²éÕÒµÄ·¿ÎİĞòºÅ£¨×î¶à10¸ö×Ö·û£©£º");
+								printf("è¯·è¾“å…¥å¸Œæœ›æŸ¥æ‰¾çš„æˆ¿å±‹åºå·ï¼ˆæœ€å¤š10ä¸ªå­—ç¬¦ï¼‰ï¼š");
 								scanf("%s", input_string);
 								tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
 								tempIntPtr++;
@@ -3184,131 +3184,131 @@ int main()
 								}
 								if (jug5)
 								{
-									printf("%s\t", fl_p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
-									printf("%4.2fÆ½·½Ã×\t", fl_p1->Area);
-									printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-									printf("%d²ã", fl_p1->floor);
-									printf("Î»ÓÚ%s", fl_p1->city);
-									printf("×â½ğÎª%6.2f", fl_p1->rent);
-									printf("³¯ÏòÎª");
+									printf("%s\t", fl_p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
+									printf("%4.2få¹³æ–¹ç±³\t", fl_p1->Area);
+									printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+									printf("%då±‚", fl_p1->floor);
+									printf("ä½äº%s", fl_p1->city);
+									printf("ç§Ÿé‡‘ä¸º%6.2f", fl_p1->rent);
+									printf("æœå‘ä¸º");
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
-										printf("¶«\n");
+										printf("ä¸œ\n");
 										break;
 									case 2:
-										printf("ÄÏ\n");
+										printf("å—\n");
 										break;
 									case 3:
-										printf("Î÷\n");
+										printf("è¥¿\n");
 										break;
 									case 4:
-										printf("±±\n");
+										printf("åŒ—\n");
 										break;
 									case 5:
-										printf("¶«ÄÏ\n");
+										printf("ä¸œå—\n");
 										break;
 									case 6:
-										printf("¶«±±\n");
+										printf("ä¸œåŒ—\n");
 										break;
 									case 7:
-										printf("Î÷ÄÏ\n");
+										printf("è¥¿å—\n");
 										break;
 									case 8:
-										printf("Î÷±±\n");
+										printf("è¥¿åŒ—\n");
 										break;
 									}
-									printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+									printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
-									jug5 = 0;//³õÊ¼»¯
+									jug5 = 0;//åˆå§‹åŒ–
 								}
 								else
 									if (*(tempIntPtr - 1) == 0)
 									{
 										logWarning(1);
-										printf("ÕÒ²»µ½ÄúÊäÈëµÄÄÚÈİ¡£\n");
-										printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+										printf("æ‰¾ä¸åˆ°æ‚¨è¾“å…¥çš„å†…å®¹ã€‚\n");
+										printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 										getchar();
 										choose();
 									}
 									else
 									{
-										printf("ÄúÊäÈëµÄÄÚÈİ±È½ÏÄ£ºı£¬ÎªÄúÕÒµ½ÒÔÏÂÄÚÈİ\n");
-										printf("ĞòºÅ\t\t±àºÅ\t\tÃæ»ı\t\tÊÒÌüÇé¿ö\t\t·ÑÓÃ\n");
+										printf("æ‚¨è¾“å…¥çš„å†…å®¹æ¯”è¾ƒæ¨¡ç³Šï¼Œä¸ºæ‚¨æ‰¾åˆ°ä»¥ä¸‹å†…å®¹\n");
+										printf("åºå·\t\tç¼–å·\t\té¢ç§¯\t\tå®¤å…æƒ…å†µ\t\tè´¹ç”¨\n");
 										for (int i = 0; i < *(tempIntPtr - 1); i++)
 										{
 											fl_p1 = fl_head->next;
 											for (int j = 0; j < *(tempIntPtr + i); j++)
 												fl_p1 = fl_p1->next;
-											printf("%d\t\t%s\t\t%6.2fÆ½·½Ã×\t\t%dÊÒ%dÌü\t\t%6.2fÔª\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
+											printf("%d\t\t%s\t\t%6.2få¹³æ–¹ç±³\t\t%då®¤%då…\t\t%6.2få…ƒ\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
 										}
-										printf("»Ø³µÒÔ¼ÌĞø\n");
+										printf("å›è½¦ä»¥ç»§ç»­\n");
 										getchar();
 										choose();
 									}
 								break;
 
-							case 3://³¯Ïò²éÕÒ
-								printf("*********²éÑ¯·½Ê½*********\n");
+							case 3://æœå‘æŸ¥æ‰¾
+								printf("*********æŸ¥è¯¢æ–¹å¼*********\n");
 								printf("**                      **\n");
-								printf("**1.        ¶«          **\n");
-								printf("**2.		ÄÏ          **\n");
-								printf("**3.        Î÷          **\n");
-								printf("**4.        ±±          **\n");
-								printf("**5.      ¶«  ÄÏ        **\n");
-								printf("**6.      ¶«  ±±        **\n");
-								printf("**7.      Î÷  ÄÏ        **\n");
-								printf("**8.      Î÷  ±±        **\n");
+								printf("**1.        ä¸œ          **\n");
+								printf("**2.		å—          **\n");
+								printf("**3.        è¥¿          **\n");
+								printf("**4.        åŒ—          **\n");
+								printf("**5.      ä¸œ  å—        **\n");
+								printf("**6.      ä¸œ  åŒ—        **\n");
+								printf("**7.      è¥¿  å—        **\n");
+								printf("**8.      è¥¿  åŒ—        **\n");
 								printf("**                      **\n");
 								printf("**************************\n");
 								scanf("%d", &choice_6);
 								choose();
 								int i;
 								i = toward_search_ag(fl_head, choice_6);
-								printf("¹²ÓĞ%d¸ö·¿Ô´³¯Ïò", i);
+								printf("å…±æœ‰%dä¸ªæˆ¿æºæœå‘", i);
 								switch (choice_6)
 								{
 								case 1:
-									printf("¶«\n");
+									printf("ä¸œ\n");
 									break;
 								case 2:
-									printf("ÄÏ\n");
+									printf("å—\n");
 									break;
 								case 3:
-									printf("Î÷\n");
+									printf("è¥¿\n");
 									break;
 								case 4:
-									printf("±±\n");
+									printf("åŒ—\n");
 									break;
 								case 5:
-									printf("¶«ÄÏ\n");
+									printf("ä¸œå—\n");
 									break;
 								case 6:
-									printf("¶«±±\n");
+									printf("ä¸œåŒ—\n");
 									break;
 								case 7:
-									printf("Î÷ÄÏ\n");
+									printf("è¥¿å—\n");
 									break;
 								case 8:
-									printf("Î÷±±\n");
+									printf("è¥¿åŒ—\n");
 									break;
 								}
-								printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+								printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 								break;
 							}
 							break;
 						case 3:
-							printf("ÇëÊäÈëÄúÏëËÑË÷µÄ³ÇÊĞ£º\n");
+							printf("è¯·è¾“å…¥æ‚¨æƒ³æœç´¢çš„åŸå¸‚ï¼š\n");
 							char input1[20];
 							scanf("%s", input1);
-							printf("ÇëÊäÈëÃæ»ı·¶Î§£º");
+							printf("è¯·è¾“å…¥é¢ç§¯èŒƒå›´ï¼š");
 							int l, r;
-							printf("×ó£º\t");
+							printf("å·¦ï¼š\t");
 							scanf("%d", &l);
-							printf("ÓÒ£º\t");
+							printf("å³ï¼š\t");
 							scanf("%d", &r);
 							choose();
 							if (!strcmp(input1, fl_p1->city) && fl_p1->Area >= l && fl_p1->Area <= r)
@@ -3316,56 +3316,56 @@ int main()
 							t++;
 							printf("%d:\t", t);
 							printf("%s\t", fl_p1->number);
-							printf("%4.2fÆ½·½Ã×\n", fl_p1->Area);
-							printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-							printf("%d²ã\t", fl_p1->floor);
-							printf("Î»ÓÚ%s\t", fl_p1->city);
-							printf("×â½ğÎª%6.2f", fl_p1->rent);
-							printf("³¯ÏòÎª");
+							printf("%4.2få¹³æ–¹ç±³\n", fl_p1->Area);
+							printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+							printf("%då±‚\t", fl_p1->floor);
+							printf("ä½äº%s\t", fl_p1->city);
+							printf("ç§Ÿé‡‘ä¸º%6.2f", fl_p1->rent);
+							printf("æœå‘ä¸º");
 							switch ((int)fl_p1->toward)
 							{
 							case 1:
-								printf("¶«\n");
+								printf("ä¸œ\n");
 								break;
 								case 2:
-								printf("ÄÏ\n");
+								printf("å—\n");
 								break;
 							case 3:
-								printf("Î÷\n");
+								printf("è¥¿\n");
 								break;
 							case 4:
-								printf("±±\n");
+								printf("åŒ—\n");
 								break;
 							case 5:
-								printf("¶«ÄÏ\n");
+								printf("ä¸œå—\n");
 								break;
 							case 6:
-								printf("¶«±±\n");
+								printf("ä¸œåŒ—\n");
 								break;
 							case 7:
-								printf("Î÷ÄÏ\n");
+								printf("è¥¿å—\n");
 								break;
 							case 8:
-								printf("Î÷±±\n");
+								printf("è¥¿åŒ—\n");
 								break;
 							}
 							}
 							fl_p1 = fl_p1->next;
-							printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+							printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							choose();
 
 							break;
 						}
 						break;
-					case 4://ĞÅÏ¢ÅÅĞò
-						//Íê¹¤
-						printf("*********²é¿´·¿Ô´*********\n");
+					case 4://ä¿¡æ¯æ’åº
+						//å®Œå·¥
+						printf("*********æŸ¥çœ‹æˆ¿æº*********\n");
 						printf("**                      **\n");
-						printf("**0.     ·µ    »Ø       **\n");
-						printf("**1.     ×â    ½ğ       **\n");
-						printf("**2.     ²ã    Êı       **\n");
-						printf("**3.     ·¿²úÃæ»ı       **\n");
+						printf("**0.     è¿”    å›       **\n");
+						printf("**1.     ç§Ÿ    é‡‘       **\n");
+						printf("**2.     å±‚    æ•°       **\n");
+						printf("**3.     æˆ¿äº§é¢ç§¯       **\n");
 						printf("**                      **\n");
 						printf("**************************\n");
 						scanf("%d", &choice_5);
@@ -3375,64 +3375,64 @@ int main()
 						}
 						else
 						{
-							printf("******ÊÇ·ñ¶àÊôĞÔÅÅĞò******\n");
+							printf("******æ˜¯å¦å¤šå±æ€§æ’åº******\n");
 							printf("**                      **\n");
-							printf("**1.        ÊÇ          **\n");
-							printf("**2.        ·ñ          **\n");
+							printf("**1.        æ˜¯          **\n");
+							printf("**2.        å¦          **\n");
 							printf("**                      **\n");
 							printf("**************************\n");
 							scanf("%d", &jug9);
 							choose();
 							if (jug9 == 1)
 							{
-								printf("*********Ñ¡ÔñÊôĞÔ*********\n");
+								printf("*********é€‰æ‹©å±æ€§*********\n");
 								printf("**                      **\n");
-								printf("**1.     ×â    ½ğ       **\n");
-								printf("**2.     ²ã    Êı       **\n");
-								printf("**3.     ·¿²úÃæ»ı       **\n");
+								printf("**1.     ç§Ÿ    é‡‘       **\n");
+								printf("**2.     å±‚    æ•°       **\n");
+								printf("**3.     æˆ¿äº§é¢ç§¯       **\n");
 								printf("**                      **\n");
 								printf("**************************\n");
 								scanf("%d", &choice_6);
 								choose();
-								int t;//¾Ö²¿±äÁ¿ÓÃÓÚ·µ»ØÖµÅĞ¶Ï
+								int t;//å±€éƒ¨å˜é‡ç”¨äºè¿”å›å€¼åˆ¤æ–­
 								bubbleSort_Area(&fl_head, choice_5);
 								t = bubbleSort_more(&fl_head, choice_5, choice_6);
 								if (t == 1)
 								{
-									printf("*********ÅÅĞò·½Ê½*********\n");
+									printf("*********æ’åºæ–¹å¼*********\n");
 									printf("**                      **\n");
-									printf("**1.     ´ÓĞ¡µ½´ó       **\n");
-									printf("**2.     ´Ó´óµ½Ğ¡       **\n");
+									printf("**1.     ä»å°åˆ°å¤§       **\n");
+									printf("**2.     ä»å¤§åˆ°å°       **\n");
 									printf("**                      **\n");
 									printf("**************************\n");
 									scanf("%d", &jug7);
 									choose();
 									list_printfl_ag(fl_head, fl_tail, jug7);
-									printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+									printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 								}
 								if (t == 2)
 								{
-									printf("ÄúÁ½´ÎÑ¡ÔñµÄÊôĞÔÏàÍ¬,ÒÑÄ¬ÈÏÎªµ¥ÊôĞÔÅÅĞò\n");
+									printf("æ‚¨ä¸¤æ¬¡é€‰æ‹©çš„å±æ€§ç›¸åŒ,å·²é»˜è®¤ä¸ºå•å±æ€§æ’åº\n");
 									bubbleSort_Area(&fl_head, choice_5);
-									printf("*********ÅÅĞò·½Ê½*********\n");
+									printf("*********æ’åºæ–¹å¼*********\n");
 									printf("**                      **\n");
-									printf("**1.     ´ÓĞ¡µ½´ó       **\n");
-									printf("**2.     ´Ó´óµ½Ğ¡       **\n");
+									printf("**1.     ä»å°åˆ°å¤§       **\n");
+									printf("**2.     ä»å¤§åˆ°å°       **\n");
 									printf("**                      **\n");
 									printf("**************************\n");
 									scanf("%d", &jug7);
 									choose();
 									list_printfl_ag(fl_head, fl_tail, jug7);
-									printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+									printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 								}
 								if (t == 3)
 								{
-									printf("ÇëÕıÈ·ÊäÈë\n");
-									printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+									printf("è¯·æ­£ç¡®è¾“å…¥\n");
+									printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 								}
@@ -3443,23 +3443,23 @@ int main()
 							{
 								bubbleSort_Area(&fl_head, choice_5);
 								choose();
-								printf("*********ÅÅĞò·½Ê½*********\n");
+								printf("*********æ’åºæ–¹å¼*********\n");
 								printf("**                      **\n");
-								printf("**1.     ´ÓĞ¡µ½´ó       **\n");
-								printf("**2.     ´Ó´óµ½Ğ¡       **\n");
+								printf("**1.     ä»å°åˆ°å¤§       **\n");
+								printf("**2.     ä»å¤§åˆ°å°       **\n");
 								printf("**                      **\n");
 								printf("**************************\n");
 								scanf("%d", &jug7);
 								choose();
 								list_printfl_ag(fl_head, fl_tail, jug7);
-								printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+								printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 							}
 						}
 						break;
 					case 5:
-						//Íê³É
+						//å®Œæˆ
 					{
 						int num = 0;
 						ap_p = ap_head->next;
@@ -3469,7 +3469,7 @@ int main()
 								num++;
 							ap_p = ap_p->next;
 						}
-						printf("ÄúËù¹ÜÀíµÄ·¿Ô´µÄÔ¤Ô¼ÓĞ%d¸ö\n", num);
+						printf("æ‚¨æ‰€ç®¡ç†çš„æˆ¿æºçš„é¢„çº¦æœ‰%dä¸ª\n", num);
 						num = 0;
 						ap_p = ap_head->next;
 						while (ap_p != NULL)
@@ -3478,7 +3478,7 @@ int main()
 								num++;
 							ap_p = ap_p->next;
 						}
-						printf("ÓĞĞ§µÄÔ¤Ô¼ÓĞ%d¸ö\n", num);
+						printf("æœ‰æ•ˆçš„é¢„çº¦æœ‰%dä¸ª\n", num);
 						num = 0;
 						ap_p = ap_head->next;
 
@@ -3488,7 +3488,7 @@ int main()
 								num++;
 							ap_p = ap_p->next;
 						}
-						printf("½ñÌìµÄÔ¤Ô¼ÓĞ%d¸ö\n", num);
+						printf("ä»Šå¤©çš„é¢„çº¦æœ‰%dä¸ª\n", num);
 						num = 0;
 						fl_p1 = fl_head->next;
 						while (fl_p1 != NULL)
@@ -3497,7 +3497,7 @@ int main()
 								num++;
 							fl_p1 = fl_p1->next;
 						}
-						printf("ÄúËù¹ÜÀíµÄ·¿Ô´ÓĞ%d¸ö\n", num);
+						printf("æ‚¨æ‰€ç®¡ç†çš„æˆ¿æºæœ‰%dä¸ª\n", num);
 						num = 0;
 						fl_p1 = fl_head->next;
 						while (fl_p1 != NULL)
@@ -3506,34 +3506,34 @@ int main()
 								num++;
 							fl_p1 = fl_p1->next;
 						}
-						printf("Äú×â³öµÄ·¿×ÓÓĞ%d¸ö\n", num);
+						printf("æ‚¨ç§Ÿå‡ºçš„æˆ¿å­æœ‰%dä¸ª\n", num);
 					}			
-					printf("»Ø³µÒÔ¼ÌĞø\n");
+					printf("å›è½¦ä»¥ç»§ç»­\n");
 					choose();
 					break;
 					case 6:
-						//Íê³É
+						//å®Œæˆ
 						while (1)
 						{
 							memset(input_key, 0, sizeof(input_key));
 							memset(input_key_2, 0, sizeof(input_key_2));
-							printf("ÇëÊäÈëÃÜÂë£º");
+							printf("è¯·è¾“å…¥å¯†ç ï¼š");
 							hideInput(input_key, 19);
-							printf("ÇëÈ·ÈÏÃÜÂë£º");
+							printf("è¯·ç¡®è®¤å¯†ç ï¼š");
 							hideInput(input_key_2, 19);
 							if (!strcmp(input_key, input_key_2))
 							{
 								strcpy(ag_p1->Key, input_key);
-								printf("ĞŞ¸Ä³É¹¦!\n");
-								printf("»Ø³µÒÔ¼ÌĞø\n");
+								printf("ä¿®æ”¹æˆåŠŸ!\n");
+								printf("å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 								break;
 							}
 							else
 							{
-								printf("Á½´ÎÊäÈë²»Ò»ÑùµÄàÏ");
-								printf("»Ø³µÒÔ¼ÌĞø");
+								printf("ä¸¤æ¬¡è¾“å…¥ä¸ä¸€æ ·çš„å˜");
+								printf("å›è½¦ä»¥ç»§ç»­");
 								getchar();
 								choose();
 								break;
@@ -3541,7 +3541,7 @@ int main()
 						}
 						break;
 					case 7:
-						printf("ÄúÈ·¶¨ÒªÉ¾³ıÄúµÄÕË»§Âğ£¿1È·¶¨ 2È¡Ïû£»");
+						printf("æ‚¨ç¡®å®šè¦åˆ é™¤æ‚¨çš„è´¦æˆ·å—ï¼Ÿ1ç¡®å®š 2å–æ¶ˆï¼›");
 						scanf("%d", &jug6);
 						if (jug6 == 1)
 						{
@@ -3558,9 +3558,9 @@ int main()
 								free(ag_p1);
 								ag_p1 = NULL;
 							}
-							printf("²Ù×÷³É¹¦\n");
+							printf("æ“ä½œæˆåŠŸ\n");
 							logInfo(4);
-							printf("»Ø³µÒÔ¼ÌĞø");
+							printf("å›è½¦ä»¥ç»§ç»­");
 							getchar();
 							choose();
 						}
@@ -3568,8 +3568,8 @@ int main()
 					}
 				}
 				break;
-			case 3://×â¿Í
-				printf("ÇëÊäÈëÕË»§£¨account£©£º");
+			case 3://ç§Ÿå®¢
+				printf("è¯·è¾“å…¥è´¦æˆ·ï¼ˆaccountï¼‰ï¼š");
 				scanf("%s", input_account);
 				cu_p1 = cu_head->next;
 				if (cu_p1 == NULL)
@@ -3581,13 +3581,13 @@ int main()
 				{
 					if (!strcmp(input_account, cu_p1->Account))
 					{
-						printf("ÇëÊäÈëÃÜÂë£¨key£©:");
+						printf("è¯·è¾“å…¥å¯†ç ï¼ˆkeyï¼‰:");
 						hideInput(input_key, 19);
 						if (cu_p1->statment == 0)
 						{
-							printf("±§Ç¸£¬ÄúÒòÎªÎ¥·´ÎÒÃÇµÄÌõÀı¶ø±»·â½û¡£ÈçÓĞÎÊÌâÇëÁªÏµ¹ÜÀíÔ±\n");
+							printf("æŠ±æ­‰ï¼Œæ‚¨å› ä¸ºè¿åæˆ‘ä»¬çš„æ¡ä¾‹è€Œè¢«å°ç¦ã€‚å¦‚æœ‰é—®é¢˜è¯·è”ç³»ç®¡ç†å‘˜\n");
 							logWarning(2);
-							printf("»Ø³µÒÔ¼ÌĞø");
+							printf("å›è½¦ä»¥ç»§ç»­");
 							getchar();
 							choose();
 							jug = 0;
@@ -3596,8 +3596,8 @@ int main()
 						if (!strcmp(input_key, cu_p1->Key))
 						{
 							logInfo(1);
-							printf("µÇÂ¼³É¹¦£¬»¶Ó­£¬Ç×°®µÄ%s\n", cu_p1->Account);
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							printf("ç™»å½•æˆåŠŸï¼Œæ¬¢è¿ï¼Œäº²çˆ±çš„%s\n", cu_p1->Account);
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							jug = 1;
 							choose();
@@ -3605,8 +3605,8 @@ int main()
 						else
 						{
 							logWarning(2);
-							printf("ÃÜÂë´íÎó\n");
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							printf("å¯†ç é”™è¯¯\n");
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							jug = 0;
 							choose();
@@ -3617,8 +3617,8 @@ int main()
 					if (cu_p1 == NULL)
 					{
 						logWarning(2);
-						printf("ÕÒ²»µ½¶ÔÏó\n");
-						printf("»Ø³µÒÔ¼ÌĞø\n");
+						printf("æ‰¾ä¸åˆ°å¯¹è±¡\n");
+						printf("å›è½¦ä»¥ç»§ç»­\n");
 						getchar();
 						jug = 0;
 						choose();
@@ -3627,19 +3627,19 @@ int main()
 				}
 				while (jug && cu_p1 != NULL)
 				{
-					printf("*********¹¦ÄÜ²Ëµ¥*********\n");
+					printf("*********åŠŸèƒ½èœå•*********\n");
 					printf("**                      **\n");
-					printf("**0.     ×¢    Ïú       **\n");
-					printf("**1.     ¸öÈËĞÅÏ¢       **\n");//Íê¹¤
-					printf("**2.     ¿´·¿Ô¤Ô¼       **\n");//Íê¹¤
-					printf("**3.     ĞÅÏ¢²éÑ¯       **\n");//½»¸øÖìÉ£ÁË
-					printf("**4.     ĞÅÏ¢ÅÅĞò       **\n");//½»¸øÖìÉ£ÁË
-					printf("**5.     ĞÅÏ¢Í³¼Æ       **\n");
-					printf("**6.     ¸ü¸ÄÃÜÂë       **\n");
-					printf("**7.     É¾³ıÕË»§       **\n");//Íê¹¤
+					printf("**0.     æ³¨    é”€       **\n");
+					printf("**1.     ä¸ªäººä¿¡æ¯       **\n");//å®Œå·¥
+					printf("**2.     çœ‹æˆ¿é¢„çº¦       **\n");//å®Œå·¥
+					printf("**3.     ä¿¡æ¯æŸ¥è¯¢       **\n");//äº¤ç»™æœ±æ¡‘äº†
+					printf("**4.     ä¿¡æ¯æ’åº       **\n");//äº¤ç»™æœ±æ¡‘äº†
+					printf("**5.     ä¿¡æ¯ç»Ÿè®¡       **\n");
+					printf("**6.     æ›´æ”¹å¯†ç        **\n");
+					printf("**7.     åˆ é™¤è´¦æˆ·       **\n");//å®Œå·¥
 					printf("**                      **\n");
 					printf("**************************\n");
-					printf("ÇëÑ¡Ôñ¹¦ÄÜ£º");
+					printf("è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
 					scanf_s("%d", &choice_4);
 					choose();
 					switch (choice_4)
@@ -3650,17 +3650,17 @@ int main()
 						cu_p1 = cu_tail;
 						break;
 					case 1:
-						//Íê¹¤
-						printf("ÕËºÅ£º%s\n", cu_p1->Account);
-						printf("ĞÕÃû£º%s\n", cu_p1->Name);
-						printf("µç»°£º%s\n", cu_p1->phone_n);
-						printf("³ÇÊĞ£º%s\n", cu_p1->city);
-						printf("*********ĞÅÏ¢ĞŞ¸Ä*********\n");
+						//å®Œå·¥
+						printf("è´¦å·ï¼š%s\n", cu_p1->Account);
+						printf("å§“åï¼š%s\n", cu_p1->Name);
+						printf("ç”µè¯ï¼š%s\n", cu_p1->phone_n);
+						printf("åŸå¸‚ï¼š%s\n", cu_p1->city);
+						printf("*********ä¿¡æ¯ä¿®æ”¹*********\n");
 						printf("**                      **\n");
-						printf("**0.     ·µ    »Ø       **\n");
-						printf("**1.     µç    »°       **\n");
-						printf("**2.     ĞÕ    Ãû       **\n");
-						printf("**3.     ³Ç    ÊĞ       **\n");
+						printf("**0.     è¿”    å›       **\n");
+						printf("**1.     ç”µ    è¯       **\n");
+						printf("**2.     å§“    å       **\n");
+						printf("**3.     åŸ    å¸‚       **\n");
 						printf("**                      **\n");
 						printf("**************************\n");
 						scanf("%d", &choice_6);
@@ -3671,67 +3671,67 @@ int main()
 							break;
 						case 1:
 							memset(input_phonenumber, 0, sizeof(input_phonenumber));
-							printf("ÇëÊäÈëµç»°ºÅÂë£º(11Î»)");
+							printf("è¯·è¾“å…¥ç”µè¯å·ç ï¼š(11ä½)");
 							scanf("%s", input_phonenumber);
 							while (strlen(input_phonenumber) != 11)
 							{
 								choose();
-								printf("ÎŞĞ§µÄµç»°ºÅÂë£¡\n");
-								printf("ÇëÊäÈëÕıÈ·µÄµÄµç»°ºÅÂë:");
+								printf("æ— æ•ˆçš„ç”µè¯å·ç ï¼\n");
+								printf("è¯·è¾“å…¥æ­£ç¡®çš„çš„ç”µè¯å·ç :");
 								memset(input_phonenumber, 0, sizeof(input_phonenumber));
 								scanf("%s", input_phonenumber);
 							}
 							strcpy(cu_p1->phone_n, input_account);
-							printf("ĞŞ¸Ä³É¹¦£¡\n");
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							printf("ä¿®æ”¹æˆåŠŸï¼\n");
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							choose();
 							break;
 						case 2:
-							printf("ÇëÊäÈëĞÂµÄĞÕÃû£º");
+							printf("è¯·è¾“å…¥æ–°çš„å§“åï¼š");
 							scanf("%s", cu_p1->Name);
-							printf("ĞŞ¸Ä³É¹¦£¡\n");
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							printf("ä¿®æ”¹æˆåŠŸï¼\n");
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							choose();
 							break;
 						case 3:
-							printf("ÇëÊäÈëĞÂµÄ³ÇÊĞ£º");
+							printf("è¯·è¾“å…¥æ–°çš„åŸå¸‚ï¼š");
 							scanf("%s", cu_p1->city);
-							printf("ĞŞ¸Ä³É¹¦£¡\n");
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							printf("ä¿®æ”¹æˆåŠŸï¼\n");
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							choose();
 						}
 						break;
 					case 2:
-						//Íê¹¤
-						printf("*********¿´·¿Ô¤Ô¼*********\n");
+						//å®Œå·¥
+						printf("*********çœ‹æˆ¿é¢„çº¦*********\n");
 						printf("**                      **\n");
-						printf("**0.     ·µ    »Ø       **\n");
-						printf("**1.     ÎÒµÄÔ¤Ô¼       **\n");
-						printf("**2.     Ìí¼ÓÔ¤Ô¼       **\n");
-						printf("**3.     ÎÒÒª×â·¿       **\n");
+						printf("**0.     è¿”    å›       **\n");
+						printf("**1.     æˆ‘çš„é¢„çº¦       **\n");
+						printf("**2.     æ·»åŠ é¢„çº¦       **\n");
+						printf("**3.     æˆ‘è¦ç§Ÿæˆ¿       **\n");
 						printf("**                      **\n");
 						printf("**************************\n");
-						printf("ÇëÑ¡Ôñ¹¦ÄÜ£º");
+						printf("è¯·é€‰æ‹©åŠŸèƒ½ï¼š");
 						scanf("%d", &choice_6);
 						choose();
 						switch (choice_6)
 						{
 						case 3:
 							ap_p = ap_head->next;
-							printf("±àºÅ\t\tÈÕÆÚ\t\t·¿Ô´±àºÅ\t\tÖĞ½éµç»°\n");
+							printf("ç¼–å·\t\tæ—¥æœŸ\t\tæˆ¿æºç¼–å·\t\tä¸­ä»‹ç”µè¯\n");
 							while (ap_p != NULL)
 							{
 								if (ap_p->custom == cu_p1)
 								{
 									printf("%s\t%d-%d-%d\t%s\t\t", ap_p->Number, ap_p->year, ap_p->month, ap_p->day, ap_p->flat->number);
 									if (ap_p->flat->agency == NULL)
-										printf("ÎŞÖĞ½é\n");
+										printf("æ— ä¸­ä»‹\n");
 									else
 										printf("%s\n", ap_p->flat->agency->phone_n);
 								}
 								ap_p = ap_p->next;
 							}
-							printf("ÇëÊäÈë·¿Ô´±àºÅ£º");
+							printf("è¯·è¾“å…¥æˆ¿æºç¼–å·ï¼š");
 							memset(input_string, 0, sizeof(input_string));
 							scanf("%s", input_string);
 							fl_p1 = fl_head->next;
@@ -3740,44 +3740,44 @@ int main()
 								if (!strcmp(fl_p1->number, input_string) && fl_p1->agency == ag_p1)
 								{
 									printf("%s\t", fl_p1->number);
-									printf("%4.2fÆ½·½Ã×\t", fl_p1->Area);
-									printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-									printf("%d²ã\t", fl_p1->floor);
+									printf("%4.2få¹³æ–¹ç±³\t", fl_p1->Area);
+									printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+									printf("%då±‚\t", fl_p1->floor);
 									printf("%s\t", fl_p1->city);
-									printf("×â½ğÎª%6.2f\t\t", fl_p1->rent);
+									printf("ç§Ÿé‡‘ä¸º%6.2f\t\t", fl_p1->rent);
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
-										printf("¶«\t");
+										printf("ä¸œ\t");
 										break;
 									case 2:
-										printf("ÄÏ\t");
+										printf("å—\t");
 										break;
 									case 3:
-										printf("Î÷\t");
+										printf("è¥¿\t");
 										break;
 									case 4:
-										printf("±±\t");
+										printf("åŒ—\t");
 										break;
 									case 5:
-										printf("¶«ÄÏ\t");
+										printf("ä¸œå—\t");
 										break;
 									case 6:
-										printf("¶«±±\t");
+										printf("ä¸œåŒ—\t");
 										break;
 									case 7:
-										printf("Î÷ÄÏ\t");
+										printf("è¥¿å—\t");
 										break;
 									case 8:
-										printf("Î÷±±\t");
+										printf("è¥¿åŒ—\t");
 										break;
 									}
 									if (fl_p1->statment == true)
-										printf("Î´×â³ö");
+										printf("æœªç§Ÿå‡º");
 									else
-										printf("ÒÑ×â³ö");
+										printf("å·²ç§Ÿå‡º");
 									printf("\n");
-									printf("È·¶¨¸Ä±ä×´Ì¬Âğ£¿1È·¶¨  2È¡Ïû£º");
+									printf("ç¡®å®šæ”¹å˜çŠ¶æ€å—ï¼Ÿ1ç¡®å®š  2å–æ¶ˆï¼š");
 									scanf("%d", &jug6);
 									if (jug6 == 1)
 									{
@@ -3786,7 +3786,7 @@ int main()
 										{
 											memset(fl_p1->cuposition, 0, sizeof(fl_p1->cuposition));
 											fl_p1->custome = NULL;
-											printf("²Ù×÷³É¹¦\n");
+											printf("æ“ä½œæˆåŠŸ\n");
 										}
 										else
 										{
@@ -3805,13 +3805,13 @@ int main()
 											{
 												fl_p1->custome = ap_p->custom;
 												strcpy(fl_p1->cuposition, fl_p1->custome->Account);
-												printf("²Ù×÷³É¹¦\n");
+												printf("æ“ä½œæˆåŠŸ\n");
 											}
 											else
-												printf("²Ù×÷Ê§°Ü\n");
+												printf("æ“ä½œå¤±è´¥\n");
 										}
 									}
-									printf("»Ø³µÒÔ¼ÌĞø\n");
+									printf("å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 									break;
@@ -3821,8 +3821,8 @@ int main()
 							if (fl_p1 == NULL)
 							{
 								logWarning(1);
-								printf("ÕÒ²»µ½¶ÔÏó\n");
-								printf("»Ø³µÒÔ¼ÌĞø\n");
+								printf("æ‰¾ä¸åˆ°å¯¹è±¡\n");
+								printf("å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 								break;
@@ -3833,24 +3833,24 @@ int main()
 							break;
 						case 1:
 							ap_p = ap_head->next;
-							printf("±àºÅ\t\tÈÕÆÚ\t\t·¿Ô´±àºÅ\t\tÖĞ½éµç»°\n");
+							printf("ç¼–å·\t\tæ—¥æœŸ\t\tæˆ¿æºç¼–å·\t\tä¸­ä»‹ç”µè¯\n");
 							while (ap_p != NULL)
 							{
 								if (ap_p->custom == cu_p1)
 								{
 									printf("%s\t%d-%d-%d\t%s\t\t",ap_p->Number,ap_p->year,ap_p->month,ap_p->day,ap_p->flat->number);
 									if (ap_p->flat->agency == NULL)
-										printf("ÎŞÖĞ½é\n");
+										printf("æ— ä¸­ä»‹\n");
 									else
 										printf("%s\n", ap_p->flat->agency->phone_n);
 								}
 								ap_p = ap_p->next;
 							}
-							printf("ÊÇ·ñÒª´¦ÀíÔ¤Ô¼ĞÅÏ¢£¿ 1È·¶¨ 2È¡Ïû£º");
+							printf("æ˜¯å¦è¦å¤„ç†é¢„çº¦ä¿¡æ¯ï¼Ÿ 1ç¡®å®š 2å–æ¶ˆï¼š");
 							scanf("%d", &jug6);
 							if (jug6 == 1)
 							{
-								printf("ÇëÊäÈëÔ¤Ô¼ĞÅÏ¢±àºÅ£º");
+								printf("è¯·è¾“å…¥é¢„çº¦ä¿¡æ¯ç¼–å·ï¼š");
 								memset(input_string, 0, sizeof(input_string));
 								scanf("%s", input_string);
 								ap_p = ap_head->next;
@@ -3858,19 +3858,19 @@ int main()
 								{
 									if (ap_p->custom == cu_p1)
 									{
-										printf("ÊÇ·ñÍê³ÉÔ¤Ô¼£¿1È·¶¨ 2È¡Ïû£º");
+										printf("æ˜¯å¦å®Œæˆé¢„çº¦ï¼Ÿ1ç¡®å®š 2å–æ¶ˆï¼š");
 										scanf("%d", &jug6);
 										if (jug6 == 1)
 										{
 											ap_p->statment = 0;
-											printf("²Ù×÷³É¹¦£¡");
+											printf("æ“ä½œæˆåŠŸï¼");
 										}
 										break;
 									}
 									ap_p = ap_p->next;
 								}
 							}
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							choose();
 							break;
@@ -3918,10 +3918,10 @@ int main()
 								fl_p1 = fl_p1->next;
 								t++;
 							}
-							printf("ÍÆ¼ö\n");
+							printf("æ¨è\n");
 							for (int i = 0; i < 5 && i < flnumber; i++)
 							{
-								unsigned long long len = flnumber;//Ëæ»úÊä³öÎå¸ö
+								unsigned long long len = flnumber;//éšæœºè¾“å‡ºäº”ä¸ª
 								unsigned int seed;
 								seed = (unsigned int)time(NULL);
 								srand(seed);
@@ -3943,35 +3943,35 @@ int main()
 										fl_p1 = fl_p1->next;
 									printf("%s\t", fl_p1->number);
 									printf("%4.2f\t", fl_p1->Area);
-									printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-									printf("%d²ã\t", fl_p1->floor);
+									printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+									printf("%då±‚\t", fl_p1->floor);
 									printf("%s\t", fl_p1->city);
-									printf("×â½ğÎª%6.2f\t\t", fl_p1->rent);
+									printf("ç§Ÿé‡‘ä¸º%6.2f\t\t", fl_p1->rent);
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
-										printf("¶«\t");
+										printf("ä¸œ\t");
 										break;
 									case 2:
-										printf("ÄÏ\t");
+										printf("å—\t");
 										break;
 									case 3:
-										printf("Î÷\t");
+										printf("è¥¿\t");
 										break;
 									case 4:
-										printf("±±\t");
+										printf("åŒ—\t");
 										break;
 									case 5:
-										printf("¶«ÄÏ\t");
+										printf("ä¸œå—\t");
 										break;
 									case 6:
-										printf("¶«±±\t");
+										printf("ä¸œåŒ—\t");
 										break;
 									case 7:
-										printf("Î÷ÄÏ\t");
+										printf("è¥¿å—\t");
 										break;
 									case 8:
-										printf("Î÷±±\t");
+										printf("è¥¿åŒ—\t");
 										break;
 									}
 									printf("\n");
@@ -3982,14 +3982,14 @@ int main()
 							free(num);
 						}
 						memset(input_string, 0, sizeof(input_string));
-						printf("ÇëÊäÈë·¿Ô´ĞÅÏ¢£¨×î¶à20¸ö×Ö·û£©£º");
+						printf("è¯·è¾“å…¥æˆ¿æºä¿¡æ¯ï¼ˆæœ€å¤š20ä¸ªå­—ç¬¦ï¼‰ï¼š");
 						scanf("%s", input_string);
 						tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
 						if (*tempIntPtr == 0)
 						{
 							logWarning(1);
-							printf("ÕÒ²»µ½·¿Ô´\n");
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							printf("æ‰¾ä¸åˆ°æˆ¿æº\n");
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							choose();
 							break;
@@ -4009,58 +4009,58 @@ int main()
 						if (jug5)
 						{
 							choose();
-							printf("³É¹¦ÕÒµ½¶ÔÏó\n");
+							printf("æˆåŠŸæ‰¾åˆ°å¯¹è±¡\n");
 							printf("%s\t", fl_p1->number);
-							printf("%4.2fÆ½·½Ã×\t", fl_p1->Area);
-							printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-							printf("%d²ã\t", fl_p1->floor);
+							printf("%4.2få¹³æ–¹ç±³\t", fl_p1->Area);
+							printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+							printf("%då±‚\t", fl_p1->floor);
 							printf("%s\t", fl_p1->city);
-							printf("×â½ğÎª%6.2f\t\t", fl_p1->rent);
+							printf("ç§Ÿé‡‘ä¸º%6.2f\t\t", fl_p1->rent);
 							switch ((int)fl_p1->toward)
 							{
 							case 1:
-								printf("¶«\t");
+								printf("ä¸œ\t");
 								break;
 							case 2:
-								printf("ÄÏ\t");
+								printf("å—\t");
 								break;
 							case 3:
-								printf("Î÷\t");
+								printf("è¥¿\t");
 								break;
 							case 4:
-								printf("±±\t");
+								printf("åŒ—\t");
 								break;
 							case 5:
-								printf("¶«ÄÏ\t");
+								printf("ä¸œå—\t");
 								break;
 							case 6:
-								printf("¶«±±\t");
+								printf("ä¸œåŒ—\t");
 								break;
 							case 7:
-								printf("Î÷ÄÏ\t");
+								printf("è¥¿å—\t");
 								break;
 							case 8:
-								printf("Î÷±±\t");
+								printf("è¥¿åŒ—\t");
 								break;
 							}
 							if (fl_p1->agency == NULL)
-								printf("¿ÕÏĞÖĞ\n");
+								printf("ç©ºé—²ä¸­\n");
 							else
-								printf("ÒÑÕ¼ÓÃ\n");
-							printf("ÄúÈ·¶¨ÒªÔ¤Ô¼¸Ã·¿Ô´Âğ£¿\n1È·ÈÏ\t 2È¡Ïû£º\n");
-							printf("ÄúµÄÑ¡Ôñ£º");
+								printf("å·²å ç”¨\n");
+							printf("æ‚¨ç¡®å®šè¦é¢„çº¦è¯¥æˆ¿æºå—ï¼Ÿ\n1ç¡®è®¤\t 2å–æ¶ˆï¼š\n");
+							printf("æ‚¨çš„é€‰æ‹©ï¼š");
 							scanf("%d", &jug6);
 							if (jug6 == 1)
 							{
-								//Ìî¶«Î÷
-								printf("ÇëÊäÈëÊ±¼ä£¨ÄêÔÂÈÕ£©£º");
+								//å¡«ä¸œè¥¿
+								printf("è¯·è¾“å…¥æ—¶é—´ï¼ˆå¹´æœˆæ—¥ï¼‰ï¼š");
 								scanf("%d%d%d", &year, &month, &day);
 								time_t now = time(NULL);
 								struct tm* local = localtime(&now);
 								if (year < local->tm_year || (year == local->tm_year && month < local->tm_mon) || (year == local->tm_year && month == local->tm_mon && day < local->tm_mday) || !checkDate(year, month, day))
 								{
-									printf("ÎŞĞ§µÄÊ±¼ä\n");
-									printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+									printf("æ— æ•ˆçš„æ—¶é—´\n");
+									printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 									break;
@@ -4069,68 +4069,68 @@ int main()
 								{
 									extendApm(ap_p, ap_tail, ap_head, year, month, day, fl_p1, cu_p1);
 									ap_tail = ap_tail->next;
-									printf("²Ù×÷³É¹¦£¡\n");
-									printf("»Ø³µÒÔ¼ÌĞø\n");
+									printf("æ“ä½œæˆåŠŸï¼\n");
+									printf("å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 
 								}
 							}
 							jug6 = 0;
-							jug5 = 0;//³õÊ¼»¯
+							jug5 = 0;//åˆå§‹åŒ–
 						}
 						else
 							if (*(tempIntPtr - 1) == 0)
 							{
 								logWarning(1);
-								printf("ÕÒ²»µ½ÄúÊäÈëµÄÄÚÈİ¡£\n");
-								printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+								printf("æ‰¾ä¸åˆ°æ‚¨è¾“å…¥çš„å†…å®¹ã€‚\n");
+								printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 							}
 							else
 							{
-								printf("ÄúÊäÈëµÄÄÚÈİ±È½ÏÄ£ºı£¬ÎªÄúÕÒµ½ÒÔÏÂÄÚÈİ\n");
+								printf("æ‚¨è¾“å…¥çš„å†…å®¹æ¯”è¾ƒæ¨¡ç³Šï¼Œä¸ºæ‚¨æ‰¾åˆ°ä»¥ä¸‹å†…å®¹\n");
 								for (int i = 0; i < *(tempIntPtr - 1); i++)
 								{
 									fl_p1 = fl_head->next;
 									for (int j = 0; j < *(tempIntPtr + i); j++)
 										fl_p1 = fl_p1->next;
 									printf("%s\t", fl_p1->number);
-									printf("%4.2fÆ½·½Ã×\t", fl_p1->Area);
-									printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-									printf("%d²ã\t", fl_p1->floor);
+									printf("%4.2få¹³æ–¹ç±³\t", fl_p1->Area);
+									printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+									printf("%då±‚\t", fl_p1->floor);
 									printf("%s\t", fl_p1->city);
-									printf("×â½ğÎª%6.2f\t\t", fl_p1->rent);
+									printf("ç§Ÿé‡‘ä¸º%6.2f\t\t", fl_p1->rent);
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
-										printf("¶«\n");
+										printf("ä¸œ\n");
 										break;
 									case 2:
-										printf("ÄÏ\n");
+										printf("å—\n");
 										break;
 									case 3:
-										printf("Î÷\n");
+										printf("è¥¿\n");
 										break;
 									case 4:
-										printf("±±\n");
+										printf("åŒ—\n");
 										break;
 									case 5:
-										printf("¶«ÄÏ\n");
+										printf("ä¸œå—\n");
 										break;
 									case 6:
-										printf("¶«±±\n");
+										printf("ä¸œåŒ—\n");
 										break;
 									case 7:
-										printf("Î÷ÄÏ\n");
+										printf("è¥¿å—\n");
 										break;
 									case 8:
-										printf("Î÷±±\n");
+										printf("è¥¿åŒ—\n");
 										break;
 									}
 								}
-								printf("»Ø³µÒÔ¼ÌĞø\n");
+								printf("å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 							}
@@ -4140,13 +4140,13 @@ int main()
 						}
 						break;
 					case 3:
-						//Íê¹¤
-						printf("*********²éÑ¯·½Ê½*********\n");
+						//å®Œå·¥
+						printf("*********æŸ¥è¯¢æ–¹å¼*********\n");
 						printf("**                      **\n");
-						printf("**0.     ·µ    »Ø       **\n");
-						printf("**1.     ·¶Î§²éÕÒ       **\n");
-						printf("**2.     ¾ßÌå²éÕÒ       **\n");
-						printf("**3.     ×éºÏ²éÕÒ       **\n");
+						printf("**0.     è¿”    å›       **\n");
+						printf("**1.     èŒƒå›´æŸ¥æ‰¾       **\n");
+						printf("**2.     å…·ä½“æŸ¥æ‰¾       **\n");
+						printf("**3.     ç»„åˆæŸ¥æ‰¾       **\n");
 						printf("**                      **\n");
 						printf("**************************\n");
 						scanf("%d", &choice_6);
@@ -4156,11 +4156,11 @@ int main()
 						case 0:
 							break;
 						case 1:
-							printf("*********²éÑ¯·½Ê½*********\n");
+							printf("*********æŸ¥è¯¢æ–¹å¼*********\n");
 							printf("**                      **\n");
-							printf("**1.     ×â    ½ğ       **\n");
-							printf("**2.     Â¥    ²ã       **\n");
-							printf("**3.     Ãæ    »ı       **\n");
+							printf("**1.     ç§Ÿ    é‡‘       **\n");
+							printf("**2.     æ¥¼    å±‚       **\n");
+							printf("**3.     é¢    ç§¯       **\n");
 							printf("**                      **\n");
 							printf("**************************\n");
 							scanf("%d", &choice_6);
@@ -4168,33 +4168,33 @@ int main()
 							int left = 0;
 							int right = 0;
 
-							printf("*********ÅÅĞò·½Ê½*********\n");
+							printf("*********æ’åºæ–¹å¼*********\n");
 							printf("**                      **\n");
-							printf("**1.     ´ÓĞ¡µ½´ó       **\n");
-							printf("**2.     ´Ó´óµ½Ğ¡       **\n");
+							printf("**1.     ä»å°åˆ°å¤§       **\n");
+							printf("**2.     ä»å¤§åˆ°å°       **\n");
 							printf("**                      **\n");
 							printf("**************************\n");
 							scanf("%d", &jug7);
-							printf("ÇëÊäÈë×óÓÒ·¶Î§:\n");
-							printf("×ó:");
+							printf("è¯·è¾“å…¥å·¦å³èŒƒå›´:\n");
+							printf("å·¦:");
 							scanf("%d", &left);
-							printf("\nÓÒ:");
+							printf("\nå³:");
 							scanf("%d", &right);
 							choose();
 							int t;
 							t = range_search_cu(left, right, fl_head, fl_tail, jug7, choice_6);
-							printf("¹²ÓĞ%d¼ä·¿×Ó·ûºÏ±ê×¼\n", t);
-							printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+							printf("å…±æœ‰%dé—´æˆ¿å­ç¬¦åˆæ ‡å‡†\n", t);
+							printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							choose();
 							break;
 						case 2:
-							printf("*********²éÑ¯·½Ê½*********\n");
+							printf("*********æŸ¥è¯¢æ–¹å¼*********\n");
 							printf("**                      **\n");
-							printf("**1.     ³Ç    ÊĞ       **\n");
-							printf("**2.     ÖĞ    ½é       **\n");
-							printf("**3.     ±à    ºÅ       **\n");
-							printf("**4.     ³¯    Ïò       **\n");
+							printf("**1.     åŸ    å¸‚       **\n");
+							printf("**2.     ä¸­    ä»‹       **\n");
+							printf("**3.     ç¼–    å·       **\n");
+							printf("**4.     æœ    å‘       **\n");
 							printf("**                      **\n");
 							printf("**************************\n");
 							scanf("%d", &choice_6);
@@ -4204,7 +4204,7 @@ int main()
 							case 0:
 								break;
 							case 1:
-								printf("ÇëÊäÈëÏ£Íû²éÕÒµÄ³ÇÊĞ£¨×î¶à10¸ö×Ö·û£©£º");
+								printf("è¯·è¾“å…¥å¸Œæœ›æŸ¥æ‰¾çš„åŸå¸‚ï¼ˆæœ€å¤š10ä¸ªå­—ç¬¦ï¼‰ï¼š");
 								scanf("%s", input_string);
 								tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
 								tempIntPtr++;
@@ -4234,71 +4234,71 @@ int main()
 								{
 
 									printf("%s\t", fl_p1->number);
-									printf("%4.2fÆ½·½Ã×\t", fl_p1->Area);
-									printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-									printf("%d²ã", fl_p1->floor);
-									printf("Î»ÓÚ%s", fl_p1->city);
-									printf("×â½ğÎª%6.2f", fl_p1->rent);
-									printf("³¯ÏòÎª");
+									printf("%4.2få¹³æ–¹ç±³\t", fl_p1->Area);
+									printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+									printf("%då±‚", fl_p1->floor);
+									printf("ä½äº%s", fl_p1->city);
+									printf("ç§Ÿé‡‘ä¸º%6.2f", fl_p1->rent);
+									printf("æœå‘ä¸º");
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
-										printf("¶«\n");
+										printf("ä¸œ\n");
 										break;
 									case 2:
-										printf("ÄÏ\n");
+										printf("å—\n");
 										break;
 									case 3:
-										printf("Î÷\n");
+										printf("è¥¿\n");
 										break;
 									case 4:
-										printf("±±\n");
+										printf("åŒ—\n");
 										break;
 									case 5:
-										printf("¶«ÄÏ\n");
+										printf("ä¸œå—\n");
 										break;
 									case 6:
-										printf("¶«±±\n");
+										printf("ä¸œåŒ—\n");
 										break;
 									case 7:
-										printf("Î÷ÄÏ\n");
+										printf("è¥¿å—\n");
 										break;
 									case 8:
-										printf("Î÷±±\n");
+										printf("è¥¿åŒ—\n");
 										break;
 									}
-									printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+									printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
-									jug5 = 0;//³õÊ¼»¯
+									jug5 = 0;//åˆå§‹åŒ–
 								}
 								else
 									if (*(tempIntPtr - 1) == 0)
 									{
 										logWarning(1);
-										printf("ÕÒ²»µ½ÄúÊäÈëµÄÄÚÈİ¡£\n");
-										printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+										printf("æ‰¾ä¸åˆ°æ‚¨è¾“å…¥çš„å†…å®¹ã€‚\n");
+										printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 										getchar();
 										choose();
 									}
 									else
 									{
-										printf("ÄúÊäÈëµÄÄÚÈİ±È½ÏÄ£ºı£¬ÎªÄúÕÒµ½ÒÔÏÂÄÚÈİ\n");
-										printf("ĞòºÅ\t\t±àºÅ\t\tÃæ»ı\t\tÊÒÌüÇé¿ö\t\t·ÑÓÃ\n");
+										printf("æ‚¨è¾“å…¥çš„å†…å®¹æ¯”è¾ƒæ¨¡ç³Šï¼Œä¸ºæ‚¨æ‰¾åˆ°ä»¥ä¸‹å†…å®¹\n");
+										printf("åºå·\t\tç¼–å·\t\té¢ç§¯\t\tå®¤å…æƒ…å†µ\t\tè´¹ç”¨\n");
 										for (int i = 0; i < *(tempIntPtr - 1); i++)
 										{
 											fl_p1 = fl_head->next;
 											for (int j = 0; j < *(tempIntPtr + i); j++)
 												fl_p1 = fl_p1->next;
-											printf("%d\t\t%s\t\t%6.2f\t\t%dÊÒ%dÌü\t\t%6.2f\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
+											printf("%d\t\t%s\t\t%6.2f\t\t%då®¤%då…\t\t%6.2f\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
 										}
-										printf("»Ø³µÒÔ¼ÌĞø\n");
+										printf("å›è½¦ä»¥ç»§ç»­\n");
 										getchar();
 										choose();
 									}
 								break;
 							case 2:
-								printf("ÇëÊäÈëÄúÏëËÑË÷µÄÖĞ½éĞÕÃû£º\n");
+								printf("è¯·è¾“å…¥æ‚¨æƒ³æœç´¢çš„ä¸­ä»‹å§“åï¼š\n");
 								char input[20];
 								scanf("%s", input);
 								choose();
@@ -4308,17 +4308,17 @@ int main()
 								{
 									if (!strcmp(input, ag_p1->Name))
 									{
-										printf("±àºÅ£º");
+										printf("ç¼–å·ï¼š");
 										printf("%s\n", ag_p1->Number);
-										printf("ĞÕÃû£º");
+										printf("å§“åï¼š");
 										printf("%s\n", ag_p1->Name);
-										printf("µç»°£º");
+										printf("ç”µè¯ï¼š");
 										printf("%s\n", ag_p1->phone_n);
 										break;
 									}
 									ag_p1 = ag_p1->next;
 								}
-								printf("·¿²úĞÅÏ¢£º\n");
+								printf("æˆ¿äº§ä¿¡æ¯ï¼š\n");
 								int t = 0;
 								while (fl_p1 != NULL)
 								{
@@ -4329,47 +4329,47 @@ int main()
 										printf("%d:\t", t);
 										printf("%s\t", fl_p1->number);
 										printf("%4.2f\n", fl_p1->Area);
-										printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-										printf("%d²ã\t", fl_p1->floor);
-										printf("Î»ÓÚ%s\t", fl_p1->city);
-										printf("×â½ğÎª%6.2f", fl_p1->rent);
-										printf("³¯ÏòÎª");
+										printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+										printf("%då±‚\t", fl_p1->floor);
+										printf("ä½äº%s\t", fl_p1->city);
+										printf("ç§Ÿé‡‘ä¸º%6.2f", fl_p1->rent);
+										printf("æœå‘ä¸º");
 										switch ((int)fl_p1->toward)
 										{
 										case 1:
-											printf("¶«\n");
+											printf("ä¸œ\n");
 											break;
 										case 2:
-											printf("ÄÏ\n");
+											printf("å—\n");
 											break;
 										case 3:
-											printf("Î÷\n");
+											printf("è¥¿\n");
 											break;
 										case 4:
-											printf("±±\n");
+											printf("åŒ—\n");
 											break;
 										case 5:
-											printf("¶«ÄÏ\n");
+											printf("ä¸œå—\n");
 											break;
 										case 6:
-											printf("¶«±±\n");
+											printf("ä¸œåŒ—\n");
 											break;
 										case 7:
-											printf("Î÷ÄÏ\n");
+											printf("è¥¿å—\n");
 											break;
 										case 8:
-											printf("Î÷±±\n");
+											printf("è¥¿åŒ—\n");
 											break;
 										}
 									}
 									fl_p1 = fl_p1->next;
 								}
-								printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+								printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 								break;
 							case 3:
-								printf("ÇëÊäÈëÏ£Íû²éÕÒµÄ·¿ÎİĞòºÅ£¨×î¶à10¸ö×Ö·û£©£º");
+								printf("è¯·è¾“å…¥å¸Œæœ›æŸ¥æ‰¾çš„æˆ¿å±‹åºå·ï¼ˆæœ€å¤š10ä¸ªå­—ç¬¦ï¼‰ï¼š");
 								scanf("%s", input_string);
 								tempIntPtr = string_seach(input_string, ag_head, cu_head, fl_head, ap_head, 4);
 								tempIntPtr++;
@@ -4397,130 +4397,130 @@ int main()
 								}
 								if (jug5)
 								{
-									printf("%s\t", fl_p1->number);//ÕâÀïĞèÒª¸ü¸Ä³ÉĞòºÅ
-									printf("%4.2fÆ½·½Ã×\t", fl_p1->Area);
-									printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-									printf("%d²ã", fl_p1->floor);
-									printf("Î»ÓÚ%s", fl_p1->city);
-									printf("×â½ğÎª%6.2f", fl_p1->rent);
-									printf("³¯ÏòÎª");
+									printf("%s\t", fl_p1->number);//è¿™é‡Œéœ€è¦æ›´æ”¹æˆåºå·
+									printf("%4.2få¹³æ–¹ç±³\t", fl_p1->Area);
+									printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+									printf("%då±‚", fl_p1->floor);
+									printf("ä½äº%s", fl_p1->city);
+									printf("ç§Ÿé‡‘ä¸º%6.2f", fl_p1->rent);
+									printf("æœå‘ä¸º");
 									switch ((int)fl_p1->toward)
 									{
 									case 1:
-										printf("¶«\n");
+										printf("ä¸œ\n");
 										break;
 									case 2:
-										printf("ÄÏ\n");
+										printf("å—\n");
 										break;
 									case 3:
-										printf("Î÷\n");
+										printf("è¥¿\n");
 										break;
 									case 4:
-										printf("±±\n");
+										printf("åŒ—\n");
 										break;
 									case 5:
-										printf("¶«ÄÏ\n");
+										printf("ä¸œå—\n");
 										break;
 									case 6:
-										printf("¶«±±\n");
+										printf("ä¸œåŒ—\n");
 										break;
 									case 7:
-										printf("Î÷ÄÏ\n");
+										printf("è¥¿å—\n");
 										break;
 									case 8:
-										printf("Î÷±±\n");
+										printf("è¥¿åŒ—\n");
 										break;
 									}
-									printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+									printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
-									jug5 = 0;//³õÊ¼»¯
+									jug5 = 0;//åˆå§‹åŒ–
 								}
 								else
 									if (*(tempIntPtr - 1) == 0)
 									{
 										logWarning(1);
-										printf("ÕÒ²»µ½ÄúÊäÈëµÄÄÚÈİ¡£\n");
-										printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+										printf("æ‰¾ä¸åˆ°æ‚¨è¾“å…¥çš„å†…å®¹ã€‚\n");
+										printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 										getchar();
 										choose();
 									}
 									else
 									{
-										printf("ÄúÊäÈëµÄÄÚÈİ±È½ÏÄ£ºı£¬ÎªÄúÕÒµ½ÒÔÏÂÄÚÈİ\n");
-										printf("ĞòºÅ\t\t±àºÅ\t\tÃæ»ı\t\tÊÒÌüÇé¿ö\t\t·ÑÓÃ\n");
+										printf("æ‚¨è¾“å…¥çš„å†…å®¹æ¯”è¾ƒæ¨¡ç³Šï¼Œä¸ºæ‚¨æ‰¾åˆ°ä»¥ä¸‹å†…å®¹\n");
+										printf("åºå·\t\tç¼–å·\t\té¢ç§¯\t\tå®¤å…æƒ…å†µ\t\tè´¹ç”¨\n");
 										for (int i = 0; i < *(tempIntPtr - 1); i++)
 										{
 											fl_p1 = fl_head->next;
 											for (int j = 0; j < *(tempIntPtr + i); j++)
 												fl_p1 = fl_p1->next;
-											printf("%d\t\t%s\t\t%6.2f\t\t%dÊÒ%dÌü\t\t%6.2f\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
+											printf("%d\t\t%s\t\t%6.2f\t\t%då®¤%då…\t\t%6.2f\n", i + 1, fl_p1->number, fl_p1->Area, fl_p1->shi, fl_p1->ting, fl_p1->rent);
 										}
-										printf("»Ø³µÒÔ¼ÌĞø\n");
+										printf("å›è½¦ä»¥ç»§ç»­\n");
 										getchar();
 										choose();
 									}
 								break;
-							case 4://³¯Ïò²éÕÒ
-								printf("*********²éÑ¯·½Ê½*********\n");
+							case 4://æœå‘æŸ¥æ‰¾
+								printf("*********æŸ¥è¯¢æ–¹å¼*********\n");
 								printf("**                      **\n");
-								printf("**1.        ¶«          **\n");
-								printf("**2.		ÄÏ          **\n");
-								printf("**3.        Î÷          **\n");
-								printf("**4.        ±±          **\n");
-								printf("**5.      ¶«  ÄÏ        **\n");
-								printf("**6.      ¶«  ±±        **\n");
-								printf("**7.      Î÷  ÄÏ        **\n");
-								printf("**8.      Î÷  ±±        **\n");
+								printf("**1.        ä¸œ          **\n");
+								printf("**2.		å—          **\n");
+								printf("**3.        è¥¿          **\n");
+								printf("**4.        åŒ—          **\n");
+								printf("**5.      ä¸œ  å—        **\n");
+								printf("**6.      ä¸œ  åŒ—        **\n");
+								printf("**7.      è¥¿  å—        **\n");
+								printf("**8.      è¥¿  åŒ—        **\n");
 								printf("**                      **\n");
 								printf("**************************\n");
 								scanf("%d", &choice_6);
 								choose();
 								int i;
 								i = toward_search_cu(fl_head, choice_6);
-								printf("¹²ÓĞ%d¸ö·¿Ô´³¯Ïò", i);
+								printf("å…±æœ‰%dä¸ªæˆ¿æºæœå‘", i);
 								switch (choice_6)
 								{
 								case 1:
-									printf("¶«\n");
+									printf("ä¸œ\n");
 									break;
 								case 2:
-									printf("ÄÏ\n");
+									printf("å—\n");
 									break;
 								case 3:
-									printf("Î÷\n");
+									printf("è¥¿\n");
 									break;
 								case 4:
-									printf("±±\n");
+									printf("åŒ—\n");
 									break;
 								case 5:
-									printf("¶«ÄÏ\n");
+									printf("ä¸œå—\n");
 									break;
 								case 6:
-									printf("¶«±±\n");
+									printf("ä¸œåŒ—\n");
 									break;
 								case 7:
-									printf("Î÷ÄÏ\n");
+									printf("è¥¿å—\n");
 									break;
 								case 8:
-									printf("Î÷±±\n");
+									printf("è¥¿åŒ—\n");
 									break;
 								}
-								printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+								printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 								break;
 							}
 							break;
 						case 3:
-							printf("ÇëÊäÈëÄúÏëËÑË÷µÄ³ÇÊĞ£º\n");
+							printf("è¯·è¾“å…¥æ‚¨æƒ³æœç´¢çš„åŸå¸‚ï¼š\n");
 							char input1[20];
 							scanf("%s", input1);
-							printf("ÇëÊäÈëÃæ»ı·¶Î§£º");
+							printf("è¯·è¾“å…¥é¢ç§¯èŒƒå›´ï¼š");
 							int l, r;
-							printf("×ó£º\t");
+							printf("å·¦ï¼š\t");
 							scanf("%d", &l);
-							printf("ÓÒ£º\t");
+							printf("å³ï¼š\t");
 							scanf("%d", &r);
 							choose();
 							if (!strcmp(input1, fl_p1->city) && fl_p1->Area >= l && fl_p1->Area <= r)
@@ -4528,55 +4528,55 @@ int main()
 								t++;
 								printf("%d:\t", t);
 								printf("%s\t", fl_p1->number);
-								printf("%4.2fÆ½·½Ã×\n", fl_p1->Area);
-								printf("%dÊÒ%dÌü\t", fl_p1->shi, fl_p1->ting);
-								printf("%d²ã\t", fl_p1->floor);
-								printf("Î»ÓÚ%s\t", fl_p1->city);
-								printf("×â½ğÎª%6.2f", fl_p1->rent);
-								printf("³¯ÏòÎª");
+								printf("%4.2få¹³æ–¹ç±³\n", fl_p1->Area);
+								printf("%då®¤%då…\t", fl_p1->shi, fl_p1->ting);
+								printf("%då±‚\t", fl_p1->floor);
+								printf("ä½äº%s\t", fl_p1->city);
+								printf("ç§Ÿé‡‘ä¸º%6.2f", fl_p1->rent);
+								printf("æœå‘ä¸º");
 								switch ((int)fl_p1->toward)
 								{
 									case 1:
-									printf("¶«\n");
+									printf("ä¸œ\n");
 									break;
 									case 2:
-									printf("ÄÏ\n");
+									printf("å—\n");
 									break;
 									case 3:
-									printf("Î÷\n");
+									printf("è¥¿\n");
 									break;
 									case 4:
-									printf("±±\n");
+									printf("åŒ—\n");
 									break;
 									case 5:
-									printf("¶«ÄÏ\n");
+									printf("ä¸œå—\n");
 									break;
 									case 6:
-									printf("¶«±±\n");
+									printf("ä¸œåŒ—\n");
 									break;
 									case 7:
-									printf("Î÷ÄÏ\n");
+									printf("è¥¿å—\n");
 									break;
 									case 8:
-									printf("Î÷±±\n");
+									printf("è¥¿åŒ—\n");
 									break;
 								}
 							}
 							fl_p1 = fl_p1->next;
-							printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+							printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							choose();
 							break;
 						}
 						break;
 					case 4:
-						//¿ÕÏĞÖĞ
-						printf("*********²é¿´·¿Ô´*********\n");
+						//ç©ºé—²ä¸­
+						printf("*********æŸ¥çœ‹æˆ¿æº*********\n");
 						printf("**                      **\n");
-						printf("**0.     ·µ    »Ø       **\n");
-						printf("**1.     ×â    ½ğ       **\n");
-						printf("**2.     ²ã    Êı       **\n");
-						printf("**3.     ·¿²úÃæ»ı       **\n");
+						printf("**0.     è¿”    å›       **\n");
+						printf("**1.     ç§Ÿ    é‡‘       **\n");
+						printf("**2.     å±‚    æ•°       **\n");
+						printf("**3.     æˆ¿äº§é¢ç§¯       **\n");
 						printf("**                      **\n");
 						printf("**************************\n");
 						scanf("%d", &choice_5);	
@@ -4588,64 +4588,64 @@ int main()
 
 						else
 						{		
-							printf("******ÊÇ·ñ¶àÊôĞÔÅÅĞò******\n");
+							printf("******æ˜¯å¦å¤šå±æ€§æ’åº******\n");
 							printf("**                      **\n");
-							printf("**1.        ÊÇ          **\n");
-							printf("**2.        ·ñ          **\n");
+							printf("**1.        æ˜¯          **\n");
+							printf("**2.        å¦          **\n");
 							printf("**                      **\n");
 							printf("**************************\n");
 							scanf("%d", &jug9);
 							choose();
 							if (jug9 == 1)
 							{						
-									printf("*********Ñ¡ÔñÊôĞÔ*********\n");
+									printf("*********é€‰æ‹©å±æ€§*********\n");
 									printf("**                      **\n");
-									printf("**1.     ×â    ½ğ       **\n");
-									printf("**2.     ²ã    Êı       **\n");
-									printf("**3.     ·¿²úÃæ»ı       **\n");
+									printf("**1.     ç§Ÿ    é‡‘       **\n");
+									printf("**2.     å±‚    æ•°       **\n");
+									printf("**3.     æˆ¿äº§é¢ç§¯       **\n");
 									printf("**                      **\n");
 									printf("**************************\n");
 									scanf("%d", &choice_6);
 									choose();
-									int t;//¾Ö²¿±äÁ¿ÓÃÓÚ·µ»ØÖµÅĞ¶Ï
+									int t;//å±€éƒ¨å˜é‡ç”¨äºè¿”å›å€¼åˆ¤æ–­
 									bubbleSort_Area(&fl_head, choice_5);
 									t = bubbleSort_more(&fl_head, choice_5, choice_6);
 									if (t == 1)
 									{
-										printf("*********ÅÅĞò·½Ê½*********\n");
+										printf("*********æ’åºæ–¹å¼*********\n");
 										printf("**                      **\n");
-										printf("**1.     ´ÓĞ¡µ½´ó       **\n");
-										printf("**2.     ´Ó´óµ½Ğ¡       **\n");
+										printf("**1.     ä»å°åˆ°å¤§       **\n");
+										printf("**2.     ä»å¤§åˆ°å°       **\n");
 										printf("**                      **\n");
 										printf("**************************\n");
 										scanf("%d", &jug7);
 										choose();
 										list_printfl_cu(fl_head, fl_tail, jug7);
-										printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+										printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 										getchar();
 										choose();
 									}
 									if (t == 2)
 									{
-										printf("ÄúÁ½´ÎÑ¡ÔñµÄÊôĞÔÏàÍ¬,ÒÑÄ¬ÈÏÎªµ¥ÊôĞÔÅÅĞò\n");
+										printf("æ‚¨ä¸¤æ¬¡é€‰æ‹©çš„å±æ€§ç›¸åŒ,å·²é»˜è®¤ä¸ºå•å±æ€§æ’åº\n");
 										bubbleSort_Area(&fl_head, choice_5);
-										printf("*********ÅÅĞò·½Ê½*********\n");
+										printf("*********æ’åºæ–¹å¼*********\n");
 										printf("**                      **\n");
-										printf("**1.     ´ÓĞ¡µ½´ó       **\n");
-										printf("**2.     ´Ó´óµ½Ğ¡       **\n");
+										printf("**1.     ä»å°åˆ°å¤§       **\n");
+										printf("**2.     ä»å¤§åˆ°å°       **\n");
 										printf("**                      **\n");
 										printf("**************************\n");
 										scanf("%d", &jug7);
 										choose();
 										list_printfl_cu(fl_head, fl_tail, jug7);
-										printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+										printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 										getchar();
 										choose();
 									}
 									if (t == 3)
 									{
-										printf("ÇëÕıÈ·ÊäÈë\n");
-										printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+										printf("è¯·æ­£ç¡®è¾“å…¥\n");
+										printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 										getchar();
 										choose();
 									}
@@ -4656,23 +4656,23 @@ int main()
 							{
 								bubbleSort_Area(&fl_head, choice_5);
 								choose();
-								printf("*********ÅÅĞò·½Ê½*********\n");
+								printf("*********æ’åºæ–¹å¼*********\n");
 								printf("**                      **\n");
-								printf("**1.     ´ÓĞ¡µ½´ó       **\n");
-								printf("**2.     ´Ó´óµ½Ğ¡       **\n");
+								printf("**1.     ä»å°åˆ°å¤§       **\n");
+								printf("**2.     ä»å¤§åˆ°å°       **\n");
 								printf("**                      **\n");
 								printf("**************************\n");
 								scanf("%d", &jug7);
 								choose();
 								list_printfl_cu(fl_head, fl_tail, jug7);
-								printf("°´ÏÂ»Ø³µÒÔ¼ÌĞø\n");
+								printf("æŒ‰ä¸‹å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 							}
 						}
 						break;
 					case 5:
-						//Íê¹¤
+						//å®Œå·¥
 					{
 						int num = 0;
 						ap_p = ap_head->next;
@@ -4682,7 +4682,7 @@ int main()
 								num++;
 							ap_p = ap_p->next;
 						}
-						printf("ÄúµÄÔ¤Ô¼ÓĞ%d¸ö\n", num);
+						printf("æ‚¨çš„é¢„çº¦æœ‰%dä¸ª\n", num);
 						num = 0;
 						ap_p = ap_head->next;
 						while (ap_p != NULL)
@@ -4691,7 +4691,7 @@ int main()
 								num++;
 							ap_p = ap_p->next;
 						}
-						printf("½ñÌìµÄÔ¤Ô¼ÓĞ%d¸ö\n", num);
+						printf("ä»Šå¤©çš„é¢„çº¦æœ‰%dä¸ª\n", num);
 						num = 0;
 						fl_p1 = fl_head->next;
 						while (fl_p1 != NULL)
@@ -4700,34 +4700,34 @@ int main()
 								num++;
 							fl_p1 = fl_p1->next;
 						}
-						printf("Äú×âµ½µÄ·¿Ô´ÓĞ%d¸ö\n", num);
-						printf("»Ø³µÒÔ¼ÌĞø\n");
+						printf("æ‚¨ç§Ÿåˆ°çš„æˆ¿æºæœ‰%dä¸ª\n", num);
+						printf("å›è½¦ä»¥ç»§ç»­\n");
 						choose();
 					}
 						break;
 					case 6:
-						//Íê¹¤
+						//å®Œå·¥
 						while (1)
 						{
 							memset(input_key, 0, sizeof(input_key));
 							memset(input_key_2, 0, sizeof(input_key_2));
-							printf("ÇëÊäÈëÃÜÂë£º");
+							printf("è¯·è¾“å…¥å¯†ç ï¼š");
 							hideInput(input_key, 19);
-							printf("ÇëÈ·ÈÏÃÜÂë£º");
+							printf("è¯·ç¡®è®¤å¯†ç ï¼š");
 							hideInput(input_key_2, 19);
 							if (!strcmp(input_key, input_key_2))
 							{
 								strcpy(cu_p1->Key, input_key);
-								printf("ĞŞ¸Ä³É¹¦!\n");
-								printf("»Ø³µÒÔ¼ÌĞø\n");
+								printf("ä¿®æ”¹æˆåŠŸ!\n");
+								printf("å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 								break;
 							}
 							else
 							{
-								printf("Á½´ÎÊäÈë²»Ò»ÑùµÄàÏ");
-								printf("»Ø³µÒÔ¼ÌĞø");
+								printf("ä¸¤æ¬¡è¾“å…¥ä¸ä¸€æ ·çš„å˜");
+								printf("å›è½¦ä»¥ç»§ç»­");
 								getchar();
 								choose();
 								break;
@@ -4735,7 +4735,7 @@ int main()
 						}
 						break;
 					case 7:
-						printf("ÄúÈ·¶¨ÒªÉ¾³ıÄúµÄÕË»§Âğ£¿1È·¶¨ 2È¡Ïû£»");
+						printf("æ‚¨ç¡®å®šè¦åˆ é™¤æ‚¨çš„è´¦æˆ·å—ï¼Ÿ1ç¡®å®š 2å–æ¶ˆï¼›");
 						scanf("%d", &jug6);
 						if (jug6 == 1)
 						{
@@ -4752,9 +4752,9 @@ int main()
 								free(cu_p1);
 								cu_p1 = NULL;
 							}
-							printf("²Ù×÷³É¹¦\n");
+							printf("æ“ä½œæˆåŠŸ\n");
 							logInfo(4);
-							printf("»Ø³µÒÔ¼ÌĞø");
+							printf("å›è½¦ä»¥ç»§ç»­");
 							getchar();
 							choose();
 						}
@@ -4765,21 +4765,21 @@ int main()
 			}
 			break;
 		case 2:
-			printf("******Éí·İÑ¡Ôñ******\n");
+			printf("******èº«ä»½é€‰æ‹©******\n");
 			printf("**                **\n");
-			printf("**0.  ÍË    ³ö    **\n");
-			printf("**1.  ¹Ü Àí Ô±    **\n");
-			printf("**2.  ÖĞ    ½é    **\n");
-			printf("**3.  ×â    ¿Í    **\n");
+			printf("**0.  é€€    å‡º    **\n");
+			printf("**1.  ç®¡ ç† å‘˜    **\n");
+			printf("**2.  ä¸­    ä»‹    **\n");
+			printf("**3.  ç§Ÿ    å®¢    **\n");
 			printf("**                **\n");
 			printf("********************\n");
-			printf("ÇëÑ¡ÔñÉí·İ£º");
+			printf("è¯·é€‰æ‹©èº«ä»½ï¼š");
 			scanf_s("%d", &choice_5);
 			choose();
 			switch (choice_5)
 			{
 			case 1:
-				printf("ÇëÊäÈëÑûÇëÂë£º");
+				printf("è¯·è¾“å…¥é‚€è¯·ç ï¼š");
 				scanf("%s", input_invitation);
 				ad_p1 = ad_head->next;
 				while (jug3)
@@ -4792,16 +4792,16 @@ int main()
 							jug4 = 0;
 						}
 						memset(input_account, 0, sizeof(input_account));
-						printf("ÇëÊäÈëÕË»§£º£¨20¸ö×Ö·û£©");
+						printf("è¯·è¾“å…¥è´¦æˆ·ï¼šï¼ˆ20ä¸ªå­—ç¬¦ï¼‰");
 						scanf("%s", input_account);
 						ad_p1 = ad_head->next;
 						while (1)
 						{
 							if (ad_p1 == NULL)
 							{
-								printf("ÇëÊäÈëÃÜÂë£º");
+								printf("è¯·è¾“å…¥å¯†ç ï¼š");
 								hideInput(input_key, 19);
-								printf("ÇëÈ·ÈÏÃÜÂë£º");
+								printf("è¯·ç¡®è®¤å¯†ç ï¼š");
 								hideInput(input_key_2, 19);
 								if (!strcmp(input_key, input_key_2))
 								{
@@ -4810,9 +4810,9 @@ int main()
 									ad_tail = ad_tail->next;
 									ad_p2 = ad_tail;
 									ad_p1 = ad_tail;
-									printf("×¢²á³É¹¦£¡");
+									printf("æ³¨å†ŒæˆåŠŸï¼");
 									logInfo(3);
-									printf("»Ø³µÒÔ¼ÌĞø");
+									printf("å›è½¦ä»¥ç»§ç»­");
 									getchar();
 									choose();
 									jug2 = 0;
@@ -4821,8 +4821,8 @@ int main()
 								}
 								else
 								{
-									printf("Á½´ÎÊäÈë²»Ò»ÑùµÄàÏ");
-									printf("»Ø³µÒÔ¼ÌĞø");
+									printf("ä¸¤æ¬¡è¾“å…¥ä¸ä¸€æ ·çš„å˜");
+									printf("å›è½¦ä»¥ç»§ç»­");
 									getchar();
 									choose();
 									ad_p1 = ad_head->next;
@@ -4832,8 +4832,8 @@ int main()
 							if (!strcmp(input_account, ad_p1->Account))
 							{
 								ad_p1 = ad_head->next;
-								printf("¸ÃÓÃ»§ÒÑ¾­´æÔÚ\n");
-								printf("°´»Ø³µÒÔ¼ÌĞø\n");
+								printf("è¯¥ç”¨æˆ·å·²ç»å­˜åœ¨\n");
+								printf("æŒ‰å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 								break;
@@ -4846,8 +4846,8 @@ int main()
 						ad_p1 = ad_p1->next;
 						if (ad_p1 == NULL)
 						{
-							printf("ÎŞĞ§»ò¹ıÆÚµÄµÄÑûÇëÂë!\n");
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							printf("æ— æ•ˆæˆ–è¿‡æœŸçš„çš„é‚€è¯·ç !\n");
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							choose();
 							jug3 = 0;
@@ -4859,7 +4859,7 @@ int main()
 				jug4 = 1;
 				break;
 			case 2:
-				printf("ÇëÊäÈëÑûÇëÂë£º");
+				printf("è¯·è¾“å…¥é‚€è¯·ç ï¼š");
 				scanf("%s", input_invitation);
 				ad_p1 = ad_head->next;
 				while (jug3)
@@ -4873,26 +4873,26 @@ int main()
 						}
 						memset(input_account, 0, sizeof(input_account));
 						memset(input_phonenumber, 0, sizeof(input_phonenumber));
-						printf("ÇëÊäÈëµç»°ºÅÂë£º(11Î»)");
+						printf("è¯·è¾“å…¥ç”µè¯å·ç ï¼š(11ä½)");
 						scanf("%s", input_phonenumber);
 						while (strlen(input_phonenumber) != 11)
 						{
 							choose();
-							printf("ÎŞĞ§µÄµç»°ºÅÂë£¡\n");
-							printf("ÇëÊäÈëÕıÈ·µÄµÄµç»°ºÅÂë:");
+							printf("æ— æ•ˆçš„ç”µè¯å·ç ï¼\n");
+							printf("è¯·è¾“å…¥æ­£ç¡®çš„çš„ç”µè¯å·ç :");
 							memset(input_phonenumber, 0, sizeof(input_phonenumber));
 							scanf("%s", input_phonenumber);
 						}
-						printf("ÇëÊäÈëÕË»§£º£¨20¸ö×Ö·û£©");
+						printf("è¯·è¾“å…¥è´¦æˆ·ï¼šï¼ˆ20ä¸ªå­—ç¬¦ï¼‰");
 						scanf("%s", input_account);
 						ag_p1 = ag_head->next;
 						while (1)
 						{
 							if (ag_p1 == NULL)
 							{
-								printf("ÇëÊäÈëÃÜÂë£º");
+								printf("è¯·è¾“å…¥å¯†ç ï¼š");
 								hideInput(input_key, 19);
-								printf("ÇëÈ·ÈÏÃÜÂë£º");
+								printf("è¯·ç¡®è®¤å¯†ç ï¼š");
 								hideInput(input_key_2, 19);
 								if (!strcmp(input_key, input_key_2))
 								{
@@ -4902,12 +4902,12 @@ int main()
 									ag_p2 = ag_tail;
 									ag_p1 = ag_tail;
 									strcpy(ag_p1->phone_n, input_phonenumber);
-									printf("×¢²á³É¹¦£¡\n");
+									printf("æ³¨å†ŒæˆåŠŸï¼\n");
 									logInfo(3);
-									printf("ÄúµÄ±àºÅÎª%s\n", ag_p1->Number);
-									printf("ÇëÊäÈëÄúµÄĞÕÃû£º");
+									printf("æ‚¨çš„ç¼–å·ä¸º%s\n", ag_p1->Number);
+									printf("è¯·è¾“å…¥æ‚¨çš„å§“åï¼š");
 									scanf("%s", ag_p1->Name);
-									printf("»Ø³µÒÔ¼ÌĞø\n");
+									printf("å›è½¦ä»¥ç»§ç»­\n");
 									getchar();
 									choose();
 									jug2 = 0;
@@ -4916,8 +4916,8 @@ int main()
 								}
 								else
 								{
-									printf("Á½´ÎÊäÈë²»Ò»ÑùµÄàÏ");
-									printf("»Ø³µÒÔ¼ÌĞø");
+									printf("ä¸¤æ¬¡è¾“å…¥ä¸ä¸€æ ·çš„å˜");
+									printf("å›è½¦ä»¥ç»§ç»­");
 									getchar();
 									choose();
 									ag_p1 = ag_head->next;
@@ -4927,8 +4927,8 @@ int main()
 							if (!strcmp(input_account, ag_p1->Account) || !strcmp(input_phonenumber, ag_p1->phone_n))
 							{
 								ag_p1 = ag_head->next;
-								printf("¸ÃÓÃ»§ÒÑ¾­´æÔÚ\n");
-								printf("°´»Ø³µÒÔ¼ÌĞø\n");
+								printf("è¯¥ç”¨æˆ·å·²ç»å­˜åœ¨\n");
+								printf("æŒ‰å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 								break;
@@ -4941,8 +4941,8 @@ int main()
 						ad_p1 = ad_p1->next;
 						if (ad_p1 == NULL)
 						{
-							printf("ÎŞĞ§»ò¹ıÆÚµÄµÄÑûÇëÂë!\n");
-							printf("»Ø³µÒÔ¼ÌĞø\n");
+							printf("æ— æ•ˆæˆ–è¿‡æœŸçš„çš„é‚€è¯·ç !\n");
+							printf("å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							choose();
 							jug3 = 0;
@@ -4957,26 +4957,26 @@ int main()
 				{
 					memset(input_account, 0, sizeof(input_account));
 					memset(input_phonenumber, 0, sizeof(input_phonenumber));
-					printf("ÇëÊäÈëµç»°ºÅÂë£º(11Î»)");
+					printf("è¯·è¾“å…¥ç”µè¯å·ç ï¼š(11ä½)");
 					scanf("%s", input_phonenumber);
 					while (strlen(input_phonenumber) != 11)
 					{
 						choose();
-						printf("ÎŞĞ§µÄµç»°ºÅÂë£¡\n");
-						printf("ÇëÊäÈëÕıÈ·µÄµÄµç»°ºÅÂë:");
+						printf("æ— æ•ˆçš„ç”µè¯å·ç ï¼\n");
+						printf("è¯·è¾“å…¥æ­£ç¡®çš„çš„ç”µè¯å·ç :");
 						memset(input_phonenumber, 0, sizeof(input_phonenumber));
 						scanf("%s", input_phonenumber);
 					}
-					printf("ÇëÊäÈëÕË»§£º£¨20¸ö×Ö·û£©");
+					printf("è¯·è¾“å…¥è´¦æˆ·ï¼šï¼ˆ20ä¸ªå­—ç¬¦ï¼‰");
 					scanf("%s", input_account);
 					cu_p1 = cu_head->next;
 					while (1)
 					{
 						if (cu_p1 == NULL)
 						{
-							printf("ÇëÊäÈëÃÜÂë£º");
+							printf("è¯·è¾“å…¥å¯†ç ï¼š");
 							hideInput(input_key, 19);
-							printf("ÇëÈ·ÈÏÃÜÂë£º");
+							printf("è¯·ç¡®è®¤å¯†ç ï¼š");
 							hideInput(input_key_2, 19);
 							if (!strcmp(input_key, input_key_2))
 							{
@@ -4985,13 +4985,13 @@ int main()
 								cu_p2 = cu_tail;
 								cu_p1 = cu_tail;
 								strcpy(cu_p1->phone_n, input_phonenumber);
-								printf("×¢²á³É¹¦£¡\n");
+								printf("æ³¨å†ŒæˆåŠŸï¼\n");
 								logInfo(3);
-								printf("ÇëÊäÈëÄúµÄĞÕÃû£º");
+								printf("è¯·è¾“å…¥æ‚¨çš„å§“åï¼š");
 								scanf("%s", cu_p1->Name);
-								printf("ÇëÊäÈë³ÇÊĞ£º");
+								printf("è¯·è¾“å…¥åŸå¸‚ï¼š");
 								scanf("%s", cu_p1->city);
-								printf("»Ø³µÒÔ¼ÌĞø\n");
+								printf("å›è½¦ä»¥ç»§ç»­\n");
 								getchar();
 								choose();
 								jug2 = 0;
@@ -4999,8 +4999,8 @@ int main()
 							}
 							else
 							{
-								printf("Á½´ÎÊäÈë²»Ò»ÑùµÄàÏ");
-								printf("»Ø³µÒÔ¼ÌĞø");
+								printf("ä¸¤æ¬¡è¾“å…¥ä¸ä¸€æ ·çš„å˜");
+								printf("å›è½¦ä»¥ç»§ç»­");
 								getchar();
 								choose();
 								cu_p1 = cu_head->next;
@@ -5010,8 +5010,8 @@ int main()
 						if (!strcmp(input_account, cu_p1->Account) || !strcmp(input_phonenumber, cu_p1->phone_n))
 						{
 							cu_p1 = cu_head->next;
-							printf("¸ÃÓÃ»§ÒÑ¾­´æÔÚ\n");
-							printf("°´»Ø³µÒÔ¼ÌĞø\n");
+							printf("è¯¥ç”¨æˆ·å·²ç»å­˜åœ¨\n");
+							printf("æŒ‰å›è½¦ä»¥ç»§ç»­\n");
 							getchar();
 							choose();
 							break;
