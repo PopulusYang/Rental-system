@@ -5,25 +5,47 @@
 
 ## 目录
 - [项目概述](#项目概述)
-- [目录结构](#目录结构)
-- [编译与运行](#编译与运行)
+- [项目结构](#项目结构)
+- [主要文件](#主要文件)
 - [许可证](#许可证)
+- [注意事项](#注意事项)
 
 ## 项目概述
 本项目是一个租赁系统，包含多个模块如公寓、机构、客户和预约等。
 
-## 目录结构
-- `.git/` - Git 版本控制系统目录
-- `Class_design/` - 包含主要的C语言源文件和项目文件
-- `rentalsystem/` - 租赁系统的目录
-- `README.md` - 项目说明文件
-- `...` - 其他文件和目录
+## 项目结构
+- `admin.bin`
+- `agency.bin`
+- `appointment.bin`
+- `class_design.c`
+- `Class_design.vcxproj`
+- `Class_design.vcxproj.filters`
+- `color.c`
+- `customer.bin`
+- `filecach.c`
+- `flat.bin`
+- `information_search.c`
+- `list.h`
+- `listwriting.c`
+- `log.c`
+- `log.txt`
+- `others.c`
+- `output.c`
+- `sort.c`
+- `temphead.h`
+## 主要文件
+### class_design.c
+这是项目的主文件，包含了程序的入口点 `main` 函数。在这个文件中，定义了管理员 (`Admin`) 和代理 (`Agency`) 的链表结构，并进行了初始化。
 
-## 编译与运行
-要编译和运行此项目，请确保您已安装C编译器（如GCC）。然后在项目根目录下运行以下命令：
-sh
-- gcc -o Class_design Class_design.c -I.
-- ./Class_design
+### list.h
+这个头文件包含了链表操作的相关定义。
+
+### temphead.h
+这个头文件包含了项目中使用的一些基本定义和宏。
+
+## 注意事项
+- 项目中使用了 `_CRT_SECURE_NO_WARNINGS` 宏，以避免某些安全警告。
+- 项目中使用了 `logError` 函数，但未在代码中定义，需要在 `log.c` 或其他相关文件中实现。
 
 ## 许可证
 此项目使用MIT许可证，详情见[LICENSE](LICENSE)文件。
